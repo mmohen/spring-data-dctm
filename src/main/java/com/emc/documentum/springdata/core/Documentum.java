@@ -1,17 +1,9 @@
 package com.emc.documentum.springdata.core;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
 import org.springframework.data.authentication.UserCredentials;
 import org.springframework.util.Assert;
 
 import com.documentum.com.DfClientX;
-import com.documentum.fc.client.DfAuthenticationException;
-import com.documentum.fc.client.DfIdentityException;
-import com.documentum.fc.client.DfPrincipalException;
-import com.documentum.fc.client.DfServiceException;
 import com.documentum.fc.client.IDfClient;
 import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.client.IDfSessionManager;
@@ -64,24 +56,25 @@ public class Documentum {
 		try {
 			return this.sessionManager.getSession(docBase);
 		}
-		catch (Exception e) {
+		catch (DfException e) {
 			// TODO Is this the best way to do this?S
-			String msg = String.format("Session cannot be instantiated for user %s for docBase %s. Exception: %s.", this.credentials.getUsername(), docBase, e.getMessage());
+			String msg = String.format("Session cannot be instantiated for user %s for docBase %s. Exception: %s, %s.\n", this.credentials.getUsername(), docBase, e.getClass(), e.getMessage());
 			System.out.println(msg);
 			e.printStackTrace();
 			return null;
 		}
 				
 	}
-
 	
 	public static void main(String[] args) throws DfException {
 		
 		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"));
-		IDfSysObject object = (IDfSysObject) doc.getSession("FPIRepo").newObject("dm_sysobject");
+		IDfSession session = doc.getSession("FPIRepo");
+		IDfSysObject object = (IDfSysObject) session.newObject("dm_sysobject");
+		System.out.println(session.getDocbaseName());
         object.setTitle("My Title" );
         object.save();
-        IDfSysObject myobject = (IDfSysObject) doc.getSession("FPIRepo").getObject(object.getObjectId());
+        IDfSysObject myobject = (IDfSysObject) session.getObject(object.getObjectId());
         System.out.println(myobject.getTitle());		
 		
 	}
