@@ -8,6 +8,10 @@ import org.springframework.data.authentication.UserCredentials;
 import org.springframework.util.Assert;
 
 import com.documentum.com.DfClientX;
+import com.documentum.fc.client.DfAuthenticationException;
+import com.documentum.fc.client.DfIdentityException;
+import com.documentum.fc.client.DfPrincipalException;
+import com.documentum.fc.client.DfServiceException;
 import com.documentum.fc.client.IDfClient;
 import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.client.IDfSessionManager;
@@ -18,87 +22,66 @@ import com.documentum.fc.common.IDfLoginInfo;
 
 public class Documentum {
 	
-	public IDfSession session;
+	public IDfSessionManager sessionManager;
 	private final UserCredentials credentials;
-	
-		
-	public Documentum(UserCredentials credentials, String docBase) throws DfException {
-		this(credentials, docBase, null, null);
+
+	public UserCredentials getCredentials() {
+		return this.credentials;
+	}
+
+	public Documentum(UserCredentials credentials) throws DfException {
+		this(credentials, null, null);
 		
 	}
 	
-	public Documentum(UserCredentials credentials, String docBase, String host, String port) throws DfException {
+	public Documentum(UserCredentials credentials, String docbrokerHost, String docbrokerPort) throws DfException {
 		
-		Assert.notNull(docBase);
-		this.credentials = credentials == null ? UserCredentials.NO_CREDENTIALS : credentials;
+		Assert.notNull(credentials);
 		
-		if (host == null) {
-			host  = getDefaultHost(); 
-//			System.out.println(host);
-		}
-		
-		if (port == null) {
-			port =  getDefaultPort();
-//			System.out.println(port2);
-		}
-		
+		this.credentials = credentials;
 		
 		DfClientX clientX = new DfClientX();
         IDfClient client = clientX.getLocalClient();
         IDfTypedObject config = client.getClientConfig();
-        config.setString("primary_host", host);
-        config.setInt("primary_port", new Integer(port));
-        IDfSessionManager sessionManager = client.newSessionManager();
         
+        if (docbrokerHost != null && docbrokerPort != null) {
+        	config.setString("primary_host", docbrokerHost);
+            config.setInt("primary_port", new Integer(docbrokerPort));
+        }
+        
+        this.sessionManager = client.newSessionManager();
         IDfLoginInfo loginInfo= clientX.getLoginInfo();
         loginInfo.setUser(credentials.getUsername());
         loginInfo.setPassword(credentials.getPassword());
         sessionManager.setIdentity(IDfSessionManager.ALL_DOCBASES, loginInfo);
-        this.session = sessionManager.getSession(docBase);
-		
 		}
 	
 
-
-	public IDfSession getSession() {
-		return session;
-	}
-
-	private static final String getDefaultHost() {
+	public IDfSession getSession(String docBase) {
 		
-		try (InputStream inStream = Documentum.class.getResourceAsStream("/dfc.properties"))	{
-			Properties properties = new Properties();
-			properties.load(inStream);
-			String host = properties.getProperty("dfc.docbroker.host[0]");
-			return host;
+		Assert.notNull(docBase);
+		
+		try {
+			return this.sessionManager.getSession(docBase);
 		}
-		catch(IOException e){
+		catch (Exception e) {
+			// TODO Is this the best way to do this?S
+			String msg = String.format("Session cannot be instantiated for user %s for docBase %s. Exception: %s.", this.credentials.getUsername(), docBase, e.getMessage());
+			System.out.println(msg);
 			e.printStackTrace();
 			return null;
 		}
+				
 	}
-	
-	private static final String getDefaultPort() {
-		
-		try (InputStream inStream = Documentum.class.getResourceAsStream("/dfc.properties"))	{
-			Properties properties = new Properties();
-			properties.load(inStream);
-			String port = properties.getProperty("dfc.docbroker.port[0]");
-			return port;
-		}
-		catch(IOException e){
-			e.printStackTrace();
-			return null;
-		}			
-	}
+
 	
 	public static void main(String[] args) throws DfException {
 		
-		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"), "FPIRepo");
-		IDfSysObject object = (IDfSysObject) doc.getSession().newObject("dm_sysobject");
+		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"));
+		IDfSysObject object = (IDfSysObject) doc.getSession("FPIRepo").newObject("dm_sysobject");
         object.setTitle("My Title" );
         object.save();
-        IDfSysObject myobject = (IDfSysObject) doc.getSession().getObject(object.getObjectId());
+        IDfSysObject myobject = (IDfSysObject) doc.getSession("FPIRepo").getObject(object.getObjectId());
         System.out.println(myobject.getTitle());		
 		
 	}

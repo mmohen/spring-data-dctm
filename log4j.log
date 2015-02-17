@@ -262,3 +262,15 @@ DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A glob
 	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:47)
 	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:26)
 	at com.emc.documentum.springdata.core.Documentum.main(Documentum.java:97)
+0 [main] ERROR com.documentum.fc.common.impl.logging.LoggingConfigurator  - Problem locating log4j configuration
+2 [main] WARN com.documentum.fc.common.impl.logging.LoggingConfigurator  - Using default log4j configuration
+428 [main] WARN com.documentum.fc.client.security.internal.RegistrationMgr  - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
+DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A global registry is not configured; ERRORCODE: ff; NEXT: null
+	at com.documentum.fc.client.security.impl.DfcIdentityPublisher.<init>(DfcIdentityPublisher.java:51)
+	at com.documentum.fc.client.security.internal.RegistrationMgr.register(RegistrationMgr.java:34)
+	at com.documentum.fc.impl.RuntimeContext.<clinit>(RuntimeContext.java:195)
+	at com.documentum.fc.client.DfClient.<clinit>(DfClient.java:772)
+	at com.documentum.com.DfClientX.getLocalClient(DfClientX.java:43)
+	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:44)
+	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:33)
+	at com.emc.documentum.springdata.core.Documentum.main(Documentum.java:80)
