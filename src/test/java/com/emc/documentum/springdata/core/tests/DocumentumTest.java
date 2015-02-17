@@ -1,10 +1,8 @@
-package com.emc.documentum.springdata.core;
+package com.emc.documentum.springdata.core.tests;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -15,6 +13,7 @@ import com.documentum.fc.client.DfIdentityException;
 import com.documentum.fc.client.DfServiceException;
 import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.common.DfException;
+import com.emc.documentum.springdata.core.Documentum;
 
 public class DocumentumTest {
 	
@@ -41,8 +40,6 @@ public class DocumentumTest {
 		assertEquals(doc.getCredentials(),credentials);
 		
 	}
-
-//	com.documentum.fc.client.DfIdentityException
 	
 	
 	@Test 
@@ -53,38 +50,38 @@ public class DocumentumTest {
 			assertEquals(session.getDocbaseName(), docBase);
 	}
 	
-	
-	@Test
-	public void testGetSessionThrowDfIndentityException() throws DfException {
-	try {
-		Documentum docWithoutHostAndPort = new Documentum(credentials);
-		String docBase = "FPIRepo";
-		docWithoutHostAndPort.getSession(docBase);
-	}
-	catch(Exception e) {
-		
-		expected.expect(DfServiceException.class);
-	}
-	}
-	
 	/**
 	 * DfServiceException raised if no host and port information given either as constructor
 	 * arguments or in dfc.properties
 	 * @throws DfException 
 	 */
 //	@Test
-//	public void testGetSessionThrowDfServiceException() throws DfException {
+//	public void testGetSessionThrowsDfServiceException() throws DfException {
 //	try {
-//		UserCredentials wrongCredentials = new UserCredentials("dmadmin", "password");
-//		Documentum docWithWrongCredentials = new Documentum(wrongCredentials);
+//		Documentum docWithoutHostAndPort = new Documentum(credentials);
 //		String docBase = "FPIRepo";
-//		docWithWrongCredentials.getSession(docBase);
+//		docWithoutHostAndPort.getSession(docBase);
 //	}
 //	catch(Exception e) {
 //		
-//		expected.expect(DfIdentityException.class);
+//		expected.expect(DfServiceException.class);
 //	}
 //	}
+//	
+
+	@Test
+	public void testGetSessionThrowsDfIdentityException() throws DfException {
+	try {
+		UserCredentials wrongCredentials = new UserCredentials("admin", "passwrd");
+		Documentum docWithWrongCredentials = new Documentum(wrongCredentials);
+		String docBase = "FPIRepo";
+		docWithWrongCredentials.getSession(docBase);
+	}
+	catch(Exception e) {
+		
+		expected.expect(DfIdentityException.class);
+	}
+	}
 	
 
 	@Test
