@@ -1,5 +1,6 @@
 package com.emc.documentum.springdata.core;
 
+import org.apache.log4j.Logger;
 import org.springframework.data.authentication.UserCredentials;
 import org.springframework.util.Assert;
 
@@ -13,6 +14,8 @@ import com.documentum.fc.common.DfException;
 import com.documentum.fc.common.IDfLoginInfo;
 
 public class Documentum {
+	
+	static Logger log = Logger.getLogger(Documentum.class.getName());
 	
 	public IDfSessionManager sessionManager;
 	private final UserCredentials credentials;
@@ -68,6 +71,7 @@ public class Documentum {
 	
 	public static void main(String[] args) throws DfException {
 		
+		log.debug("First Log Message by Megha");
 		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"));
 		IDfSession session = doc.getSession("FPIRepo");
 		IDfSysObject object = (IDfSysObject) session.newObject("dm_sysobject");
