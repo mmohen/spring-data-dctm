@@ -4,6 +4,7 @@ package com.emc.documentum.springdata.core;
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -32,7 +33,6 @@ public class DSTemplate implements IDSOperations {
 	private final IDfSession documentumSession;
 	private static final Collection<String> ITERABLE_CLASSES;
 	private final static ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
-	private final static Lock read = lock.readLock();
 
 	static {
 
@@ -83,7 +83,7 @@ public class DSTemplate implements IDSOperations {
 		}
 	}
 	
-	static <T> Map determineEntityFieldMapping(T obj) {
+	static <T> Map<String, String> determineEntityFieldMapping(T obj) {
 		if (null != obj) {
 			return determineFieldMapping(obj.getClass());
 		}
@@ -91,7 +91,7 @@ public class DSTemplate implements IDSOperations {
 		return null;
 	}
 
-	static Map determineFieldMapping(Class<?> entityClass) {
+	static Map<String, String> determineFieldMapping(Class<?> entityClass) {
 
 		if (entityClass == null) {
 			throw new InvalidDataAccessApiUsageException(
@@ -106,25 +106,28 @@ public class DSTemplate implements IDSOperations {
 	}
 	
 	
-	public static Map getFieldMapping(Class<?> type) {
+	public static Map<String, String> getFieldMapping(Class<?> type) {
 		
-		for (Field f: type.getDeclaredFields()) {
-			f.setAccessible(true);
-		   Attribute attribute = f.getAnnotation(Attribute.class);
-		   if (attribute != null)
-		       System.out.println(f.getName() + " : " + attribute.value());
+		Field[] fields = type.getDeclaredFields();
+		Map<String, String> fieldMapping = new HashMap<String, String>();
+		if(fields.length == 0) {
+			throw new InvalidDataAccessApiUsageException(
+					"No fields to map for the given class!");
+		}
+		Attribute attribute;
+		for (Field f: fields) {
+		   f.setAccessible(true);
+		   if (f.isAnnotationPresent(Attribute.class)) {
+			   attribute = f.getAnnotation(Attribute.class);
+			   if (attribute != null) 
+				   fieldMapping.put(f.getName(), attribute.value());  
+			   else 
+				   fieldMapping.put(f.getName(), f.getName());
+		   }
 		   else
-			   System.out.println(f.getName() + " : " + f.getName());
+			   fieldMapping.put(f.getName(), f.getName());
 		}
-		
-		Map fallback = new HashMap<>();
-		if (type.isAnnotationPresent(DCTMObject.class)) {
-			DCTMObject dCTMObject = AnnotationUtils.findAnnotation(type, DCTMObject.class);
-			return dCTMObject.repository();
-		}
-		else {
-			return fallback;
-		}
+		return fieldMapping;
 	}
 	
 	
@@ -132,31 +135,17 @@ public class DSTemplate implements IDSOperations {
 		
 		Person p = new Person("Megha", new Integer(21),"Female");
 		System.out.println(determineEntityRepositoryName(p));
-
+		Map<String, String> fieldMap = determineEntityFieldMapping(p);
+		Field[] fields = p.getClass().getDeclaredFields();
+		String fieldDeclaredName;
+		String fieldRepoName;
+		for (Field f: fields) {
+			   fieldDeclaredName = f.getName();
+			   fieldRepoName = fieldMap.get(fieldDeclaredName);
+			   System.out.println(fieldDeclaredName + " : " + fieldRepoName);
+		}
 	}
- 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+		 
 	 
 	 public void insert(Object objectToSave) {
 		 ensureNotIterable(objectToSave);
