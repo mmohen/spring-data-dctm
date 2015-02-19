@@ -1,21 +1,38 @@
 package com.emc.documentum.springdata.core;
 
+
+import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import com.documentum.fc.client.IDfSession;
+import com.documentum.fc.client.IDfSysObject;
+import com.documentum.fc.common.DfException;
+import com.emc.documentum.springdata.core.mapping.Attribute;
+import com.emc.documentum.springdata.core.mapping.DCTMObject;
 
+import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
+import org.springframework.data.authentication.UserCredentials;
+import org.springframework.data.mapping.model.MappingException;
+import org.springframework.data.util.ClassTypeInformation;
+import org.springframework.data.util.TypeInformation;
+import org.springframework.util.Assert;
 import org.springframework.util.CollectionUtils;
 
 public class DSTemplate implements IDSOperations {
 	
 	private final IDfSession documentumSession;
 	private static final Collection<String> ITERABLE_CLASSES;
+	private final static ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+	private final static Lock read = lock.readLock();
 
 	static {
 
@@ -31,16 +48,126 @@ public class DSTemplate implements IDSOperations {
 		 this.documentumSession = documentumSession;	 
 	 }
 	 
+	 static <T> String determineEntityRepositoryName(T obj) {
+		if (null != obj) {
+			return determineRepositoryName(obj.getClass());
+		}
+
+		return null;
+	}
+
+	static String determineRepositoryName(Class<?> entityClass) {
+
+		if (entityClass == null) {
+			throw new InvalidDataAccessApiUsageException(
+					"No class parameter provided, entity collection can't be determined!");
+		}
+
+		if (getRepositoryName(entityClass) == null) {
+			throw new InvalidDataAccessApiUsageException("No Persitent Entity information found for the class "
+					+ entityClass.getName());
+		}
+		return getRepositoryName(entityClass);
+	}
+	
+	
+	public static String getRepositoryName(Class<?> type) {
+		
+		String fallback = type.getSimpleName();
+		if (type.isAnnotationPresent(DCTMObject.class)) {
+			DCTMObject dCTMObject = AnnotationUtils.findAnnotation(type, DCTMObject.class);
+			return dCTMObject.repository();
+		}
+		else {
+			return fallback;
+		}
+	}
+	
+	static <T> Map determineEntityFieldMapping(T obj) {
+		if (null != obj) {
+			return determineFieldMapping(obj.getClass());
+		}
+
+		return null;
+	}
+
+	static Map determineFieldMapping(Class<?> entityClass) {
+
+		if (entityClass == null) {
+			throw new InvalidDataAccessApiUsageException(
+					"No class parameter provided, entity collection can't be determined!");
+		}
+
+		if (getFieldMapping(entityClass) == null) {
+			throw new InvalidDataAccessApiUsageException("No Field Mapping information found for the class "
+					+ entityClass.getName());
+		}
+		return getFieldMapping(entityClass);
+	}
+	
+	
+	public static Map getFieldMapping(Class<?> type) {
+		
+		for (Field f: type.getDeclaredFields()) {
+			f.setAccessible(true);
+		   Attribute attribute = f.getAnnotation(Attribute.class);
+		   if (attribute != null)
+		       System.out.println(f.getName() + " : " + attribute.value());
+		   else
+			   System.out.println(f.getName() + " : " + f.getName());
+		}
+		
+		Map fallback = new HashMap<>();
+		if (type.isAnnotationPresent(DCTMObject.class)) {
+			DCTMObject dCTMObject = AnnotationUtils.findAnnotation(type, DCTMObject.class);
+			return dCTMObject.repository();
+		}
+		else {
+			return fallback;
+		}
+	}
+	
+	
+	public static void main(String[] args) throws DfException {
+		
+		Person p = new Person("Megha", new Integer(21),"Female");
+		System.out.println(determineEntityRepositoryName(p));
+
+	}
+ 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 public void insert(Object objectToSave) {
 		 ensureNotIterable(objectToSave);
-		 insert(objectToSave, determineEntityRepositoryName(objectToSave));
+//		 insert(objectToSave, determineEntityRepositoryName(objectToSave));
 	 }
 
 
-	 public void insert(Object objectToSave, String repositoryName) {
-		 ensureNotIterable(objectToSave);
-		 doInsert(repositoryName, objectToSave, this.mongoConverter);
-	 }
+//	 public void insert(Object objectToSave, String repositoryName) {
+//		 ensureNotIterable(objectToSave);
+//		 doInsert(repositoryName, objectToSave, this.mongoConverter);
+//	 }
 
 		protected void ensureNotIterable(Object o) {
 			if (null != o) {
@@ -49,29 +176,29 @@ public class DSTemplate implements IDSOperations {
 				}
 			}
 		}
-		
-		private <T> String determineEntityRepositoryName(T obj) {
-			if (null != obj) {
-				return determineRepositoryName(obj.getClass());
-			}
-			return null;
-		}
-
-		String determineRepositoryName(Class<?> entityClass) {
-
-			if (entityClass == null) {
-				throw new InvalidDataAccessApiUsageException(
-						"No class parameter provided, entity collection can't be determined!");
-			}
-
-			MongoPersistentEntity<?> entity = mappingContext.getPersistentEntity(entityClass);
-			if (entity == null) {
-				throw new InvalidDataAccessApiUsageException("No Persitent Entity information found for the class "
-						+ entityClass.getName());
-			}
-			return entity.getCollection();
-		}
-		
+//		
+//		private <T> String determineEntityRepositoryName(T obj) {
+//			if (null != obj) {
+//				return determineRepositoryName(obj.getClass());
+//			}
+//			return null;
+//		}
+//
+//		String determineRepositoryName(Class<?> entityClass) {
+//
+//			if (entityClass == null) {
+//				throw new InvalidDataAccessApiUsageException(
+//						"No class parameter provided, entity collection can't be determined!");
+//			}
+//
+//			MongoPersistentEntity<?> entity = mappingContext.getPersistentEntity(entityClass);
+//			if (entity == null) {
+//				throw new InvalidDataAccessApiUsageException("No Persitent Entity information found for the class "
+//						+ entityClass.getName());
+//			}
+//			return entity.getCollection();
+//		}
+//		
 		
 //		public void insert(Collection<? extends Object> batchToSave, Class<?> entityClass) {
 //			doInsertBatch(determineCollectionName(entityClass), batchToSave, this.mongoConverter);
@@ -137,10 +264,6 @@ public class DSTemplate implements IDSOperations {
 //				i++;
 //			}
 //		}
-
-		
-
-	 
 	  
 
 }

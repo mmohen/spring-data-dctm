@@ -3,20 +3,29 @@ package com.emc.documentum.springdata.core;
 import org.springframework.data.annotation.TypeAlias;
 
 import com.emc.documentum.springdata.core.mapping.DCTMObject;
-import com.emc.documentum.springdata.core.mapping.Field;
+import com.emc.documentum.springdata.core.mapping.Attribute;
 
 @DCTMObject(repository="persons")
 @TypeAlias("person")
 public class Person {
 	
-	@Field("firstname")
+	@Attribute("firstname")
 	private String name;
     
-	private Integer age;
+	public Integer age;
     
-	@Field("sex")
+	@Attribute("sex")
     private String gender;
     
-	private Address address;
+	@Attribute("addr")
+	public Address address;
+	
+	public Person(String name, Integer age, String gender)
+	{
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	}
+	
  }
 
