@@ -28,7 +28,7 @@ public class EntityPersistanceManager {
 		
 			 IDfSysObject dctmObject = (IDfSysObject) documentum.getSession().newObject("dm_sysobject");//repoObjectName);
 			 
-		 ArrayList<AttributeType> mapping = new MappingHandler(objectToSave).getAttributeMappings();
+			ArrayList<AttributeType> mapping = new MappingHandler(objectToSave).getAttributeMappings();
 			DCTMObjectConverter dctmObjectConverter = new DCTMObjectConverter(objectToSave, dctmObject);
 			dctmObjectConverter.convert(mapping);
 			 
