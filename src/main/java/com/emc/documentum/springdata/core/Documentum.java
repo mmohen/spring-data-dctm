@@ -19,21 +19,24 @@ public class Documentum {
 	
 	public IDfSessionManager sessionManager;
 	private final UserCredentials credentials;
+	public String docBase;
 
 	public UserCredentials getCredentials() {
 		return this.credentials;
 	}
 
-	public Documentum(UserCredentials credentials) throws DfException {
-		this(credentials, null, null);
+	public Documentum(UserCredentials credentials, String docBase) throws DfException {
+		this(credentials, docBase, null, null);
 		
 	}
 	
-	public Documentum(UserCredentials credentials, String docbrokerHost, String docbrokerPort) throws DfException {
+	public Documentum(UserCredentials credentials, String docBase, String docbrokerHost, String docbrokerPort) throws DfException {
 		
 		Assert.notNull(credentials);
+		Assert.notNull(docBase);
 		
 		this.credentials = credentials;
+		this.docBase = docBase;
 		
 		DfClientX clientX = new DfClientX();
         IDfClient client = clientX.getLocalClient();
@@ -52,12 +55,10 @@ public class Documentum {
 		}
 	
 
-	public IDfSession getSession(String docBase) {
-		
-		Assert.notNull(docBase);
+	public IDfSession getSession() {	
 		
 		try {
-			return this.sessionManager.getSession(docBase);
+			return this.sessionManager.getSession(this.docBase);
 		}
 		catch (DfException e) {
 			// TODO Is this the best way to do this?S
@@ -72,8 +73,8 @@ public class Documentum {
 	public static void main(String[] args) throws DfException {
 		
 		log.debug("First Log Message by Megha");
-		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"));
-		IDfSession session = doc.getSession("FPIRepo");
+		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"),"FPIRepo");
+		IDfSession session = doc.getSession();
 		IDfSysObject object = (IDfSysObject) session.newObject("dm_sysobject");
 		System.out.println(session.getDocbaseName());
         object.setTitle("My Title" );

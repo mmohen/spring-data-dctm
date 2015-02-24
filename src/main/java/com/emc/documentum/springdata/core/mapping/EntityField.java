@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Attribute {
+public @interface EntityField {
 
 	/**
 	* The key to be used to store the field inside the document.
