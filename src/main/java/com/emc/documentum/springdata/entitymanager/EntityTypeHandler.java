@@ -15,7 +15,6 @@ public class EntityTypeHandler {
 				
 	}
 
-	
 	public String getEntityObjectNameFromClass(Class<?> type) {
 		
 		String fallback = type.getSimpleName();

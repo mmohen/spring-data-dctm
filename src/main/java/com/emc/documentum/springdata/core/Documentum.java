@@ -30,7 +30,8 @@ public class Documentum {
 		
 	}
 	
-	public Documentum(UserCredentials credentials, String docBase, String docbrokerHost, String docbrokerPort) throws DfException {
+	public Documentum(UserCredentials credentials, String docBase, String docbrokerHost,
+			String docbrokerPort) throws DfException {
 		
 		Assert.notNull(credentials);
 		Assert.notNull(docBase);
@@ -61,8 +62,8 @@ public class Documentum {
 			return this.sessionManager.getSession(this.docBase);
 		}
 		catch (DfException e) {
-			// TODO Is this the best way to do this?S
-			String msg = String.format("Session cannot be instantiated for user %s for docBase %s. Exception: %s, %s.\n", this.credentials.getUsername(), docBase, e.getClass(), e.getMessage());
+			String msg = String.format("Session cannot be instantiated for user %s for docBase %s. "
+					+ "Exception: %s, %s.", this.credentials.getUsername(), docBase, e.getClass(), e.getMessage());
 			System.out.println(msg);
 			e.printStackTrace();
 			return null;
@@ -72,7 +73,7 @@ public class Documentum {
 	
 	public static void main(String[] args) throws DfException {
 		
-		log.debug("First Log Message by Megha");
+		log.debug("First Log Message");
 		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"),"FPIRepo");
 		IDfSession session = doc.getSession();
 		IDfSysObject object = (IDfSysObject) session.newObject("dm_sysobject");

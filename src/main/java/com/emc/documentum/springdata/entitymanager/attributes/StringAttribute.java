@@ -4,8 +4,6 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.apache.commons.beanutils.PropertyUtils;
 
-import com.documentum.fc.client.IDfSysObject;
-
 public class StringAttribute extends Attribute<String>{
 
 	public StringAttribute(String name) {

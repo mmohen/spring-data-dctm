@@ -11,7 +11,18 @@ public class Person {
 	
 	@EntityField("firstname")
 	private String name;
+
+	public Integer age;
     
+	@EntityField("sex")
+    private String gender;
+	
+	public char type;
+	public int test;
+    
+//	@EntityField("addr")
+//	public Address address;
+	
 	public String getName() {
 		return name;
 	}
@@ -20,8 +31,6 @@ public class Person {
 		this.name = name;
 	}
 
-	public Integer age;
-    
 	public Integer getAge() {
 		return age;
 	}
@@ -29,12 +38,6 @@ public class Person {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-
-	@EntityField("sex")
-    private String gender;
-    
-//	@EntityField("addr")
-//	public Address address;
 	
 	public String getGender() {
 		return gender;

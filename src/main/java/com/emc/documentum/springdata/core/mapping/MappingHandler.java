@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.util.Assert;
 
-import com.documentum.fc.common.DfException;
-import com.emc.documentum.springdata.core.Person;
 import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
@@ -54,23 +52,11 @@ public class MappingHandler {
 		   else {
 			   attributeName = f.getName();
 		   }
-		   attribute = AttributeFactory.getAttribute(type,attributeName);
+		   attribute = AttributeFactory.getAttribute(type, attributeName);
 		   AttributeType attributeType = new AttributeType(f.getName(), attribute);
 		   mapping.add(attributeType);  
 		}
 		return mapping;
 	}
 	
-
-
-public static void main(String[] args) throws DfException {
-	
-	Person p = new Person("Megha", new Integer(21),"Female");
-	MappingHandler handler = new MappingHandler(p);
-	ArrayList<AttributeType> fieldMap = handler.getAttributeMappings();
-	for (AttributeType attributeType : fieldMap) {
-		System.out.print(attributeType.getFieldName() + " : ");
-		System.out.println(attributeType.attribute + " , " + attributeType.attribute.getName()); 
-	}
-}
 }

@@ -1,7 +1,5 @@
 package com.emc.documentum.springdata.entitymanager.attributes;
 
-import com.documentum.fc.client.IDfSysObject;
-
 public class Attribute<T> {
 
 	public String name;
@@ -18,8 +16,6 @@ public class Attribute<T> {
 	
 	public T getValue(Object o){
 		return null;
-	}
-
-	
+	}	
 	
 }
