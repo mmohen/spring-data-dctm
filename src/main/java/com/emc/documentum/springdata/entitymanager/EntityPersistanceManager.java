@@ -26,21 +26,18 @@ public class EntityPersistanceManager {
 	public <T> void createObject(String repoObjectName,T objectToSave){
 		 try {
 		
-			 IDfSysObject dctmObject = (IDfSysObject) documentum.getSession().newObject("dm_sysobject");//repoObjectName);
+			 IDfSysObject dctmObject = (IDfSysObject) documentum.getSession().newObject(repoObjectName);//repoObjectName);
+			 ArrayList<AttributeType> mapping = new MappingHandler(objectToSave).getAttributeMappings();
+			 DCTMObjectConverter dctmObjectConverter = new DCTMObjectConverter(objectToSave, dctmObject);
+			 dctmObjectConverter.convert(mapping);
 			 
-			ArrayList<AttributeType> mapping = new MappingHandler(objectToSave).getAttributeMappings();
-			DCTMObjectConverter dctmObjectConverter = new DCTMObjectConverter(objectToSave, dctmObject);
-			dctmObjectConverter.convert(mapping);
-			 
-			 //dctmObject.save();
-			 
+			 dctmObject.save();
 			 
 		 } catch (DfException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		 
-		 
+		  
 	 }
 	 
 	 public static void main(String[] args) throws DfException {

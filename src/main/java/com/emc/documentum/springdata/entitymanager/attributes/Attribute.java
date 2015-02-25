@@ -1,21 +1,25 @@
 package com.emc.documentum.springdata.entitymanager.attributes;
 
+import com.documentum.fc.client.IDfSysObject;
+
 public class Attribute<T> {
 
 	public String name;
-	T type;
 	
-	 public Attribute(T type, String name) {
-		 this.type = type;
+	 public Attribute( String name) {
 		 this.name = name;
 		 }
 	
-	public T getType() {
-		return this.type;
-	}
 	
 	public String getName() {
 		return this.name;
 	}
 
+	
+	public T getValue(Object o){
+		return null;
+	}
+
+	
+	
 }

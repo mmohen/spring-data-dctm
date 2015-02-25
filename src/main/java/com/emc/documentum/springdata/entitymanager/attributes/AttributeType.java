@@ -13,12 +13,11 @@ public class AttributeType {
 	}
 
 	public String getFieldName() {
-		return fieldName;
+		return this.fieldName;
 	}
 
 	public Attribute<?> getAttribute() {
-		return attribute;
+		return this.attribute;
 	}
 	
-
 }

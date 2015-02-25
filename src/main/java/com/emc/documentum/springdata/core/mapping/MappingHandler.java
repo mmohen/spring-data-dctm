@@ -9,6 +9,7 @@ import org.springframework.util.Assert;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.Person;
 import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
+import com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 
 public class MappingHandler {
@@ -36,6 +37,7 @@ public class MappingHandler {
 		
 		EntityField entityField;
 		Attribute<?> attribute;
+		String attributeName;
 		
 		for (Field f: fields) {
 		   f.setAccessible(true);
@@ -43,15 +45,16 @@ public class MappingHandler {
 		   if (f.isAnnotationPresent(EntityField.class)) {
 			   entityField = f.getAnnotation(EntityField.class);
 			   if (entityField != null) {
-				   attribute = new Attribute<Object>(type, entityField.value());  
+				   attributeName = entityField.value();
 			   }
 			   else {
-				   attribute = new Attribute<Object>(type, f.getName());
+				   attributeName = f.getName();
 			   }
 		   }
 		   else {
-			   attribute = new Attribute<Object>(type, f.getName());  
+			   attributeName = f.getName();
 		   }
+		   attribute = AttributeFactory.getAttribute(type,attributeName);
 		   AttributeType attributeType = new AttributeType(f.getName(), attribute);
 		   mapping.add(attributeType);  
 		}
@@ -67,7 +70,7 @@ public static void main(String[] args) throws DfException {
 	ArrayList<AttributeType> fieldMap = handler.getAttributeMappings();
 	for (AttributeType attributeType : fieldMap) {
 		System.out.print(attributeType.getFieldName() + " : ");
-		System.out.println(attributeType.attribute.getType() + " , " + attributeType.attribute.getName()); 
+		System.out.println(attributeType.attribute + " , " + attributeType.attribute.getName()); 
 	}
 }
 }
