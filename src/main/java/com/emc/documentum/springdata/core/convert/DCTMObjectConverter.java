@@ -74,13 +74,13 @@ public class DCTMObjectConverter {
 			dctmObject.setDouble(fieldType.getAttribute().getName(), (Float) valueFromClass);
 		} 
 		else if (attributeType instanceof ByteAttribute){
-			dctmObject.setString(fieldType.getAttribute().getName(), (Byte) valueFromClass);
+			dctmObject.setInt(fieldType.getAttribute().getName(), (Byte) valueFromClass);
 		} 
 		else if (attributeType instanceof BooleanAttribute){
 			dctmObject.setBoolean(fieldType.getAttribute().getName(), (Boolean) valueFromClass);
 		} 
 		else if (attributeType instanceof CharacterAttribute){
-			dctmObject.setString(fieldType.getAttribute().getName(), (Character) valueFromClass);
+			dctmObject.setString(fieldType.getAttribute().getName(), (String) valueFromClass);
 		}
 		
 	}

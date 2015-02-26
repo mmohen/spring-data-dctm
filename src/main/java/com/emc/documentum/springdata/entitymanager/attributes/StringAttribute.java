@@ -14,8 +14,7 @@ public class StringAttribute extends Attribute<String>{
 	public String getValue(Object o){
 		try {
 			return (String) PropertyUtils.getSimpleProperty(o, name);
-		} catch (IllegalAccessException | InvocationTargetException
-				| NoSuchMethodException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

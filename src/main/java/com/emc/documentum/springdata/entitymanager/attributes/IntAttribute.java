@@ -15,8 +15,7 @@ public class IntAttribute extends Attribute<Integer>{
 	public Integer getValue(Object o) {
 		try {
 			return (Integer) PropertyUtils.getSimpleProperty(o, name);
-		} catch (IllegalAccessException | InvocationTargetException
-				| NoSuchMethodException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
