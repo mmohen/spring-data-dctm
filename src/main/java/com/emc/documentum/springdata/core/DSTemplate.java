@@ -1,5 +1,6 @@
 package com.emc.documentum.springdata.core;
 
+import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.entitymanager.EntityPersistanceManager;
 import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
 
@@ -17,7 +18,7 @@ public class DSTemplate implements IDSOperations {
 	 }
 	 
 	 
-	 public void insert(Object objectToSave) {
+	 public void insert(Object objectToSave) throws DfException {
 //		 ensureNotIterable(objectToSave);
 		 
 		 String repoObjectName = getRepositoryObjectName(objectToSave);
