@@ -56,17 +56,15 @@ public class Documentum {
 		}
 	
 
-	public IDfSession getSession() {	
+	public IDfSession getSession() throws DfException {	
 		
 		try {
 			return this.sessionManager.getSession(this.docBase);
 		}
-		catch (DfException e) {
+		catch (Exception e) {
 			String msg = String.format("Session cannot be instantiated for user %s for docBase %s. "
 					+ "Exception: %s, %s.", this.credentials.getUsername(), docBase, e.getClass(), e.getMessage());
-			System.out.println(msg);
-			e.printStackTrace();
-			return null;
+			throw new DfException(msg, e);
 		}
 				
 	}
