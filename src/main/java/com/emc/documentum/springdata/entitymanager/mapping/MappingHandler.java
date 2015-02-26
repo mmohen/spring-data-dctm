@@ -1,4 +1,4 @@
-package com.emc.documentum.springdata.core.mapping;
+package com.emc.documentum.springdata.entitymanager.mapping;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -25,7 +25,10 @@ public class MappingHandler {
 	}
 
 	public ArrayList<AttributeType> getAttributeMappings() {
-		
+        EntityField entityField;
+        Attribute<?> attribute;
+        String attributeName;
+
 		ArrayList<AttributeType> mapping = new ArrayList<AttributeType>();
 		Field[] fields = this.entityClass.getDeclaredFields();
 		if(fields.length == 0) {
@@ -33,30 +36,35 @@ public class MappingHandler {
 					"No fields to map for the given class!");
 		}
 		
-		EntityField entityField;
-		Attribute<?> attribute;
-		String attributeName;
-		
+
 		for (Field f: fields) {
 		   f.setAccessible(true);
 		   Class<?> type = f.getType();
-		   if (f.isAnnotationPresent(EntityField.class)) {
-			   entityField = f.getAnnotation(EntityField.class);
-			   if (entityField != null) {
-				   attributeName = entityField.value();
-			   }
-			   else {
-				   attributeName = f.getName();
-			   }
-		   }
-		   else {
-			   attributeName = f.getName();
-		   }
-		   attribute = AttributeFactory.getAttribute(type, attributeName);
+            attributeName = getEntityFieldName(f);
+            attribute = AttributeFactory.getAttribute(type, attributeName);
 		   AttributeType attributeType = new AttributeType(f.getName(), attribute);
 		   mapping.add(attributeType);  
 		}
 		return mapping;
 	}
-	
+
+
+    private String getEntityFieldName(Field f) {
+        EntityField entityField;
+        String attributeName;
+        if (f.isAnnotationPresent(EntityField.class)) {
+            entityField = f.getAnnotation(EntityField.class);
+            if (entityField != null) {
+                attributeName = entityField.value();
+            }
+            else {
+                attributeName = f.getName();
+            }
+        }
+        else {
+            attributeName = f.getName();
+        }
+        return attributeName;
+    }
+
 }

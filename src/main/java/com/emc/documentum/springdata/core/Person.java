@@ -2,8 +2,8 @@ package com.emc.documentum.springdata.core;
 
 import org.springframework.data.annotation.TypeAlias;
 
-import com.emc.documentum.springdata.core.mapping.DCTMObject;
-import com.emc.documentum.springdata.core.mapping.EntityField;
+import com.emc.documentum.springdata.entitymanager.mapping.DCTMObject;
+import com.emc.documentum.springdata.entitymanager.mapping.EntityField;
 
 @DCTMObject(repository="persons")
 @TypeAlias("person")

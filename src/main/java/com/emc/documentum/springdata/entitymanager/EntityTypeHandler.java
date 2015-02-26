@@ -3,7 +3,7 @@ package com.emc.documentum.springdata.entitymanager;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.util.Assert;
 
-import com.emc.documentum.springdata.core.mapping.DCTMObject;
+import com.emc.documentum.springdata.entitymanager.mapping.DCTMObject;
 
 public class EntityTypeHandler {
 

@@ -1,4 +1,4 @@
-package com.emc.documentum.springdata.core.mapping;
+package com.emc.documentum.springdata.entitymanager.mapping;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

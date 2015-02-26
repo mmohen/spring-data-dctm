@@ -1,19 +1,13 @@
-package com.emc.documentum.springdata.core.convert;
+package com.emc.documentum.springdata.entitymanager.convert;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.springframework.data.authentication.UserCredentials;
 
-import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.common.DfException;
-import com.emc.documentum.springdata.core.Documentum;
-import com.emc.documentum.springdata.core.Person;
 import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
-import com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 import com.emc.documentum.springdata.entitymanager.attributes.BooleanAttribute;
 import com.emc.documentum.springdata.entitymanager.attributes.ByteAttribute;
@@ -35,7 +29,7 @@ public class DCTMObjectConverter {
 		this.dctmObject = dctmObject;
 	}
 
-	public void convert(ArrayList<AttributeType> mapping) {
+	public void convert(ArrayList<AttributeType> mapping) throws DfException {
 		for (AttributeType attributeType : mapping) {
 			 try {
 				setValue(dctmObject, objectToSave, attributeType);
@@ -43,12 +37,11 @@ public class DCTMObjectConverter {
 			catch(Exception e){
 				String msg = String.format("Conversion failed for Object of class %s. " + "Exception: %s, %s.", 
 						objectToSave.getClass(), e.getClass(), e.getMessage());
-				System.out.println(msg);
-				e.printStackTrace();
+                throw new DfException(msg,e);
 			}
 	}
 }
-
+    // TODO : see if there is a better way of doing this
 	private void setValue(IDfSysObject dctmObject, Object objectToSave, AttributeType fieldType) 
 			throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		
