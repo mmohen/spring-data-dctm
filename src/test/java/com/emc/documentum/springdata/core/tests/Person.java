@@ -1,4 +1,4 @@
-package com.emc.documentum.springdata.core;
+package com.emc.documentum.springdata.core.tests;
 
 import org.springframework.data.annotation.TypeAlias;
 
@@ -16,9 +16,6 @@ public class Person {
     
 	@EntityField("sex")
     private String gender;
-	
-	public char type;
-	public int test;
     
 //	@EntityField("addr")
 //	public Address address;
