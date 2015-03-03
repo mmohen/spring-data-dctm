@@ -1,1648 +1,4 @@
-26 Feb 2015 15:39:03,487 main - Extended attributes changed for dmi_dd_type_info
-AbstractObjectProtocol$AttributeMismatchException:: THREAD: main; MSG: [DFC_OBJPROTO_ATTRIBUTE_MISMATCH] The serialized attribute "r_supertype" did not match the previous definition; ERRORCODE: ff; NEXT: null
-	at com.documentum.fc.client.impl.objectprotocol.AbstractObjectProtocol.resolveAttribute(AbstractObjectProtocol.java:60)
-	at com.documentum.fc.client.impl.objectprotocol.ObjectProtocolV1.deserializeExtendedAttributes(ObjectProtocolV1.java:127)
-	at com.documentum.fc.client.impl.objectprotocol.ObjectProtocolV1.deserializeObject(ObjectProtocolV1.java:97)
-	at com.documentum.fc.client.impl.objectprotocol.ObjectProtocolV1.deserializeObjectWithPossiblyExtendedType(ObjectProtocolV1.java:204)
-	at com.documentum.fc.client.impl.objectprotocol.ObjectProtocolV1.deserializeObjectWithPreamble(ObjectProtocolV1.java:310)
-	at com.documentum.fc.client.impl.connection.docbase.netwise.NetwiseDocbaseRpcClient.applyForObject(NetwiseDocbaseRpcClient.java:668)
-	at com.documentum.fc.client.impl.connection.docbase.DocbaseConnection$8.evaluate(DocbaseConnection.java:1378)
-	at com.documentum.fc.client.impl.connection.docbase.DocbaseConnection.evaluateRpc(DocbaseConnection.java:1137)
-	at com.documentum.fc.client.impl.connection.docbase.DocbaseConnection.applyForObject(DocbaseConnection.java:1370)
-	at com.documentum.fc.client.impl.docbase.DocbaseApi.getDDObject(DocbaseApi.java:825)
-	at com.documentum.fc.client.impl.dd.DDInfoManager.fetchFromServer(DDInfoManager.java:177)
-	at com.documentum.fc.client.impl.dd.DDInfoManager.getCacheItem(DDInfoManager.java:100)
-	at com.documentum.fc.client.impl.dd.DDInfoManager.getDDInfo(DDInfoManager.java:46)
-	at com.documentum.fc.client.impl.TypeManager.getTypeDescription(TypeManager.java:83)
-	at com.documentum.fc.client.impl.session.Session.getTypeDescription(Session.java:1405)
-	at com.documentum.fc.client.impl.session.SessionHandle.getTypeDescription(SessionHandle.java:993)
-	at com.documentum.fc.client.DfPersistentObject.setDefaultValues(DfPersistentObject.java:196)
-	at com.documentum.fc.client.DfPersistentObject.init(DfPersistentObject.java:167)
-	at com.documentum.fc.client.DfSysObject.init(DfSysObject.java:102)
-	at com.documentum.fc.client.DfPersistentObject.initialize(DfPersistentObject.java:115)
-	at com.documentum.fc.client.DfSysObject___PROXY.initialize(DfSysObject___PROXY.java)
-	at com.documentum.fc.client.impl.objectmanager.PObjectFactoryWithAspects.makeObject(PObjectFactoryWithAspects.java:54)
-	at com.documentum.fc.client.impl.objectmanager.PersistentObjectManager.newUncachedObject(PersistentObjectManager.java:100)
-	at com.documentum.fc.client.impl.objectmanager.PersistentObjectManager.newObject(PersistentObjectManager.java:66)
-	at com.documentum.fc.client.impl.objectmanager.PersistentObjectManager.newObject(PersistentObjectManager.java:52)
-	at com.documentum.fc.client.impl.session.Session.newObject(Session.java:946)
-	at com.documentum.fc.client.impl.session.SessionHandle.newObject(SessionHandle.java:901)
-	at com.emc.documentum.springdata.entitymanager.EntityPersistanceManager.createObject(EntityPersistanceManager.java:30)
-	at com.emc.documentum.springdata.core.DSTemplate.insert(DSTemplate.java:27)
-	at com.emc.documentum.springdata.entitymanager.EntityPersistanceManager.main(EntityPersistanceManager.java:51)
-26 Feb 2015 15:39:03,489 main - Using cached data for tpersons:en:FPIRepo
-26 Feb 2015 15:39:03,489 main - Using cached data for tdm_sysobject:en:FPIRepo
-26 Feb 2015 15:39:03,863 main - com.documentum.fc.client.DfSysObject is intrinsic class
-26 Feb 2015 15:39:03,864 main - loadProxyClass com.documentum.fc.client.DfSysObject
-26 Feb 2015 15:39:03,864 main - Using cached data for tpersons:en:FPIRepo
-26 Feb 2015 15:39:03,864 main - Using cached data for tpersons:en:FPIRepo
-26 Feb 2015 15:39:03,864 main - Using cached data for tdm_sysobject:en:FPIRepo
-26 Feb 2015 15:41:30,506 main - setTracingConfig called; enabled: false
-26 Feb 2015 15:41:30,531 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 15:41:30,535 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 15:41:30,543 main - DocbaseConnectionManagerIntervalStats: Doing Interval Statistics = false
-26 Feb 2015 15:41:30,544 main - Optimal connection = 27
-26 Feb 2015 15:41:30,567 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 15:41:30,571 main - keystore file name is /Users/MacbookPro/Desktop/dev/dctm-spring-data/target/classes/dfc.keystore
-26 Feb 2015 15:41:30,579 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 15:41:30,582 main - parsing X500 DN ----CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a,O=EMC,OU=Documentum---- rfc1779 is false
-26 Feb 2015 15:41:30,583 main - [DFC_SECURITY_IDENTITY_LOADED] Loaded identity from keystore, DFC alias=dfc, identity=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 15:41:30,590 main - DFC Certificate:
-[
-[
-  Version: V1
-  Subject: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
-
-  Key:  Sun RSA public key, 1024 bits
-  modulus: 159980354300736151010824017616013759411147821557649207501033751270070343302361620823504789013743956699228588871731319024162104130262748915286422541165622046830245171578710223061543862162458829546242855225360580873990329158354076719621088196387984171717067323879428895950480630416494921247172849385752694628119
-  public exponent: 65537
-  Validity: [From: Thu Feb 26 15:22:54 IST 2015,
-               To: Sun Feb 23 15:27:54 IST 2025]
-  Issuer: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  SerialNumber: [    60ea9a69 58ae2bac 21c5ec23 ff1ffb34]
-
-]
-  Algorithm: [SHA1withRSA]
-  Signature:
-0000: 0A AC DA A4 30 86 D4 B1   F1 3F CE 83 A7 04 32 76  ....0....?....2v
-0010: D4 CE 61 BB 81 5D 73 29   F3 23 F8 7D 59 42 E8 0A  ..a..]s).#..YB..
-0020: 6A 21 DD 02 F4 81 AD C9   E5 34 71 BE B2 C5 4C 93  j!.......4q...L.
-0030: 95 F0 87 CA 2D EA 54 5E   53 A9 88 25 88 40 EE BF  ....-.T^S..%.@..
-0040: D5 BF 9D 04 DD 8F AC 35   19 32 48 71 B9 F0 D2 00  .......5.2Hq....
-0050: E0 F9 E8 67 05 03 24 DA   5D FF 07 32 7A 1A 46 E0  ...g..$.]..2z.F.
-0060: 9B E8 62 7E E5 90 29 CF   9C 9F C7 4E 77 0F A3 DB  ..b...)....Nw...
-0070: 44 29 63 8E 5B 2A 4A D7   CB A3 45 CA 80 AA 04 9D  D)c.[*J...E.....
-
-]
-26 Feb 2015 15:41:30,592 main - identity for authentication is dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 15:41:30,745 main - DFC Version is 7.1.1000.0037SP1
-26 Feb 2015 15:41:30,776 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 15:41:30,776 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 15:41:30,786 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 15:41:31,088 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 15:41:31,089 Timer-1 - [DFC_BOF_RUNNING_CLEANUP] Running class cache cleanup task
-26 Feb 2015 15:41:31,090 Timer-1 - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 15:41:31,098 Timer-1 - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 15:41:31,100 main - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
-DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A global registry is not configured; ERRORCODE: ff; NEXT: null
-	at com.documentum.fc.client.security.impl.DfcIdentityPublisher.<init>(DfcIdentityPublisher.java:51)
-	at com.documentum.fc.client.security.internal.RegistrationMgr.register(RegistrationMgr.java:34)
-	at com.documentum.fc.impl.RuntimeContext.<clinit>(RuntimeContext.java:195)
-	at com.documentum.fc.client.DfClient.<clinit>(DfClient.java:772)
-	at com.documentum.com.DfClientX.getLocalClient(DfClientX.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:29)
-	at com.emc.documentum.springdata.entitymanager.EntityPersistanceManager.main(EntityPersistanceManager.java:48)
-26 Feb 2015 15:41:31,156 main - Using default identity "dmadmin" for docbase "FPIRepo"
-26 Feb 2015 15:41:31,158 main - Creating new conn as total conn count is below min count
-26 Feb 2015 15:41:31,324 main - Updated Server Choices for 'FPIRepo'. 1 servers found. 0 content servers found
-26 Feb 2015 15:41:31,324 main - Updated Server Choices for 'FPIRepo'. 0 bad servers found.
-26 Feb 2015 15:41:31,360 main - 3:IPV6: false address: /10.31.157.229:47625
-26 Feb 2015 15:41:36,100 main - Object protocol version 2
-26 Feb 2015 15:41:36,149 main - new identity bundle <dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424945496	10.164.50.215		v5xhyvgSBdEb8da11P8oEZuS1OuXCAGvHv6IIlvCO81VySJckNN6qIke0GC3xE0mYKfvbpCsc01KF7TxUXQH6Dt7oon/I0avyxQydCK6GTM/V1oWWX2GmkulF0UmVJA49NuYOjgyEneAhpdQdrTFiwTkBvJmtB5kRIsbgHBCjc4=>
-26 Feb 2015 15:41:36,149 main - time now (s since POSIX epoch): 1,424,945,496
-26 Feb 2015 15:41:36,149 main - bundle: <dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424945496	10.164.50.215		v5xhyvgSBdEb8da11P8oEZuS1OuXCAGvHv6IIlvCO81VySJckNN6qIke0GC3xE0mYKfvbpCsc01KF7TxUXQH6Dt7oon/I0avyxQydCK6GTM/V1oWWX2GmkulF0UmVJA49NuYOjgyEneAhpdQdrTFiwTkBvJmtB5kRIsbgHBCjc4=>
-26 Feb 2015 15:41:36,150 main - Authenticate [assume=false, reconnect=false, user=dmadmin]
-26 Feb 2015 15:41:36,172 main - deserializeType: 2
-TYPE ERROR_TYPE 0000000000000000 0 0 0
- NULL 
- NULL 
- NULL F
-7
-B  LOGGED_FLAG  BOOL S 0 0
-C  COUNT  INT S 0 0
-D  CODE  INT S 0 0
-E  STAMP  STRING S 0 0
-F  SEVERITY  INT S 0 0
-G  MESSAGE  STRING S 0 0
-H  NAME  STRING S 0 0
-26 Feb 2015 15:41:36,190 main - deserializeObjectWithPreamble: 2
-TYPE GeneratedType 0000000000000000 0 0 0
- NULL 
- NULL 
- NULL F
-28
-?  DO_SET_LOCALE  BOOL S 0 0
-?  CONNECT_POOLING  BOOL S 0 0
-?  RECONNECT  BOOL S 0 0
-?  ASSUME_USER  BOOL S 0 0
-?  CHECK_ONLY  BOOL S 0 0
-?  AUTHENTICATE_ONLY  BOOL S 0 0
-?  OS_LOGON_NAME  STRING S 0 0
-?  OS_LOGON_DOMAIN  STRING S 0 0
-?  LOGON_NAME  STRING S 0 0
-?  USER_PASSWORD  STRING S 0 0
-?  USER_EXTRA_CREDENTIAL  STRING R 0 0
-?  CLIENT_AUTH_DATA  STRING S 0 0
-?  CLIENT_TOKEN  STRING S 0 0
-?  UL_LOGON_TYPE  STRING S 0 0
-?  UL_SECURITY_INFO  STRING S 0 0
-?  PRINCIPAL_AUTH  BOOL S 0 0
-?  NEW_USER_PASSWORD  STRING S 0 0
-?  OLD_USER_PASSWORD  STRING S 0 0
-?  AUTHENTICATION_LEVEL  INT S 0 0
-?  CLIENT_HOST_NAME  STRING S 0 0
-?  CLIENT_HOST_ADDR  STRING S 0 0
-?  CLIENT_HOST_ADDR_NUM  INT S 0 0
-?  USER_LOGIN_NAME  STRING S 0 0
-?  USER_EXTRA_DOMAIN_UNSPECIFIED  BOOL S 0 0
-?  USER_LOGON_NAME_RESOLVED  BOOL S 0 0
-?  USER_NAME  STRING S 0 0
-?  USER_LOGIN_DOMAIN  STRING S 0 0
-?  RETURN_VALUE  INT S 0 0
-
-OBJ GeneratedType 0 0 0 28
-? S 0 F
-? S 0 T
-? S 0 F
-? S 0 F
-? S 0 F
-? S 0 F
-? S 2 A 10 MacbookPro
-? S 2 A 0 
-? S 2 A 7 dmadmin
-? S 2 A 16 d2c4d9c1c5c5d7c6
-? R 2 6
-A 12 8786dbc0c5d5
-A 0 
-A 2 f0
-A 0 
-A 0 
-A 0 
-? S 2 A 231 dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424945496	10.164.50.215		v5xhyvgSBdEb8da11P8oEZuS1OuXCAGvHv6IIlvCO81VySJckNN6qIke0GC3xE0mYKfvbpCsc01KF7TxUXQH6Dt7oon/I0avyxQydCK6GTM/V1oWWX2GmkulF0UmVJA49NuYOjgyEneAhpdQdrTFiwTkBvJmtB5kRIsbgHBCjc4=
-? S 2 A 62 [4, 3, 89, 69, 98, 99, -96, 7, 18, 64, 79, 86, -51, -108, -41]
-? S 2 A 0 
-? S 2 A 0 
-? S 0 F
-? S 2 A 0 
-? S 2 A 0 
-? S 1 8
-? S 2 A 0 
-? S 2 A 13 10.164.50.215
-? S 1 0
-? S 2 A 7 dmadmin
-? S 0 T
-? S 0 T
-? S 2 A 7 dmadmin
-? S 2 A 6 csvm01
-? S 1 1
-0
-
-26 Feb 2015 15:41:36,191 main - deserializeType: 2
-TYPE GeneratedType 0000000000000000 0 0 0
- NULL 
- NULL 
- NULL F
-28
-?  DO_SET_LOCALE  BOOL S 0 0
-?  CONNECT_POOLING  BOOL S 0 0
-?  RECONNECT  BOOL S 0 0
-?  ASSUME_USER  BOOL S 0 0
-?  CHECK_ONLY  BOOL S 0 0
-?  AUTHENTICATE_ONLY  BOOL S 0 0
-?  OS_LOGON_NAME  STRING S 0 0
-?  OS_LOGON_DOMAIN  STRING S 0 0
-?  LOGON_NAME  STRING S 0 0
-?  USER_PASSWORD  STRING S 0 0
-?  USER_EXTRA_CREDENTIAL  STRING R 0 0
-?  CLIENT_AUTH_DATA  STRING S 0 0
-?  CLIENT_TOKEN  STRING S 0 0
-?  UL_LOGON_TYPE  STRING S 0 0
-?  UL_SECURITY_INFO  STRING S 0 0
-?  PRINCIPAL_AUTH  BOOL S 0 0
-?  NEW_USER_PASSWORD  STRING S 0 0
-?  OLD_USER_PASSWORD  STRING S 0 0
-?  AUTHENTICATION_LEVEL  INT S 0 0
-?  CLIENT_HOST_NAME  STRING S 0 0
-?  CLIENT_HOST_ADDR  STRING S 0 0
-?  CLIENT_HOST_ADDR_NUM  INT S 0 0
-?  USER_LOGIN_NAME  STRING S 0 0
-?  USER_EXTRA_DOMAIN_UNSPECIFIED  BOOL S 0 0
-?  USER_LOGON_NAME_RESOLVED  BOOL S 0 0
-?  USER_NAME  STRING S 0 0
-?  USER_LOGIN_DOMAIN  STRING S 0 0
-?  RETURN_VALUE  INT S 0 0
-
-OBJ GeneratedType 0 0 0 28
-? S 0 F
-? S 0 T
-? S 0 F
-? S 0 F
-? S 0 F
-? S 0 F
-? S 2 A 10 MacbookPro
-? S 2 A 0 
-? S 2 A 7 dmadmin
-? S 2 A 16 d2c4d9c1c5c5d7c6
-? R 2 6
-A 12 8786dbc0c5d5
-A 0 
-A 2 f0
-A 0 
-A 0 
-A 0 
-? S 2 A 231 dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424945496	10.164.50.215		v5xhyvgSBdEb8da11P8oEZuS1OuXCAGvHv6IIlvCO81VySJckNN6qIke0GC3xE0mYKfvbpCsc01KF7TxUXQH6Dt7oon/I0avyxQydCK6GTM/V1oWWX2GmkulF0UmVJA49NuYOjgyEneAhpdQdrTFiwTkBvJmtB5kRIsbgHBCjc4=
-? S 2 A 62 [4, 3, 89, 69, 98, 99, -96, 7, 18, 64, 79, 86, -51, -108, -41]
-? S 2 A 0 
-? S 2 A 0 
-? S 0 F
-? S 2 A 0 
-? S 2 A 0 
-? S 1 8
-? S 2 A 0 
-? S 2 A 13 10.164.50.215
-? S 1 0
-? S 2 A 7 dmadmin
-? S 0 T
-? S 0 T
-? S 2 A 7 dmadmin
-? S 2 A 6 csvm01
-? S 1 1
-0
-
-26 Feb 2015 15:41:36,192 main - Connection{id=0, docbase=FPIRepo, user=dmadmin, state=used/inactive} created
-26 Feb 2015 15:41:36,290 main - Session{id=0, iid=0, serial=0, docbase=FPIRepo, user=dmadmin, serversession=0101e2408003e810} created
-26 Feb 2015 15:41:36,337 main - deserializeObjectWithPreamble: 2
-dm_server_config
-3d01e24080000102 0 
-
-OBJ dm_server_config 0 0 0 158
-B S 2 A 7 FPIRepo
-C S 2 A 16 dm_server_config
-D S 2 A 0 
-E S 2 A 0 
-F R 2 0
-G R 2 0
-H S 2 A 0 
-I S 2 A 0 
-J S 4 2014-05-01T08:45:49Z
-K S 4 2015-01-07T08:55:29Z
-L S 2 A 7 FPIRepo
-M S 4 nulldate
-N S 0 F
-O S 0 F
-P S 4 nulldate
-Q S 0 F
-R S 2 A 0 
-S S 0 F
-T S 1 1
-U S 0 T
-V R 3 1
-0c01e24080000106
-W R 3 0
-X R 2 0
-Y R 2 0
-Z R 1 0
-a S 1 0
-b S 1 0
-c S 3 0000000000000000
-d S 1 0
-e S 0 F
-f S 2 A 0 
-g S 1 0
-h S 3 0000000000000000
-i S 2 A 0 
-j S 1 0
-k S 1 0
-l S 0 T
-m S 2 A 0 
-n S 3 0c01e24080000106
-o S 2 A 7 FPIRepo
-p S 1 7
-q S 2 A 4 docu
-r S 1 5
-s S 1 3
-t S 3 0000000000000000
-u S 3 3d01e24080000102
-v S 0 T
-w S 2 A 0 
-x S 4 nulldate
-y S 2 A 0 
-z S 2 A 0 
-0 R 2 2
-A 3 1.0
-A 7 CURRENT
-1 S 1 0
-2 S 0 F
-3 S 0 F
-4 S 0 F
-5 S 0 F
-6 S 2 A 7 FPIRepo
-7 S 2 A 19 dm_4501e24080000100
-8 S 2 A 0 
-9 S 0 F
-+ S 2 A 7 FPIRepo
-/ S 0 T
-AB S 3 0000000000000000
-BB S 1 0
-CB S 1 0
-DB S 3 0000000000000000
-EB R 4 0
-FB R 4 0
-GB R 2 0
-HB R 2 0
-IB R 2 0
-JB S 2 A 0 
-KB S 2 A 0 
-LB S 0 F
-MB S 2 A 0 
-NB S 5 0
-OB R 2 0
-PB S 0 F
-QB S 4 nulldate
-RB S 4 nulldate
-SB R 2 0
-TB R 3 0
-UB S 1 0
-VB S 0 F
-WB S 1 64
-WC S 1 100
-XC S 1 200
-YC S 1 50
-ZC S 0 F
-aC S 2 A 30 7.1.0100.0222  Win64.SQLServer
-bC S 2 A 0 
-cC S 2 A 0 
-dC S 0 T
-eC S 2 A 7 convert
-fC S 2 A 0 
-gC R 2 0
-hC R 2 0
-iC S 2 A 0 
-jC S 2 A 0 
-kC S 2 A 3 log
-lC S 2 A 6 common
-mC S 2 A 4 temp
-nC S 2 A 13 nls_chartrans
-oC S 2 A 2 en
-pC S 1 300
-qC S 1 1440
-rC S 1 300
-sC S 0 T
-tC S 2 A 6 csvm01
-uC S 1 4960
-vC S 2 A 7 FPIRepo
-wC S 2 A 11 assume_user
-xC S 2 A 15 change_password
-yC S 2 A 12 filestore_01
-zC S 2 A 6 events
-0C S 2 A 17 agent_exec_method
-1C S 1 3
-2C S 2 A 7 dmadmin
-3C S 2 A 6 csvm01
-4C S 2 A 8 DoNotUse
-5C S 2 A 0 
-6C R 2 0
-7C R 1 0
-8C R 1 0
-9C R 2 0
-+C R 0 0
-/C S 0 T
-AD S 2 A 15 check_signature
-BD S 3 0000000000000000
-CD S 2 A 6 CSVM01
-DD S 2 A 0 
-ED S 1 80
-FD S 3 0000000000000000
-GD S 1 5
-HD S 2 A 10 ISO_8859-1
-ID S 2 A 10 ISO_8859-1
-JD R 2 4
-A 9 do_method
-A 7 do_mail
-A 6 do_bpm
-A 23 ctsvm02_9200_IndexAgent
-KD R 2 4
-A 48 http://localhost:9080/DmMethods/servlet/DoMethod
-A 43 http://localhost:9080/DmMail/servlet/DoMail
-A 42 http://localhost:9080/bpm/servlet/DoMethod
-A 49 http://ctsvm02:9200/IndexAgent/servlet/IndexAgent
-LD S 2 A 6 CSVM01
-MD S 2 A 6 native
-ND S 2 A 11 auth_plugin
-OD S 1 1
-PD S 2 A 6 dm_dba
-QD S 1 3
-RD S 1 5
-SD S 1 1
-TD S 2 A 0 
-UD S 0 F
-VD S 1 43200
-WD S 0 F
-XD R 3 0
-YD S 2 A 7 dsearch
-ZD R 0 0
-aD R 2 0
-bD S 1 10
-cD S 1 120
-dD S 0 T
-7
-r_object_id ID S 0
-3d01e24080000102
-_KEEP_LOCK_ BOOL S 0
-F
-_FREEZE_COMPONENTS_ BOOL S 0
-F
-_THAW_COMPONENTS_ BOOL S 0
-F
-_CONTENTS_CHANGED_ BOOL S 0
-F
-_DIST_SAVE_AS_NEW_ BOOL S 0
-F
-R_OBJECT_ID ID S 0
-3d01e24080000102
- 0 
-
-26 Feb 2015 15:41:36,361 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_server_config 0301e2408000011d 0 0 0
-dm_sysobject
- NULL 
- NULL F
-72
-WC  concurrent_sessions  INT S 0 0
-XC  server_cache_size  INT S 0 0
-YC  client_cache_size  INT S 0 0
-ZC  nfs_enabled  BOOL S 0 0
-aC  r_server_version  STRING S 32 0
-bC  secure_writer_location  STRING S 32 0
-cC  user_validation_location  STRING S 32 0
-dC  compound_integrity  BOOL S 0 0
-eC  system_converter_location  STRING S 32 0
-fC  stage_destroyer_location  STRING S 32 0
-gC  cached_types  STRING R 32 0
-hC  far_stores  STRING R 32 0
-iC  user_converter_location  STRING S 32 0
-jC  netstor_bin_location  STRING S 32 0
-kC  log_location  STRING S 32 0
-lC  common_location  STRING S 32 0
-mC  temp_location  STRING S 32 0
-nC  nls_location  STRING S 32 0
-oC  locale_name  STRING S 32 0
-pC  checkpoint_interval  INT S 0 0
-qC  keep_entry_interval  INT S 0 0
-rC  sibling_checkpoint_interval  INT S 0 0
-sC  sibling_export_enabled  BOOL S 0 0
-tC  r_host_name  STRING S 64 0
-uC  r_process_id  INT S 0 0
-vC  operator_name  STRING S 255 0
-wC  assume_user_location  STRING S 32 0
-xC  change_password_location  STRING S 32 0
-yC  turbo_backing_store  STRING S 32 0
-zC  events_location  STRING S 32 0
-0C  agent_launcher  STRING S 32 0
-1C  default_acl  INT S 0 0
-2C  r_install_owner  STRING S 255 0
-3C  r_install_domain  STRING S 16 0
-4C  verity_location  STRING S 32 0
-5C  rend_backing_store  STRING S 32 0
-6C  projection_targets  STRING R 80 0
-7C  projection_ports  INT R 0 0
-8C  projection_proxval  INT R 0 0
-9C  projection_notes  STRING R 80 0
-+C  projection_enable  BOOL R 0 0
-/C  a_silent_login  BOOL S 0 0
-AD  signature_chk_loc  STRING S 32 0
-BD  alias_set_id  ID S 0 0
-CD  web_server_loc  STRING S 255 0
-DD  rightsite_image  STRING S 255 0
-ED  web_server_port  INT S 0 0
-FD  ldap_config_id  ID S 0 0
-GD  login_ticket_timeout  INT S 0 0
-HD  default_client_codepage  STRING S 64 0
-ID  server_os_codepage  STRING S 64 0
-JD  app_server_name  STRING R 32 0
-KD  app_server_uri  STRING R 255 0
-LD  smtp_server  STRING S 64 0
-MD  secure_connect_mode  STRING S 16 0
-ND  auth_plugin_location  STRING S 32 0
-OD  r_trusted_mode  INT S 0 0
-PD  dba_location  STRING S 32 0
-QD  wf_agent_worker_threads  INT S 0 0
-RD  wf_sleep_interval  INT S 0 0
-SD  r_castore_enabled  INT S 0 0
-TD  mail_method  STRING S 32 0
-UD  application_access_control  BOOL S 0 0
-VD  max_login_ticket_timeout  INT S 0 0
-WD  restrict_su_ticket_login  BOOL S 0 0
-XD  extra_directory_config_id  ID R 0 0
-YD  fulltext_location  STRING S 64 0
-ZD  projection_netloc_enable  BOOL R 0 0
-aD  projection_netloc_id  STRING R 80 0
-bD  max_cm_parallel_degree  INT S 0 0
-cD  system_shutdown_timeout  INT S 0 0
-dD  wf_agent_notify_newtask  BOOL S 0 0
-
-
-26 Feb 2015 15:41:36,491 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_server_config 0301e2408000011d 0 0 0
-dm_sysobject
- NULL 
- NULL F
-72
-WC  concurrent_sessions  INT S 0 0
-XC  server_cache_size  INT S 0 0
-YC  client_cache_size  INT S 0 0
-ZC  nfs_enabled  BOOL S 0 0
-aC  r_server_version  STRING S 32 0
-bC  secure_writer_location  STRING S 32 0
-cC  user_validation_location  STRING S 32 0
-dC  compound_integrity  BOOL S 0 0
-eC  system_converter_location  STRING S 32 0
-fC  stage_destroyer_location  STRING S 32 0
-gC  cached_types  STRING R 32 0
-hC  far_stores  STRING R 32 0
-iC  user_converter_location  STRING S 32 0
-jC  netstor_bin_location  STRING S 32 0
-kC  log_location  STRING S 32 0
-lC  common_location  STRING S 32 0
-mC  temp_location  STRING S 32 0
-nC  nls_location  STRING S 32 0
-oC  locale_name  STRING S 32 0
-pC  checkpoint_interval  INT S 0 0
-qC  keep_entry_interval  INT S 0 0
-rC  sibling_checkpoint_interval  INT S 0 0
-sC  sibling_export_enabled  BOOL S 0 0
-tC  r_host_name  STRING S 64 0
-uC  r_process_id  INT S 0 0
-vC  operator_name  STRING S 255 0
-wC  assume_user_location  STRING S 32 0
-xC  change_password_location  STRING S 32 0
-yC  turbo_backing_store  STRING S 32 0
-zC  events_location  STRING S 32 0
-0C  agent_launcher  STRING S 32 0
-1C  default_acl  INT S 0 0
-2C  r_install_owner  STRING S 255 0
-3C  r_install_domain  STRING S 16 0
-4C  verity_location  STRING S 32 0
-5C  rend_backing_store  STRING S 32 0
-6C  projection_targets  STRING R 80 0
-7C  projection_ports  INT R 0 0
-8C  projection_proxval  INT R 0 0
-9C  projection_notes  STRING R 80 0
-+C  projection_enable  BOOL R 0 0
-/C  a_silent_login  BOOL S 0 0
-AD  signature_chk_loc  STRING S 32 0
-BD  alias_set_id  ID S 0 0
-CD  web_server_loc  STRING S 255 0
-DD  rightsite_image  STRING S 255 0
-ED  web_server_port  INT S 0 0
-FD  ldap_config_id  ID S 0 0
-GD  login_ticket_timeout  INT S 0 0
-HD  default_client_codepage  STRING S 64 0
-ID  server_os_codepage  STRING S 64 0
-JD  app_server_name  STRING R 32 0
-KD  app_server_uri  STRING R 255 0
-LD  smtp_server  STRING S 64 0
-MD  secure_connect_mode  STRING S 16 0
-ND  auth_plugin_location  STRING S 32 0
-OD  r_trusted_mode  INT S 0 0
-PD  dba_location  STRING S 32 0
-QD  wf_agent_worker_threads  INT S 0 0
-RD  wf_sleep_interval  INT S 0 0
-SD  r_castore_enabled  INT S 0 0
-TD  mail_method  STRING S 32 0
-UD  application_access_control  BOOL S 0 0
-VD  max_login_ticket_timeout  INT S 0 0
-WD  restrict_su_ticket_login  BOOL S 0 0
-XD  extra_directory_config_id  ID R 0 0
-YD  fulltext_location  STRING S 64 0
-ZD  projection_netloc_enable  BOOL R 0 0
-aD  projection_netloc_id  STRING R 80 0
-bD  max_cm_parallel_degree  INT S 0 0
-cD  system_shutdown_timeout  INT S 0 0
-dD  wf_agent_notify_newtask  BOOL S 0 0
-
-
-26 Feb 2015 15:41:36,508 main - deserializeObjectWithPreamble: 2
-dm_docbase_config
-3c01e24080000103 0 
-
-OBJ dm_docbase_config 0 0 0 136
-B S 2 A 7 FPIRepo
-C S 2 A 17 dm_docbase_config
-D S 2 A 0 
-E S 2 A 0 
-F R 2 0
-G R 2 0
-H S 2 A 0 
-I S 2 A 0 
-J S 4 2014-05-01T08:45:48Z
-K S 4 2014-11-17T23:04:57Z
-L S 2 A 7 dmadmin
-M S 4 nulldate
-N S 0 F
-O S 0 F
-P S 4 nulldate
-Q S 0 F
-R S 2 A 0 
-S S 0 F
-T S 1 1
-U S 0 T
-V R 3 1
-0c01e24080000106
-W R 3 0
-X R 2 0
-Y R 2 0
-Z R 1 0
-a S 1 0
-b S 1 0
-c S 3 0000000000000000
-d S 1 0
-e S 0 F
-f S 2 A 0 
-g S 1 0
-h S 3 0000000000000000
-i S 2 A 0 
-j S 1 0
-k S 1 0
-l S 0 T
-m S 2 A 0 
-n S 3 0c01e24080000106
-o S 2 A 7 FPIRepo
-p S 1 7
-q S 2 A 4 docu
-r S 1 5
-s S 1 3
-t S 3 0000000000000000
-u S 3 3c01e24080000103
-v S 0 T
-w S 2 A 0 
-x S 4 nulldate
-y S 2 A 0 
-z S 2 A 0 
-0 R 2 2
-A 3 1.0
-A 7 CURRENT
-1 S 1 0
-2 S 0 F
-3 S 0 F
-4 S 0 F
-5 S 0 F
-6 S 2 A 7 FPIRepo
-7 S 2 A 19 dm_4501e24080000100
-8 S 2 A 0 
-9 S 0 F
-+ S 2 A 7 FPIRepo
-/ S 0 T
-AB S 3 0000000000000000
-BB S 1 0
-CB S 1 0
-DB S 3 0000000000000000
-EB R 4 0
-FB R 4 0
-GB R 2 0
-HB R 2 0
-IB R 2 0
-JB S 2 A 0 
-KB S 2 A 0 
-LB S 0 F
-MB S 2 A 0 
-NB S 5 0
-OB R 2 0
-PB S 0 F
-QB S 4 nulldate
-RB S 4 nulldate
-SB R 2 0
-TB R 3 0
-UB S 1 0
-VB S 0 F
-WB S 1 36
-kB S 2 A 9 SQLServer
-lB S 2 A 2 nt
-mB S 2 A 3 acl
-nB S 2 A 0 
-oB S 2 A 0 
-pB S 1 123456
-qB S 1 1
-rB S 1 0
-sB S 1 0
-tB S 0 T
-uB S 4 nulldate
-vB S 2 A 0 
-wB S 2 A 12 session_user
-xB S 0 T
-yB R 2 1
-A 2 en
-zB S 1 3
-0B S 2 A 3 5.1
-1B S 1 0
-2B S 2 A 124 AgAAACAAAAAEAAAAIAAAAAIAAAAQAAAAEAAAAEDiAQAAAAAAAAAAAQAAABBJU83b0g0sxIJ/Q2BBnIHPZJ65uwnuy/5u469urJ75cQO7iqpG8+rGAlQHALdiV/w=
-3B S 0 F
-4B S 1 1
-5B R 2 1
-A 7 dsearch
-6B S 1 0
-7B S 1 0
-8B S 0 F
-9B S 1 1
-+B S 0 F
-/B S 2 A 124 AgAAACAAAAAEAAAAIAAAAAIAAAAQAAAAEAAAAEDiAQAAAAAAAAAAAgAAABBhVfTpo4G29UzXg9CiuqjLjhxUsNJB3QFk0TrFLlGBKWJzcUat1/jM2BiHaCbFG68=
-AC S 0 T
-BC R 2 0
-CC S 4 nulldate
-DC S 1 0
-EC S 1 0
-FC S 0 F
-GC R 2 10
-A 8 Snaplock
-A 15 Archive Service
-A 23 CASCADING_AUTO_DELEGATE
-A 17 MAX_AUTO_DELEGATE
-A 3 RPS
-A 3 FRS
-A 2 RM
-A 3 PRM
-A 13 Collaboration
-A 14 Process Engine
-HC R 1 10
-1
-1
-0
-1
-1
-1
-1
-1
-3
-1
-IC S 0 T
-JC S 1 0
-KC S 0 T
-LC R 2 1
-A 15 Global Registry
-MC S 0 F
-NC S 0 T
-OC S 0 F
-PC S 1 0
-QC S 2 A 0 
-RC S 2 A 21 AES128_RSA1024_SHA256
-SC S 2 A 5 Local
-TC S 2 A 0 
-UC R 2 0
-VC R 4 0
-7
-r_object_id ID S 0
-3c01e24080000103
-_KEEP_LOCK_ BOOL S 0
-F
-_FREEZE_COMPONENTS_ BOOL S 0
-F
-_THAW_COMPONENTS_ BOOL S 0
-F
-_CONTENTS_CHANGED_ BOOL S 0
-F
-_DIST_SAVE_AS_NEW_ BOOL S 0
-F
-R_OBJECT_ID ID S 0
-3c01e24080000103
- 0 
-
-26 Feb 2015 15:41:36,545 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_docbase_config 0301e2408000011c 0 0 0
-dm_sysobject
- NULL 
- NULL F
-50
-kB  r_dbms_name  STRING S 32 0
-lB  mac_access_protocol  STRING S 32 0
-mB  security_mode  STRING S 32 0
-nB  auth_protocol  STRING S 32 0
-oB  index_store  STRING S 80 0
-pB  r_docbase_id  INT S 0 0
-qB  r_address_partitions  INT S 0 0
-rB  r_starting_partition  INT S 0 0
-sB  r_ending_partition  INT S 0 0
-tB  folder_security  BOOL S 0 0
-uB  effective_date  TIME S 0 0
-vB  r_federation_name  STRING S 120 0
-wB  a_bpaction_run_as  STRING S 255 0
-xB  richmedia_enabled  BOOL S 0 0
-yB  dd_locales  STRING R 5 0
-zB  default_app_permit  INT S 0 0
-0B  oldest_client_version  STRING S 32 0
-1B  max_auth_attempt  INT S 0 0
-2B  i_crypto_key  STRING S 255 0
-3B  client_pcaching_disabled  BOOL S 0 0
-4B  client_pcaching_change  INT S 0 0
-5B  fulltext_install_locs  STRING R 32 0
-6B  offline_sync_level  INT S 0 0
-7B  offline_checkin_flag  INT S 0 0
-8B  wf_package_control_enabled  BOOL S 0 0
-9B  r_storage_mode  INT S 0 0
-+B  macl_security_disabled  BOOL S 0 0
-/B  i_ticket_crypto_key  STRING S 255 0
-AC  trust_by_default  BOOL S 0 0
-BC  trusted_docbases  STRING R 255 0
-CC  login_ticket_cutoff  TIME S 0 0
-DC  auth_failure_interval  INT S 0 0
-EC  auth_deactivation_interval  INT S 0 0
-FC  dir_user_sync_on_demand  BOOL S 0 0
-GC  r_module_name  STRING R 32 0
-HC  r_module_mode  INT R 0 0
-IC  check_client_version  BOOL S 0 0
-JC  r_normal_tz  INT S 0 0
-KC  audit_old_values  BOOL S 0 0
-LC  docbase_roles  STRING R 32 0
-MC  approved_clients_only  BOOL S 0 0
-NC  r_tz_aware  BOOL S 0 0
-OC  r_partition_status  BOOL S 0 0
-PC  minimum_owner_permit  INT S 0 0
-QC  minimum_owner_xpermit  STRING S 255 0
-RC  r_crypto_mode  STRING S 64 0
-SC  r_crypto_keystore  STRING S 32 0
-TC  dormancy_status  STRING S 32 0
-UC  i_expired_crypto_keys  STRING R 255 0
-VC  i_crypto_keys_expiry_date  TIME R 0 0
-
-
-26 Feb 2015 15:41:36,545 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_docbase_config 0301e2408000011c 0 0 0
-dm_sysobject
- NULL 
- NULL F
-50
-kB  r_dbms_name  STRING S 32 0
-lB  mac_access_protocol  STRING S 32 0
-mB  security_mode  STRING S 32 0
-nB  auth_protocol  STRING S 32 0
-oB  index_store  STRING S 80 0
-pB  r_docbase_id  INT S 0 0
-qB  r_address_partitions  INT S 0 0
-rB  r_starting_partition  INT S 0 0
-sB  r_ending_partition  INT S 0 0
-tB  folder_security  BOOL S 0 0
-uB  effective_date  TIME S 0 0
-vB  r_federation_name  STRING S 120 0
-wB  a_bpaction_run_as  STRING S 255 0
-xB  richmedia_enabled  BOOL S 0 0
-yB  dd_locales  STRING R 5 0
-zB  default_app_permit  INT S 0 0
-0B  oldest_client_version  STRING S 32 0
-1B  max_auth_attempt  INT S 0 0
-2B  i_crypto_key  STRING S 255 0
-3B  client_pcaching_disabled  BOOL S 0 0
-4B  client_pcaching_change  INT S 0 0
-5B  fulltext_install_locs  STRING R 32 0
-6B  offline_sync_level  INT S 0 0
-7B  offline_checkin_flag  INT S 0 0
-8B  wf_package_control_enabled  BOOL S 0 0
-9B  r_storage_mode  INT S 0 0
-+B  macl_security_disabled  BOOL S 0 0
-/B  i_ticket_crypto_key  STRING S 255 0
-AC  trust_by_default  BOOL S 0 0
-BC  trusted_docbases  STRING R 255 0
-CC  login_ticket_cutoff  TIME S 0 0
-DC  auth_failure_interval  INT S 0 0
-EC  auth_deactivation_interval  INT S 0 0
-FC  dir_user_sync_on_demand  BOOL S 0 0
-GC  r_module_name  STRING R 32 0
-HC  r_module_mode  INT R 0 0
-IC  check_client_version  BOOL S 0 0
-JC  r_normal_tz  INT S 0 0
-KC  audit_old_values  BOOL S 0 0
-LC  docbase_roles  STRING R 32 0
-MC  approved_clients_only  BOOL S 0 0
-NC  r_tz_aware  BOOL S 0 0
-OC  r_partition_status  BOOL S 0 0
-PC  minimum_owner_permit  INT S 0 0
-QC  minimum_owner_xpermit  STRING S 255 0
-RC  r_crypto_mode  STRING S 64 0
-SC  r_crypto_keystore  STRING S 32 0
-TC  dormancy_status  STRING S 32 0
-UC  i_expired_crypto_keys  STRING R 255 0
-VC  i_crypto_keys_expiry_date  TIME R 0 0
-
-
-26 Feb 2015 15:41:36,565 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_folder 0301e24080000127 0 0 0
-dm_sysobject
- NULL 
- NULL F
-2
-KE  r_folder_path  STRING R 450 0
-LE  i_ancestor_id  ID R 0 0
-
-TYPE dmc_module 0301e24080000173 0 0 635
-dm_folder
- NULL 
- NULL F
-12
-BJ  primary_class  STRING S 255 0
-CJ  a_interfaces  STRING R 255 0
-DJ  min_dfc_version  STRING S 32 0
-EJ  implementation_technology  STRING S 32 0
-FJ  contact_info  STRING S 255 0
-GJ  a_bof_version  STRING S 32 0
-HJ  a_module_type  STRING S 64 0
-IJ  req_module_names  STRING R 255 0
-JJ  a_req_module_interfaces  STRING R 255 0
-KJ  module_description  STRING S 255 0
-LJ  a_is_privileged  BOOL S 0 0
-MJ  a_privilege_roles  STRING R 255 0
-
-
-26 Feb 2015 15:41:36,566 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_folder 0301e24080000127 0 0 0
-dm_sysobject
- NULL 
- NULL F
-2
-KE  r_folder_path  STRING R 450 0
-LE  i_ancestor_id  ID R 0 0
-
-TYPE dmc_module 0301e24080000173 0 0 635
-dm_folder
- NULL 
- NULL F
-12
-BJ  primary_class  STRING S 255 0
-CJ  a_interfaces  STRING R 255 0
-DJ  min_dfc_version  STRING S 32 0
-EJ  implementation_technology  STRING S 32 0
-FJ  contact_info  STRING S 255 0
-GJ  a_bof_version  STRING S 32 0
-HJ  a_module_type  STRING S 64 0
-IJ  req_module_names  STRING R 255 0
-JJ  a_req_module_interfaces  STRING R 255 0
-KJ  module_description  STRING S 255 0
-LJ  a_is_privileged  BOOL S 0 0
-MJ  a_privilege_roles  STRING R 255 0
-
-
-26 Feb 2015 15:41:36,566 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_folder 0301e24080000127 0 0 0
-dm_sysobject
- NULL 
- NULL F
-2
-KE  r_folder_path  STRING R 450 0
-LE  i_ancestor_id  ID R 0 0
-
-TYPE dmc_module 0301e24080000173 0 0 635
-dm_folder
- NULL 
- NULL F
-12
-BJ  primary_class  STRING S 255 0
-CJ  a_interfaces  STRING R 255 0
-DJ  min_dfc_version  STRING S 32 0
-EJ  implementation_technology  STRING S 32 0
-FJ  contact_info  STRING S 255 0
-GJ  a_bof_version  STRING S 32 0
-HJ  a_module_type  STRING S 64 0
-IJ  req_module_names  STRING R 255 0
-JJ  a_req_module_interfaces  STRING R 255 0
-KJ  module_description  STRING S 255 0
-LJ  a_is_privileged  BOOL S 0 0
-MJ  a_privilege_roles  STRING R 255 0
-
-
-26 Feb 2015 15:41:36,573 main - deserializeType: 2
+03 Mar 2015 12:31:27,490 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -1750,223 +106,7 @@ NJ  min_vm_version  STRING S 32 0
 OJ  jar_type  INT S 0 0
 
 
-26 Feb 2015 15:41:36,574 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_document 0301e24080000129 0 0 223
-dm_sysobject
- NULL 
- NULL F
-0
-
-TYPE dmc_jar 0301e24080000174 0 0 613
-dm_document
- NULL 
- NULL F
-2
-NJ  min_vm_version  STRING S 32 0
-OJ  jar_type  INT S 0 0
-
-
-26 Feb 2015 15:41:36,574 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_document 0301e24080000129 0 0 223
-dm_sysobject
- NULL 
- NULL F
-0
-
-TYPE dmc_jar 0301e24080000174 0 0 613
-dm_document
- NULL 
- NULL F
-2
-NJ  min_vm_version  STRING S 32 0
-OJ  jar_type  INT S 0 0
-
-
-26 Feb 2015 15:41:36,586 main - deserializeType: 2
+03 Mar 2015 12:31:27,527 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -2075,7 +215,7 @@ dm_folder
 PJ  sandbox_library  BOOL S 0 0
 
 
-26 Feb 2015 15:41:36,586 main - deserializeType: 2
+03 Mar 2015 12:31:27,527 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -2184,7 +324,7 @@ dm_folder
 PJ  sandbox_library  BOOL S 0 0
 
 
-26 Feb 2015 15:41:36,587 main - deserializeType: 2
+03 Mar 2015 12:31:27,528 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -2293,7 +433,7 @@ dm_folder
 PJ  sandbox_library  BOOL S 0 0
 
 
-26 Feb 2015 15:41:36,594 main - deserializeType: 2
+03 Mar 2015 12:31:27,533 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -2387,142 +527,7 @@ VB  i_is_replica  BOOL S 0 0
 WB  i_vstamp  INT S 0 0
 
 
-26 Feb 2015 15:41:36,600 main - deserializeType: 2
-TYPE dm_sysobject 0301e24080000105 1 0 0
- NULL 
- NULL 
- NULL F
-86
-B  object_name  STRING S 255 0
-C  r_object_type  STRING S 32 0
-D  title  STRING S 400 0
-E  subject  STRING S 192 0
-F  authors  STRING R 48 0
-G  keywords  STRING R 48 0
-H  a_application_type  STRING S 32 0
-I  a_status  STRING S 16 0
-J  r_creation_date  TIME S 0 0
-K  r_modify_date  TIME S 0 0
-L  r_modifier  STRING S 255 0
-M  r_access_date  TIME S 0 0
-N  a_is_hidden  BOOL S 0 0
-O  i_is_deleted  BOOL S 0 0
-P  a_retention_date  TIME S 0 0
-Q  a_archive  BOOL S 0 0
-R  a_compound_architecture  STRING S 16 0
-S  a_link_resolved  BOOL S 0 0
-T  i_reference_cnt  INT S 0 0
-U  i_has_folder  BOOL S 0 0
-V  i_folder_id  ID R 0 0
-W  r_composite_id  ID R 0 0
-X  r_composite_label  STRING R 32 0
-Y  r_component_label  STRING R 32 0
-Z  r_order_no  INT R 0 0
-a  r_link_cnt  INT S 0 0
-b  r_link_high_cnt  INT S 0 0
-c  r_assembled_from_id  ID S 0 0
-d  r_frzn_assembly_cnt  INT S 0 0
-e  r_has_frzn_assembly  BOOL S 0 0
-f  resolution_label  STRING S 32 0
-g  r_is_virtual_doc  INT S 0 0
-h  i_contents_id  ID S 0 0
-i  a_content_type  STRING S 32 0
-j  r_page_cnt  INT S 0 0
-k  r_content_size  INT S 0 0
-l  a_full_text  BOOL S 0 0
-m  a_storage_type  STRING S 64 0
-n  i_cabinet_id  ID S 0 0
-o  owner_name  STRING S 255 0
-p  owner_permit  INT S 0 0
-q  group_name  STRING S 255 0
-r  group_permit  INT S 0 0
-s  world_permit  INT S 0 0
-t  i_antecedent_id  ID S 0 0
-u  i_chronicle_id  ID S 0 0
-v  i_latest_flag  BOOL S 0 0
-w  r_lock_owner  STRING S 255 0
-x  r_lock_date  TIME S 0 0
-y  r_lock_machine  STRING S 80 0
-z  log_entry  STRING S 120 0
-0  r_version_label  STRING R 32 0
-1  i_branch_cnt  INT S 0 0
-2  i_direct_dsc  BOOL S 0 0
-3  r_immutable_flag  BOOL S 0 0
-4  r_frozen_flag  BOOL S 0 0
-5  r_has_events  BOOL S 0 0
-6  acl_domain  STRING S 255 0
-7  acl_name  STRING S 32 0
-8  a_special_app  STRING S 32 0
-9  i_is_reference  BOOL S 0 0
-+  r_creator_name  STRING S 255 0
-/  r_is_public  BOOL S 0 0
-AB  r_policy_id  ID S 0 0
-BB  r_resume_state  INT S 0 0
-CB  r_current_state  INT S 0 0
-DB  r_alias_set_id  ID S 0 0
-EB  a_effective_date  TIME R 0 0
-FB  a_expiration_date  TIME R 0 0
-GB  a_publish_formats  STRING R 32 0
-HB  a_effective_label  STRING R 32 0
-IB  a_effective_flag  STRING R 8 0
-JB  a_category  STRING S 64 0
-KB  language_code  STRING S 5 0
-LB  a_is_template  BOOL S 0 0
-MB  a_controlling_app  STRING S 32 0
-NB  r_full_content_size  DOUBLE S 0 0
-OB  a_extended_properties  STRING R 32 0
-PB  a_is_signed  BOOL S 0 0
-QB  a_last_review_date  TIME S 0 0
-RB  i_retain_until  TIME S 0 0
-SB  r_aspect_name  STRING R 64 0
-TB  i_retainer_id  ID R 0 0
-UB  i_partition  INT S 0 0
-VB  i_is_replica  BOOL S 0 0
-WB  i_vstamp  INT S 0 0
-
-TYPE dm_folder 0301e24080000127 0 0 0
-dm_sysobject
- NULL 
- NULL F
-2
-KE  r_folder_path  STRING R 450 0
-LE  i_ancestor_id  ID R 0 0
-
-TYPE dmc_module 0301e24080000173 0 0 635
-dm_folder
- NULL 
- NULL F
-12
-BJ  primary_class  STRING S 255 0
-CJ  a_interfaces  STRING R 255 0
-DJ  min_dfc_version  STRING S 32 0
-EJ  implementation_technology  STRING S 32 0
-FJ  contact_info  STRING S 255 0
-GJ  a_bof_version  STRING S 32 0
-HJ  a_module_type  STRING S 64 0
-IJ  req_module_names  STRING R 255 0
-JJ  a_req_module_interfaces  STRING R 255 0
-KJ  module_description  STRING S 255 0
-LJ  a_is_privileged  BOOL S 0 0
-MJ  a_privilege_roles  STRING R 255 0
-
-TYPE dmc_aspect_type 0301e24080000176 0 0 533
-dmc_module
- NULL 
- NULL F
-9
-QJ  target_object_type  STRING R 27 0
-RJ  aspect_category  STRING R 32 0
-SJ  versioning_policy  INT S 0 0
-TJ  copy_policy  INT S 0 0
-UJ  attaching_aspect_policy  STRING R 128 0
-VJ  detaching_aspect_policy  STRING R 128 0
-WJ  i_attr_def  STRING S 27 0
-XJ  is_data_shared  BOOL S 0 0
-YJ  immutability_policy  INT S 0 0
-
-
-26 Feb 2015 15:41:36,600 main - deserializeType: 2
+03 Mar 2015 12:31:27,538 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -2657,7 +662,7 @@ XJ  is_data_shared  BOOL S 0 0
 YJ  immutability_policy  INT S 0 0
 
 
-26 Feb 2015 15:41:36,600 main - deserializeType: 2
+03 Mar 2015 12:31:27,539 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -2792,7 +797,7 @@ XJ  is_data_shared  BOOL S 0 0
 YJ  immutability_policy  INT S 0 0
 
 
-26 Feb 2015 15:41:36,601 main - deserializeType: 2
+03 Mar 2015 12:31:27,539 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -2927,7 +932,142 @@ XJ  is_data_shared  BOOL S 0 0
 YJ  immutability_policy  INT S 0 0
 
 
-26 Feb 2015 15:41:36,608 main - deserializeType: 2
+03 Mar 2015 12:31:27,539 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+TYPE dmc_aspect_type 0301e24080000176 0 0 533
+dmc_module
+ NULL 
+ NULL F
+9
+QJ  target_object_type  STRING R 27 0
+RJ  aspect_category  STRING R 32 0
+SJ  versioning_policy  INT S 0 0
+TJ  copy_policy  INT S 0 0
+UJ  attaching_aspect_policy  STRING R 128 0
+VJ  detaching_aspect_policy  STRING R 128 0
+WJ  i_attr_def  STRING S 27 0
+XJ  is_data_shared  BOOL S 0 0
+YJ  immutability_policy  INT S 0 0
+
+
+03 Mar 2015 12:31:27,543 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3033,7 +1173,7 @@ jP  end_near_ip_address  STRING R 80 0
 kP  ip_address_range  STRING R 240 0
 
 
-26 Feb 2015 15:41:36,608 main - deserializeType: 2
+03 Mar 2015 12:31:27,543 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3139,7 +1279,7 @@ jP  end_near_ip_address  STRING R 80 0
 kP  ip_address_range  STRING R 240 0
 
 
-26 Feb 2015 15:41:36,622 main - deserializeType: 2
+03 Mar 2015 12:31:27,548 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3259,7 +1399,7 @@ NP  server_minor_version  STRING S 16 0
 OP  dormancy_status  STRING S 32 0
 
 
-26 Feb 2015 15:41:36,622 main - deserializeType: 2
+03 Mar 2015 12:31:27,548 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3379,7 +1519,7 @@ NP  server_minor_version  STRING S 16 0
 OP  dormancy_status  STRING S 32 0
 
 
-26 Feb 2015 15:41:36,633 main - deserializeType: 2
+03 Mar 2015 12:31:27,553 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3483,7 +1623,7 @@ pP  bocs_precaching_mode  INT S 0 0
 qP  bocs_encryption_mode  STRING S 32 0
 
 
-26 Feb 2015 15:41:36,633 main - deserializeType: 2
+03 Mar 2015 12:31:27,554 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3587,7 +1727,7 @@ pP  bocs_precaching_mode  INT S 0 0
 qP  bocs_encryption_mode  STRING S 32 0
 
 
-26 Feb 2015 15:41:36,638 main - deserializeType: 2
+03 Mar 2015 12:31:27,558 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3698,7 +1838,7 @@ YP  external_url  STRING R 240 0
 ZP  external_url_type  STRING R 32 0
 
 
-26 Feb 2015 15:41:36,638 main - deserializeType: 2
+03 Mar 2015 12:31:27,559 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3809,7 +1949,7 @@ YP  external_url  STRING R 240 0
 ZP  external_url_type  STRING R 32 0
 
 
-26 Feb 2015 15:41:36,643 main - deserializeType: 2
+03 Mar 2015 12:31:27,562 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -3914,7 +2054,7 @@ dP  server_minor_version  STRING S 16 0
 eP  dms_capability  INT S 0 0
 
 
-26 Feb 2015 15:41:36,643 main - deserializeType: 2
+03 Mar 2015 12:31:27,563 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -4019,7 +2159,7 @@ dP  server_minor_version  STRING S 16 0
 eP  dms_capability  INT S 0 0
 
 
-26 Feb 2015 15:41:36,648 main - deserializeType: 2
+03 Mar 2015 12:31:27,568 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -4121,7 +2261,7 @@ lP  descriptor_version  STRING S 16 0
 mP  parameter_names  STRING R 255 0
 
 
-26 Feb 2015 15:41:36,648 main - deserializeType: 2
+03 Mar 2015 12:31:27,569 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -4223,7 +2363,7 @@ lP  descriptor_version  STRING S 16 0
 mP  parameter_names  STRING R 255 0
 
 
-26 Feb 2015 15:41:36,715 main - deserializeType: 2
+03 Mar 2015 12:31:27,656 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -4326,7 +2466,7 @@ RU  sex  STRING S 10 0
 SU  age  INT S 0 0
 
 
-26 Feb 2015 15:41:36,715 main - deserializeType: 2
+03 Mar 2015 12:31:27,656 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -4429,7 +2569,7 @@ RU  sex  STRING S 10 0
 SU  age  INT S 0 0
 
 
-26 Feb 2015 15:41:36,722 main - deserializeObjectWithPreamble: 2
+03 Mar 2015 12:31:27,665 main - deserializeObjectWithPreamble: 2
 TYPE dm_next_id_list_type 0000000000000000 0 0 0
  NULL 
  NULL 
@@ -4439,19 +2579,19 @@ B  next_id  ID R 0 0
 
 OBJ dm_next_id_list_type 0 0 0 1
 B R 3 10
-0801e24080090f7f
-0801e24080090f80
-0801e24080090f81
-0801e24080090f82
-0801e24080090f83
-0801e24080090f84
-0801e24080090f85
-0801e24080090f86
-0801e24080090f87
-0801e24080090f88
+0801e240800925bc
+0801e240800925bd
+0801e240800925be
+0801e240800925bf
+0801e240800925c0
+0801e240800925c1
+0801e240800925c2
+0801e240800925c3
+0801e240800925c4
+0801e240800925c5
 0
 
-26 Feb 2015 15:41:36,722 main - deserializeType: 2
+03 Mar 2015 12:31:27,665 main - deserializeType: 2
 TYPE dm_next_id_list_type 0000000000000000 0 0 0
  NULL 
  NULL 
@@ -4461,27 +2601,27 @@ B  next_id  ID R 0 0
 
 OBJ dm_next_id_list_type 0 0 0 1
 B R 3 10
-0801e24080090f7f
-0801e24080090f80
-0801e24080090f81
-0801e24080090f82
-0801e24080090f83
-0801e24080090f84
-0801e24080090f85
-0801e24080090f86
-0801e24080090f87
-0801e24080090f88
+0801e240800925bc
+0801e240800925bd
+0801e240800925be
+0801e240800925bf
+0801e240800925c0
+0801e240800925c1
+0801e240800925c2
+0801e240800925c3
+0801e240800925c4
+0801e240800925c5
 0
 
-26 Feb 2015 15:41:36,735 main - deserializeType: 2
+03 Mar 2015 12:31:27,676 main - deserializeType: 2
 TYPE QR 0000000000000000 0 0 0
  NULL 
  NULL 
  NULL F
 1
 B  r_object_id  STRING S 16 0
-26 Feb 2015 15:41:36,738 main - Fetching data from server for 0801e24080000190
-26 Feb 2015 15:41:36,748 main - deserializeObjectWithPreamble: 2
+03 Mar 2015 12:31:27,683 main - Fetching data from server for 0801e24080000190
+03 Mar 2015 12:31:27,690 main - deserializeObjectWithPreamble: 2
 dm_sysobject
 0801e24080000190 0 
 
@@ -4590,61 +2730,61 @@ _DIST_SAVE_AS_NEW_ BOOL S 0
 F
  0 
 
-26 Feb 2015 15:41:36,753 main - queried cache for dm_sysobject moduleKey
-26 Feb 2015 15:41:36,753 main - cache miss for dm_sysobject moduleKey
-26 Feb 2015 15:41:36,763 main - deserializeType: 2
+03 Mar 2015 12:31:27,696 main - queried cache for dm_sysobject moduleKey
+03 Mar 2015 12:31:27,696 main - cache miss for dm_sysobject moduleKey
+03 Mar 2015 12:31:27,707 main - deserializeType: 2
 TYPE QR 0000000000000000 0 0 0
  NULL 
  NULL 
  NULL F
 1
 B  r_object_id  STRING S 16 0
-26 Feb 2015 15:41:36,780 main - queried cache for dm_persistent_object moduleKey
-26 Feb 2015 15:41:36,781 main - cache miss for dm_persistent_object moduleKey
-26 Feb 2015 15:41:36,789 main - deserializeType: 2
+03 Mar 2015 12:31:27,722 main - queried cache for dm_persistent_object moduleKey
+03 Mar 2015 12:31:27,723 main - cache miss for dm_persistent_object moduleKey
+03 Mar 2015 12:31:27,730 main - deserializeType: 2
 TYPE QR 0000000000000000 0 0 0
  NULL 
  NULL 
  NULL F
 1
 B  r_object_id  STRING S 16 0
-26 Feb 2015 15:41:36,789 main - Loading TBO 'dm_persistent_object' from repository 'FPIRepo'
-26 Feb 2015 15:41:36,798 main - Extension classloader will be consulted first
-26 Feb 2015 15:41:36,798 main - Extension classloader is sun.misc.Launcher$ExtClassLoader@5419f379
-26 Feb 2015 15:41:36,799 main - Loading TBO 'dm_sysobject' from repository 'FPIRepo'
-26 Feb 2015 15:41:36,804 main - com.documentum.fc.client.DfSysObject is intrinsic class
-26 Feb 2015 15:41:36,811 main - loadProxyClass com.documentum.fc.client.DfSysObject
-26 Feb 2015 15:41:37,103 main - loadClass com.documentum.fc.client.impl.ISysObject
-26 Feb 2015 15:41:37,103 main - loadClass com.documentum.fc.client.impl.IPersistentObject
-26 Feb 2015 15:41:37,103 main - loadClass com.documentum.fc.client.impl.ITypedObject
-26 Feb 2015 15:41:37,103 main - loadClass com.documentum.fc.client.internal.ITypedObjectInternal
-26 Feb 2015 15:41:37,103 main - loadClass com.documentum.fc.client.IDfTypedObject
-26 Feb 2015 15:41:37,103 main - loadClass com.documentum.fc.tracing.IUserIdentifyingObject
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.internal.IPersistentObjectInternal
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.IDfPersistentObject
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.internal.ISysObjectInternal
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.IDfSysObject
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.impl.IAliasResolution
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.IDfSysObjectInternal
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.IDfPersistentObjectInternal
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.IDfSysObjectRetention
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.impl.util.reflection.proxy.IProxyTarget
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.relationship.IDfRelatable
-26 Feb 2015 15:41:37,104 main - loadClass com.documentum.fc.client.aspect.IDfAspects
-26 Feb 2015 15:41:37,105 main - loadClass java.lang.Cloneable
-26 Feb 2015 15:41:37,105 main - loadClass com.documentum.fc.client.IDfTypedObjectInternal
-26 Feb 2015 15:41:37,105 main - loadClass com.documentum.fc.client.impl.bof.compoundclass.PObjectBaseDoubleProxy
-26 Feb 2015 15:41:37,107 main - loadClass java.lang.Object
-26 Feb 2015 15:41:37,107 main - loadClass com.documentum.fc.impl.util.reflection.proxy.BaseDoubleProxy
-26 Feb 2015 15:41:37,150 main - deserializeType: 2
+03 Mar 2015 12:31:27,730 main - Loading TBO 'dm_persistent_object' from repository 'FPIRepo'
+03 Mar 2015 12:31:27,737 main - Extension classloader will be consulted first
+03 Mar 2015 12:31:27,737 main - Extension classloader is sun.misc.Launcher$ExtClassLoader@523884b2
+03 Mar 2015 12:31:27,738 main - Loading TBO 'dm_sysobject' from repository 'FPIRepo'
+03 Mar 2015 12:31:27,743 main - com.documentum.fc.client.DfSysObject is intrinsic class
+03 Mar 2015 12:31:27,751 main - loadProxyClass com.documentum.fc.client.DfSysObject
+03 Mar 2015 12:31:28,164 main - loadClass com.documentum.fc.client.impl.ISysObject
+03 Mar 2015 12:31:28,164 main - loadClass com.documentum.fc.client.impl.IPersistentObject
+03 Mar 2015 12:31:28,164 main - loadClass com.documentum.fc.client.impl.ITypedObject
+03 Mar 2015 12:31:28,164 main - loadClass com.documentum.fc.client.internal.ITypedObjectInternal
+03 Mar 2015 12:31:28,164 main - loadClass com.documentum.fc.client.IDfTypedObject
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.tracing.IUserIdentifyingObject
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.internal.IPersistentObjectInternal
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.IDfPersistentObject
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.internal.ISysObjectInternal
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.IDfSysObject
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.impl.IAliasResolution
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.IDfSysObjectInternal
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.IDfPersistentObjectInternal
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.client.IDfSysObjectRetention
+03 Mar 2015 12:31:28,165 main - loadClass com.documentum.fc.impl.util.reflection.proxy.IProxyTarget
+03 Mar 2015 12:31:28,166 main - loadClass com.documentum.fc.client.relationship.IDfRelatable
+03 Mar 2015 12:31:28,166 main - loadClass com.documentum.fc.client.aspect.IDfAspects
+03 Mar 2015 12:31:28,166 main - loadClass java.lang.Cloneable
+03 Mar 2015 12:31:28,166 main - loadClass com.documentum.fc.client.IDfTypedObjectInternal
+03 Mar 2015 12:31:28,168 main - loadClass com.documentum.fc.client.impl.bof.compoundclass.PObjectBaseDoubleProxy
+03 Mar 2015 12:31:28,169 main - loadClass java.lang.Object
+03 Mar 2015 12:31:28,170 main - loadClass com.documentum.fc.impl.util.reflection.proxy.BaseDoubleProxy
+03 Mar 2015 12:31:28,222 main - deserializeType: 2
 TYPE QR 0000000000000000 0 0 0
  NULL 
  NULL 
  NULL F
 1
 B  dd_change_count  INT S 0 0
-26 Feb 2015 15:41:37,154 main - Fetching DD info from server for tdm_sysobject
-26 Feb 2015 15:41:37,225 main - deserializeObjectWithPreamble: 2
+03 Mar 2015 12:31:28,229 main - Fetching DD info from server for tdm_sysobject
+03 Mar 2015 12:31:28,249 main - deserializeObjectWithPreamble: 2
 dmi_dd_type_info
 6901e24080000141 0 
 
@@ -6238,7 +4378,7 @@ attr_identifier INT R 0
 85
 86
 next_attr_identifier INT S 0
-1289
+1299
 shared_parent_name STRING S 0
 A 0 
 r_creation_date TIME S 0
@@ -6275,7 +4415,7 @@ type_cache_vstamp INT S 0
 0
  0 
 
-26 Feb 2015 15:41:37,248 main - deserializeType: 2
+03 Mar 2015 12:31:28,263 main - deserializeType: 2
 TYPE dmi_dd_common_info 0301e2408000011f 0 0 0
  NULL 
  NULL 
@@ -6373,7 +4513,7 @@ OC  scope_config  ID R 0 0
 PC  i_scope_config  INT S 0 0
 
 
-26 Feb 2015 15:41:37,248 main - deserializeType: 2
+03 Mar 2015 12:31:28,263 main - deserializeType: 2
 TYPE dmi_dd_common_info 0301e2408000011f 0 0 0
  NULL 
  NULL 
@@ -6471,27 +4611,27 @@ OC  scope_config  ID R 0 0
 PC  i_scope_config  INT S 0 0
 
 
-26 Feb 2015 15:41:37,265 main - Using cached data for 0801e24080000190 currency check value of check_always
-26 Feb 2015 15:41:37,265 main - queried cache for persons moduleKey
-26 Feb 2015 15:41:37,265 main - cache miss for persons moduleKey
-26 Feb 2015 15:41:37,270 main - deserializeType: 2
+03 Mar 2015 12:31:28,296 main - Using cached data for 0801e24080000190 currency check value of check_always
+03 Mar 2015 12:31:28,296 main - queried cache for persons moduleKey
+03 Mar 2015 12:31:28,296 main - cache miss for persons moduleKey
+03 Mar 2015 12:31:28,328 main - deserializeType: 2
 TYPE QR 0000000000000000 0 0 0
  NULL 
  NULL 
  NULL F
 1
 B  r_object_id  STRING S 16 0
-26 Feb 2015 15:41:37,270 main - com.documentum.fc.client.DfSysObject is intrinsic class
-26 Feb 2015 15:41:37,271 main - loadProxyClass com.documentum.fc.client.DfSysObject
-26 Feb 2015 15:41:37,275 main - deserializeType: 2
+03 Mar 2015 12:31:28,332 main - com.documentum.fc.client.DfSysObject is intrinsic class
+03 Mar 2015 12:31:28,332 main - loadProxyClass com.documentum.fc.client.DfSysObject
+03 Mar 2015 12:31:28,338 main - deserializeType: 2
 TYPE QR 0000000000000000 0 0 0
  NULL 
  NULL 
  NULL F
 1
 B  r_object_id  STRING S 16 0
-26 Feb 2015 15:41:37,282 main - Fetching data from server for 0301e2408000024a
-26 Feb 2015 15:41:37,295 main - deserializeObjectWithPreamble: 2
+03 Mar 2015 12:31:28,344 main - Fetching data from server for 0301e2408000024a
+03 Mar 2015 12:31:28,353 main - deserializeObjectWithPreamble: 2
 dm_type
 0301e2408000024a 0 
 
@@ -7058,7 +5198,7 @@ r_object_id ID S 0
 0301e2408000024a
  0 
 
-26 Feb 2015 15:41:37,298 main - deserializeType: 2
+03 Mar 2015 12:31:28,368 main - deserializeType: 2
 TYPE dm_type 0301e24080000001 0 0 0
  NULL 
  NULL 
@@ -7089,19 +5229,19 @@ W  r_modify_date  TIME S 0 0
 X  i_vstamp  INT S 0 0
 
 
-26 Feb 2015 15:41:37,299 main - com.documentum.fc.client.DfType is intrinsic class
-26 Feb 2015 15:41:37,304 main - loadProxyClass com.documentum.fc.client.DfType
-26 Feb 2015 15:41:37,340 main - loadClass com.documentum.fc.client.impl.IType
-26 Feb 2015 15:41:37,341 main - loadClass com.documentum.fc.client.IDfType
-26 Feb 2015 15:41:37,357 main - deserializeType: 2
+03 Mar 2015 12:31:28,370 main - com.documentum.fc.client.DfType is intrinsic class
+03 Mar 2015 12:31:28,375 main - loadProxyClass com.documentum.fc.client.DfType
+03 Mar 2015 12:31:28,413 main - loadClass com.documentum.fc.client.impl.IType
+03 Mar 2015 12:31:28,413 main - loadClass com.documentum.fc.client.IDfType
+03 Mar 2015 12:31:28,429 main - deserializeType: 2
 TYPE QR 0000000000000000 0 0 0
  NULL 
  NULL 
  NULL F
 1
 B  dd_change_count  INT S 0 0
-26 Feb 2015 15:41:37,360 main - Fetching DD info from server for tpersons
-26 Feb 2015 15:41:37,376 main - deserializeObjectWithPreamble: 2
+03 Mar 2015 12:31:28,437 main - Fetching DD info from server for tpersons
+03 Mar 2015 12:31:28,464 main - deserializeObjectWithPreamble: 2
 dmi_dd_type_info
 6901e24080004d02 0 
 
@@ -8171,100 +6311,9 @@ OC R 3 2
 6c01e24080000100
 6c01e24080000101
 PC S 1 0
-37
+36
 r_object_id ID S 0
 6901e24080004d02
-r_has_computed_expr BOOL R 0
-89
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
-F
 name STRING S 0
 A 7 persons
 super_name STRING S 0
@@ -8873,7 +6922,7 @@ type_cache_vstamp INT S 0
 6056
  0 
 
-26 Feb 2015 15:41:37,378 main - Extended attributes changed for dmi_dd_type_info
+03 Mar 2015 12:31:28,466 main - Extended attributes changed for dmi_dd_type_info
 AbstractObjectProtocol$AttributeMismatchException:: THREAD: main; MSG: [DFC_OBJPROTO_ATTRIBUTE_MISMATCH] The serialized attribute "r_supertype" did not match the previous definition; ERRORCODE: ff; NEXT: null
 	at com.documentum.fc.client.impl.objectprotocol.AbstractObjectProtocol.resolveAttribute(AbstractObjectProtocol.java:60)
 	at com.documentum.fc.client.impl.objectprotocol.ObjectProtocolV1.deserializeExtendedAttributes(ObjectProtocolV1.java:127)
@@ -8902,64 +6951,327 @@ AbstractObjectProtocol$AttributeMismatchException:: THREAD: main; MSG: [DFC_OBJP
 	at com.documentum.fc.client.impl.objectmanager.PersistentObjectManager.newObject(PersistentObjectManager.java:52)
 	at com.documentum.fc.client.impl.session.Session.newObject(Session.java:946)
 	at com.documentum.fc.client.impl.session.SessionHandle.newObject(SessionHandle.java:901)
-	at com.emc.documentum.springdata.entitymanager.EntityPersistanceManager.createObject(EntityPersistanceManager.java:30)
-	at com.emc.documentum.springdata.core.DSTemplate.insert(DSTemplate.java:27)
-	at com.emc.documentum.springdata.entitymanager.EntityPersistanceManager.main(EntityPersistanceManager.java:51)
-26 Feb 2015 15:41:37,380 main - Using cached data for tpersons:en:FPIRepo
-26 Feb 2015 15:41:37,380 main - Using cached data for tdm_sysobject:en:FPIRepo
-26 Feb 2015 15:41:37,628 main - com.documentum.fc.client.DfSysObject is intrinsic class
-26 Feb 2015 15:41:37,628 main - loadProxyClass com.documentum.fc.client.DfSysObject
-26 Feb 2015 15:41:37,628 main - Using cached data for tpersons:en:FPIRepo
-26 Feb 2015 15:41:37,628 main - Using cached data for tpersons:en:FPIRepo
-26 Feb 2015 15:41:37,629 main - Using cached data for tdm_sysobject:en:FPIRepo
-26 Feb 2015 16:00:19,292 main - setTracingConfig called; enabled: false
-26 Feb 2015 16:00:19,333 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:00:19,338 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:00:19,348 main - DocbaseConnectionManagerIntervalStats: Doing Interval Statistics = false
-26 Feb 2015 16:00:19,352 main - Optimal connection = 27
-26 Feb 2015 16:00:19,373 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:00:19,376 main - keystore file name is /Users/MacbookPro/Desktop/dev/dctm-spring-data/target/classes/dfc.keystore
-26 Feb 2015 16:00:19,382 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:00:19,385 main - parsing X500 DN ----CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a,O=EMC,OU=Documentum---- rfc1779 is false
-26 Feb 2015 16:00:19,386 main - [DFC_SECURITY_IDENTITY_LOADED] Loaded identity from keystore, DFC alias=dfc, identity=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:00:19,394 main - DFC Certificate:
+	at com.emc.documentum.springdata.entitymanager.EntityPersistanceManager.createObject(EntityPersistanceManager.java:36)
+	at com.emc.documentum.springdata.core.DSTemplate.insert(DSTemplate.java:38)
+	at com.emc.documentum.springdata.core.tests.DSTemplateTest.testFindById(DSTemplateTest.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+03 Mar 2015 12:31:28,468 main - Using cached data for tpersons:en:FPIRepo
+03 Mar 2015 12:31:28,468 main - Using cached data for tdm_sysobject:en:FPIRepo
+03 Mar 2015 12:31:29,573 main - Fetching data from server for 0801e240800925bc
+03 Mar 2015 12:31:29,578 main - deserializeObjectWithPreamble: 2
+persons
+0801e240800925bc 0 
+
+OBJ persons 0 0 6056 89
+B S 2 A 0 
+C S 2 A 7 persons
+D S 2 A 0 
+E S 2 A 0 
+F R 2 0
+G R 2 0
+H S 2 A 0 
+I S 2 A 0 
+J S 4 2015-03-03T07:02:23Z
+K S 4 2015-03-03T07:02:23Z
+L S 2 A 7 dmadmin
+M S 4 nulldate
+N S 0 F
+O S 0 F
+P S 4 nulldate
+Q S 0 F
+R S 2 A 0 
+S S 0 F
+T S 1 1
+U S 0 T
+V R 3 1
+0c01e24080000105
+W R 3 0
+X R 2 0
+Y R 2 0
+Z R 1 0
+a S 1 0
+b S 1 0
+c S 3 0000000000000000
+d S 1 0
+e S 0 F
+f S 2 A 0 
+g S 1 0
+h S 3 0000000000000000
+i S 2 A 0 
+j S 1 0
+k S 1 0
+l S 0 T
+m S 2 A 0 
+n S 3 0c01e24080000105
+o S 2 A 7 dmadmin
+p S 1 7
+q S 2 A 4 docu
+r S 1 5
+s S 1 6
+t S 3 0000000000000000
+u S 3 0801e240800925bc
+v S 0 T
+w S 2 A 0 
+x S 4 nulldate
+y S 2 A 0 
+z S 2 A 0 
+0 R 2 2
+A 3 1.0
+A 7 CURRENT
+1 S 1 0
+2 S 0 F
+3 S 0 F
+4 S 0 F
+5 S 0 F
+6 S 2 A 7 dmadmin
+7 S 2 A 19 dm_4501e24080000101
+8 S 2 A 0 
+9 S 0 F
++ S 2 A 7 dmadmin
+/ S 0 T
+AB S 3 0000000000000000
+BB S 1 0
+CB S 1 0
+DB S 3 0000000000000000
+EB R 4 0
+FB R 4 0
+GB R 2 0
+HB R 2 0
+IB R 2 0
+JB S 2 A 0 
+KB S 2 A 0 
+LB S 0 F
+MB S 2 A 0 
+NB S 5 0
+OB R 2 0
+PB S 0 F
+QB S 4 nulldate
+RB S 4 nulldate
+SB R 2 0
+TB R 3 0
+UB S 1 0
+VB S 0 F
+WB S 1 0
+QU S 2 A 4 John
+RU S 2 A 4 Male
+SU S 1 67
+9
+r_object_id ID S 0
+0801e240800925bc
+_KEEP_LOCK_ BOOL S 0
+F
+_FREEZE_COMPONENTS_ BOOL S 0
+F
+_THAW_COMPONENTS_ BOOL S 0
+F
+_CONTENTS_CHANGED_ BOOL S 0
+F
+_DIST_SAVE_AS_NEW_ BOOL S 0
+F
+_ACL_DEFAULT_ INT S 0
+0
+_ACL_DOMAIN_ STRING S 0
+A 0 
+_ACL_NAME_ STRING S 0
+A 0 
+ 0 
+
+03 Mar 2015 12:31:29,583 main - Using cached data for 0801e240800925bc currency check value of check_always
+03 Mar 2015 12:31:29,590 main - com.documentum.fc.client.DfSysObject is intrinsic class
+03 Mar 2015 12:31:29,590 main - loadProxyClass com.documentum.fc.client.DfSysObject
+03 Mar 2015 12:31:29,591 main - Using cached data for tpersons:en:FPIRepo
+03 Mar 2015 12:31:29,591 main - Using cached data for tpersons:en:FPIRepo
+03 Mar 2015 12:31:29,592 main - Using cached data for tdm_sysobject:en:FPIRepo
+03 Mar 2015 12:31:29,606 main - Fetching data from server for 0801e240800925bd
+03 Mar 2015 12:31:29,610 main - deserializeObjectWithPreamble: 2
+persons
+0801e240800925bd 0 
+
+OBJ persons 0 0 6056 89
+B S 2 A 0 
+C S 2 A 7 persons
+D S 2 A 0 
+E S 2 A 0 
+F R 2 0
+G R 2 0
+H S 2 A 0 
+I S 2 A 0 
+J S 4 2015-03-03T07:02:24Z
+K S 4 2015-03-03T07:02:24Z
+L S 2 A 7 dmadmin
+M S 4 nulldate
+N S 0 F
+O S 0 F
+P S 4 nulldate
+Q S 0 F
+R S 2 A 0 
+S S 0 F
+T S 1 1
+U S 0 T
+V R 3 1
+0c01e24080000105
+W R 3 0
+X R 2 0
+Y R 2 0
+Z R 1 0
+a S 1 0
+b S 1 0
+c S 3 0000000000000000
+d S 1 0
+e S 0 F
+f S 2 A 0 
+g S 1 0
+h S 3 0000000000000000
+i S 2 A 0 
+j S 1 0
+k S 1 0
+l S 0 T
+m S 2 A 0 
+n S 3 0c01e24080000105
+o S 2 A 7 dmadmin
+p S 1 7
+q S 2 A 4 docu
+r S 1 5
+s S 1 6
+t S 3 0000000000000000
+u S 3 0801e240800925bd
+v S 0 T
+w S 2 A 0 
+x S 4 nulldate
+y S 2 A 0 
+z S 2 A 0 
+0 R 2 2
+A 3 1.0
+A 7 CURRENT
+1 S 1 0
+2 S 0 F
+3 S 0 F
+4 S 0 F
+5 S 0 F
+6 S 2 A 7 dmadmin
+7 S 2 A 19 dm_4501e24080000101
+8 S 2 A 0 
+9 S 0 F
++ S 2 A 7 dmadmin
+/ S 0 T
+AB S 3 0000000000000000
+BB S 1 0
+CB S 1 0
+DB S 3 0000000000000000
+EB R 4 0
+FB R 4 0
+GB R 2 0
+HB R 2 0
+IB R 2 0
+JB S 2 A 0 
+KB S 2 A 0 
+LB S 0 F
+MB S 2 A 0 
+NB S 5 0
+OB R 2 0
+PB S 0 F
+QB S 4 nulldate
+RB S 4 nulldate
+SB R 2 0
+TB R 3 0
+UB S 1 0
+VB S 0 F
+WB S 1 0
+QU S 2 A 5 Rohan
+RU S 2 A 4 Male
+SU S 1 22
+9
+r_object_id ID S 0
+0801e240800925bd
+_KEEP_LOCK_ BOOL S 0
+F
+_FREEZE_COMPONENTS_ BOOL S 0
+F
+_THAW_COMPONENTS_ BOOL S 0
+F
+_CONTENTS_CHANGED_ BOOL S 0
+F
+_DIST_SAVE_AS_NEW_ BOOL S 0
+F
+_ACL_DEFAULT_ INT S 0
+0
+_ACL_DOMAIN_ STRING S 0
+A 0 
+_ACL_NAME_ STRING S 0
+A 0 
+ 0 
+
+03 Mar 2015 12:32:09,896 main - setTracingConfig called; enabled: false
+03 Mar 2015 12:32:09,931 main - Use Certificate Based Authentication = false Trust Store = 
+03 Mar 2015 12:32:09,936 main - Use Certificate Based Authentication = false Trust Store = 
+03 Mar 2015 12:32:09,952 main - DocbaseConnectionManagerIntervalStats: Doing Interval Statistics = false
+03 Mar 2015 12:32:09,954 main - Optimal connection = 27
+03 Mar 2015 12:32:09,996 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
+03 Mar 2015 12:32:10,001 main - keystore file name is /Users/MacbookPro/Desktop/dev/dctm-spring-data/target/classes/dfc.keystore
+03 Mar 2015 12:32:10,009 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
+03 Mar 2015 12:32:10,012 main - parsing X500 DN ----CN=dfc_FWirV7HcAPEKIazqHkzMSshB1aga,O=EMC,OU=Documentum---- rfc1779 is false
+03 Mar 2015 12:32:10,013 main - [DFC_SECURITY_IDENTITY_LOADED] Loaded identity from keystore, DFC alias=dfc, identity=dfc_FWirV7HcAPEKIazqHkzMSshB1aga
+03 Mar 2015 12:32:10,022 main - DFC Certificate:
 [
 [
   Version: V1
-  Subject: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
+  Subject: CN=dfc_FWirV7HcAPEKIazqHkzMSshB1aga, O=EMC, OU=Documentum
   Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
 
   Key:  Sun RSA public key, 1024 bits
-  modulus: 159980354300736151010824017616013759411147821557649207501033751270070343302361620823504789013743956699228588871731319024162104130262748915286422541165622046830245171578710223061543862162458829546242855225360580873990329158354076719621088196387984171717067323879428895950480630416494921247172849385752694628119
+  modulus: 132921538206357722208154740992933119788325840182996589428230858320156902969686483201735614553048596986462384404030356856978388909161020608040588493935988058331364513919215524511073859426933259525324411929399031468131308802868638096528151756170757896730780739151548340787936479390220539243998869193675750217741
   public exponent: 65537
-  Validity: [From: Thu Feb 26 15:22:54 IST 2015,
-               To: Sun Feb 23 15:27:54 IST 2025]
-  Issuer: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  SerialNumber: [    60ea9a69 58ae2bac 21c5ec23 ff1ffb34]
+  Validity: [From: Tue Mar 03 12:21:29 IST 2015,
+               To: Fri Feb 28 12:26:29 IST 2025]
+  Issuer: CN=dfc_FWirV7HcAPEKIazqHkzMSshB1aga, O=EMC, OU=Documentum
+  SerialNumber: [    737cc335 a5b03d3c 337d9727 a4b87dea]
 
 ]
   Algorithm: [SHA1withRSA]
   Signature:
-0000: 0A AC DA A4 30 86 D4 B1   F1 3F CE 83 A7 04 32 76  ....0....?....2v
-0010: D4 CE 61 BB 81 5D 73 29   F3 23 F8 7D 59 42 E8 0A  ..a..]s).#..YB..
-0020: 6A 21 DD 02 F4 81 AD C9   E5 34 71 BE B2 C5 4C 93  j!.......4q...L.
-0030: 95 F0 87 CA 2D EA 54 5E   53 A9 88 25 88 40 EE BF  ....-.T^S..%.@..
-0040: D5 BF 9D 04 DD 8F AC 35   19 32 48 71 B9 F0 D2 00  .......5.2Hq....
-0050: E0 F9 E8 67 05 03 24 DA   5D FF 07 32 7A 1A 46 E0  ...g..$.]..2z.F.
-0060: 9B E8 62 7E E5 90 29 CF   9C 9F C7 4E 77 0F A3 DB  ..b...)....Nw...
-0070: 44 29 63 8E 5B 2A 4A D7   CB A3 45 CA 80 AA 04 9D  D)c.[*J...E.....
+0000: 89 EF 74 51 0E 1A CC 60   66 A3 CA 4A BA C8 19 46  ..tQ...`f..J...F
+0010: 74 DB 13 92 67 E6 90 C1   74 B3 95 2D 7D 34 0B 3B  t...g...t..-.4.;
+0020: C7 1D FB 01 53 E5 E6 84   EA 97 FB 7D 9E 26 79 EE  ....S........&y.
+0030: 22 D4 40 3C 06 FA 70 64   C6 C3 B3 6D 90 6A F9 72  ".@<..pd...m.j.r
+0040: 61 AE 93 5F F2 82 02 8A   11 0A 1D 76 1B 5F 3E C2  a.._.......v._>.
+0050: 16 88 F0 66 26 18 4A 96   D3 57 45 E8 56 9E 55 FA  ...f&.J..WE.V.U.
+0060: 94 4D 90 9A C4 D0 5F B7   7F CE 49 4F 10 D7 BF 58  .M...._...IO...X
+0070: 66 1C 5B F8 A5 20 36 10   EF E0 69 63 3F 33 DC A1  f.[.. 6...ic?3..
 
 ]
-26 Feb 2015 16:00:19,395 main - identity for authentication is dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:00:19,581 main - DFC Version is 7.1.1000.0037SP1
-26 Feb 2015 16:00:19,606 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:00:19,606 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:00:19,613 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:00:19,865 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:00:19,866 Timer-1 - [DFC_BOF_RUNNING_CLEANUP] Running class cache cleanup task
-26 Feb 2015 16:00:19,867 Timer-1 - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:00:19,872 Timer-1 - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:00:19,876 main - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
+03 Mar 2015 12:32:10,024 main - identity for authentication is dfc_FWirV7HcAPEKIazqHkzMSshB1aga
+03 Mar 2015 12:32:10,029 main - DFC Version is 7.1.1000.0037SP1
+03 Mar 2015 12:32:10,072 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
+03 Mar 2015 12:32:10,072 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
+03 Mar 2015 12:32:10,081 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
+03 Mar 2015 12:32:10,400 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
+03 Mar 2015 12:32:10,402 Timer-1 - [DFC_BOF_RUNNING_CLEANUP] Running class cache cleanup task
+03 Mar 2015 12:32:10,402 Timer-1 - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
+03 Mar 2015 12:32:10,410 Timer-1 - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
+03 Mar 2015 12:32:10,421 main - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
 DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A global registry is not configured; ERRORCODE: ff; NEXT: null
 	at com.documentum.fc.client.security.impl.DfcIdentityPublisher.<init>(DfcIdentityPublisher.java:51)
 	at com.documentum.fc.client.security.internal.RegistrationMgr.register(RegistrationMgr.java:34)
@@ -8968,7 +7280,7 @@ DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A glob
 	at com.documentum.com.DfClientX.getLocalClient(DfClientX.java:43)
 	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:43)
 	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:29)
-	at com.emc.documentum.springdata.core.GenericCacheTest.setUpBeforeClass(GenericCacheTest.java:23)
+	at com.emc.documentum.springdata.core.tests.DSTemplateTest.setUpBeforeClass(DSTemplateTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -8984,218 +7296,17 @@ DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A glob
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
 	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
-26 Feb 2015 16:04:28,178 main - setTracingConfig called; enabled: false
-26 Feb 2015 16:04:28,216 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:04:28,222 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:04:28,231 main - DocbaseConnectionManagerIntervalStats: Doing Interval Statistics = false
-26 Feb 2015 16:04:28,233 main - Optimal connection = 27
-26 Feb 2015 16:04:28,257 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:04:28,260 main - keystore file name is /Users/MacbookPro/Desktop/dev/dctm-spring-data/target/classes/dfc.keystore
-26 Feb 2015 16:04:28,265 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:04:28,266 main - parsing X500 DN ----CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a,O=EMC,OU=Documentum---- rfc1779 is false
-26 Feb 2015 16:04:28,267 main - [DFC_SECURITY_IDENTITY_LOADED] Loaded identity from keystore, DFC alias=dfc, identity=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:04:28,277 main - DFC Certificate:
-[
-[
-  Version: V1
-  Subject: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
-
-  Key:  Sun RSA public key, 1024 bits
-  modulus: 159980354300736151010824017616013759411147821557649207501033751270070343302361620823504789013743956699228588871731319024162104130262748915286422541165622046830245171578710223061543862162458829546242855225360580873990329158354076719621088196387984171717067323879428895950480630416494921247172849385752694628119
-  public exponent: 65537
-  Validity: [From: Thu Feb 26 15:22:54 IST 2015,
-               To: Sun Feb 23 15:27:54 IST 2025]
-  Issuer: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  SerialNumber: [    60ea9a69 58ae2bac 21c5ec23 ff1ffb34]
-
-]
-  Algorithm: [SHA1withRSA]
-  Signature:
-0000: 0A AC DA A4 30 86 D4 B1   F1 3F CE 83 A7 04 32 76  ....0....?....2v
-0010: D4 CE 61 BB 81 5D 73 29   F3 23 F8 7D 59 42 E8 0A  ..a..]s).#..YB..
-0020: 6A 21 DD 02 F4 81 AD C9   E5 34 71 BE B2 C5 4C 93  j!.......4q...L.
-0030: 95 F0 87 CA 2D EA 54 5E   53 A9 88 25 88 40 EE BF  ....-.T^S..%.@..
-0040: D5 BF 9D 04 DD 8F AC 35   19 32 48 71 B9 F0 D2 00  .......5.2Hq....
-0050: E0 F9 E8 67 05 03 24 DA   5D FF 07 32 7A 1A 46 E0  ...g..$.]..2z.F.
-0060: 9B E8 62 7E E5 90 29 CF   9C 9F C7 4E 77 0F A3 DB  ..b...)....Nw...
-0070: 44 29 63 8E 5B 2A 4A D7   CB A3 45 CA 80 AA 04 9D  D)c.[*J...E.....
-
-]
-26 Feb 2015 16:04:28,280 main - identity for authentication is dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:04:28,473 main - DFC Version is 7.1.1000.0037SP1
-26 Feb 2015 16:04:28,501 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:04:28,501 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:04:28,510 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:04:28,797 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:04:28,799 Timer-1 - [DFC_BOF_RUNNING_CLEANUP] Running class cache cleanup task
-26 Feb 2015 16:04:28,800 Timer-1 - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:04:28,809 Timer-1 - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:04:28,811 main - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
-DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A global registry is not configured; ERRORCODE: ff; NEXT: null
-	at com.documentum.fc.client.security.impl.DfcIdentityPublisher.<init>(DfcIdentityPublisher.java:51)
-	at com.documentum.fc.client.security.internal.RegistrationMgr.register(RegistrationMgr.java:34)
-	at com.documentum.fc.impl.RuntimeContext.<clinit>(RuntimeContext.java:195)
-	at com.documentum.fc.client.DfClient.<clinit>(DfClient.java:772)
-	at com.documentum.com.DfClientX.getLocalClient(DfClientX.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:29)
-	at com.emc.documentum.springdata.core.GenericCacheTest.setUpBeforeClass(GenericCacheTest.java:23)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
-26 Feb 2015 16:18:03,291 main - setTracingConfig called; enabled: false
-26 Feb 2015 16:18:03,347 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:18:03,358 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:18:03,375 main - DocbaseConnectionManagerIntervalStats: Doing Interval Statistics = false
-26 Feb 2015 16:18:03,380 main - Optimal connection = 27
-26 Feb 2015 16:18:03,417 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:18:03,420 main - keystore file name is /Users/MacbookPro/Desktop/dev/dctm-spring-data/target/classes/dfc.keystore
-26 Feb 2015 16:18:03,429 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:18:03,433 main - parsing X500 DN ----CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a,O=EMC,OU=Documentum---- rfc1779 is false
-26 Feb 2015 16:18:03,435 main - [DFC_SECURITY_IDENTITY_LOADED] Loaded identity from keystore, DFC alias=dfc, identity=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:18:03,445 main - DFC Certificate:
-[
-[
-  Version: V1
-  Subject: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
-
-  Key:  Sun RSA public key, 1024 bits
-  modulus: 159980354300736151010824017616013759411147821557649207501033751270070343302361620823504789013743956699228588871731319024162104130262748915286422541165622046830245171578710223061543862162458829546242855225360580873990329158354076719621088196387984171717067323879428895950480630416494921247172849385752694628119
-  public exponent: 65537
-  Validity: [From: Thu Feb 26 15:22:54 IST 2015,
-               To: Sun Feb 23 15:27:54 IST 2025]
-  Issuer: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  SerialNumber: [    60ea9a69 58ae2bac 21c5ec23 ff1ffb34]
-
-]
-  Algorithm: [SHA1withRSA]
-  Signature:
-0000: 0A AC DA A4 30 86 D4 B1   F1 3F CE 83 A7 04 32 76  ....0....?....2v
-0010: D4 CE 61 BB 81 5D 73 29   F3 23 F8 7D 59 42 E8 0A  ..a..]s).#..YB..
-0020: 6A 21 DD 02 F4 81 AD C9   E5 34 71 BE B2 C5 4C 93  j!.......4q...L.
-0030: 95 F0 87 CA 2D EA 54 5E   53 A9 88 25 88 40 EE BF  ....-.T^S..%.@..
-0040: D5 BF 9D 04 DD 8F AC 35   19 32 48 71 B9 F0 D2 00  .......5.2Hq....
-0050: E0 F9 E8 67 05 03 24 DA   5D FF 07 32 7A 1A 46 E0  ...g..$.]..2z.F.
-0060: 9B E8 62 7E E5 90 29 CF   9C 9F C7 4E 77 0F A3 DB  ..b...)....Nw...
-0070: 44 29 63 8E 5B 2A 4A D7   CB A3 45 CA 80 AA 04 9D  D)c.[*J...E.....
-
-]
-26 Feb 2015 16:18:03,447 main - identity for authentication is dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:18:03,695 main - DFC Version is 7.1.1000.0037SP1
-26 Feb 2015 16:18:03,731 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:03,732 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:03,740 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:04,141 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:04,142 Timer-1 - [DFC_BOF_RUNNING_CLEANUP] Running class cache cleanup task
-26 Feb 2015 16:18:04,143 Timer-1 - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:04,150 Timer-1 - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:04,160 main - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
-DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A global registry is not configured; ERRORCODE: ff; NEXT: null
-	at com.documentum.fc.client.security.impl.DfcIdentityPublisher.<init>(DfcIdentityPublisher.java:51)
-	at com.documentum.fc.client.security.internal.RegistrationMgr.register(RegistrationMgr.java:34)
-	at com.documentum.fc.impl.RuntimeContext.<clinit>(RuntimeContext.java:195)
-	at com.documentum.fc.client.DfClient.<clinit>(DfClient.java:772)
-	at com.documentum.com.DfClientX.getLocalClient(DfClientX.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:29)
-	at com.emc.documentum.springdata.core.GenericCacheTest.setUpBeforeClass(GenericCacheTest.java:23)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
-26 Feb 2015 16:18:55,178 main - setTracingConfig called; enabled: false
-26 Feb 2015 16:18:55,217 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:18:55,222 main - Use Certificate Based Authentication = false Trust Store = 
-26 Feb 2015 16:18:55,237 main - DocbaseConnectionManagerIntervalStats: Doing Interval Statistics = false
-26 Feb 2015 16:18:55,239 main - Optimal connection = 27
-26 Feb 2015 16:18:55,269 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:18:55,273 main - keystore file name is /Users/MacbookPro/Desktop/dev/dctm-spring-data/target/classes/dfc.keystore
-26 Feb 2015 16:18:55,281 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/identityInterprocessMutex.lock
-26 Feb 2015 16:18:55,284 main - parsing X500 DN ----CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a,O=EMC,OU=Documentum---- rfc1779 is false
-26 Feb 2015 16:18:55,285 main - [DFC_SECURITY_IDENTITY_LOADED] Loaded identity from keystore, DFC alias=dfc, identity=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:18:55,294 main - DFC Certificate:
-[
-[
-  Version: V1
-  Subject: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5
-
-  Key:  Sun RSA public key, 1024 bits
-  modulus: 159980354300736151010824017616013759411147821557649207501033751270070343302361620823504789013743956699228588871731319024162104130262748915286422541165622046830245171578710223061543862162458829546242855225360580873990329158354076719621088196387984171717067323879428895950480630416494921247172849385752694628119
-  public exponent: 65537
-  Validity: [From: Thu Feb 26 15:22:54 IST 2015,
-               To: Sun Feb 23 15:27:54 IST 2025]
-  Issuer: CN=dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a, O=EMC, OU=Documentum
-  SerialNumber: [    60ea9a69 58ae2bac 21c5ec23 ff1ffb34]
-
-]
-  Algorithm: [SHA1withRSA]
-  Signature:
-0000: 0A AC DA A4 30 86 D4 B1   F1 3F CE 83 A7 04 32 76  ....0....?....2v
-0010: D4 CE 61 BB 81 5D 73 29   F3 23 F8 7D 59 42 E8 0A  ..a..]s).#..YB..
-0020: 6A 21 DD 02 F4 81 AD C9   E5 34 71 BE B2 C5 4C 93  j!.......4q...L.
-0030: 95 F0 87 CA 2D EA 54 5E   53 A9 88 25 88 40 EE BF  ....-.T^S..%.@..
-0040: D5 BF 9D 04 DD 8F AC 35   19 32 48 71 B9 F0 D2 00  .......5.2Hq....
-0050: E0 F9 E8 67 05 03 24 DA   5D FF 07 32 7A 1A 46 E0  ...g..$.]..2z.F.
-0060: 9B E8 62 7E E5 90 29 CF   9C 9F C7 4E 77 0F A3 DB  ..b...)....Nw...
-0070: 44 29 63 8E 5B 2A 4A D7   CB A3 45 CA 80 AA 04 9D  D)c.[*J...E.....
-
-]
-26 Feb 2015 16:18:55,296 main - identity for authentication is dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a
-26 Feb 2015 16:18:55,301 main - DFC Version is 7.1.1000.0037SP1
-26 Feb 2015 16:18:55,345 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:55,345 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:55,355 main - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:55,623 main - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:55,625 Timer-1 - [DFC_BOF_RUNNING_CLEANUP] Running class cache cleanup task
-26 Feb 2015 16:18:55,625 Timer-1 - Lock Aquire has 1 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:55,632 Timer-1 - Lock release has 0 lock counts for resource /Users/MacbookPro/Desktop/dev/dctm-spring-data/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.lck
-26 Feb 2015 16:18:55,636 main - [DFC_SECURITY_GR_PUBLICATION_FAILED] Publication of DFC instance with global registry failed
-DfException:: THREAD: main; MSG: [DFC_BOF_GLOBAL_REGISTRY_NOT_CONFIGURED] A global registry is not configured; ERRORCODE: ff; NEXT: null
-	at com.documentum.fc.client.security.impl.DfcIdentityPublisher.<init>(DfcIdentityPublisher.java:51)
-	at com.documentum.fc.client.security.internal.RegistrationMgr.register(RegistrationMgr.java:34)
-	at com.documentum.fc.impl.RuntimeContext.<clinit>(RuntimeContext.java:195)
-	at com.documentum.fc.client.DfClient.<clinit>(DfClient.java:772)
-	at com.documentum.com.DfClientX.getLocalClient(DfClientX.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:43)
-	at com.emc.documentum.springdata.core.Documentum.<init>(Documentum.java:29)
-	at com.emc.documentum.springdata.entitymanager.EntityPersistanceManager.main(EntityPersistanceManager.java:48)
-26 Feb 2015 16:18:55,702 main - Using default identity "dmadmin" for docbase "FPIRepo"
-26 Feb 2015 16:18:55,704 main - Creating new conn as total conn count is below min count
-26 Feb 2015 16:18:55,910 main - Updated Server Choices for 'FPIRepo'. 1 servers found. 0 content servers found
-26 Feb 2015 16:18:55,910 main - Updated Server Choices for 'FPIRepo'. 0 bad servers found.
-26 Feb 2015 16:18:55,946 main - 2:IPV6: true address: /10.31.157.229:47625
-26 Feb 2015 16:19:00,747 main - Object protocol version 2
-26 Feb 2015 16:19:00,852 main - new identity bundle <dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424947740	ussaconwaj2m1.corp.emc.com		a6Bgsyf+vnrWv7NxyVZi23gkdFP5nWIoBokV6V8aE2lZ53lriAvfh7e3MCl3wrUrMX2zG4IX8V1iIPRiqZaUU5BGS716eqF3CNfffEgJIuG+XIbJ+oTiWJ1bDJIuH5Xf7dOpnViXkn+iwK49UjWTPP1dBDvVua/n6CeIodDGOyM=>
-26 Feb 2015 16:19:00,852 main - time now (s since POSIX epoch): 1,424,947,740
-26 Feb 2015 16:19:00,852 main - bundle: <dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424947740	ussaconwaj2m1.corp.emc.com		a6Bgsyf+vnrWv7NxyVZi23gkdFP5nWIoBokV6V8aE2lZ53lriAvfh7e3MCl3wrUrMX2zG4IX8V1iIPRiqZaUU5BGS716eqF3CNfffEgJIuG+XIbJ+oTiWJ1bDJIuH5Xf7dOpnViXkn+iwK49UjWTPP1dBDvVua/n6CeIodDGOyM=>
-26 Feb 2015 16:19:00,852 main - Authenticate [assume=false, reconnect=false, user=dmadmin]
-26 Feb 2015 16:19:00,897 main - deserializeType: 2
+03 Mar 2015 12:32:10,487 main - Using default identity "dmadmin" for docbase "FPIRepo"
+03 Mar 2015 12:32:10,488 main - Creating new conn as total conn count is below min count
+03 Mar 2015 12:32:10,727 main - Updated Server Choices for 'FPIRepo'. 1 servers found. 0 content servers found
+03 Mar 2015 12:32:10,727 main - Updated Server Choices for 'FPIRepo'. 0 bad servers found.
+03 Mar 2015 12:32:10,791 main - 3:IPV6: false address: /10.31.157.229:47625
+03 Mar 2015 12:32:15,311 main - Object protocol version 2
+03 Mar 2015 12:32:15,350 main - new identity bundle <dfc_FWirV7HcAPEKIazqHkzMSshB1aga	1425366135	10.164.48.104		lCf8T3YdoDICReBH/RHgiO93UGlbkZLIuLkvQVcCO7pPgn6g4NnCUG7/YrvESFP3KBpDHc0lYt5U9WkQBWpCzsNyJezXLaqICLegmHhHTL8AKNe8cUgFItAWgrowhfywp//k+VT4ULTdQI9jLdK+g3WJ6Ww9NjRzUQkju9wPscc=>
+03 Mar 2015 12:32:15,350 main - time now (s since POSIX epoch): 1,425,366,135
+03 Mar 2015 12:32:15,350 main - bundle: <dfc_FWirV7HcAPEKIazqHkzMSshB1aga	1425366135	10.164.48.104		lCf8T3YdoDICReBH/RHgiO93UGlbkZLIuLkvQVcCO7pPgn6g4NnCUG7/YrvESFP3KBpDHc0lYt5U9WkQBWpCzsNyJezXLaqICLegmHhHTL8AKNe8cUgFItAWgrowhfywp//k+VT4ULTdQI9jLdK+g3WJ6Ww9NjRzUQkju9wPscc=>
+03 Mar 2015 12:32:15,351 main - Authenticate [assume=false, reconnect=false, user=dmadmin]
+03 Mar 2015 12:32:15,412 main - deserializeType: 2
 TYPE ERROR_TYPE 0000000000000000 0 0 0
  NULL 
  NULL 
@@ -9208,7 +7319,7 @@ E  STAMP  STRING S 0 0
 F  SEVERITY  INT S 0 0
 G  MESSAGE  STRING S 0 0
 H  NAME  STRING S 0 0
-26 Feb 2015 16:19:00,936 main - deserializeObjectWithPreamble: 2
+03 Mar 2015 12:32:15,432 main - deserializeObjectWithPreamble: 2
 TYPE GeneratedType 0000000000000000 0 0 0
  NULL 
  NULL 
@@ -9261,8 +7372,8 @@ A 2 f0
 A 0 
 A 0 
 A 0 
-? S 2 A 244 dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424947740	ussaconwaj2m1.corp.emc.com		a6Bgsyf+vnrWv7NxyVZi23gkdFP5nWIoBokV6V8aE2lZ53lriAvfh7e3MCl3wrUrMX2zG4IX8V1iIPRiqZaUU5BGS716eqF3CNfffEgJIuG+XIbJ+oTiWJ1bDJIuH5Xf7dOpnViXkn+iwK49UjWTPP1dBDvVua/n6CeIodDGOyM=
-? S 2 A 74 [-126, -93, -82, -75, -128, -87, -24, 113, 75, 91, 13, -112, -20, 95, -89]
+? S 2 A 231 dfc_FWirV7HcAPEKIazqHkzMSshB1aga	1425366135	10.164.48.104		lCf8T3YdoDICReBH/RHgiO93UGlbkZLIuLkvQVcCO7pPgn6g4NnCUG7/YrvESFP3KBpDHc0lYt5U9WkQBWpCzsNyJezXLaqICLegmHhHTL8AKNe8cUgFItAWgrowhfywp//k+VT4ULTdQI9jLdK+g3WJ6Ww9NjRzUQkju9wPscc=
+? S 2 A 71 [113, -73, 109, -37, -26, 54, 54, 46, -107, -122, -75, 43, 30, 127, 74]
 ? S 2 A 0 
 ? S 2 A 0 
 ? S 0 F
@@ -9270,7 +7381,7 @@ A 0
 ? S 2 A 0 
 ? S 1 8
 ? S 2 A 0 
-? S 2 A 12 10.30.89.172
+? S 2 A 13 10.164.48.104
 ? S 1 0
 ? S 2 A 7 dmadmin
 ? S 0 T
@@ -9280,7 +7391,7 @@ A 0
 ? S 1 1
 0
 
-26 Feb 2015 16:19:00,937 main - deserializeType: 2
+03 Mar 2015 12:32:15,432 main - deserializeType: 2
 TYPE GeneratedType 0000000000000000 0 0 0
  NULL 
  NULL 
@@ -9333,8 +7444,8 @@ A 2 f0
 A 0 
 A 0 
 A 0 
-? S 2 A 244 dfc_Kx9DCKGKu6dWkfVhONEIzWDqGO8a	1424947740	ussaconwaj2m1.corp.emc.com		a6Bgsyf+vnrWv7NxyVZi23gkdFP5nWIoBokV6V8aE2lZ53lriAvfh7e3MCl3wrUrMX2zG4IX8V1iIPRiqZaUU5BGS716eqF3CNfffEgJIuG+XIbJ+oTiWJ1bDJIuH5Xf7dOpnViXkn+iwK49UjWTPP1dBDvVua/n6CeIodDGOyM=
-? S 2 A 74 [-126, -93, -82, -75, -128, -87, -24, 113, 75, 91, 13, -112, -20, 95, -89]
+? S 2 A 231 dfc_FWirV7HcAPEKIazqHkzMSshB1aga	1425366135	10.164.48.104		lCf8T3YdoDICReBH/RHgiO93UGlbkZLIuLkvQVcCO7pPgn6g4NnCUG7/YrvESFP3KBpDHc0lYt5U9WkQBWpCzsNyJezXLaqICLegmHhHTL8AKNe8cUgFItAWgrowhfywp//k+VT4ULTdQI9jLdK+g3WJ6Ww9NjRzUQkju9wPscc=
+? S 2 A 71 [113, -73, 109, -37, -26, 54, 54, 46, -107, -122, -75, 43, 30, 127, 74]
 ? S 2 A 0 
 ? S 2 A 0 
 ? S 0 F
@@ -9342,7 +7453,7 @@ A 0
 ? S 2 A 0 
 ? S 1 8
 ? S 2 A 0 
-? S 2 A 12 10.30.89.172
+? S 2 A 13 10.164.48.104
 ? S 1 0
 ? S 2 A 7 dmadmin
 ? S 0 T
@@ -9352,9 +7463,9 @@ A 0
 ? S 1 1
 0
 
-26 Feb 2015 16:19:00,938 main - Connection{id=0, docbase=FPIRepo, user=dmadmin, state=used/inactive} created
-26 Feb 2015 16:19:01,021 main - Session{id=0, iid=0, serial=0, docbase=FPIRepo, user=dmadmin, serversession=0101e2408003e824} created
-26 Feb 2015 16:19:01,091 main - deserializeObjectWithPreamble: 2
+03 Mar 2015 12:32:15,433 main - Connection{id=0, docbase=FPIRepo, user=dmadmin, state=used/inactive} created
+03 Mar 2015 12:32:15,495 main - Session{id=0, iid=0, serial=0, docbase=FPIRepo, user=dmadmin, serversession=0101e2408003fe94} created
+03 Mar 2015 12:32:15,560 main - deserializeObjectWithPreamble: 2
 dm_server_config
 3d01e24080000102 0 
 
@@ -9368,7 +7479,7 @@ G R 2 0
 H S 2 A 0 
 I S 2 A 0 
 J S 4 2014-05-01T08:45:49Z
-K S 4 2015-01-07T08:55:29Z
+K S 4 2015-03-02T14:08:38Z
 L S 2 A 7 FPIRepo
 M S 4 nulldate
 N S 0 F
@@ -9447,7 +7558,7 @@ SB R 2 0
 TB R 3 0
 UB S 1 0
 VB S 0 F
-WB S 1 64
+WB S 1 66
 WC S 1 100
 XC S 1 200
 YC S 1 50
@@ -9471,8 +7582,8 @@ pC S 1 300
 qC S 1 1440
 rC S 1 300
 sC S 0 T
-tC S 2 A 6 csvm01
-uC S 1 4960
+tC S 2 A 2 3g
+uC S 1 3620
 vC S 2 A 7 FPIRepo
 wC S 2 A 11 assume_user
 xC S 2 A 15 change_password
@@ -9481,7 +7592,7 @@ zC S 2 A 6 events
 0C S 2 A 17 agent_exec_method
 1C S 1 3
 2C S 2 A 7 dmadmin
-3C S 2 A 6 csvm01
+3C S 2 A 2 3g
 4C S 2 A 8 DoNotUse
 5C S 2 A 0 
 6C R 2 0
@@ -9545,7 +7656,7 @@ R_OBJECT_ID ID S 0
 3d01e24080000102
  0 
 
-26 Feb 2015 16:19:01,114 main - deserializeType: 2
+03 Mar 2015 12:32:15,567 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -9717,7 +7828,7 @@ cD  system_shutdown_timeout  INT S 0 0
 dD  wf_agent_notify_newtask  BOOL S 0 0
 
 
-26 Feb 2015 16:19:01,280 main - deserializeType: 2
+03 Mar 2015 12:32:15,728 main - deserializeType: 2
 TYPE dm_sysobject 0301e24080000105 1 0 0
  NULL 
  NULL 
@@ -9887,5 +7998,2466 @@ aD  projection_netloc_id  STRING R 80 0
 bD  max_cm_parallel_degree  INT S 0 0
 cD  system_shutdown_timeout  INT S 0 0
 dD  wf_agent_notify_newtask  BOOL S 0 0
+
+
+03 Mar 2015 12:32:15,746 main - deserializeObjectWithPreamble: 2
+dm_docbase_config
+3c01e24080000103 0 
+
+OBJ dm_docbase_config 0 0 0 136
+B S 2 A 7 FPIRepo
+C S 2 A 17 dm_docbase_config
+D S 2 A 0 
+E S 2 A 0 
+F R 2 0
+G R 2 0
+H S 2 A 0 
+I S 2 A 0 
+J S 4 2014-05-01T08:45:48Z
+K S 4 2014-11-17T23:04:57Z
+L S 2 A 7 dmadmin
+M S 4 nulldate
+N S 0 F
+O S 0 F
+P S 4 nulldate
+Q S 0 F
+R S 2 A 0 
+S S 0 F
+T S 1 1
+U S 0 T
+V R 3 1
+0c01e24080000106
+W R 3 0
+X R 2 0
+Y R 2 0
+Z R 1 0
+a S 1 0
+b S 1 0
+c S 3 0000000000000000
+d S 1 0
+e S 0 F
+f S 2 A 0 
+g S 1 0
+h S 3 0000000000000000
+i S 2 A 0 
+j S 1 0
+k S 1 0
+l S 0 T
+m S 2 A 0 
+n S 3 0c01e24080000106
+o S 2 A 7 FPIRepo
+p S 1 7
+q S 2 A 4 docu
+r S 1 5
+s S 1 3
+t S 3 0000000000000000
+u S 3 3c01e24080000103
+v S 0 T
+w S 2 A 0 
+x S 4 nulldate
+y S 2 A 0 
+z S 2 A 0 
+0 R 2 2
+A 3 1.0
+A 7 CURRENT
+1 S 1 0
+2 S 0 F
+3 S 0 F
+4 S 0 F
+5 S 0 F
+6 S 2 A 7 FPIRepo
+7 S 2 A 19 dm_4501e24080000100
+8 S 2 A 0 
+9 S 0 F
++ S 2 A 7 FPIRepo
+/ S 0 T
+AB S 3 0000000000000000
+BB S 1 0
+CB S 1 0
+DB S 3 0000000000000000
+EB R 4 0
+FB R 4 0
+GB R 2 0
+HB R 2 0
+IB R 2 0
+JB S 2 A 0 
+KB S 2 A 0 
+LB S 0 F
+MB S 2 A 0 
+NB S 5 0
+OB R 2 0
+PB S 0 F
+QB S 4 nulldate
+RB S 4 nulldate
+SB R 2 0
+TB R 3 0
+UB S 1 0
+VB S 0 F
+WB S 1 36
+kB S 2 A 9 SQLServer
+lB S 2 A 2 nt
+mB S 2 A 3 acl
+nB S 2 A 0 
+oB S 2 A 0 
+pB S 1 123456
+qB S 1 1
+rB S 1 0
+sB S 1 0
+tB S 0 T
+uB S 4 nulldate
+vB S 2 A 0 
+wB S 2 A 12 session_user
+xB S 0 T
+yB R 2 1
+A 2 en
+zB S 1 3
+0B S 2 A 3 5.1
+1B S 1 0
+2B S 2 A 124 AgAAACAAAAAEAAAAIAAAAAIAAAAQAAAAEAAAAEDiAQAAAAAAAAAAAQAAABBJU83b0g0sxIJ/Q2BBnIHPZJ65uwnuy/5u469urJ75cQO7iqpG8+rGAlQHALdiV/w=
+3B S 0 F
+4B S 1 1
+5B R 2 1
+A 7 dsearch
+6B S 1 0
+7B S 1 0
+8B S 0 F
+9B S 1 1
++B S 0 F
+/B S 2 A 124 AgAAACAAAAAEAAAAIAAAAAIAAAAQAAAAEAAAAEDiAQAAAAAAAAAAAgAAABBhVfTpo4G29UzXg9CiuqjLjhxUsNJB3QFk0TrFLlGBKWJzcUat1/jM2BiHaCbFG68=
+AC S 0 T
+BC R 2 0
+CC S 4 nulldate
+DC S 1 0
+EC S 1 0
+FC S 0 F
+GC R 2 10
+A 8 Snaplock
+A 15 Archive Service
+A 23 CASCADING_AUTO_DELEGATE
+A 17 MAX_AUTO_DELEGATE
+A 3 RPS
+A 3 FRS
+A 2 RM
+A 3 PRM
+A 13 Collaboration
+A 14 Process Engine
+HC R 1 10
+1
+1
+0
+1
+1
+1
+1
+1
+3
+1
+IC S 0 T
+JC S 1 0
+KC S 0 T
+LC R 2 1
+A 15 Global Registry
+MC S 0 F
+NC S 0 T
+OC S 0 F
+PC S 1 0
+QC S 2 A 0 
+RC S 2 A 21 AES128_RSA1024_SHA256
+SC S 2 A 5 Local
+TC S 2 A 0 
+UC R 2 0
+VC R 4 0
+7
+r_object_id ID S 0
+3c01e24080000103
+_KEEP_LOCK_ BOOL S 0
+F
+_FREEZE_COMPONENTS_ BOOL S 0
+F
+_THAW_COMPONENTS_ BOOL S 0
+F
+_CONTENTS_CHANGED_ BOOL S 0
+F
+_DIST_SAVE_AS_NEW_ BOOL S 0
+F
+R_OBJECT_ID ID S 0
+3c01e24080000103
+ 0 
+
+03 Mar 2015 12:32:15,754 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_docbase_config 0301e2408000011c 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+50
+kB  r_dbms_name  STRING S 32 0
+lB  mac_access_protocol  STRING S 32 0
+mB  security_mode  STRING S 32 0
+nB  auth_protocol  STRING S 32 0
+oB  index_store  STRING S 80 0
+pB  r_docbase_id  INT S 0 0
+qB  r_address_partitions  INT S 0 0
+rB  r_starting_partition  INT S 0 0
+sB  r_ending_partition  INT S 0 0
+tB  folder_security  BOOL S 0 0
+uB  effective_date  TIME S 0 0
+vB  r_federation_name  STRING S 120 0
+wB  a_bpaction_run_as  STRING S 255 0
+xB  richmedia_enabled  BOOL S 0 0
+yB  dd_locales  STRING R 5 0
+zB  default_app_permit  INT S 0 0
+0B  oldest_client_version  STRING S 32 0
+1B  max_auth_attempt  INT S 0 0
+2B  i_crypto_key  STRING S 255 0
+3B  client_pcaching_disabled  BOOL S 0 0
+4B  client_pcaching_change  INT S 0 0
+5B  fulltext_install_locs  STRING R 32 0
+6B  offline_sync_level  INT S 0 0
+7B  offline_checkin_flag  INT S 0 0
+8B  wf_package_control_enabled  BOOL S 0 0
+9B  r_storage_mode  INT S 0 0
++B  macl_security_disabled  BOOL S 0 0
+/B  i_ticket_crypto_key  STRING S 255 0
+AC  trust_by_default  BOOL S 0 0
+BC  trusted_docbases  STRING R 255 0
+CC  login_ticket_cutoff  TIME S 0 0
+DC  auth_failure_interval  INT S 0 0
+EC  auth_deactivation_interval  INT S 0 0
+FC  dir_user_sync_on_demand  BOOL S 0 0
+GC  r_module_name  STRING R 32 0
+HC  r_module_mode  INT R 0 0
+IC  check_client_version  BOOL S 0 0
+JC  r_normal_tz  INT S 0 0
+KC  audit_old_values  BOOL S 0 0
+LC  docbase_roles  STRING R 32 0
+MC  approved_clients_only  BOOL S 0 0
+NC  r_tz_aware  BOOL S 0 0
+OC  r_partition_status  BOOL S 0 0
+PC  minimum_owner_permit  INT S 0 0
+QC  minimum_owner_xpermit  STRING S 255 0
+RC  r_crypto_mode  STRING S 64 0
+SC  r_crypto_keystore  STRING S 32 0
+TC  dormancy_status  STRING S 32 0
+UC  i_expired_crypto_keys  STRING R 255 0
+VC  i_crypto_keys_expiry_date  TIME R 0 0
+
+
+03 Mar 2015 12:32:15,754 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_docbase_config 0301e2408000011c 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+50
+kB  r_dbms_name  STRING S 32 0
+lB  mac_access_protocol  STRING S 32 0
+mB  security_mode  STRING S 32 0
+nB  auth_protocol  STRING S 32 0
+oB  index_store  STRING S 80 0
+pB  r_docbase_id  INT S 0 0
+qB  r_address_partitions  INT S 0 0
+rB  r_starting_partition  INT S 0 0
+sB  r_ending_partition  INT S 0 0
+tB  folder_security  BOOL S 0 0
+uB  effective_date  TIME S 0 0
+vB  r_federation_name  STRING S 120 0
+wB  a_bpaction_run_as  STRING S 255 0
+xB  richmedia_enabled  BOOL S 0 0
+yB  dd_locales  STRING R 5 0
+zB  default_app_permit  INT S 0 0
+0B  oldest_client_version  STRING S 32 0
+1B  max_auth_attempt  INT S 0 0
+2B  i_crypto_key  STRING S 255 0
+3B  client_pcaching_disabled  BOOL S 0 0
+4B  client_pcaching_change  INT S 0 0
+5B  fulltext_install_locs  STRING R 32 0
+6B  offline_sync_level  INT S 0 0
+7B  offline_checkin_flag  INT S 0 0
+8B  wf_package_control_enabled  BOOL S 0 0
+9B  r_storage_mode  INT S 0 0
++B  macl_security_disabled  BOOL S 0 0
+/B  i_ticket_crypto_key  STRING S 255 0
+AC  trust_by_default  BOOL S 0 0
+BC  trusted_docbases  STRING R 255 0
+CC  login_ticket_cutoff  TIME S 0 0
+DC  auth_failure_interval  INT S 0 0
+EC  auth_deactivation_interval  INT S 0 0
+FC  dir_user_sync_on_demand  BOOL S 0 0
+GC  r_module_name  STRING R 32 0
+HC  r_module_mode  INT R 0 0
+IC  check_client_version  BOOL S 0 0
+JC  r_normal_tz  INT S 0 0
+KC  audit_old_values  BOOL S 0 0
+LC  docbase_roles  STRING R 32 0
+MC  approved_clients_only  BOOL S 0 0
+NC  r_tz_aware  BOOL S 0 0
+OC  r_partition_status  BOOL S 0 0
+PC  minimum_owner_permit  INT S 0 0
+QC  minimum_owner_xpermit  STRING S 255 0
+RC  r_crypto_mode  STRING S 64 0
+SC  r_crypto_keystore  STRING S 32 0
+TC  dormancy_status  STRING S 32 0
+UC  i_expired_crypto_keys  STRING R 255 0
+VC  i_crypto_keys_expiry_date  TIME R 0 0
+
+
+03 Mar 2015 12:32:15,761 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+
+03 Mar 2015 12:32:15,765 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+
+03 Mar 2015 12:32:15,770 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+
+03 Mar 2015 12:32:15,776 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_document 0301e24080000129 0 0 223
+dm_sysobject
+ NULL 
+ NULL F
+0
+
+TYPE dmc_jar 0301e24080000174 0 0 613
+dm_document
+ NULL 
+ NULL F
+2
+NJ  min_vm_version  STRING S 32 0
+OJ  jar_type  INT S 0 0
+
+
+03 Mar 2015 12:32:15,777 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_document 0301e24080000129 0 0 223
+dm_sysobject
+ NULL 
+ NULL F
+0
+
+TYPE dmc_jar 0301e24080000174 0 0 613
+dm_document
+ NULL 
+ NULL F
+2
+NJ  min_vm_version  STRING S 32 0
+OJ  jar_type  INT S 0 0
+
+
+03 Mar 2015 12:32:15,777 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_document 0301e24080000129 0 0 223
+dm_sysobject
+ NULL 
+ NULL F
+0
+
+TYPE dmc_jar 0301e24080000174 0 0 613
+dm_document
+ NULL 
+ NULL F
+2
+NJ  min_vm_version  STRING S 32 0
+OJ  jar_type  INT S 0 0
+
+
+03 Mar 2015 12:32:15,782 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_java_library 0301e24080000175 0 0 612
+dm_folder
+ NULL 
+ NULL F
+1
+PJ  sandbox_library  BOOL S 0 0
+
+
+03 Mar 2015 12:32:15,782 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_java_library 0301e24080000175 0 0 612
+dm_folder
+ NULL 
+ NULL F
+1
+PJ  sandbox_library  BOOL S 0 0
+
+
+03 Mar 2015 12:32:15,783 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_java_library 0301e24080000175 0 0 612
+dm_folder
+ NULL 
+ NULL F
+1
+PJ  sandbox_library  BOOL S 0 0
+
+
+03 Mar 2015 12:32:15,786 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+
+03 Mar 2015 12:32:15,791 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+TYPE dmc_aspect_type 0301e24080000176 0 0 533
+dmc_module
+ NULL 
+ NULL F
+9
+QJ  target_object_type  STRING R 27 0
+RJ  aspect_category  STRING R 32 0
+SJ  versioning_policy  INT S 0 0
+TJ  copy_policy  INT S 0 0
+UJ  attaching_aspect_policy  STRING R 128 0
+VJ  detaching_aspect_policy  STRING R 128 0
+WJ  i_attr_def  STRING S 27 0
+XJ  is_data_shared  BOOL S 0 0
+YJ  immutability_policy  INT S 0 0
+
+
+03 Mar 2015 12:32:15,791 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+TYPE dmc_aspect_type 0301e24080000176 0 0 533
+dmc_module
+ NULL 
+ NULL F
+9
+QJ  target_object_type  STRING R 27 0
+RJ  aspect_category  STRING R 32 0
+SJ  versioning_policy  INT S 0 0
+TJ  copy_policy  INT S 0 0
+UJ  attaching_aspect_policy  STRING R 128 0
+VJ  detaching_aspect_policy  STRING R 128 0
+WJ  i_attr_def  STRING S 27 0
+XJ  is_data_shared  BOOL S 0 0
+YJ  immutability_policy  INT S 0 0
+
+
+03 Mar 2015 12:32:15,792 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+TYPE dmc_aspect_type 0301e24080000176 0 0 533
+dmc_module
+ NULL 
+ NULL F
+9
+QJ  target_object_type  STRING R 27 0
+RJ  aspect_category  STRING R 32 0
+SJ  versioning_policy  INT S 0 0
+TJ  copy_policy  INT S 0 0
+UJ  attaching_aspect_policy  STRING R 128 0
+VJ  detaching_aspect_policy  STRING R 128 0
+WJ  i_attr_def  STRING S 27 0
+XJ  is_data_shared  BOOL S 0 0
+YJ  immutability_policy  INT S 0 0
+
+
+03 Mar 2015 12:32:15,792 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_folder 0301e24080000127 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+2
+KE  r_folder_path  STRING R 450 0
+LE  i_ancestor_id  ID R 0 0
+
+TYPE dmc_module 0301e24080000173 0 0 635
+dm_folder
+ NULL 
+ NULL F
+12
+BJ  primary_class  STRING S 255 0
+CJ  a_interfaces  STRING R 255 0
+DJ  min_dfc_version  STRING S 32 0
+EJ  implementation_technology  STRING S 32 0
+FJ  contact_info  STRING S 255 0
+GJ  a_bof_version  STRING S 32 0
+HJ  a_module_type  STRING S 64 0
+IJ  req_module_names  STRING R 255 0
+JJ  a_req_module_interfaces  STRING R 255 0
+KJ  module_description  STRING S 255 0
+LJ  a_is_privileged  BOOL S 0 0
+MJ  a_privilege_roles  STRING R 255 0
+
+TYPE dmc_aspect_type 0301e24080000176 0 0 533
+dmc_module
+ NULL 
+ NULL F
+9
+QJ  target_object_type  STRING R 27 0
+RJ  aspect_category  STRING R 32 0
+SJ  versioning_policy  INT S 0 0
+TJ  copy_policy  INT S 0 0
+UJ  attaching_aspect_policy  STRING R 128 0
+VJ  detaching_aspect_policy  STRING R 128 0
+WJ  i_attr_def  STRING S 27 0
+XJ  is_data_shared  BOOL S 0 0
+YJ  immutability_policy  INT S 0 0
+
+
+03 Mar 2015 12:32:15,797 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_network_location_map 0301e240800001ce 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+6
+fP  netloc_ident  STRING S 80 0
+gP  netloc_display_name  STRING S 80 0
+hP  default_netloc  BOOL S 0 0
+iP  begin_near_ip_address  STRING R 80 0
+jP  end_near_ip_address  STRING R 80 0
+kP  ip_address_range  STRING R 240 0
+
+
+03 Mar 2015 12:32:15,797 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_network_location_map 0301e240800001ce 0 0 0
+dm_sysobject
+ NULL 
+ NULL F
+6
+fP  netloc_ident  STRING S 80 0
+gP  netloc_display_name  STRING S 80 0
+hP  default_netloc  BOOL S 0 0
+iP  begin_near_ip_address  STRING R 80 0
+jP  end_near_ip_address  STRING R 80 0
+kP  ip_address_range  STRING R 240 0
+
+
+03 Mar 2015 12:32:15,806 main - deserializeType: 2
+TYPE dm_sysobject 0301e24080000105 1 0 0
+ NULL 
+ NULL 
+ NULL F
+86
+B  object_name  STRING S 255 0
+C  r_object_type  STRING S 32 0
+D  title  STRING S 400 0
+E  subject  STRING S 192 0
+F  authors  STRING R 48 0
+G  keywords  STRING R 48 0
+H  a_application_type  STRING S 32 0
+I  a_status  STRING S 16 0
+J  r_creation_date  TIME S 0 0
+K  r_modify_date  TIME S 0 0
+L  r_modifier  STRING S 255 0
+M  r_access_date  TIME S 0 0
+N  a_is_hidden  BOOL S 0 0
+O  i_is_deleted  BOOL S 0 0
+P  a_retention_date  TIME S 0 0
+Q  a_archive  BOOL S 0 0
+R  a_compound_architecture  STRING S 16 0
+S  a_link_resolved  BOOL S 0 0
+T  i_reference_cnt  INT S 0 0
+U  i_has_folder  BOOL S 0 0
+V  i_folder_id  ID R 0 0
+W  r_composite_id  ID R 0 0
+X  r_composite_label  STRING R 32 0
+Y  r_component_label  STRING R 32 0
+Z  r_order_no  INT R 0 0
+a  r_link_cnt  INT S 0 0
+b  r_link_high_cnt  INT S 0 0
+c  r_assembled_from_id  ID S 0 0
+d  r_frzn_assembly_cnt  INT S 0 0
+e  r_has_frzn_assembly  BOOL S 0 0
+f  resolution_label  STRING S 32 0
+g  r_is_virtual_doc  INT S 0 0
+h  i_contents_id  ID S 0 0
+i  a_content_type  STRING S 32 0
+j  r_page_cnt  INT S 0 0
+k  r_content_size  INT S 0 0
+l  a_full_text  BOOL S 0 0
+m  a_storage_type  STRING S 64 0
+n  i_cabinet_id  ID S 0 0
+o  owner_name  STRING S 255 0
+p  owner_permit  INT S 0 0
+q  group_name  STRING S 255 0
+r  group_permit  INT S 0 0
+s  world_permit  INT S 0 0
+t  i_antecedent_id  ID S 0 0
+u  i_chronicle_id  ID S 0 0
+v  i_latest_flag  BOOL S 0 0
+w  r_lock_owner  STRING S 255 0
+x  r_lock_date  TIME S 0 0
+y  r_lock_machine  STRING S 80 0
+z  log_entry  STRING S 120 0
+0  r_version_label  STRING R 32 0
+1  i_branch_cnt  INT S 0 0
+2  i_direct_dsc  BOOL S 0 0
+3  r_immutable_flag  BOOL S 0 0
+4  r_frozen_flag  BOOL S 0 0
+5  r_has_events  BOOL S 0 0
+6  acl_domain  STRING S 255 0
+7  acl_name  STRING S 32 0
+8  a_special_app  STRING S 32 0
+9  i_is_reference  BOOL S 0 0
++  r_creator_name  STRING S 255 0
+/  r_is_public  BOOL S 0 0
+AB  r_policy_id  ID S 0 0
+BB  r_resume_state  INT S 0 0
+CB  r_current_state  INT S 0 0
+DB  r_alias_set_id  ID S 0 0
+EB  a_effective_date  TIME R 0 0
+FB  a_expiration_date  TIME R 0 0
+GB  a_publish_formats  STRING R 32 0
+HB  a_effective_label  STRING R 32 0
+IB  a_effective_flag  STRING R 8 0
+JB  a_category  STRING S 64 0
+KB  language_code  STRING S 5 0
+LB  a_is_template  BOOL S 0 0
+MB  a_controlling_app  STRING S 32 0
+NB  r_full_content_size  DOUBLE S 0 0
+OB  a_extended_properties  STRING R 32 0
+PB  a_is_signed  BOOL S 0 0
+QB  a_last_review_date  TIME S 0 0
+RB  i_retain_until  TIME S 0 0
+SB  r_aspect_name  STRING R 64 0
+TB  i_retainer_id  ID R 0 0
+UB  i_partition  INT S 0 0
+VB  i_is_replica  BOOL S 0 0
+WB  i_vstamp  INT S 0 0
+
+TYPE dm_acs_config 0301e240800001cb 0 0 519
+dm_sysobject
+ NULL 
+ NULL F
+20
+7O  svr_config_id  ID S 0 0
+8O  config_type  INT S 0 0
+9O  acs_rw_capability  INT S 0 0
++O  near_stores  STRING R 32 0
+/O  supported_store_types  INT R 0 0
+AP  supported_crypto_mode  INT R 0 0
+BP  supported_compression_mode  INT R 0 0
+CP  acs_base_url  STRING R 240 0
+DP  acs_supported_protocol  STRING R 6 0
+EP  projection_netloc_enable  BOOL R 0 0
+FP  projection_netloc_ident  STRING R 80 0
+GP  projection_enable  BOOL R 0 0
+HP  projection_proxval  INT R 0 0
+IP  projection_targets  STRING R 80 0
+JP  projection_ports  INT R 0 0
+KP  acs_network_locations  STRING R 80 0
+LP  is_cache_acs  BOOL S 0 0
+MP  server_major_version  STRING S 16 0
+NP  server_minor_version  STRING S 16 0
+OP  dormancy_status  STRING S 32 0
 
 

@@ -29,7 +29,8 @@ public class EntityPersistanceManager {
 		 this.documentum = documentum;	 
 	 }
 	 
-	public <T> void createObject(String repoObjectName,T objectToSave) throws DfException{
+	 // whether to return object or id
+	public <T> IDfSysObject createObject(String repoObjectName,T objectToSave) throws DfException{
 		 try {
 		
 			 IDfSysObject dctmObject = (IDfSysObject) documentum.getSession().newObject(repoObjectName);
@@ -39,6 +40,7 @@ public class EntityPersistanceManager {
 			 dctmObjectConverter.convert(mapping);
 			 
 			 dctmObject.save();
+			 return (IDfSysObject) documentum.getSession().getObject(dctmObject.getObjectId());
 			 
 		 } catch (DfException e) {
 			 String msg = String.format("Object cannot be created for class %s. Exception: %s, %s.", objectToSave.getClass(), e.getClass(), e.getMessage());
