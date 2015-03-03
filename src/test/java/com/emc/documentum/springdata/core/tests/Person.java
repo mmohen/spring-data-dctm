@@ -1,5 +1,6 @@
 package com.emc.documentum.springdata.core.tests;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
 import com.emc.documentum.springdata.entitymanager.mapping.DCTMObject;
@@ -9,6 +10,13 @@ import com.emc.documentum.springdata.entitymanager.mapping.EntityField;
 @TypeAlias("person")
 public class Person {
 	
+	@Id
+	public String _id;
+	
+	public void set_id(String _id) {
+		this._id = _id;
+	}
+
 	@EntityField("firstname")
 	private String name;
 
@@ -23,6 +31,12 @@ public class Person {
 	public String getName() {
 		return name;
 	}
+	
+
+	public String get_id() {
+		return _id;
+	}
+
 
 	public void setName(String name) {
 		this.name = name;
@@ -50,6 +64,8 @@ public class Person {
 		this.age = age;
 		this.gender = gender;
 	}
+	
+	public Person() {}
 	
  }
 

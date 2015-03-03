@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import org.apache.commons.beanutils.PropertyUtils;
 
-import com.documentum.fc.client.IDfSysObject;
+import com.documentum.fc.client.IDfTypedObject;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
@@ -19,62 +19,63 @@ import com.emc.documentum.springdata.entitymanager.attributes.LongAttribute;
 import com.emc.documentum.springdata.entitymanager.attributes.ShortAttribute;
 import com.emc.documentum.springdata.entitymanager.attributes.StringAttribute;
 
-public class DCTMObjectConverter {
+public class DCTMToObjectConverter {
 	
-	public Object objectToSave;
-	public IDfSysObject dctmObject;
+	public Object objectToReturn;
+	public IDfTypedObject dctmObject;
 	
-	public DCTMObjectConverter(Object objectToSave, IDfSysObject dctmObject) {
-		this.objectToSave = objectToSave;
+	public DCTMToObjectConverter(Object objectToReturn, IDfTypedObject dctmObject) {
+		this.objectToReturn = objectToReturn;
 		this.dctmObject = dctmObject;
 	}
 
 	public void convert(ArrayList<AttributeType> mapping) throws DfException {
 		for (AttributeType attributeType : mapping) {
 			 try {
-				setValue(dctmObject, objectToSave, attributeType);
+				getValue(dctmObject, objectToReturn, attributeType);
 			}
 			catch(Exception e){
 				String msg = String.format("Conversion failed for Object of class %s. " + "Exception: %s, %s.", 
-						objectToSave.getClass(), e.getClass(), e.getMessage());
+						objectToReturn.getClass(), e.getClass(), e.getMessage());
                 throw new DfException(msg,e);
 			}
-	}
+		}
 }
     // TODO : see if there is a better way of doing this
-	private void setValue(IDfSysObject dctmObject, Object objectToSave, AttributeType fieldType) 
+	private void getValue(IDfTypedObject dctmObject, Object objectToReturn, AttributeType fieldType) 
 			throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 		
 		Attribute<?> attributeType = fieldType.getAttribute();
-		Object valueFromClass = PropertyUtils.getSimpleProperty(objectToSave, fieldType.getFieldName());
+		Object valueFromDocumentum = null;
 		
 		if(attributeType instanceof  StringAttribute){
-			dctmObject.setString(fieldType.getAttribute().getName(), (String) valueFromClass);
+			valueFromDocumentum = dctmObject.getString(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof IntAttribute){
-			dctmObject.setInt(fieldType.getAttribute().getName(), (Integer) valueFromClass);
+			valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof DoubleAttribute){
-			dctmObject.setDouble(fieldType.getAttribute().getName(), (Double) valueFromClass);
+			valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof LongAttribute){
-			dctmObject.setDouble(fieldType.getAttribute().getName(), (Long) valueFromClass);
+			valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof ShortAttribute){
-			dctmObject.setInt(fieldType.getAttribute().getName(), (Short) valueFromClass);
+			valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof FloatAttribute){
-			dctmObject.setDouble(fieldType.getAttribute().getName(), (Float) valueFromClass);
+			valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof ByteAttribute){
-			dctmObject.setInt(fieldType.getAttribute().getName(), (Byte) valueFromClass);
+			valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof BooleanAttribute){
-			dctmObject.setBoolean(fieldType.getAttribute().getName(), (Boolean) valueFromClass);
+			valueFromDocumentum = dctmObject.getBoolean(fieldType.getAttribute().getName());
 		} 
 		else if (attributeType instanceof CharacterAttribute){
-			dctmObject.setString(fieldType.getAttribute().getName(), (String) valueFromClass);
+			valueFromDocumentum = dctmObject.getString(fieldType.getAttribute().getName());
 		}
+		PropertyUtils.setSimpleProperty(objectToReturn, fieldType.getFieldName(), valueFromDocumentum);
 		
 	}
 	

@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import org.springframework.dao.InvalidDataAccessApiUsageException;
+import org.springframework.data.annotation.Id;
 import org.springframework.util.Assert;
 
 import com.emc.documentum.springdata.core.GenericCache;
@@ -43,7 +44,6 @@ public class MappingHandler {
 	
 	public ArrayList<AttributeType> setAttributeMappingInCache() {
 		
-		EntityField entityField;
 		Attribute<?> attribute;
 		String attributeName;
 		
@@ -70,7 +70,11 @@ public class MappingHandler {
     private String getEntityFieldName(Field f) {
         EntityField entityField;
         String attributeName;
-        if (f.isAnnotationPresent(EntityField.class)) {
+        
+        if (f.isAnnotationPresent(Id.class)) {
+            attributeName = "r_object_id";
+        } 
+        else if (f.isAnnotationPresent(EntityField.class)) {
             entityField = f.getAnnotation(EntityField.class);
             if (entityField != null) {
                 attributeName = entityField.value();

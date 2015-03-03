@@ -1,8 +1,12 @@
 package com.emc.documentum.springdata.core;
 
+import java.util.List;
+
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.entitymanager.EntityPersistanceManager;
 import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
+
+
 
 
 import org.springframework.util.Assert;
@@ -23,10 +27,18 @@ public class DSTemplate implements IDSOperations {
 		 
 		 String repoObjectName = getRepositoryObjectName(objectToSave);
 		 
-		 EntityPersistanceManager entityPersitanceManager = new EntityPersistanceManager(documentum);
+		 EntityPersistanceManager entityPersitanceManager = new EntityPersistanceManager(documentum); // TODO: inject the class 
 		 entityPersitanceManager.createObject(repoObjectName, objectToSave);
 		 
 //		 insert(objectToSave, determineEntityRepositoryName(objectToSave));
+	 }
+	 
+	 public <T> List<T> findAll(Class<T> entityClass) throws DfException, InstantiationException, IllegalAccessException {
+		 String repoObjectName = determineRepositoryName(entityClass);
+		 
+		 EntityPersistanceManager entityPersitanceManager = new EntityPersistanceManager(documentum); // TODO: inject the class 
+		 return entityPersitanceManager.findAllObjects(entityClass, repoObjectName);
+	
 	 }
 	 
 	 
