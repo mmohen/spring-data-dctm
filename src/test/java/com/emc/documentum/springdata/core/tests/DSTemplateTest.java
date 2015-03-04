@@ -2,8 +2,7 @@ package com.emc.documentum.springdata.core.tests;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
+import com.documentum.fc.client.DfIdNotFoundException;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -14,7 +13,6 @@ import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.DSTemplate;
 import com.emc.documentum.springdata.core.Documentum;
-import com.emc.documentum.springdata.core.GenericCache;
 
 public class DSTemplateTest {
 
@@ -38,7 +36,7 @@ public class DSTemplateTest {
 	public void testInsert() throws DfException {
 		
 		p = new Person("Rohan",22,"Male");
-		IDfSysObject insertedObject = template.insert(p);	
+		IDfSysObject insertedObject = template.create(p);
 		assertEquals(insertedObject.getString("firstname"),  p.getName());
 		assertEquals((Integer)insertedObject.getInt("age"), p.getAge());
 		assertEquals(insertedObject.getString("sex"), p.getGender());
@@ -49,7 +47,7 @@ public class DSTemplateTest {
 	public void testFindById() throws DfException, InstantiationException, IllegalAccessException {
 	
 		p = new Person("John",67,"Male");
-		IDfSysObject insertedObject = template.insert(p);	
+		IDfSysObject insertedObject = template.create(p);
 		Object obj = template.findById(insertedObject.getObjectId().toString(), Person.class);
 		assertEquals(insertedObject.getString("firstname"),  ((Person) obj).getName());
 		assertEquals((Integer)insertedObject.getInt("age"), ((Person) obj).getAge());
@@ -65,7 +63,7 @@ public class DSTemplateTest {
 			template.findById("this id doesn't exist", Person.class);
 		
 		}
-		catch(Exception e) {
+		catch(DfException e) {
 			
 			expected.expect(DfException.class);
 		

@@ -20,63 +20,55 @@ import com.emc.documentum.springdata.entitymanager.attributes.ShortAttribute;
 import com.emc.documentum.springdata.entitymanager.attributes.StringAttribute;
 
 public class DCTMToObjectConverter {
-	
-	public Object objectToReturn;
-	public IDfTypedObject dctmObject;
-	
-	public DCTMToObjectConverter(Object objectToReturn, IDfTypedObject dctmObject) {
-		this.objectToReturn = objectToReturn;
-		this.dctmObject = dctmObject;
-	}
 
-	public void convert(ArrayList<AttributeType> mapping) throws DfException {
-		for (AttributeType attributeType : mapping) {
-			 try {
-				getValue(dctmObject, objectToReturn, attributeType);
-			}
-			catch(Exception e){
-				String msg = String.format("Conversion failed for Object of class %s. " + "Exception: %s, %s.", 
-						objectToReturn.getClass(), e.getClass(), e.getMessage());
-                throw new DfException(msg,e);
-			}
-		}
-}
+    public Object objectToReturn;
+    public IDfTypedObject dctmObject;
+
+    public DCTMToObjectConverter(Object objectToReturn, IDfTypedObject dctmObject) {
+        this.objectToReturn = objectToReturn;
+        this.dctmObject = dctmObject;
+    }
+
+    public void convert(ArrayList<AttributeType> mapping) throws DfException {
+        for (AttributeType attributeType : mapping) {
+            try {
+                getValue(dctmObject, objectToReturn, attributeType);
+            } catch (Exception e) {
+                String msg = String.format("Conversion failed for Object of class %s. " + "Exception: %s, %s.",
+                        objectToReturn.getClass(), e.getClass(), e.getMessage());
+                throw new DfException(msg, e);
+            }
+        }
+    }
+
     // TODO : see if there is a better way of doing this
-	private void getValue(IDfTypedObject dctmObject, Object objectToReturn, AttributeType fieldType) 
-			throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		
-		Attribute<?> attributeType = fieldType.getAttribute();
-		Object valueFromDocumentum = null;
-		
-		if(attributeType instanceof  StringAttribute){
-			valueFromDocumentum = dctmObject.getString(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof IntAttribute){
-			valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof DoubleAttribute){
-			valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof LongAttribute){
-			valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof ShortAttribute){
-			valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof FloatAttribute){
-			valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof ByteAttribute){
-			valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof BooleanAttribute){
-			valueFromDocumentum = dctmObject.getBoolean(fieldType.getAttribute().getName());
-		} 
-		else if (attributeType instanceof CharacterAttribute){
-			valueFromDocumentum = dctmObject.getString(fieldType.getAttribute().getName());
-		}
-		PropertyUtils.setSimpleProperty(objectToReturn, fieldType.getFieldName(), valueFromDocumentum);
-		
-	}
-	
+    private void getValue(IDfTypedObject dctmObject, Object objectToReturn, AttributeType fieldType)
+            throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+
+        Attribute<?> attributeType = fieldType.getAttribute();
+        Object valueFromDocumentum = null;
+
+        if (attributeType instanceof StringAttribute) {
+            valueFromDocumentum = dctmObject.getString(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof IntAttribute) {
+            valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof DoubleAttribute) {
+            valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof LongAttribute) {
+            valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof ShortAttribute) {
+            valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof FloatAttribute) {
+            valueFromDocumentum = dctmObject.getDouble(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof ByteAttribute) {
+            valueFromDocumentum = dctmObject.getInt(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof BooleanAttribute) {
+            valueFromDocumentum = dctmObject.getBoolean(fieldType.getAttribute().getName());
+        } else if (attributeType instanceof CharacterAttribute) {
+            valueFromDocumentum = dctmObject.getString(fieldType.getAttribute().getName());
+        }
+        PropertyUtils.setSimpleProperty(objectToReturn, fieldType.getFieldName(), valueFromDocumentum);
+
+    }
+
 }

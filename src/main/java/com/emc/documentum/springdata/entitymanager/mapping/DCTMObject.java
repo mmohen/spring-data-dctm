@@ -9,19 +9,20 @@ import java.lang.annotation.Target;
 import org.springframework.data.annotation.Persistent;
 
 /**
- * Identifies a domain object to be persisted to Documentum.
- */
+ *  * Identifies a domain object to be persisted to Documentum.
+ *  
+ */
 @Persistent
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.TYPE })
+@Target({ElementType.TYPE})
 public @interface DCTMObject {
 
-	String repository() default "";
+    String repository() default "";
 
-	/**
-	 * Defines the default language to be used with this document.
-	 */
-	String language() default "";	
+    /**
+     * Defines the default language to be used with this document.
+     */
+    String language() default "";
 }
 
