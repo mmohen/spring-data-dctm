@@ -15,8 +15,14 @@ import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 public class MappingHandler {
 
     private final Class<?> entityClass;
-    public Field idField;
-    private final GenericCache cache;
+    private Field idField;
+    
+    public void setIdField(Field idField) {
+		this.idField = idField;
+	}
+
+
+	private final GenericCache cache;
 
     public <T> MappingHandler(T objectToSave) {
         this(objectToSave.getClass());
@@ -30,11 +36,11 @@ public class MappingHandler {
     }
     
 	public Class<?> getEntityClass() {
-		return entityClass;
+		return this.entityClass;
 	}
 
 	public Field getIdField() {
-		return idField;
+		return this.idField;
 	}
 	
 
@@ -80,7 +86,7 @@ public class MappingHandler {
         String attributeName;
 
         if (f.isAnnotationPresent(Id.class)) {
-        	idField = f;
+        	this.setIdField(f);
             attributeName = "r_object_id";
         } else if (f.isAnnotationPresent(EntityField.class)) {
             entityField = f.getAnnotation(EntityField.class);

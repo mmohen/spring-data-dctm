@@ -2,6 +2,8 @@ package com.emc.documentum.springdata.core.tests;
 
 import static org.junit.Assert.*;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -62,12 +64,32 @@ public class DSTemplateTest {
 			template.findById("this id doesn't exist", Person.class);
 		
 		}
-		catch(DfException e) {
+		catch(Exception e) {
 			
 			expected.expect(DfException.class);
 		
 		}
 	
 	}
+	
+	@Test
+	public void testFindAll() throws InstantiationException, IllegalAccessException, DfException{
+		List<Person> list1 = template.findAll(Person.class);
+		p = new Person("Rohan",22,"Male");
+		Person insertedPerson = template.create(p);
+		List<Person> list2 = template.findAll(Person.class);	
+		assertEquals(list1.size() + 1,  list2.size());
+	}
+	
+	@Test 
+	public void testDeleteObject() throws DfException {
+		p = new Person("Alisha",22,"Female");
+		Person insertedPerson = template.create(p);
+		String id = insertedPerson.get_id();
+		String deletedPersonId = template.delete(insertedPerson);
+		assertEquals(id, deletedPersonId);
+	}
+	
+	
 
 }

@@ -50,7 +50,7 @@ public class DSTemplate implements IDSOperations {
 
     }
 
-    public <T> List<T> findAll(Class<T> entityClass) throws DfException, InstantiationException, IllegalAccessException {
+    public <T> List<T> findAll(Class<T> entityClass) throws DfException{
 
     	Assert.notNull(entityClass);
         String repoObjectName = getRepositoryName(entityClass);

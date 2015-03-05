@@ -1,15 +1,11 @@
 package com.emc.documentum.springdata.entitymanager;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
 import org.apache.commons.beanutils.PropertyUtils;
-import org.springframework.util.Assert;
 
 import com.documentum.fc.client.DfQuery;
 import com.documentum.fc.client.IDfCollection;
@@ -18,6 +14,7 @@ import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.client.IDfTypedObject;
 import com.documentum.fc.common.DfException;
+import com.documentum.fc.common.DfId;
 import com.emc.documentum.springdata.core.Documentum;
 import com.emc.documentum.springdata.entitymanager.convert.DCTMToObjectConverter;
 import com.emc.documentum.springdata.entitymanager.convert.ObjectToDCTMConverter;
@@ -57,17 +54,22 @@ public class EntityPersistenceManager {
     public <T> String deleteObject(String repoObjectName, T objectToDelete) throws DfException {
         try {
         	IDfSession session = documentum.getSession();
-            ArrayList<AttributeType> mapping = new MappingHandler(objectToDelete).getAttributeMappings();
-            
-//            ObjectToDCTMConverter objectToDCTMConverter = new ObjectToDCTMConverter(objectToDelete, dctmObject);
-//            objectToDCTMConverter.convert(mapping);
-//            dctmObject.save();
+        	MappingHandler mappingHandler = new MappingHandler(objectToDelete);
+//            ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings();
+            Field idField = mappingHandler.getIdField();
+            if (idField.equals(null))
+            {
+            	throw new DfException("Cannot find object to delete without ID");
+            	
+            }
+            String id = (String) PropertyUtils.getSimpleProperty(objectToDelete, idField.getName());
+            System.out.println(id);
+            IDfSysObject dctmObjectToDelete = (IDfSysObject) session.getObject(new DfId(id));
+            dctmObjectToDelete.destroy();
+            return id;
 
-            return objectToDelete.toString();
-//            return (IDfSysObject) documentum.getSession().getObject(dctmObject.getObjectId());
-
-        } catch (DfException e) {
-            String msg = String.format("Object cannot be created for class %s. Exception: %s, %s.", objectToDelete.getClass(), e.getClass(), e.getMessage());
+        } catch (Exception e) {
+            String msg = String.format("Object cannot be deleted of class %s. Exception: %s, %s.", objectToDelete.getClass(), e.getClass(), e.getMessage());
             throw new DfException(msg, e);
         }
 
@@ -112,7 +114,6 @@ public class EntityPersistenceManager {
     	Object idValue = PropertyUtils.getSimpleProperty(objectToCheck, idField);
     	return idValue.equals(null);
     }
-
 
 }
 
