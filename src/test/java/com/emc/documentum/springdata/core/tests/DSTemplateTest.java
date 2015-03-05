@@ -2,14 +2,13 @@ package com.emc.documentum.springdata.core.tests;
 
 import static org.junit.Assert.*;
 
-import com.documentum.fc.client.DfIdNotFoundException;
+
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.springframework.data.authentication.UserCredentials;
 
-import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.DSTemplate;
 import com.emc.documentum.springdata.core.Documentum;
@@ -36,10 +35,10 @@ public class DSTemplateTest {
 	public void testInsert() throws DfException {
 		
 		p = new Person("Rohan",22,"Male");
-		IDfSysObject insertedObject = template.create(p);
-		assertEquals(insertedObject.getString("firstname"),  p.getName());
-		assertEquals((Integer)insertedObject.getInt("age"), p.getAge());
-		assertEquals(insertedObject.getString("sex"), p.getGender());
+		Person insertedPerson = template.create(p);
+		assertEquals(insertedPerson.getName(),  p.getName());
+		assertEquals(insertedPerson.getAge(), p.getAge());
+		assertEquals(insertedPerson.getGender(), p.getGender());
 	
 	}
 
@@ -47,11 +46,11 @@ public class DSTemplateTest {
 	public void testFindById() throws DfException, InstantiationException, IllegalAccessException {
 	
 		p = new Person("John",67,"Male");
-		IDfSysObject insertedObject = template.create(p);
-		Object obj = template.findById(insertedObject.getObjectId().toString(), Person.class);
-		assertEquals(insertedObject.getString("firstname"),  ((Person) obj).getName());
-		assertEquals((Integer)insertedObject.getInt("age"), ((Person) obj).getAge());
-		assertEquals(insertedObject.getString("sex"), ((Person) obj).getGender());
+		Person insertedPerson = template.create(p);
+		Person obj = template.findById(insertedPerson.get_id(), Person.class);
+		assertEquals(obj.getName(),  p.getName());
+		assertEquals(obj.getAge(), p.getAge());
+		assertEquals(obj.getGender(), p.getGender());
 	
 	}
 	

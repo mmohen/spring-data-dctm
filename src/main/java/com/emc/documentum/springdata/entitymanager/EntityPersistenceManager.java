@@ -1,8 +1,15 @@
 package com.emc.documentum.springdata.entitymanager;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+
+
+import org.apache.commons.beanutils.PropertyUtils;
+import org.springframework.util.Assert;
 
 import com.documentum.fc.client.DfQuery;
 import com.documentum.fc.client.IDfCollection;
@@ -27,17 +34,18 @@ public class EntityPersistenceManager {
     }
 
     // whether to return object or id
-    public <T> IDfSysObject createObject(String repoObjectName, T objectToSave) throws DfException {
+    public <T> T createObject(String repoObjectName, T objectToSave) throws DfException {
         try {
 
             IDfSysObject dctmObject = (IDfSysObject) documentum.getSession().newObject(repoObjectName);
-
             ArrayList<AttributeType> mapping = new MappingHandler(objectToSave).getAttributeMappings();
-            ObjectToDCTMConverter dctmObjectConverter = new ObjectToDCTMConverter(objectToSave, dctmObject);
-            dctmObjectConverter.convert(mapping);
-
+            ObjectToDCTMConverter objectToDCTMConverter = new ObjectToDCTMConverter(objectToSave, dctmObject);
+            objectToDCTMConverter.convert(mapping);
             dctmObject.save();
-            return (IDfSysObject) documentum.getSession().getObject(dctmObject.getObjectId());
+            DCTMToObjectConverter dctmToObjectConverter = new DCTMToObjectConverter(objectToSave, dctmObject);
+            dctmToObjectConverter.convert(mapping);
+            return objectToSave;
+//            return (IDfSysObject) documentum.getSession().getObject(dctmObject.getObjectId());
 
         } catch (DfException e) {
             String msg = String.format("Object cannot be created for class %s. Exception: %s, %s.", objectToSave.getClass(), e.getClass(), e.getMessage());
@@ -45,8 +53,27 @@ public class EntityPersistenceManager {
         }
 
     }
+    
+    public <T> String deleteObject(String repoObjectName, T objectToDelete) throws DfException {
+        try {
+        	IDfSession session = documentum.getSession();
+            ArrayList<AttributeType> mapping = new MappingHandler(objectToDelete).getAttributeMappings();
+            
+//            ObjectToDCTMConverter objectToDCTMConverter = new ObjectToDCTMConverter(objectToDelete, dctmObject);
+//            objectToDCTMConverter.convert(mapping);
+//            dctmObject.save();
 
-    public <T> List<T> findAllObjects(Class<?> entityClass, String repoObjectName) throws DfException {
+            return objectToDelete.toString();
+//            return (IDfSysObject) documentum.getSession().getObject(dctmObject.getObjectId());
+
+        } catch (DfException e) {
+            String msg = String.format("Object cannot be created for class %s. Exception: %s, %s.", objectToDelete.getClass(), e.getClass(), e.getMessage());
+            throw new DfException(msg, e);
+        }
+
+    }
+
+    public <T> List<T> findAllObjects(Class<T> entityClass, String repoObjectName) throws DfException {
         try {
 
             IDfSession session = documentum.getSession();
@@ -59,11 +86,11 @@ public class EntityPersistenceManager {
             IDfCollection coll = query.execute(session, 0);
 
             while (coll.next()) {
-                Object objectInstance = entityClass.newInstance();
+                T objectInstance = entityClass.newInstance();
                 IDfTypedObject dctmObject = coll.getTypedObject();
                 DCTMToObjectConverter objectConverter = new DCTMToObjectConverter(objectInstance, dctmObject);
                 objectConverter.convert(mapping);
-                list.add((T) objectInstance);
+                list.add(objectInstance);
             }
             return list;
 
@@ -75,6 +102,16 @@ public class EntityPersistenceManager {
 
 // TODO: have a custom exception class and throw that exception everywhere
 // TODO : Inject DCTMObjectConverter, MappingHander and Documentum
+    
+    // private method ************
+
+    private <T> Boolean checkIfIdNull(T objectToCheck) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+    	
+    	MappingHandler mappingHandler = new MappingHandler(objectToCheck);
+    	String idField = mappingHandler.getIdField().getName();
+    	Object idValue = PropertyUtils.getSimpleProperty(objectToCheck, idField);
+    	return idValue.equals(null);
+    }
 
 
 }
