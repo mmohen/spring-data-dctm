@@ -1,5 +1,6 @@
 package com.emc.documentum.springdata.core;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,28 +65,23 @@ public class DSTemplate implements IDSOperations {
 
     	Assert.notNull(id);
     	Assert.notNull(entityClass);
-        return findById(id, entityClass, getRepositoryName(entityClass));
+    	EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum);
+    	return entityPersistenceManager.findById(id, entityClass);
 
     }
 
-    public <T> T findById(String id, Class<T> entityClass, String repoObjectName) throws DfException, InstantiationException, IllegalAccessException {
-
-        try {
-            IDfSession session = documentum.getSession();
-            ArrayList<AttributeType> mapping = new MappingHandler(entityClass).getAttributeMappings();
-            DfId dfid = new DfId(id);
-            IDfSysObject dctmObject =  (IDfSysObject) session.getObject(dfid);
-            T objectInstance = entityClass.newInstance();
-            DCTMToObjectConverter objectConverter = new DCTMToObjectConverter(objectInstance, dctmObject);
-            objectConverter.convert(mapping);
-            return objectInstance;
-
-        } catch (DfException e) {
-            String msg = String.format("Exception occured for object with Id: %s class %s. Exception: %s, %s.", id, entityClass, e.getClass(), e.getMessage());
-            throw new DfException(msg, e);
-        }
-
+    public <T> T update(T objectToUpdate) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException, DfException {
+    	
+    	EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum);
+//    	Boolean isNull = entityPersistenceManager.checkIfIdNull(objectToUpdate);
+//    	if (isNull) {
+//    		throw new DfException("Id for object has not been set");
+//    	}
+    	
+    	return entityPersistenceManager.update(objectToUpdate);
+    	
     }
+    
 
 
     // private method ************

@@ -3,6 +3,7 @@ package com.emc.documentum.springdata.core.tests;
 import static org.junit.Assert.*;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -14,6 +15,7 @@ import org.springframework.data.authentication.UserCredentials;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.DSTemplate;
 import com.emc.documentum.springdata.core.Documentum;
+import com.emc.documentum.springdata.entitymanager.Person;
 
 public class DSTemplateTest {
 
@@ -43,7 +45,18 @@ public class DSTemplateTest {
 		assertEquals(insertedPerson.getGender(), p.getGender());
 	
 	}
-
+	
+	@Test
+	public void testUpdate() throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+		
+		p = new Person("Adam",22,"Female");
+		template.create(p);
+		p.setGender("Male");
+		Person updatedPerson = template.update(p);
+		assertEquals(updatedPerson.getGender(), "Male");
+	
+	}
+	
 	@Test
 	public void testFindById() throws DfException, InstantiationException, IllegalAccessException {
 	
