@@ -1,7 +1,5 @@
 package com.emc.documentum.springdata.entitymanager.attributes;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.apache.commons.beanutils.PropertyUtils;
 
 public class IntAttribute extends Attribute<Integer> {

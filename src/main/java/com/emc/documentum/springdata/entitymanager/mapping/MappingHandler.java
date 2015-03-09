@@ -44,9 +44,9 @@ public class MappingHandler {
 	
 
     private String getIDFromCache() {
-    	ArrayList<AttributeType> attributes =  (ArrayList<AttributeType>) cache.getEntry(this.entityClass);
+    	ArrayList<AttributeType> mapping =  (ArrayList<AttributeType>) cache.getEntry(this.entityClass);
     	
-    	for(AttributeType attributeType : attributes ){
+    	for(AttributeType attributeType : mapping ){
     		if(attributeType.getAttribute().getName() == "r_object_id"){
     			return attributeType.getFieldName();
     		}

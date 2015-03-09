@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.springframework.data.authentication.UserCredentials;
 
-import com.documentum.fc.client.DfIdentityException;
 import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.Documentum;
@@ -70,7 +69,7 @@ public class DocumentumTest {
 //	
 
 	@Test
-	public void testGetSessionThrowsDfIdentityException() throws DfException {
+	public void testGetSessionThrowsDfIdentityException(){
 	try {
         String docBase = "FPIRepo";
         UserCredentials wrongCredentials = new UserCredentials("admin", "passwrd");
@@ -82,7 +81,6 @@ public class DocumentumTest {
 		expected.expect(DfException.class);
 	}
 	}
-	
 
 	@Test
 	public void testDocumentumUserCredentialsStringString() throws DfException {

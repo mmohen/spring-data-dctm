@@ -3,7 +3,6 @@ package com.emc.documentum.springdata.core.tests;
 import static org.junit.Assert.*;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -15,7 +14,6 @@ import org.springframework.data.authentication.UserCredentials;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.DSTemplate;
 import com.emc.documentum.springdata.core.Documentum;
-import com.emc.documentum.springdata.entitymanager.Person;
 
 public class DSTemplateTest {
 
@@ -89,7 +87,7 @@ public class DSTemplateTest {
 	public void testFindAll() throws InstantiationException, IllegalAccessException, DfException{
 		List<Person> list1 = template.findAll(Person.class);
 		p = new Person("Rohan",22,"Male");
-		Person insertedPerson = template.create(p);
+		template.create(p);
 		List<Person> list2 = template.findAll(Person.class);	
 		assertEquals(list1.size() + 1,  list2.size());
 	}
@@ -98,9 +96,12 @@ public class DSTemplateTest {
 	public void testDeleteObject() throws DfException {
 		p = new Person("Alisha",22,"Female");
 		Person insertedPerson = template.create(p);
+		List<Person> list1 = template.findAll(Person.class);
 		String id = insertedPerson.get_id();
 		String deletedPersonId = template.delete(insertedPerson);
+		List<Person> list2 = template.findAll(Person.class);
 		assertEquals(id, deletedPersonId);
+		assertEquals(list1.size() - 1, list2.size());
 	}
 	
 	

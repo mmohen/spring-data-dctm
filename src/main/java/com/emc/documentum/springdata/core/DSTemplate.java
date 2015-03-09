@@ -1,21 +1,12 @@
 package com.emc.documentum.springdata.core;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
+
 import java.util.List;
 
-import com.documentum.fc.client.IDfSession;
-import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.common.DfException;
-import com.documentum.fc.common.DfId;
 import com.emc.documentum.springdata.entitymanager.EntityPersistenceManager;
 import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
-import com.emc.documentum.springdata.entitymanager.mapping.MappingHandler;
-import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
-
-
-
-import com.emc.documentum.springdata.entitymanager.convert.DCTMToObjectConverter;
 
 import org.springframework.util.Assert;
 
@@ -73,16 +64,10 @@ public class DSTemplate implements IDSOperations {
     public <T> T update(T objectToUpdate) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException, DfException {
     	
     	EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum);
-//    	Boolean isNull = entityPersistenceManager.checkIfIdNull(objectToUpdate);
-//    	if (isNull) {
-//    		throw new DfException("Id for object has not been set");
-//    	}
     	
     	return entityPersistenceManager.update(objectToUpdate);
     	
     }
-    
-
 
     // private method ************
 

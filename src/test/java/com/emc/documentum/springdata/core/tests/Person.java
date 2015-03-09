@@ -1,4 +1,4 @@
-package com.emc.documentum.springdata.entitymanager;
+package com.emc.documentum.springdata.core.tests;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
