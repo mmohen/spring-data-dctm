@@ -13,67 +13,63 @@ import com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 
 public class MappingHandler {
-
-    private final Class<?> entityClass;
-    private String idField;
     
 	private final GenericCache cache;
 
-    public <T> MappingHandler(T objectToSave) {
-        this(objectToSave.getClass());
-
-    }
-
-    public MappingHandler(Class<?> entityClass) {
-        Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
-        this.entityClass = entityClass;
+    public MappingHandler() {
         cache = new GenericCache();
     }
-    
-	public Class<?> getEntityClass() {
-		return this.entityClass;
-	}
 
-	public String getIdField() {
-		if(idField == null && cache.getEntry(this.entityClass) != null)
+	public <T> String getIdField(T objectOfEntityClass) {
+		return getIdField(objectOfEntityClass.getClass());
+	}
+	
+	public String getIdField(Class<?> entityClass) {
+        Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
+		if(cache.getEntry(entityClass) != null)
 		{
-			idField = getIDFromCache();
+			return getIDFromCache(entityClass);
 		}
-		return idField;
+		return null;
 	}
 	
 
-    private String getIDFromCache() {
-    	ArrayList<AttributeType> mapping =  (ArrayList<AttributeType>) cache.getEntry(this.entityClass);
+    private String getIDFromCache(Class<?> entityClass) {
+    	Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
+    	ArrayList<AttributeType> mapping =  (ArrayList<AttributeType>) cache.getEntry(entityClass);
     	
     	for(AttributeType attributeType : mapping ){
     		if(attributeType.getAttribute().getName() == "r_object_id"){
     			return attributeType.getFieldName();
     		}
     	}
-    	
 		return null;
 	}
-
-	public ArrayList<AttributeType> getAttributeMappings() {
-
-        if (cache.getEntry(this.entityClass) == null) {
-
-            return setAttributeMappingInCache();
-        } else {
-
-            return (ArrayList<AttributeType>) cache.getEntry(this.entityClass);
-        }
-
+    
+	public <T> ArrayList<AttributeType> getAttributeMappings(T objectOfEntityClass) {
+            return getAttributeMappings(objectOfEntityClass.getClass());
+  
     }
 
-    public ArrayList<AttributeType> setAttributeMappingInCache() {
+	public ArrayList<AttributeType> getAttributeMappings(Class<?> entityClass) {
+		Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
+
+        if (cache.getEntry(entityClass) == null) {
+
+            return setAttributeMappingInCache(entityClass);
+        } else {
+
+            return (ArrayList<AttributeType>) cache.getEntry(entityClass);
+        }
+    }
+
+    public ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) {
 
         Attribute<?> attribute;
         String attributeName;
 
         ArrayList<AttributeType> mapping = new ArrayList<AttributeType>();
-        Field[] fields = this.entityClass.getDeclaredFields();
+        Field[] fields = entityClass.getDeclaredFields();
         if (fields.length == 0) {
             throw new InvalidDataAccessApiUsageException(
                     "No fields to map for the given class!");
@@ -87,7 +83,7 @@ public class MappingHandler {
             AttributeType attributeType = new AttributeType(f.getName(), attribute);
             mapping.add(attributeType);
         }
-        cache.setEntry(this.entityClass, mapping);
+        cache.setEntry(entityClass, mapping);
         return mapping;
     }
 
@@ -97,8 +93,6 @@ public class MappingHandler {
         String attributeName;
 
         if (f.isAnnotationPresent(Id.class)) {
-        	
-        	idField = f.getName();
             attributeName = "r_object_id";
         } else if (f.isAnnotationPresent(EntityField.class)) {
             entityField = f.getAnnotation(EntityField.class);

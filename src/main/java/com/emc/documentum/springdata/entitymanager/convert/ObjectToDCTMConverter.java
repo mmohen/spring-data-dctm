@@ -21,15 +21,9 @@ import com.emc.documentum.springdata.entitymanager.attributes.StringAttribute;
 
 public class ObjectToDCTMConverter {
 
-    public Object objectToSave;
-    public IDfSysObject dctmObject;
+    public ObjectToDCTMConverter() {}
 
-    public ObjectToDCTMConverter(Object objectToSave, IDfSysObject dctmObject) {
-        this.objectToSave = objectToSave;
-        this.dctmObject = dctmObject;
-    }
-
-    public void convert(ArrayList<AttributeType> mapping) throws DfException {
+    public void convert(Object objectToSave, IDfSysObject dctmObject, ArrayList<AttributeType> mapping) throws DfException {
         for (AttributeType attributeType : mapping) {
             if (attributeType.getAttribute().getName() != "r_object_id") {
                 try {

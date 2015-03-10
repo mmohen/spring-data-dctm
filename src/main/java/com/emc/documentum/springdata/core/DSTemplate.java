@@ -14,10 +14,12 @@ import org.springframework.util.Assert;
 public class DSTemplate implements IDSOperations {
 
     private final Documentum documentum;
+    private EntityPersistenceManager entityPersistenceManager;
 
 
     public DSTemplate(Documentum documentum){
         this.documentum = documentum;
+        entityPersistenceManager = new EntityPersistenceManager(this.documentum);
     }
 
     public <T> T create(T objectToSave) throws DfException {
@@ -25,8 +27,6 @@ public class DSTemplate implements IDSOperations {
     	Assert.notNull(objectToSave);
 
         String repoObjectName = getRepositoryObjectName(objectToSave);
-
-        EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum); // TODO: inject the class
         return entityPersistenceManager.createObject(repoObjectName, objectToSave);
 
     }
@@ -36,8 +36,6 @@ public class DSTemplate implements IDSOperations {
     	Assert.notNull(objectToDelete);
 
         String repoObjectName = getRepositoryObjectName(objectToDelete);
-
-        EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum); // TODO: inject the class
         return entityPersistenceManager.deleteObject(repoObjectName, objectToDelete);
 
     }
@@ -46,8 +44,6 @@ public class DSTemplate implements IDSOperations {
 
     	Assert.notNull(entityClass);
         String repoObjectName = getRepositoryName(entityClass);
-
-        EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum); // TODO: inject the class
         return entityPersistenceManager.findAllObjects(entityClass, repoObjectName);
 
     }
@@ -56,17 +52,13 @@ public class DSTemplate implements IDSOperations {
 
     	Assert.notNull(id);
     	Assert.notNull(entityClass);
-    	EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum);
     	return entityPersistenceManager.findById(id, entityClass);
 
     }
 
     public <T> T update(T objectToUpdate) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException, DfException {
     	
-    	EntityPersistenceManager entityPersistenceManager = new EntityPersistenceManager(documentum);
-    	
     	return entityPersistenceManager.update(objectToUpdate);
-    	
     }
 
     // private method ************
