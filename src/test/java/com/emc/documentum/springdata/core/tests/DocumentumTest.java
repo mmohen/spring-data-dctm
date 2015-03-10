@@ -7,6 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.springframework.boot.SpringApplication;
 import org.springframework.data.authentication.UserCredentials;
 
 import com.documentum.fc.client.IDfSession;

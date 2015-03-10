@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.springframework.boot.SpringApplication;
 import org.springframework.data.authentication.UserCredentials;
 
 import com.documentum.fc.common.DfException;
@@ -27,7 +28,8 @@ public class DSTemplateTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-
+		
+		SpringApplication.run(Person.class);
 		doc = new Documentum(new UserCredentials("dmadmin", "password"),"FPIRepo");
 		template = new DSTemplate(doc);
 		
