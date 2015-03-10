@@ -112,7 +112,17 @@
             <artifactId>guava</artifactId>
             <version>18.0</version>
         </dependency>
-		
+
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter</artifactId>
+        	<version>1.2.2.RELEASE</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-test</artifactId>
+        	<version>1.2.2.RELEASE</version>
+        </dependency>
 	</dependencies>	
 	
 	<repositories>
@@ -128,4 +138,9 @@
     </repositories>
 	
 	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.2.RELEASE</version>
+	</parent>
 </project>

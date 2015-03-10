@@ -67,20 +67,10 @@ public class DSTemplateTest {
 	
 	}
 	
-	@Test
+	@Test (expected = DfException.class)
 	public void testFindByIdThrowsBadIDException() throws DfException, InstantiationException, IllegalAccessException {
-	
-		try {
-				
-			template.findById("this id doesn't exist", Person.class);
-		
-		}
-		catch(Exception e) {
 			
-			expected.expect(DfException.class);
-		
-		}
-	
+			template.findById("this id doesn't exist", Person.class);	
 	}
 	
 	@Test

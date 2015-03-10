@@ -68,18 +68,13 @@ public class DocumentumTest {
 //	}
 //	
 
-	@Test
-	public void testGetSessionThrowsDfIdentityException(){
-	try {
+	@Test (expected = DfException.class)
+	public void testGetSessionThrowsDfIdentityException() throws DfException{
+		
         String docBase = "FPIRepo";
         UserCredentials wrongCredentials = new UserCredentials("admin", "passwrd");
 		Documentum docWithWrongCredentials = new Documentum(wrongCredentials, docBase);
 		docWithWrongCredentials.getSession();
-	}
-	catch(Exception e) {
-		
-		expected.expect(DfException.class);
-	}
 	}
 
 	@Test
