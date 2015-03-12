@@ -31,17 +31,6 @@
 	<dependencies>
 		<!-- Spring and Transactions -->
 
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>${spring-framework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${spring-framework.version}</version>
-		</dependency>
-
 		<!-- Logging with SLF4J & LogBack -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -55,54 +44,11 @@
 			<version>${logback.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-
-
-		<!-- Test Artifacts -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring-framework.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
+		
 		<dependency>
 			<groupId>com.emc.documentum.dfc</groupId>
 			<artifactId>dfc</artifactId>
 			<version>7.1.1-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-commons</artifactId>
-			<version>1.10.0.BUILD-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-beans</artifactId>
-			<version>4.0.9.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-expression</artifactId>
-			<version>4.0.9.RELEASE</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>4.0.9.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -125,6 +71,16 @@
         	<groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter-test</artifactId>
         	<version>1.2.2.RELEASE</version>
+        </dependency>
+        <dependency>
+        	<groupId>bsf</groupId>
+        	<artifactId>bsf</artifactId>
+        	<version>2.4.0</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.springframework.data</groupId>
+        	<artifactId>spring-data-commons</artifactId>
+        	<version>1.10.0.BUILD-SNAPSHOT</version>
         </dependency>
 	</dependencies>	
 	

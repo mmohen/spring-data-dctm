@@ -29,7 +29,6 @@ public class DSTemplateTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		
-		SpringApplication.run(Person.class);
 		doc = new Documentum(new UserCredentials("dmadmin", "password"),"FPIRepo");
 		template = new DSTemplate(doc);
 		

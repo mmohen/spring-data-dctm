@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 
 import com.emc.documentum.springdata.core.GenericCache;
@@ -12,6 +13,7 @@ import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 
+@Controller
 public class MappingHandler {
     
 	private final GenericCache cache;

@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.springframework.stereotype.Controller;
 
 import com.documentum.fc.client.IDfTypedObject;
 import com.documentum.fc.common.DfException;
@@ -19,6 +20,7 @@ import com.emc.documentum.springdata.entitymanager.attributes.LongAttribute;
 import com.emc.documentum.springdata.entitymanager.attributes.ShortAttribute;
 import com.emc.documentum.springdata.entitymanager.attributes.StringAttribute;
 
+@Controller
 public class DCTMToObjectConverter {
 
     public DCTMToObjectConverter() {}

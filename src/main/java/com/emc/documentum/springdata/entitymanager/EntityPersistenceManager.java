@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import com.documentum.fc.client.DfQuery;
 import com.documentum.fc.client.IDfCollection;
@@ -21,13 +22,18 @@ import com.emc.documentum.springdata.entitymanager.convert.ObjectToDCTMConverter
 import com.emc.documentum.springdata.entitymanager.mapping.MappingHandler;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 
+@Controller
 public class EntityPersistenceManager {
 
     private final Documentum documentum;
    
     @Autowired
     private MappingHandler mappingHandler;
+    
+    @Autowired
     private ObjectToDCTMConverter objectToDCTMConverter;
+    
+    @Autowired
     private DCTMToObjectConverter dctmToObjectConverter;
     
 
