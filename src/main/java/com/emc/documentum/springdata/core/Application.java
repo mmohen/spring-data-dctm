@@ -2,18 +2,16 @@ package com.emc.documentum.springdata.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 
-import com.emc.documentum.springdata.core.tests.Person;
+import com.documentum.fc.common.DfException;
 
 @SpringBootApplication
+@ComponentScan("com.emc.documentum.springdata")
 public class Application {
-
-	public static void main(String[] args) {
+	
+	public static void main(String[] args) throws DfException {
 		SpringApplication.run(Application.class);
-		Documentum doc = new Documentum(new UserCredentials("dmadmin", "password"),"FPIRepo");
-		DSTemplate temp = new DSTemplate(doc);
-		temp.findAll(Person.class);
+		
 	}
-
 }

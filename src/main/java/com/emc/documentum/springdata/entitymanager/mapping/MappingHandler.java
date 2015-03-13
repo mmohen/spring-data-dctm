@@ -3,22 +3,22 @@ package com.emc.documentum.springdata.entitymanager.mapping;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.data.annotation.Id;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.GenericCache;
 import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 
-@Controller
+@Component
 public class MappingHandler {
     
 	private final GenericCache cache;
 
-    public MappingHandler() {
+	public MappingHandler() {
         cache = new GenericCache();
     }
 
@@ -48,12 +48,12 @@ public class MappingHandler {
 		return null;
 	}
     
-	public <T> ArrayList<AttributeType> getAttributeMappings(T objectOfEntityClass) {
+	public <T> ArrayList<AttributeType> getAttributeMappings(T objectOfEntityClass) throws DfException {
             return getAttributeMappings(objectOfEntityClass.getClass());
   
     }
 
-	public ArrayList<AttributeType> getAttributeMappings(Class<?> entityClass) {
+	public ArrayList<AttributeType> getAttributeMappings(Class<?> entityClass) throws DfException {
 		Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
 
         if (cache.getEntry(entityClass) == null) {
@@ -65,7 +65,7 @@ public class MappingHandler {
         }
     }
 
-    public ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) {
+    public ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) throws DfException {
 
         Attribute<?> attribute;
         String attributeName;
@@ -73,8 +73,7 @@ public class MappingHandler {
         ArrayList<AttributeType> mapping = new ArrayList<AttributeType>();
         Field[] fields = entityClass.getDeclaredFields();
         if (fields.length == 0) {
-            throw new InvalidDataAccessApiUsageException(
-                    "No fields to map for the given class!");
+            throw new DfException("No fields to map for the given class!");
         }
 
         for (Field f : fields) {
@@ -88,7 +87,6 @@ public class MappingHandler {
         cache.setEntry(entityClass, mapping);
         return mapping;
     }
-
 
     private String getEntityFieldName(Field f) {
         EntityField entityField;

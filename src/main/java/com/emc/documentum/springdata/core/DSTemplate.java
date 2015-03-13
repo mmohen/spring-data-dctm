@@ -1,25 +1,28 @@
 package com.emc.documentum.springdata.core;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.List;
 
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.entitymanager.EntityPersistenceManager;
 import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 
 
+@Controller
 public class DSTemplate implements IDSOperations {
 
-    private final Documentum documentum;
+	@Autowired
+    private  Documentum documentum;
+	
+	@Autowired
     private EntityPersistenceManager entityPersistenceManager;
 
 
-    public DSTemplate(Documentum documentum){
-        this.documentum = documentum;
-        entityPersistenceManager = new EntityPersistenceManager(this.documentum);
+    public DSTemplate(){
     }
 
     public <T> T create(T objectToSave) throws DfException {

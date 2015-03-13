@@ -2,6 +2,7 @@ package com.emc.documentum.springdata.core;
 
 import org.apache.log4j.Logger;
 import org.springframework.data.authentication.UserCredentials;
+import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 
 import com.documentum.com.DfClientX;
@@ -13,6 +14,7 @@ import com.documentum.fc.client.IDfTypedObject;
 import com.documentum.fc.common.DfException;
 import com.documentum.fc.common.IDfLoginInfo;
 
+@Controller
 public class Documentum {
 	
 	static Logger log = Logger.getLogger(Documentum.class.getName());
@@ -25,6 +27,12 @@ public class Documentum {
 		return this.credentials;
 	}
 
+	public Documentum() {
+		this.credentials = new UserCredentials("dmadmin", "password");
+		this.docBase = "FPIRepo";
+		/// this is a default constructor
+	}
+	
 	public Documentum(UserCredentials credentials, String docBase) throws DfException {
 		this(credentials, docBase, null, null);
 		

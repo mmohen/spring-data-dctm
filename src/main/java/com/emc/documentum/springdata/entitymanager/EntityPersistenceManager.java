@@ -25,7 +25,8 @@ import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 @Controller
 public class EntityPersistenceManager {
 
-    private final Documentum documentum;
+	@Autowired
+    private Documentum documentum;
    
     @Autowired
     private MappingHandler mappingHandler;
@@ -36,11 +37,9 @@ public class EntityPersistenceManager {
     @Autowired
     private DCTMToObjectConverter dctmToObjectConverter;
     
-
-
-    public EntityPersistenceManager(Documentum documentum) {
-        this.documentum = documentum;
-        mappingHandler = new MappingHandler();
+    public EntityPersistenceManager() {
+//      this.documentum = documentum;
+//    	mappingHandler = new MappingHandler();
         objectToDCTMConverter = new ObjectToDCTMConverter();
         dctmToObjectConverter = new DCTMToObjectConverter() ;
     }

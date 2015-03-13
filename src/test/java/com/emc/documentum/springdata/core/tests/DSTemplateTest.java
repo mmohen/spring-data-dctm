@@ -9,31 +9,44 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.springframework.boot.SpringApplication;
-import org.springframework.data.authentication.UserCredentials;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.documentum.fc.common.DfException;
+import com.emc.documentum.springdata.core.Application;
 import com.emc.documentum.springdata.core.DSTemplate;
 import com.emc.documentum.springdata.core.Documentum;
+import com.emc.documentum.springdata.core.Person;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = Application.class)
 public class DSTemplateTest {
 
+	private Person p;
+
+	@Autowired
+	private Documentum dctm;
 	
-	static DSTemplate template;
-	static Person p;
-	static Documentum doc;
-	
+	@Autowired
+	private DSTemplate template;
+
 	@Rule
 	public ExpectedException expected = ExpectedException.none();
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		
-		doc = new Documentum(new UserCredentials("dmadmin", "password"),"FPIRepo");
-		template = new DSTemplate(doc);
-		
 	}
 
+	@Test
+	public void testSpringConfiguration() throws DfException{
+		Person p = new Person("rohan",21,"male");
+		System.out.println(p.getName());
+		System.out.println(template.findAll(Person.class).size());
+	}
+	
 	@Test
 	public void testInsert() throws DfException {
 		
