@@ -27,7 +27,7 @@ public class ObjectToDCTMConverter {
 
     public void convert(Object objectToSave, IDfSysObject dctmObject, ArrayList<AttributeType> mapping) throws DfException {
         for (AttributeType attributeType : mapping) {
-            if (attributeType.getAttribute().getName() != "r_object_id") {
+            if (!attributeType.getAttribute().getName().equals( "r_object_id")) {
                 try {
                     setValue(dctmObject, objectToSave, attributeType);
                 } catch (Exception e) {

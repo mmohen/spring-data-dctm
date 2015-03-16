@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,6 +13,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.data.authentication.UserCredentials;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.documentum.fc.common.DfException;
@@ -37,8 +39,16 @@ public class DSTemplateTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		
+
 	}
+
+    @Before
+    public void setUp()
+    {
+        dctm.setCredentials(new UserCredentials("dmadmin", "password"));
+        dctm.setDocBase("FPIRepo");
+
+    }
 
 	@Test
 	public void testSpringConfiguration() throws DfException{
@@ -49,7 +59,7 @@ public class DSTemplateTest {
 	
 	@Test
 	public void testInsert() throws DfException {
-		
+
 		p = new Person("Rohan",22,"Male");
 		Person insertedPerson = template.create(p);
 		assertEquals(insertedPerson.getName(),  p.getName());
@@ -60,7 +70,7 @@ public class DSTemplateTest {
 	
 	@Test
 	public void testUpdate() throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		
+
 		p = new Person("Adam",22,"Female");
 		template.create(p);
 		p.setGender("Male");

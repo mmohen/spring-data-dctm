@@ -2,14 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.springframework.samples</groupId>
+	<groupId>com.emc.documentum.spring</groupId>
 	<artifactId>spring-data-documentum</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	
-	<properties>
+    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+
+    <properties>
 
 		<!-- Generic properties -->
-		<java.version>1.6</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -21,7 +22,6 @@
 
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
-		<slf4j.version>1.7.5</slf4j.version>
 
 		<!-- Test -->
 		<junit.version>4.11</junit.version>
@@ -73,11 +73,6 @@
         	<version>1.2.2.RELEASE</version>
         </dependency>
         <dependency>
-        	<groupId>bsf</groupId>
-        	<artifactId>bsf</artifactId>
-        	<version>2.4.0</version>
-        </dependency>
-        <dependency>
         	<groupId>org.springframework.data</groupId>
         	<artifactId>spring-data-commons</artifactId>
         </dependency>
@@ -101,4 +96,15 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.2.2.RELEASE</version>
 	</parent>
+
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>artifactory-dev</id>
+            <name>pls-jfrogrepo.lss.emc.com-snapshots</name>
+            <url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/dev-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 </project>

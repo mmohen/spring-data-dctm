@@ -37,12 +37,6 @@ public class EntityPersistenceManager {
     @Autowired
     private DCTMToObjectConverter dctmToObjectConverter;
     
-    public EntityPersistenceManager() {
-//      this.documentum = documentum;
-//    	mappingHandler = new MappingHandler();
-        objectToDCTMConverter = new ObjectToDCTMConverter();
-        dctmToObjectConverter = new DCTMToObjectConverter() ;
-    }
 
     public <T> T createObject(String repoObjectName, T objectToSave) throws DfException {
         try {

@@ -16,10 +16,9 @@ import org.springframework.util.Assert;
 public class DSTemplate implements IDSOperations {
 
 	@Autowired
-    private  Documentum documentum;
-	
-	@Autowired
     private EntityPersistenceManager entityPersistenceManager;
+    @Autowired
+    private EntityTypeHandler entityTypeManager;
 
 
     public DSTemplate(){
@@ -76,7 +75,7 @@ public class DSTemplate implements IDSOperations {
     	
     	Assert.notNull(entityClass);
 
-        EntityTypeHandler entityTypeManager = new EntityTypeHandler(); // TODO: inject the class
+
 
         return entityTypeManager.getEntityObjectName(entityClass);
 

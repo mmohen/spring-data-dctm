@@ -16,7 +16,7 @@ public @interface EntityField {
     /**
      * The key to be used to store the field inside the document.
      *
-     * @return
+     * @return String
      */
 
     String value() default "";

@@ -2,38 +2,42 @@ package com.emc.documentum.springdata.core.tests;
 
 import static org.junit.Assert.*;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
+import com.emc.documentum.springdata.core.Application;
+import org.junit.*;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.data.authentication.UserCredentials;
 
 import com.documentum.fc.client.IDfSession;
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.Documentum;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = Application.class)
 public class DocumentumTest {
 	
-	private static UserCredentials credentials;
-	private static Documentum doc;
-	static String docBase;
+	private UserCredentials credentials;
+    @Autowired
+	private  Documentum doc;
+	private String docBase;
+    @Autowired
+    private Documentum docWithWrongCredentials;
 
 	@Rule
 	public ExpectedException expected = ExpectedException.none();
 	
 	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		
-		credentials = new UserCredentials("dmadmin", "password");
-        docBase = "FPIRepo";
-        doc = new Documentum(credentials, docBase);
-	}
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
+    @Before
+    public void setup(){
+        credentials = new UserCredentials("dmadmin", "password");
+        docBase = "FPIRepo";
+        doc.setDocBase(docBase);
+        doc.setCredentials(credentials);
+    }
 
 	@Test
 	public void testGetCredentials() throws DfException {
@@ -68,12 +72,13 @@ public class DocumentumTest {
 //	}
 //	
 
-	@Test (expected = DfException.class)
+	@Test
 	public void testGetSessionThrowsDfIdentityException() throws DfException{
 		
         String docBase = "FPIRepo";
         UserCredentials wrongCredentials = new UserCredentials("admin", "passwrd");
-		Documentum docWithWrongCredentials = new Documentum(wrongCredentials, docBase);
+        docWithWrongCredentials.setCredentials(wrongCredentials);
+        docWithWrongCredentials.setDocBase(docBase);
 		docWithWrongCredentials.getSession();
 	}
 

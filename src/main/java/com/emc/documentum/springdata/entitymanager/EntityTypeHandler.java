@@ -1,10 +1,12 @@
 package com.emc.documentum.springdata.entitymanager;
 
 import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import com.emc.documentum.springdata.entitymanager.mapping.DCTMObject;
 
+@Component
 public class EntityTypeHandler {
 
     public String getEntityObjectName(Class<?> entityClass) {
