@@ -27,10 +27,12 @@ public class Documentum {
 		return this.credentials;
 	}
 
-	public Documentum() {
+	public Documentum() throws DfException {
 		this.credentials = new UserCredentials("dmadmin", "password");
 		this.docBase = "FPIRepo";
 		/// this is a default constructor
+
+        createSessionManager(credentials, null, null);
 	}
 	
 	public Documentum(UserCredentials credentials, String docBase) throws DfException {
@@ -46,25 +48,29 @@ public class Documentum {
 		
 		this.credentials = credentials;
 		this.docBase = docBase;
-		
-		DfClientX clientX = new DfClientX();
+
+        createSessionManager(credentials, docbrokerHost, docbrokerPort);
+	}
+
+    private void createSessionManager(UserCredentials credentials, String docbrokerHost, String docbrokerPort) throws DfException {
+        DfClientX clientX = new DfClientX();
         IDfClient client = clientX.getLocalClient();
         IDfTypedObject config = client.getClientConfig();
-        
+
         if (docbrokerHost != null && docbrokerPort != null) {
         	config.setString("primary_host", docbrokerHost);
             config.setInt("primary_port", new Integer(docbrokerPort));
         }
-        
+
         this.sessionManager = client.newSessionManager();
         IDfLoginInfo loginInfo= clientX.getLoginInfo();
         loginInfo.setUser(credentials.getUsername());
         loginInfo.setPassword(credentials.getPassword());
         sessionManager.setIdentity(IDfSessionManager.ALL_DOCBASES, loginInfo);
-		}
-	
+    }
 
-	public IDfSession getSession() throws DfException {	
+
+    public IDfSession getSession() throws DfException {
 		
 		try {
 			return this.sessionManager.getSession(this.docBase);
