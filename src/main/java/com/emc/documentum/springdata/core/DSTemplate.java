@@ -1,6 +1,5 @@
 package com.emc.documentum.springdata.core;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import com.documentum.fc.common.DfException;
@@ -50,7 +49,7 @@ public class DSTemplate implements IDSOperations {
 
     }
 
-    public <T> T findById(String id, Class<T> entityClass) throws DfException, InstantiationException, IllegalAccessException {
+    public <T> T findById(String id, Class<T> entityClass) throws DfException {
 
     	Assert.notNull(id);
     	Assert.notNull(entityClass);
@@ -58,7 +57,7 @@ public class DSTemplate implements IDSOperations {
 
     }
 
-    public <T> T update(T objectToUpdate) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException, DfException {
+    public <T> T update(T objectToUpdate) throws DfException {
     	
     	return entityPersistenceManager.update(objectToUpdate);
     }

@@ -99,7 +99,7 @@ public class EntityPersistenceManager {
     }
 
 
-    public <T> T findById(String id, Class<T> entityClass) throws DfException, InstantiationException, IllegalAccessException {
+    public <T> T findById(String id, Class<T> entityClass) throws DfException {
 
         try {
             IDfSession session = documentum.getSession();
@@ -110,19 +110,19 @@ public class EntityPersistenceManager {
             dctmToObjectConverter.convert(dctmObject, objectInstance, mapping);
             return objectInstance;
 
-        } catch (DfException e) {
+        } catch (Exception e) {
             String msg = String.format("Exception occured for object with Id: %s class %s. Exception: %s, %s.", id, entityClass, e.getClass(), e.getMessage());
             throw new DfException(msg, e);
         }
 
     }
     
-    public <T> Boolean checkIfIdNull(T objectToCheck) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-    	
-    	String idField = mappingHandler.getIdField(objectToCheck);
-    	Object idValue = PropertyUtils.getSimpleProperty(objectToCheck, idField);
-    	return idValue.equals(null);
-    }
+//    public <T> Boolean checkIfIdNull(T objectToCheck) throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+//    	
+//    	String idField = mappingHandler.getIdField(objectToCheck);
+//    	Object idValue = PropertyUtils.getSimpleProperty(objectToCheck, idField);
+//    	return idValue.equals(null);
+//    }
     
     public <T> T update(T objectToUpdate) throws DfException {
     	try {
