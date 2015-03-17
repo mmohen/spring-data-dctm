@@ -93,7 +93,7 @@ public class EntityPersistenceManager {
             return list;
 
         } catch (Exception e) {
-            String msg = String.format("Object cannot be created for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
+            String msg = String.format("Objects cannot be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
             throw new DfException(msg, e);
         }
     }
