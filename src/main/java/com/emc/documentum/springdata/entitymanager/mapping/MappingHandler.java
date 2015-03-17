@@ -22,17 +22,17 @@ public class MappingHandler {
         cache = new GenericCache();
     }
 
-	public <T> String getIdField(T objectOfEntityClass) {
+	public <T> String getIdField(T objectOfEntityClass) throws DfException {
 		return getIdField(objectOfEntityClass.getClass());
 	}
 	
-	public String getIdField(Class<?> entityClass) {
+	public String getIdField(Class<?> entityClass) throws DfException {
         Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
-		if(cache.getEntry(entityClass) != null)
+		if(cache.getEntry(entityClass) == null)
 		{
-			return getIDFromCache(entityClass);
+			setAttributeMappingInCache(entityClass);
 		}
-		return null;
+		return getIDFromCache(entityClass);
 	}
 	
 
