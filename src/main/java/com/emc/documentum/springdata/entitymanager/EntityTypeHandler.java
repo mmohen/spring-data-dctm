@@ -5,10 +5,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
-<<<<<<< HEAD
 
-=======
->>>>>>> @EnableDctmRepository
 
 @Component
 public class EntityTypeHandler {
