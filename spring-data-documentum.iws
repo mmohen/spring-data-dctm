@@ -26,55 +26,83 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02665d85-00d7-4e6d-9d14-15c6ad693f6a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/activityLog.log.1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/activityLog.log.2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/activityLog.log.3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/activityLog.log.4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/activityLog.log.5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistanceManager.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistanceManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistenceManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ByteAttribute.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/CharacterAttribute.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/FloatAttribute.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ShortAttribute.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeType.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ByteAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ByteAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/CharacterAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/CharacterAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/DCTMObject.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/DCTMObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/DSTemplate.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/DSTemplate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/EntityField.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/EntityField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityTypeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityTypeHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/FloatAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/FloatAttribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ShortAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ShortAttribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/package-info.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/package-info.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/dfc.properties" afterPath="$PROJECT_DIR$/src/main/resources/dfc.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-data-documentum.iml" afterPath="$PROJECT_DIR$/spring-data-documentum.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-data-documentum.ipr" afterPath="$PROJECT_DIR$/spring-data-documentum.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-data-documentum.iws" afterPath="$PROJECT_DIR$/spring-data-documentum.iws" />
     </list>
     <ignored path="spring-data-documentum.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425387252737" ignored="false" />
+    <file path="/Dummy.txt" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426824512307" ignored="false" />
     <file path="$PROJECT_DIR$/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424923306995" ignored="false" />
-    <file path="/IntAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424923408176" ignored="false" />
-    <file path="/StringAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424923415558" ignored="false" />
+    <file path="/IntAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853079738" ignored="false" />
+    <file path="/StringAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426854036941" ignored="false" />
     <file path="/DCTMObjectConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424948708613" ignored="false" />
-    <file path="$PROJECT_DIR$/../3g/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425459021745" ignored="false" />
-    <file path="/DocumentumTest.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424924493712" ignored="false" />
+    <file path="$PROJECT_DIR$/../3g/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426648410503" ignored="false" />
+    <file path="/DocumentumTest.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426495847091" ignored="false" />
     <file path="/EntityPersistanceManager.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424926552752" ignored="false" />
     <file path="/DSException.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424925537724" ignored="false" />
     <file path="$PROJECT_DIR$/../../temp/springboot/myproject/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425459021745" ignored="false" />
     <file path="$PROJECT_DIR$/../../temp/springboot/myproject/pom.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425054755123" ignored="false" />
-    <file path="/pom.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425054748424" ignored="false" />
+    <file path="/pom.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426500567879" ignored="false" />
     <file path="$PROJECT_DIR$/../3g/config/default.json" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425364651590" ignored="false" />
-    <file path="/DSTemplateTest.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425458891520" ignored="false" />
-    <file path="/DSTemplate.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425459158262" ignored="false" />
+    <file path="/DSTemplateTest.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483355583" ignored="false" />
+    <file path="/DSTemplate.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483454244" ignored="false" />
     <file path="/*.regexp" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425459197473" ignored="false" />
+    <file path="$PROJECT_DIR$/../3gjavamodules/ews-java-api-master/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426497473046" ignored="false" />
+    <file path="$PROJECT_DIR$/../3gjavamodules/CreateMeetingRequest/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426497473046" ignored="false" />
+    <file path="/fragment.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426479920600" ignored="false" />
+    <file path="/Documentum.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483600655" ignored="false" />
+    <file path="/EntityTypeHandler.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483422270" ignored="false" />
+    <file path="/ObjectToDCTMConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426850254887" ignored="false" />
+    <file path="/EntityField.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483716707" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/spring-boot-starter-dctm/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426648410503" ignored="false" />
+    <file path="/usr/local/Cellar/maven/3.2.5/libexec/conf/settings.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426496483495" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/spring-boot-starter-dctm/pom.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426500572772" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/MyApp/pom.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426500554721" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/MyApp/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426648410503" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/MyApp/src/main/java/CreateObject.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426499599252" ignored="false" />
+    <file path="/CreateObject.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426498841209" ignored="false" />
+    <file path="$PROJECT_DIR$/../3g/public/app/js/app.js" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426500989144" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/pom.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426565549175" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426648410503" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/.gitignore" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426565549175" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/java/com/emc/documentum/lms/controller/CourseController.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426565549175" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/java/com/emc/documentum/lms/controller/UserController.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426576366437" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/java/com/emc/documentum/lms/Application.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426578301772" ignored="false" />
+    <file path="/Application.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426576870009" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/resources/dfc.properties" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426576175829" ignored="false" />
+    <file path="/dfc.properties" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426576174781" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/learning-management-system.iws" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426646941478" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/java/com/emc/documentum/lms/domain/User.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426576363047" ignored="false" />
+    <file path="/User.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426576435691" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/java/com/emc/documentum/lms/domain/Student.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426576453255" ignored="false" />
+    <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/java/com/emc/documentum/lms/controller/StudentController.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426583385624" ignored="false" />
+    <file path="/StudentController.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426577736413" ignored="false" />
+    <file path="$USER_HOME$/Perforce/waliar_newwork/depot/Platform/Spring/SpringDataNGIS/springdata-ngis-example-rest-angularjs/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853098865" ignored="false" />
+    <file path="$USER_HOME$/Downloads/spring-data-book-master/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426854109178" ignored="false" />
+    <file path="/DCTMToObjectConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851950163" ignored="false" />
+    <file path="/Attribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851533263" ignored="false" />
+    <file path="/ShortAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426850035050" ignored="false" />
+    <file path="/LongAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853024837" ignored="false" />
+    <file path="/FloatAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851829667" ignored="false" />
+    <file path="/DoubleAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853038595" ignored="false" />
+    <file path="/CharacterAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426850103107" ignored="false" />
+    <file path="/ByteAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851757695" ignored="false" />
+    <file path="/BooleanAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853047146" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +153,53 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DocumentumTest.java" line="43" class="com.emc.documentum.springdata.core.tests.DocumentumTest" package="com.emc.documentum.springdata.core.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DocumentumTest.java" line="78" class="com.emc.documentum.springdata.core.tests.DocumentumTest" package="com.emc.documentum.springdata.core.tests">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java" line="37" class="com.emc.documentum.springdata.entitymanager.convert.DCTMToObjectConverter" package="com.emc.documentum.springdata.entitymanager.convert">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
@@ -135,10 +210,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EntityPersistenceManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistenceManager.java">
+      <file leaf-file-name="DCTMToObjectConverter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="6" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
+            <state line="19" column="97" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,74 +221,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenericCacheTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/GenericCacheTest.java">
+      <file leaf-file-name="ObjectToDCTMConverter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DSTemplateTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="26" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dfc.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/dfc.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="22" selection-start="22" selection-end="35" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DSTemplate.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/DSTemplate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="47" selection-start="1605" selection-end="1619" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DfException.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/dfc/7.1.1-SNAPSHOT/dfc-7.1.1-20141104.073733-41.jar!/com/documentum/fc/common/DfException.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="11" selection-start="8823" selection-end="8823" vertical-scroll-proportion="-12.72">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="21" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DocumentumTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DocumentumTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="55" selection-start="1838" selection-end="1877" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="15" column="13" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -221,8 +235,81 @@
       <file leaf-file-name="AttributeFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
+            <state line="13" column="0" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringAttribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DoubleAttribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BooleanAttribute.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.06417112">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Attribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="22" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IntAttribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DSTemplateTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="19" selection-start="980" selection-end="994" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LongAttribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -245,20 +332,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DocumentumTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/exception/DSException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/mapping/MappingHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/convert/DCTMObjectConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityTypeHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMObjectConverter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistanceManager.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/DSTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistenceManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ShortAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/CharacterAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/dfc.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ByteAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/FloatAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java" />
       </list>
     </option>
   </component>
@@ -299,10 +388,32 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="700" />
-    <option name="y" value="73" />
-    <option name="width" value="1440" />
-    <option name="height" value="1163" />
+    <option name="x" value="487" />
+    <option name="y" value="135" />
+    <option name="width" value="1728" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -332,8 +443,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -374,6 +483,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-documentum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dctm-spring-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -391,26 +530,234 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-documentum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dctm-spring-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springdata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entitymanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-documentum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dctm-spring-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springdata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entitymanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapping" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-documentum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dctm-spring-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springdata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entitymanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="convert" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-documentum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dctm-spring-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springdata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entitymanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="attributes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-documentum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dctm-spring-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springdata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-data-documentum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dctm-spring-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springdata" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="138" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="140" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="139" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="149" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="939" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="937" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="939" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="145" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="141" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -424,14 +771,45 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="MavenSettings" />
+    <property name="options.lastSelected" value="reference.settings.project.maven.ignored.files" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.com.emc.documentum.springdata.core.tests in spring-data-documentum">
-    <configuration default="false" name="DocumentumTest" type="JUnit" factoryName="JUnit" temporary="true">
+  <component name="RunManager" selected="JUnit.DSTemplateTest">
+    <configuration default="false" name="DSTemplateTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="spring-data-documentum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DSTemplateTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DocumentumTest.testGetCredentials" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
@@ -443,8 +821,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
       <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DocumentumTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testGetCredentials" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -463,15 +841,52 @@
       <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
-    <configuration default="false" name="All in spring-data-documentum" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration default="false" name="DocumentumTest.testGetSessionThrowsDfIdentityException" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="spring-data-documentum" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DocumentumTest" />
+      <option name="METHOD_NAME" value="testGetSessionThrowsDfIdentityException" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DSTemplateTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="spring-data-documentum" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DSTemplateTest" />
+      <option name="METHOD_NAME" value="testInsert" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -486,7 +901,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="GenericCacheTest" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="DSTemplateTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
@@ -497,9 +912,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.GenericCacheTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DSTemplateTest" />
+      <option name="METHOD_NAME" value="testUpdate" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -510,35 +925,13 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="com.emc.documentum.springdata.core.tests in spring-data-documentum" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="spring-data-documentum" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -578,6 +971,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -604,19 +1010,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -655,18 +1048,20 @@
       <patterns />
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DocumentumTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.All in spring-data-documentum" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.GenericCacheTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.com.emc.documentum.springdata.core.tests in spring-data-documentum" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DSTemplateTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetCredentials" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetSessionThrowsDfIdentityException" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testInsert" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testUpdate" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.com.emc.documentum.springdata.core.tests in spring-data-documentum" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GenericCacheTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.All in spring-data-documentum" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DocumentumTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DSTemplateTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testUpdate" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testInsert" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetSessionThrowsDfIdentityException" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetCredentials" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -714,39 +1109,44 @@
       <created>1424926333074</created>
       <updated>1424926333074</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Session Manager instantiated in default constructor">
+      <created>1426480989286</created>
+      <updated>1426480989286</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="700" y="73" width="1440" height="1163" extended-state="0" />
+    <frame x="487" y="135" width="1728" height="1048" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2681729" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.54202586" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907662" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32981783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694152" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.118364416" sideWeight="0.67092335" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17835909" sideWeight="0.45797414" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.73182714" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33693516" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23840666" sideWeight="0.45797414" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30387932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.66442955" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907662" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -792,7 +1192,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed compilation errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="Session Manager instantiated in default constructor" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -810,6 +1210,7 @@
     <MESSAGE value="Fixed Tests" />
     <MESSAGE value="Fixed package structure. &#10;Added some todos to be done later" />
     <MESSAGE value="Fixed compilation errors." />
+    <MESSAGE value="Session Manager instantiated in default constructor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -838,117 +1239,129 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/Documentum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/dfc/7.1.1-SNAPSHOT/dfc-7.1.1-20141104.073733-41.jar!/com/documentum/fc/client/IDfPersistentObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="117" selection-start="1486" selection-end="1486" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/IDSOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/exception/DSException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="15" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="13" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/GenericCacheTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0">
+        <state line="24" column="21" selection-start="544" selection-end="547" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/dfc.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/dfc/7.1.1-SNAPSHOT/dfc-7.1.1-20141104.073733-41.jar!/com/documentum/fc/client/IDfTypedObject.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="22" selection-start="22" selection-end="35" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="21" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DocumentumTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="55" selection-start="1838" selection-end="1877" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/dfc/7.1.1-SNAPSHOT/dfc-7.1.1-20141104.073733-41.jar!/com/documentum/fc/common/DfException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="11" selection-start="8823" selection-end="8823" vertical-scroll-proportion="-12.72">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="26" selection-start="1931" selection-end="1931" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/DSTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="47" selection-start="1605" selection-end="1619" vertical-scroll-proportion="0.0">
+        <state line="90" column="38" selection-start="4429" selection-end="4429" vertical-scroll-proportion="-3.8">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistenceManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="6" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0">
+        <state line="42" column="0" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/ch/FileDispatcherImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="22" selection-start="2350" selection-end="2350" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dfc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="24" selection-start="60" selection-end="60" vertical-scroll-proportion="0.03448276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="22" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="19" selection-start="980" selection-end="994" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="97" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.06417112">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1010,6 +1423,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1029,7 +1443,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

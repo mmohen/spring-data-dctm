@@ -1,24 +1,21 @@
 package com.emc.documentum.springdata.entitymanager.attributes;
 
+import com.documentum.fc.client.IDfTypedObject;
+import com.documentum.fc.common.DfException;
 import org.apache.commons.beanutils.PropertyUtils;
 
 public class StringAttribute extends Attribute<String> {
 
     public StringAttribute(String name) {
         super(name);
+        dfAttributeType = 2;
     }
 
 
-    public String getValue(Object o) {
-        try {
-            return (String) PropertyUtils.getSimpleProperty(o, name);
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return null;
+    @Override
+    public String getValue(Object o) throws DfException {
+        return ((IDfTypedObject) o).getString(name);
+
     }
-
-
 }
 

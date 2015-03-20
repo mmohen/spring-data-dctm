@@ -3,22 +3,14 @@ package com.emc.documentum.springdata.entitymanager.convert;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 
+import com.documentum.fc.common.DfValue;
+import com.documentum.fc.common.IDfValue;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.stereotype.Controller;
 
 import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.common.DfException;
-import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
-import com.emc.documentum.springdata.entitymanager.attributes.BooleanAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.ByteAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.CharacterAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.DoubleAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.FloatAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.IntAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.LongAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.ShortAttribute;
-import com.emc.documentum.springdata.entitymanager.attributes.StringAttribute;
 
 @Controller
 public class ObjectToDCTMConverter {
@@ -40,32 +32,14 @@ public class ObjectToDCTMConverter {
         }
     }
 
-    // TODO : see if there is a better way of doing this
     private void setValue(IDfSysObject dctmObject, Object objectToSave, AttributeType fieldType)
             throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
-        Attribute<?> attributeType = fieldType.getAttribute();
         Object valueFromClass = PropertyUtils.getSimpleProperty(objectToSave, fieldType.getFieldName());
 
-        if (attributeType instanceof StringAttribute) {
-            dctmObject.setString(fieldType.getAttribute().getName(), (String) valueFromClass);
-        } else if (attributeType instanceof IntAttribute) {
-            dctmObject.setInt(fieldType.getAttribute().getName(), (Integer) valueFromClass);
-        } else if (attributeType instanceof DoubleAttribute) {
-            dctmObject.setDouble(fieldType.getAttribute().getName(), (Double) valueFromClass);
-        } else if (attributeType instanceof LongAttribute) {
-            dctmObject.setDouble(fieldType.getAttribute().getName(), (Long) valueFromClass);
-        } else if (attributeType instanceof ShortAttribute) {
-            dctmObject.setInt(fieldType.getAttribute().getName(), (Short) valueFromClass);
-        } else if (attributeType instanceof FloatAttribute) {
-            dctmObject.setDouble(fieldType.getAttribute().getName(), (Float) valueFromClass);
-        } else if (attributeType instanceof ByteAttribute) {
-            dctmObject.setInt(fieldType.getAttribute().getName(), (Byte) valueFromClass);
-        } else if (attributeType instanceof BooleanAttribute) {
-            dctmObject.setBoolean(fieldType.getAttribute().getName(), (Boolean) valueFromClass);
-        } else if (attributeType instanceof CharacterAttribute) {
-            dctmObject.setString(fieldType.getAttribute().getName(), (String) valueFromClass);
-        }
+        IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
+
+        dctmObject.setValue(fieldType.getAttribute().getName(), value);
 
     }
 
