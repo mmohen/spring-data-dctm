@@ -29,6 +29,7 @@ public class Person {
     
     @EntityField("accountnumbers")
     private List<Double> accountNumbers = new ArrayList<Double>();
+
 //    @Relation
 //    public Address address;
 

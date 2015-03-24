@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringListAttribute extends IterableAttribute<List<String>> {
+
     public StringListAttribute(java.lang.String name) {
         super(name);
         dfAttributeType = 2;

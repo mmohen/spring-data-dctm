@@ -82,6 +82,8 @@ public class DctmTemplateTest {
 	public void testFindById() throws DfException {
 	
 		p = new Person("John",67,"Male");
+        p.getHobbies().add("Hobby One");
+        p.getHobbies().add("Hobby two");
 		Person insertedPerson = template.create(p);
 		Person obj = template.findById(insertedPerson.get_id(), Person.class);
 		assertEquals(obj.getName(),  p.getName());
