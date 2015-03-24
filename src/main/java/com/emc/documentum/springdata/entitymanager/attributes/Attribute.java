@@ -3,15 +3,14 @@ package com.emc.documentum.springdata.entitymanager.attributes;
 import com.documentum.fc.common.DfException;
 
 public abstract class Attribute<T> {
+
     protected int dfAttributeType;
+    public String name;
 
 
     public int getDfAttributeType() {
         return dfAttributeType;
     }
-
-
-    public String name;
 
     public Attribute(String name) {
         this.name = name;
@@ -22,8 +21,6 @@ public abstract class Attribute<T> {
     }
 
 
-    public T getValue(Object o) throws DfException {
-        return null;
-    }
+    public abstract T getValue(Object o) throws DfException;
 
 }

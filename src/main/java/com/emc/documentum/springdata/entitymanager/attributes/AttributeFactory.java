@@ -1,8 +1,16 @@
 package com.emc.documentum.springdata.entitymanager.attributes;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+
 public class AttributeFactory {
 
-    public static Attribute<?> getAttribute(Class<?> type, String attributeName) {
+    public static Attribute<?> getAttribute(Field field, String attributeName) {
+
+
+        Class<?> type = field.getType();
+
         if (type == java.lang.String.class) {
             return new StringAttribute(attributeName);
         } else if (type == java.lang.Integer.class || type == int.class) {
@@ -13,8 +21,19 @@ public class AttributeFactory {
             return new LongAttribute(attributeName);
         } else if (type == java.lang.Boolean.class || type == boolean.class) {
             return new BooleanAttribute(attributeName);
+        } else if (type == java.util.List.class && getParameterizedType(field) == java.lang.String.class ){
+            return new StringListAttribute(attributeName);
         }
+
         return null;
     }
+
+    private static Type getParameterizedType(Field field) {
+        field.setAccessible(true);
+
+        return ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
+
+    }
+
 
 }

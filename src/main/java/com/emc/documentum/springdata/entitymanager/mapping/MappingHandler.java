@@ -3,6 +3,7 @@ package com.emc.documentum.springdata.entitymanager.mapping;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+import com.emc.documentum.springdata.entitymanager.annotations.EntityField;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
@@ -64,27 +65,27 @@ public class MappingHandler {
     }
   }
 
-  public ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) throws DfException {
+    public ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) throws DfException {
 
-    Attribute<?> attribute;
-    String attributeName;
+        Attribute<?> attribute;
+        String attributeName;
 
-    ArrayList<AttributeType> mapping = new ArrayList<AttributeType>();
-    Field[] fields = entityClass.getDeclaredFields();
-    if (fields.length == 0) {
-      throw new DfException("No fields to map for the given class!");
-    }
+        ArrayList<AttributeType> mapping = new ArrayList<AttributeType>();
+        Field[] fields = entityClass.getDeclaredFields();
+        if (fields.length == 0) {
+            throw new DfException("No fields to map for the given class!");
+        }
 
-    for (Field f : fields) {
-      f.setAccessible(true);
-      Class<?> type = f.getType();
-      attributeName = getEntityFieldName(f);
-      attribute = AttributeFactory.getAttribute(type, attributeName);
-      AttributeType attributeType = new AttributeType(f.getName(), attribute);
-      mapping.add(attributeType);
-    }
-    cache.setEntry(entityClass, mapping);
-    return mapping;
+        for (Field f : fields) {
+            f.setAccessible(true);
+            Class<?> type = f.getType();
+            attributeName = getEntityFieldName(f);
+            attribute = AttributeFactory.getAttribute(f, attributeName);
+            AttributeType attributeType = new AttributeType(f.getName(), attribute);
+            mapping.add(attributeType);
+        }
+        cache.setEntry(entityClass, mapping);
+        return mapping;
   }
 
   private String getEntityFieldName(Field f) {
