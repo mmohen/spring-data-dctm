@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-
 public class AttributeFactory {
 
     public static Attribute<?> getAttribute(Field field, String attributeName) {
@@ -32,6 +31,7 @@ public class AttributeFactory {
 
     private static Type getParameterizedType(Field field) {
         field.setAccessible(true);
+
         return ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
 
     }

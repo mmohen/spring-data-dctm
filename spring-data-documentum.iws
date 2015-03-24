@@ -27,12 +27,16 @@
   <component name="ChangeListManager">
     <list default="true" id="02665d85-00d7-4e6d-9d14-15c6ad693f6a" name="Default" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Session Manager instantiated in default constructor
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/Address.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ObjectAttribute.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/annotations/Relation.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringListAttribute.java" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/DCTMObject.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/annotations/DCTMObject.java" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/EntityField.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/annotations/EntityField.java" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" />
@@ -57,15 +61,27 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-data-documentum.iml" afterPath="$PROJECT_DIR$/spring-data-documentum.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-data-documentum.ipr" afterPath="$PROJECT_DIR$/spring-data-documentum.ipr" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityTypeHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityTypeHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/Person.java" afterPath="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/Person.java" />
+>>>>>>> Session Manager instantiated in default constructor
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-data-documentum.iws" afterPath="$PROJECT_DIR$/spring-data-documentum.iws" />
     </list>
     <ignored path="spring-data-documentum.iws" />
     <ignored path=".idea/workspace.xml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <file path="/Dummy.txt" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1427183425270" ignored="false" />
 =======
     <file path="/Dummy.txt" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426824512307" ignored="false" />
 >>>>>>> Refactored the code to handle different types better
+=======
+    <file path="/Dummy.txt" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1427183425270" ignored="false" />
+>>>>>>> Session Manager instantiated in default constructor
     <file path="$PROJECT_DIR$/documentum/cache/7.1.1000.0037SP1/bof/FPIRepo/content.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1424923306995" ignored="false" />
     <file path="/IntAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853079738" ignored="false" />
     <file path="/StringAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426854036941" ignored="false" />
@@ -79,14 +95,19 @@
     <file path="/pom.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426500567879" ignored="false" />
     <file path="$PROJECT_DIR$/../3g/config/default.json" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425364651590" ignored="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <file path="/DSTemplateTest.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426869167283" ignored="false" />
 =======
     <file path="/DSTemplateTest.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483355583" ignored="false" />
 >>>>>>> Refactored the code to handle different types better
+=======
+    <file path="/DSTemplateTest.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426869167283" ignored="false" />
+>>>>>>> Session Manager instantiated in default constructor
     <file path="/DSTemplate.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483454244" ignored="false" />
     <file path="/*.regexp" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1425459197473" ignored="false" />
     <file path="$PROJECT_DIR$/../3gjavamodules/ews-java-api-master/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426497473046" ignored="false" />
     <file path="$PROJECT_DIR$/../3gjavamodules/CreateMeetingRequest/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426497473046" ignored="false" />
+<<<<<<< HEAD
 <<<<<<< HEAD
     <file path="/fragment.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426871859903" ignored="false" />
     <file path="/Documentum.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483600655" ignored="false" />
@@ -98,6 +119,12 @@
     <file path="/EntityTypeHandler.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483422270" ignored="false" />
     <file path="/ObjectToDCTMConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426850254887" ignored="false" />
 >>>>>>> Refactored the code to handle different types better
+=======
+    <file path="/fragment.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426871859903" ignored="false" />
+    <file path="/Documentum.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483600655" ignored="false" />
+    <file path="/EntityTypeHandler.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483422270" ignored="false" />
+    <file path="/ObjectToDCTMConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426872149450" ignored="false" />
+>>>>>>> Session Manager instantiated in default constructor
     <file path="/EntityField.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426483716707" ignored="false" />
     <file path="$PROJECT_DIR$/../../temp/springboot/spring-boot-starter-dctm/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426648410503" ignored="false" />
     <file path="/usr/local/Cellar/maven/3.2.5/libexec/conf/settings.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426496483495" ignored="false" />
@@ -123,6 +150,7 @@
     <file path="$PROJECT_DIR$/../../temp/springboot/dctm-lms/src/main/java/com/emc/documentum/lms/controller/StudentController.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426583385624" ignored="false" />
     <file path="/StudentController.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426577736413" ignored="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <file path="$USER_HOME$/Perforce/waliar_newwork/depot/Platform/Spring/SpringDataNGIS/springdata-ngis-example-rest-angularjs/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426872081976" ignored="false" />
     <file path="$USER_HOME$/Downloads/spring-data-book-master/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1427183594142" ignored="false" />
     <file path="/DCTMToObjectConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851950163" ignored="false" />
@@ -133,6 +161,12 @@
     <file path="/DCTMToObjectConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851950163" ignored="false" />
     <file path="/Attribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851533263" ignored="false" />
 >>>>>>> Refactored the code to handle different types better
+=======
+    <file path="$USER_HOME$/Perforce/waliar_newwork/depot/Platform/Spring/SpringDataNGIS/springdata-ngis-example-rest-angularjs/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426872081976" ignored="false" />
+    <file path="$USER_HOME$/Downloads/spring-data-book-master/atlassian-ide-plugin.xml" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1427183594142" ignored="false" />
+    <file path="/DCTMToObjectConverter.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851950163" ignored="false" />
+    <file path="/Attribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426867705823" ignored="false" />
+>>>>>>> Session Manager instantiated in default constructor
     <file path="/ShortAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426850035050" ignored="false" />
     <file path="/LongAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853024837" ignored="false" />
     <file path="/FloatAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851829667" ignored="false" />
@@ -141,6 +175,9 @@
     <file path="/ByteAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426851757695" ignored="false" />
     <file path="/BooleanAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426853047146" ignored="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Session Manager instantiated in default constructor
     <file path="/Address.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426867095667" ignored="false" />
     <file path="/Person.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426869139962" ignored="false" />
     <file path="/ListAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426870735733" ignored="false" />
@@ -148,8 +185,11 @@
     <file path="/AttributeFactory.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426871945799" ignored="false" />
     <file path="/MappingHandler.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426871034321" ignored="false" />
     <file path="/StringListAttribute.java" changelist="02665d85-00d7-4e6d-9d14-15c6ad693f6a" time="1426870762493" ignored="false" />
+<<<<<<< HEAD
 =======
 >>>>>>> Refactored the code to handle different types better
+=======
+>>>>>>> Session Manager instantiated in default constructor
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +273,9 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Session Manager instantiated in default constructor
       <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" line="11" class="com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory" package="com.emc.documentum.springdata.entitymanager.attributes">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -294,9 +337,12 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" line="87" class="com.emc.documentum.springdata.core.tests.DSTemplateTest" package="com.emc.documentum.springdata.core.tests">
+<<<<<<< HEAD
 =======
       <breakpoint url="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java" line="37" class="com.emc.documentum.springdata.entitymanager.convert.DCTMToObjectConverter" package="com.emc.documentum.springdata.entitymanager.convert">
 >>>>>>> Refactored the code to handle different types better
+=======
+>>>>>>> Session Manager instantiated in default constructor
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -313,9 +359,12 @@
       </breakpoint>
     </line_breakpoints>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
 >>>>>>> Refactored the code to handle different types better
+=======
+>>>>>>> Session Manager instantiated in default constructor
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -325,9 +374,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DCTMToObjectConverter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java">
+      <file leaf-file-name="EntityPersistenceManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistenceManager.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <state line="49" column="0" selection-start="1971" selection-end="1971" vertical-scroll-proportion="0.0">
               <folding />
@@ -337,6 +387,19 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> Refactored the code to handle different types better
+=======
+            <state line="49" column="0" selection-start="1971" selection-end="1971" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DSTemplate.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/DSTemplate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="0" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+              <folding />
+>>>>>>> Session Manager instantiated in default constructor
             </state>
           </provider>
         </entry>
@@ -351,11 +414,16 @@
       <file leaf-file-name="ObjectToDCTMConverter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="15" column="13" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> Refactored the code to handle different types better
+=======
+            <state line="32" column="0" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.0">
+              <folding />
+>>>>>>> Session Manager instantiated in default constructor
             </state>
           </provider>
         </entry>
@@ -369,13 +437,18 @@
       <file leaf-file-name="AttributeFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="13" column="0" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
 >>>>>>> Refactored the code to handle different types better
+=======
+            <state line="24" column="42" selection-start="1083" selection-end="1102" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="AttributeFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java">
@@ -391,10 +464,18 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> Refactored the code to handle different types better
+=======
+      <file leaf-file-name="MappingHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="0" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0">
+              <folding />
+>>>>>>> Session Manager instantiated in default constructor
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="MappingHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java">
@@ -410,10 +491,18 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> Refactored the code to handle different types better
+=======
+      <file leaf-file-name="StringListAttribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringListAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="32" selection-start="562" selection-end="570" vertical-scroll-proportion="0.0">
+              <folding />
+>>>>>>> Session Manager instantiated in default constructor
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="StringListAttribute.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringListAttribute.java">
@@ -429,10 +518,18 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> Refactored the code to handle different types better
+=======
+      <file leaf-file-name="DSTemplateTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="45" selection-start="2471" selection-end="2471" vertical-scroll-proportion="0.24726477">
+              <folding />
+>>>>>>> Session Manager instantiated in default constructor
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="DSTemplateTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java">
@@ -444,6 +541,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="4" column="22" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
 >>>>>>> Refactored the code to handle different types better
+=======
+      <file leaf-file-name="DoubleAttribute.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="13" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
               <folding />
             </state>
           </provider>
@@ -459,6 +562,7 @@
       <file leaf-file-name="IntAttribute.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
@@ -479,11 +583,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="26" column="19" selection-start="980" selection-end="994" vertical-scroll-proportion="0.0">
 >>>>>>> Refactored the code to handle different types better
+=======
+            <state line="6" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file leaf-file-name="DCTMToObjectConverter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java">
@@ -499,6 +607,13 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> Refactored the code to handle different types better
+=======
+      <file leaf-file-name="DCTMToObjectConverter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="104" selection-start="1583" selection-end="1591" vertical-scroll-proportion="0.0">
+              <folding />
+>>>>>>> Session Manager instantiated in default constructor
             </state>
           </provider>
         </entry>
@@ -522,6 +637,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java" />
@@ -552,11 +668,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java" />
+=======
+>>>>>>> Session Manager instantiated in default constructor
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java" />
+<<<<<<< HEAD
 >>>>>>> Refactored the code to handle different types better
+=======
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/Relation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/annotations/Relation.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/Address.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ObjectAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/Person.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ListAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringListAttribute.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java" />
+>>>>>>> Session Manager instantiated in default constructor
       </list>
     </option>
   </component>
@@ -598,6 +731,7 @@
   </component>
   <component name="ProjectFrameBounds">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="824" />
@@ -607,6 +741,11 @@
     <option name="width" value="1728" />
     <option name="height" value="1048" />
 >>>>>>> Refactored the code to handle different types better
+=======
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="824" />
+>>>>>>> Session Manager instantiated in default constructor
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -913,6 +1052,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Session Manager instantiated in default constructor
               <option name="myItemId" value="entitymanager" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -947,8 +1089,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
 =======
 >>>>>>> Refactored the code to handle different types better
+=======
+>>>>>>> Session Manager instantiated in default constructor
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -990,12 +1135,17 @@
         </subPane>
       </pane>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
 =======
       <pane id="Scope" />
       <pane id="PackagesPane" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+>>>>>>> Session Manager instantiated in default constructor
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1004,9 +1154,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="140" />
     <property name="project.structure.proportion" value="0.15" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="OverrideImplement.combined" value="true" />
 =======
 >>>>>>> Refactored the code to handle different types better
+=======
+    <property name="OverrideImplement.combined" value="true" />
+>>>>>>> Session Manager instantiated in default constructor
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="139" />
@@ -1042,6 +1196,9 @@
     <property name="dynamic.classpath" value="false" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Session Manager instantiated in default constructor
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.emc.documentum.springdata.entitymanager.mapping" />
@@ -1049,9 +1206,12 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.DSTemplateTest.testFindById">
+<<<<<<< HEAD
 =======
   <component name="RunManager" selected="JUnit.DSTemplateTest">
 >>>>>>> Refactored the code to handle different types better
+=======
+>>>>>>> Session Manager instantiated in default constructor
     <configuration default="false" name="DSTemplateTest" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1081,10 +1241,14 @@
       <method />
     </configuration>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <configuration default="false" name="DocumentumTest.testGetSessionThrowsDfIdentityException" type="JUnit" factoryName="JUnit" temporary="true">
 =======
     <configuration default="false" name="DocumentumTest.testGetCredentials" type="JUnit" factoryName="JUnit" temporary="true">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <configuration default="false" name="DocumentumTest.testGetSessionThrowsDfIdentityException" type="JUnit" factoryName="JUnit" temporary="true">
+>>>>>>> Session Manager instantiated in default constructor
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
@@ -1096,11 +1260,15 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
       <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DocumentumTest" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <option name="METHOD_NAME" value="testGetSessionThrowsDfIdentityException" />
 =======
       <option name="METHOD_NAME" value="testGetCredentials" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <option name="METHOD_NAME" value="testGetSessionThrowsDfIdentityException" />
+>>>>>>> Session Manager instantiated in default constructor
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1121,10 +1289,14 @@
       <method />
     </configuration>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <configuration default="false" name="DSTemplateTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true">
 =======
     <configuration default="false" name="DocumentumTest.testGetSessionThrowsDfIdentityException" type="JUnit" factoryName="JUnit" temporary="true">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <configuration default="false" name="DSTemplateTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true">
+>>>>>>> Session Manager instantiated in default constructor
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
@@ -1135,6 +1307,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DSTemplateTest" />
       <option name="METHOD_NAME" value="testInsert" />
@@ -1142,6 +1315,10 @@
       <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DocumentumTest" />
       <option name="METHOD_NAME" value="testGetSessionThrowsDfIdentityException" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DSTemplateTest" />
+      <option name="METHOD_NAME" value="testInsert" />
+>>>>>>> Session Manager instantiated in default constructor
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1153,19 +1330,19 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <configuration default="false" name="DSTemplateTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true">
 =======
     <configuration default="false" name="DSTemplateTest.testInsert" type="JUnit" factoryName="JUnit" temporary="true">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <configuration default="false" name="DSTemplateTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true">
+>>>>>>> Session Manager instantiated in default constructor
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
@@ -1178,10 +1355,14 @@
       <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
       <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DSTemplateTest" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <option name="METHOD_NAME" value="testUpdate" />
 =======
       <option name="METHOD_NAME" value="testInsert" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <option name="METHOD_NAME" value="testUpdate" />
+>>>>>>> Session Manager instantiated in default constructor
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1204,10 +1385,14 @@
       <method />
     </configuration>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <configuration default="false" name="DSTemplateTest.testFindById" type="JUnit" factoryName="JUnit" temporary="true">
 =======
     <configuration default="false" name="DSTemplateTest.testUpdate" type="JUnit" factoryName="JUnit" temporary="true">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <configuration default="false" name="DSTemplateTest.testFindById" type="JUnit" factoryName="JUnit" temporary="true">
+>>>>>>> Session Manager instantiated in default constructor
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.emc.documentum.springdata.core.tests.*" />
@@ -1220,10 +1405,14 @@
       <option name="PACKAGE_NAME" value="com.emc.documentum.springdata.core.tests" />
       <option name="MAIN_CLASS_NAME" value="com.emc.documentum.springdata.core.tests.DSTemplateTest" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <option name="METHOD_NAME" value="testFindById" />
 =======
       <option name="METHOD_NAME" value="testUpdate" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <option name="METHOD_NAME" value="testFindById" />
+>>>>>>> Session Manager instantiated in default constructor
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1241,12 +1430,16 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <ConfigurationWrapper RunnerId="Debug" />
 =======
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <ConfigurationWrapper RunnerId="Debug" />
+>>>>>>> Session Manager instantiated in default constructor
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1365,10 +1558,14 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.DSTemplateTest" />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Session Manager instantiated in default constructor
       <item index="1" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetSessionThrowsDfIdentityException" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testInsert" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testUpdate" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testFindById" />
+<<<<<<< HEAD
     </list>
     <recent_temporary>
       <list size="5">
@@ -1391,6 +1588,16 @@
         <item index="3" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetSessionThrowsDfIdentityException" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetCredentials" />
 >>>>>>> Refactored the code to handle different types better
+=======
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testFindById" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DSTemplateTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testUpdate" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DSTemplateTest.testInsert" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DocumentumTest.testGetSessionThrowsDfIdentityException" />
+>>>>>>> Session Manager instantiated in default constructor
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1447,6 +1654,7 @@
   </component>
   <component name="ToolWindowManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="0" y="23" width="1440" height="824" extended-state="0" />
     <editor active="false" />
     <layout>
@@ -1457,22 +1665,33 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.54202586" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 >>>>>>> Refactored the code to handle different types better
+=======
+    <frame x="0" y="23" width="1440" height="824" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2784091" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> Session Manager instantiated in default constructor
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39772728" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 =======
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914772" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39772728" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> Session Manager instantiated in default constructor
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32981783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32386363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1484,14 +1703,21 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25824964" sideWeight="0.72159094" order="0" side_tool="false" content_ui="combo" />
 =======
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32386363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> Session Manager instantiated in default constructor
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17835909" sideWeight="0.45797414" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21807748" sideWeight="0.75284094" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23840666" sideWeight="0.45797414" order="0" side_tool="false" content_ui="combo" />
 >>>>>>> Refactored the code to handle different types better
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25824964" sideWeight="0.72159094" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Session Manager instantiated in default constructor
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30387932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.66442955" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1591,6 +1817,7 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/dfc/7.1.1-SNAPSHOT/dfc-7.1.1-20141104.073733-41.jar!/com/documentum/fc/client/IDfTypedObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="21" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.35628742" />
@@ -1617,10 +1844,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="21" selection-start="544" selection-end="547" vertical-scroll-proportion="0.0">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <entry file="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/dfc/7.1.1-SNAPSHOT/dfc-7.1.1-20141104.073733-41.jar!/com/documentum/fc/client/IDfTypedObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="21" selection-start="3587" selection-end="3587" vertical-scroll-proportion="0.35628742" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/Documentum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="572" selection-end="572" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1630,10 +1868,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="90" column="38" selection-start="4429" selection-end="4429" vertical-scroll-proportion="-3.8">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/ObjectAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="22" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeType.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1643,10 +1887,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="0" selection-start="1471" selection-end="1471" vertical-scroll-proportion="0.0">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/Attribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="33" selection-start="167" selection-end="182" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1656,10 +1906,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="22" selection-start="2350" selection-end="2350" vertical-scroll-proportion="0.33333334">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1669,10 +1925,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="24" selection-start="60" selection-end="60" vertical-scroll-proportion="0.03448276">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="23" selection-start="291" selection-end="306" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1682,10 +1944,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="22" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
 >>>>>>> Refactored the code to handle different types better
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1724,10 +1992,16 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringListAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="32" selection-start="562" selection-end="570" vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistenceManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="0" selection-start="1971" selection-end="1971" vertical-scroll-proportion="0.0">
@@ -1747,73 +2021,66 @@
         <state line="86" column="45" selection-start="2471" selection-end="2471" vertical-scroll-proportion="0.24726477">
 =======
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/DoubleAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/IntAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/LongAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/DCTMToObjectConverter.java">
+>>>>>>> Session Manager instantiated in default constructor
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="97" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="37" column="104" selection-start="1583" selection-end="1591" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/AttributeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
->>>>>>> Refactored the code to handle different types better
+        <state line="24" column="42" selection-start="1083" selection-end="1102" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/BooleanAttribute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/mapping/MappingHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="65" selection-end="65" vertical-scroll-proportion="0.06417112">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="52" column="0" selection-start="1834" selection-end="1834" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/convert/ObjectToDCTMConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/attributes/StringListAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="32" selection-start="562" selection-end="570" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/entitymanager/EntityPersistenceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="0" selection-start="1971" selection-end="1971" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/emc/documentum/springdata/core/DSTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="13" column="0" selection-start="667" selection-end="667" vertical-scroll-proportion="0.0">
+>>>>>>> Refactored the code to handle different types better
+=======
+        <state line="30" column="0" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+>>>>>>> Session Manager instantiated in default constructor
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/emc/documentum/springdata/core/tests/DSTemplateTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="45" selection-start="2471" selection-end="2471" vertical-scroll-proportion="0.24726477">
+          <folding />
         </state>
       </provider>
     </entry>
