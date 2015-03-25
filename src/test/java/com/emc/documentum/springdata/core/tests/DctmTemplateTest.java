@@ -89,6 +89,10 @@ public class DctmTemplateTest {
 		assertEquals(obj.getName(),  p.getName());
 		assertEquals(obj.getAge(), p.getAge());
 		assertEquals(obj.getGender(), p.getGender());
+		System.out.println(obj.getHobbies());
+		obj.getHobbies().add("Hobby Three");
+		Person updatedObj = template.update(obj);
+		System.out.println(updatedObj.getHobbies());
 	
 	}
 	

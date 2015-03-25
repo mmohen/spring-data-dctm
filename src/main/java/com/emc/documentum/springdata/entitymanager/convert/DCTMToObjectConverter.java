@@ -32,7 +32,10 @@ public class DCTMToObjectConverter {
     private void getValue(IDfTypedObject dctmObject, Object objectToReturn, AttributeType fieldType)
             throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Added all ListTypes and SetValue Method for String, yet to test
         Attribute<?> attribute = fieldType.getAttribute();
 
         PropertyUtils.setSimpleProperty(objectToReturn, fieldType.getFieldName(), attribute.getValue(dctmObject));
