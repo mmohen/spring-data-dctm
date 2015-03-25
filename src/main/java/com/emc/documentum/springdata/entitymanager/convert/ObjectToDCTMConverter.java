@@ -2,15 +2,19 @@ package com.emc.documentum.springdata.entitymanager.convert;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.documentum.fc.common.DfValue;
 import com.documentum.fc.common.IDfValue;
+
 import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.stereotype.Controller;
 
 import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.common.DfException;
+import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
+import com.emc.documentum.springdata.entitymanager.attributes.IterableAttribute;
 
 @Controller
 public class ObjectToDCTMConverter {
@@ -36,11 +40,16 @@ public class ObjectToDCTMConverter {
             throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
         Object valueFromClass = PropertyUtils.getSimpleProperty(objectToSave, fieldType.getFieldName());
-
-        IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
-
-        dctmObject.setValue(fieldType.getAttribute().getName(), value);
-
+        Attribute<?> attribute = fieldType.getAttribute();
+        
+        if(attribute instanceof IterableAttribute<?> ) {
+        	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass);
+        	
+        }
+        else {
+        	IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
+        	dctmObject.setValue(fieldType.getAttribute().getName(), value);
+        }
     }
 
 }

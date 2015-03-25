@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
+
 public class AttributeFactory {
 
     public static Attribute<?> getAttribute(Field field, String attributeName) {
@@ -22,6 +23,7 @@ public class AttributeFactory {
         } else if (type == java.lang.Boolean.class || type == boolean.class) {
             return new BooleanAttribute(attributeName);
         } else if (type == java.util.List.class && getParameterizedType(field) == java.lang.String.class ){
+        	// TODO Will not work if field declared as Arraylist of any other extended class of List, use Collection.class.isAssignableFrom(f.getType()) ??
             return new StringListAttribute(attributeName);
         }
 
@@ -30,7 +32,6 @@ public class AttributeFactory {
 
     private static Type getParameterizedType(Field field) {
         field.setAccessible(true);
-
         return ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
 
     }
