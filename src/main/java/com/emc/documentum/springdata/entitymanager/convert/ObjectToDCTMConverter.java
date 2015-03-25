@@ -7,13 +7,16 @@ import java.util.List;
 import com.documentum.fc.common.DfValue;
 import com.documentum.fc.common.IDfValue;
 
+
 import com.documentum.fc.common.DfValue;
 import com.documentum.fc.common.IDfValue;
+
 import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.stereotype.Controller;
 
 import com.documentum.fc.client.IDfSysObject;
 import com.documentum.fc.common.DfException;
+import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 import com.emc.documentum.springdata.entitymanager.attributes.IterableAttribute;
 

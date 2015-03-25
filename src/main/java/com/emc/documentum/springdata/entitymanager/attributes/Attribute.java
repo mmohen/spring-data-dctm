@@ -21,5 +21,4 @@ public abstract class Attribute<T> {
     }
 
     public abstract T getValue(Object o) throws DfException;
-
 }
