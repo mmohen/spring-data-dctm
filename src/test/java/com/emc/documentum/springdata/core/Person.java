@@ -27,19 +27,31 @@ public class Person {
 
     private List<String> hobbies = new ArrayList<String>();
     
+<<<<<<< HEAD
     @EntityField("accountnumbers")
     private List<Double> accountNumbers = new ArrayList<Double>();
 
+=======
+    private List<Long> accountNumbers = new ArrayList<Long>();
+>>>>>>> Repeating Attributes Working
 //    @Relation
 //    public Address address;
 
 
 
+<<<<<<< HEAD
     public List<Double> getAccountNumbers() {
 		return accountNumbers;
 	}
 
 	public void setAccountNumbers(List<Double> accountNumbers) {
+=======
+    public List<Long> getAccountNumbers() {
+		return accountNumbers;
+	}
+
+	public void setAccountNumbers(List<Long> accountNumbers) {
+>>>>>>> Repeating Attributes Working
 		this.accountNumbers = accountNumbers;
 	}
 

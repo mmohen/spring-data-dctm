@@ -82,17 +82,11 @@ public class DctmTemplateTest {
 	public void testFindById() throws DfException {
 	
 		p = new Person("John",67,"Male");
-        p.getHobbies().add("Hobby One");
-        p.getHobbies().add("Hobby two");
 		Person insertedPerson = template.create(p);
 		Person obj = template.findById(insertedPerson.get_id(), Person.class);
 		assertEquals(obj.getName(),  p.getName());
 		assertEquals(obj.getAge(), p.getAge());
 		assertEquals(obj.getGender(), p.getGender());
-		System.out.println(obj.getHobbies());
-		obj.getHobbies().add("Hobby Three");
-		Person updatedObj = template.update(obj);
-		System.out.println(updatedObj.getHobbies());
 	
 	}
 	
@@ -100,6 +94,7 @@ public class DctmTemplateTest {
 	public void testForRepeatingAttributes() throws DfException {
 		
 		p = new Person("John",67,"Male");
+<<<<<<< HEAD
         p.getAccountNumbers().add(new Double(1979869469));
         p.getAccountNumbers().add(new Double(1979869468));
 		Person insertedPerson = template.create(p);
@@ -110,6 +105,18 @@ public class DctmTemplateTest {
 		Person updatedObj = template.update(obj);
 		assertEquals(updatedObj.getAccountNumbers().size(),3);
 		assertEquals(updatedObj.getHobbies().size(),2);
+=======
+        p.getAccountNumbers().add(new Long(1979869469));
+        p.getAccountNumbers().add(new Long(1979869468));
+		Person insertedPerson = template.create(p);
+		Person obj = template.findById(insertedPerson.get_id(), Person.class);
+		System.out.println(obj.getAccountNumbers());
+		obj.getAccountNumbers().add(new Long(1979869467));
+		Person updatedObj = template.update(obj);
+		assertEquals(updatedObj.getAccountNumbers().size(),3);
+		System.out.println(updatedObj.getAccountNumbers());
+		
+>>>>>>> Repeating Attributes Working
 	}
 	
 	
