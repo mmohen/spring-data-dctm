@@ -80,31 +80,42 @@ public class DctmTemplateTest {
 	}
 	
 	@Test
-	public void testFindById() throws DfException, InstantiationException, IllegalAccessException {
+	public void testFindById() throws DfException {
 	
 		p = new Person("John",67,"Male");
-        p.getHobbies().add("Hobby One");
-        p.getHobbies().add("Hobby two");
 		Person insertedPerson = template.create(p);
 		Person obj = template.findById(insertedPerson.get_id(), Person.class);
 		assertEquals(obj.getName(),  p.getName());
 		assertEquals(obj.getAge(), p.getAge());
 		assertEquals(obj.getGender(), p.getGender());
-		System.out.println(obj.getHobbies());
-		obj.getHobbies().add("Hobby Three");
-		Person updatedObj = template.update(obj);
-		System.out.println(updatedObj.getHobbies());
 	
 	}
 	
+	@Test
+	public void testForRepeatingAttributes() throws DfException {
+		
+		p = new Person("John",67,"Male");
+        p.getAccountNumbers().add(new Long(1979869469));
+        p.getAccountNumbers().add(new Long(1979869468));
+		Person insertedPerson = template.create(p);
+		Person obj = template.findById(insertedPerson.get_id(), Person.class);
+		System.out.println(obj.getAccountNumbers());
+		obj.getAccountNumbers().add(new Long(1979869467));
+		Person updatedObj = template.update(obj);
+		assertEquals(updatedObj.getAccountNumbers().size(),3);
+		System.out.println(updatedObj.getAccountNumbers());
+		
+	}
+	
+	
 	@Test (expected = DfException.class)
-	public void testFindByIdThrowsBadIDException() throws DfException, InstantiationException, IllegalAccessException {
+	public void testFindByIdThrowsBadIDException() throws DfException {
 			
 			template.findById("this id doesn't exist", Person.class);	
 	}
 	
 	@Test
-	public void testFindAll() throws InstantiationException, IllegalAccessException, DfException{
+	public void testFindAll() throws DfException{
 		List<Person> list1 = template.findAll(Person.class);
 		p = new Person("Rohan",22,"Male");
 		template.create(p);

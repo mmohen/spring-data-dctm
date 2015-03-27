@@ -22,9 +22,24 @@ public class AttributeFactory {
             return new LongAttribute(attributeName);
         } else if (type == java.lang.Boolean.class || type == boolean.class) {
             return new BooleanAttribute(attributeName);
-        } else if (type == java.util.List.class && getParameterizedType(field) == java.lang.String.class ){
+        } 
+        
+        
+        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.String.class ){
         	// TODO Will not work if field declared as Arraylist of any other extended class of List, use Collection.class.isAssignableFrom(f.getType()) ??
             return new StringListAttribute(attributeName);
+        }
+        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Integer.class ){
+            return new IntListAttribute(attributeName);
+        }
+        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Double.class ){
+            return new DoubleListAttribute(attributeName);
+        }
+        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Long.class ){
+            return new LongListAttribute(attributeName);
+        }
+        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Boolean.class ){
+            return new BooleanListAttribute(attributeName);
         }
 
         return null;

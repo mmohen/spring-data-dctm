@@ -2,7 +2,6 @@ package com.emc.documentum.springdata.entitymanager.attributes;
 
 import com.documentum.fc.client.IDfTypedObject;
 import com.documentum.fc.common.DfException;
-import org.apache.commons.beanutils.PropertyUtils;
 
 public class IntAttribute extends Attribute<Integer> {
 

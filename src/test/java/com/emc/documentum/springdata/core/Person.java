@@ -26,12 +26,22 @@ public class Person {
 
 
     private List<String> hobbies = new ArrayList<String>();
+    
+    private List<Long> accountNumbers = new ArrayList<Long>();
 //    @Relation
 //    public Address address;
 
 
 
-    public List<String> getHobbies() {
+    public List<Long> getAccountNumbers() {
+		return accountNumbers;
+	}
+
+	public void setAccountNumbers(List<Long> accountNumbers) {
+		this.accountNumbers = accountNumbers;
+	}
+
+	public List<String> getHobbies() {
         return hobbies;
     }
 
