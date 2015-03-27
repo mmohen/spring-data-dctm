@@ -57,9 +57,13 @@ public class ObjectToDCTMConverter {
         Attribute<?> attribute = fieldType.getAttribute();
         
         if(attribute instanceof IterableAttribute<?> ) {
+<<<<<<< HEAD
         	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass);
         	
 >>>>>>> Added all ListTypes and SetValue Method for String, yet to test
+=======
+        	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass); 	
+>>>>>>> Added test for repeating attributes
         }
         else {
         	IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());

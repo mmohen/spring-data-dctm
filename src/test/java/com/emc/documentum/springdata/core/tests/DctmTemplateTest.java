@@ -94,7 +94,6 @@ public class DctmTemplateTest {
 	public void testForRepeatingAttributes() throws DfException {
 		
 		p = new Person("John",67,"Male");
-<<<<<<< HEAD
         p.getAccountNumbers().add(new Double(1979869469));
         p.getAccountNumbers().add(new Double(1979869468));
 		Person insertedPerson = template.create(p);
@@ -105,18 +104,6 @@ public class DctmTemplateTest {
 		Person updatedObj = template.update(obj);
 		assertEquals(updatedObj.getAccountNumbers().size(),3);
 		assertEquals(updatedObj.getHobbies().size(),2);
-=======
-        p.getAccountNumbers().add(new Long(1979869469));
-        p.getAccountNumbers().add(new Long(1979869468));
-		Person insertedPerson = template.create(p);
-		Person obj = template.findById(insertedPerson.get_id(), Person.class);
-		System.out.println(obj.getAccountNumbers());
-		obj.getAccountNumbers().add(new Long(1979869467));
-		Person updatedObj = template.update(obj);
-		assertEquals(updatedObj.getAccountNumbers().size(),3);
-		System.out.println(updatedObj.getAccountNumbers());
-		
->>>>>>> Repeating Attributes Working
 	}
 	
 	

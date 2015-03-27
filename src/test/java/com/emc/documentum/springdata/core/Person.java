@@ -28,17 +28,23 @@ public class Person {
     private List<String> hobbies = new ArrayList<String>();
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     @EntityField("accountnumbers")
     private List<Double> accountNumbers = new ArrayList<Double>();
 
 =======
     private List<Long> accountNumbers = new ArrayList<Long>();
 >>>>>>> Repeating Attributes Working
+=======
+    @EntityField("accountnumbers")
+    private List<Double> accountNumbers = new ArrayList<Double>();
+>>>>>>> Added test for repeating attributes
 //    @Relation
 //    public Address address;
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     public List<Double> getAccountNumbers() {
 		return accountNumbers;
@@ -52,6 +58,13 @@ public class Person {
 
 	public void setAccountNumbers(List<Long> accountNumbers) {
 >>>>>>> Repeating Attributes Working
+=======
+    public List<Double> getAccountNumbers() {
+		return accountNumbers;
+	}
+
+	public void setAccountNumbers(List<Double> accountNumbers) {
+>>>>>>> Added test for repeating attributes
 		this.accountNumbers = accountNumbers;
 	}
 
