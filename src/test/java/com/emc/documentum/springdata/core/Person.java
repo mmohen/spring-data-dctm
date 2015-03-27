@@ -27,17 +27,18 @@ public class Person {
 
     private List<String> hobbies = new ArrayList<String>();
     
-    private List<Long> accountNumbers = new ArrayList<Long>();
+    @EntityField("accountnumbers")
+    private List<Double> accountNumbers = new ArrayList<Double>();
 //    @Relation
 //    public Address address;
 
 
 
-    public List<Long> getAccountNumbers() {
+    public List<Double> getAccountNumbers() {
 		return accountNumbers;
 	}
 
-	public void setAccountNumbers(List<Long> accountNumbers) {
+	public void setAccountNumbers(List<Double> accountNumbers) {
 		this.accountNumbers = accountNumbers;
 	}
 

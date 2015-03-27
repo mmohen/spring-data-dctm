@@ -1,8 +1,7 @@
 package com.emc.documentum.springdata.core.tests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import org.junit.Before;
@@ -50,7 +49,7 @@ public class DctmTemplateTest {
 
     }
 
-	@Test
+//	@Test
 	public void testSpringConfiguration() throws DfException{
 		Person p = new Person("rohan",21,"male");
 		System.out.println(p.getName());
@@ -69,7 +68,7 @@ public class DctmTemplateTest {
 	}
 	
 	@Test
-	public void testUpdate() throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+	public void testUpdate() throws DfException{
 
 		p = new Person("Adam",22,"Female");
 		template.create(p);
@@ -95,16 +94,16 @@ public class DctmTemplateTest {
 	public void testForRepeatingAttributes() throws DfException {
 		
 		p = new Person("John",67,"Male");
-        p.getAccountNumbers().add(new Long(1979869469));
-        p.getAccountNumbers().add(new Long(1979869468));
+        p.getAccountNumbers().add(new Double(1979869469));
+        p.getAccountNumbers().add(new Double(1979869468));
 		Person insertedPerson = template.create(p);
 		Person obj = template.findById(insertedPerson.get_id(), Person.class);
-		System.out.println(obj.getAccountNumbers());
-		obj.getAccountNumbers().add(new Long(1979869467));
+		obj.getAccountNumbers().add(new Double(1979869467));
+		obj.getHobbies().add("Reading");
+		obj.getHobbies().add("Dancing");
 		Person updatedObj = template.update(obj);
 		assertEquals(updatedObj.getAccountNumbers().size(),3);
-		System.out.println(updatedObj.getAccountNumbers());
-		
+		assertEquals(updatedObj.getHobbies().size(),2);
 	}
 	
 	

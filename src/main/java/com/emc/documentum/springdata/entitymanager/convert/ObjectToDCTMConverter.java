@@ -47,8 +47,7 @@ public class ObjectToDCTMConverter {
         Attribute<?> attribute = fieldType.getAttribute();
         
         if(attribute instanceof IterableAttribute<?> ) {
-        	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass);
-        	
+        	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass); 	
         }
         else {
         	IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
