@@ -16,9 +16,9 @@ import org.springframework.data.annotation.Persistent;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
-public @interface DCTMObject {
+public @interface DctmEntity {
 
-    String repository() default "";
+    String repository();
 
     /**
      * Defines the default language to be used with this document.

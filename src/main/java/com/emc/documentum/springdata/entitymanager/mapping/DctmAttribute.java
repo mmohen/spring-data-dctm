@@ -11,7 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-public @interface EntityField {
+public @interface DctmAttribute {
 
     /**
      * The key to be used to store the field inside the document.
@@ -20,13 +20,6 @@ public @interface EntityField {
      */
 
     String value() default "";
-
-    /**
-     * The order in which various fields shall be stored. Has to be a positive integer.
-     *
-     *
-     */
-
 }
 
 

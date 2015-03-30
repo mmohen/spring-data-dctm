@@ -9,9 +9,8 @@ import com.documentum.fc.common.DfException;
 @SpringBootApplication
 @ComponentScan("com.emc.documentum.springdata")
 public class Application {
-	
-	public static void main(String[] args) throws DfException {
-		SpringApplication.run(Application.class);
-		
-	}
+  
+  public static void main(String[] args) throws DfException {
+    SpringApplication.run(Application.class);
+  }
 }

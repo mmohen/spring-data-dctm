@@ -8,14 +8,11 @@ public class Attribute<T> {
         this.name = name;
     }
 
-
     public String getName() {
         return this.name;
     }
 
-
     public T getValue(Object o) {
         return null;
     }
-
 }

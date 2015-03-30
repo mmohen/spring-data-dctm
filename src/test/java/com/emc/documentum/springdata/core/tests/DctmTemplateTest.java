@@ -18,13 +18,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.Application;
-import com.emc.documentum.springdata.core.DSTemplate;
+import com.emc.documentum.springdata.core.DctmTemplate;
 import com.emc.documentum.springdata.core.Documentum;
-import com.emc.documentum.springdata.core.Person;
+import com.emc.documentum.springdata.Person;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
-public class DSTemplateTest {
+public class DctmTemplateTest {
 
 	private Person p;
 
@@ -32,7 +32,7 @@ public class DSTemplateTest {
 	private Documentum dctm;
 	
 	@Autowired
-	private DSTemplate template;
+	private DctmTemplate template;
 
 	@Rule
 	public ExpectedException expected = ExpectedException.none();

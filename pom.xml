@@ -1,110 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.emc.documentum.spring</groupId>
-	<artifactId>spring-data-documentum</artifactId>
-    <packaging>jar</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.emc.documentum.spring</groupId>
+  <artifactId>spring-data-documentum</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
 
 
-    <properties>
+  <properties>
 
-		<!-- Generic properties -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- Generic properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <querydsl>3.6.2.BUILD-SNAPSHOT</querydsl>
 
-		<!-- Spring -->
-		<spring-framework.version>3.2.3.RELEASE</spring-framework.version>
+    <!-- Spring -->
+    <spring-framework.version>3.2.3.RELEASE</spring-framework.version>
 
-		<!-- Hibernate / JPA -->
-		<hibernate.version>4.2.1.Final</hibernate.version>
+    <!-- Hibernate / JPA -->
+    <hibernate.version>4.2.1.Final</hibernate.version>
 
-		<!-- Logging -->
-		<logback.version>1.0.13</logback.version>
+    <!-- Logging -->
+    <logback.version>1.0.13</logback.version>
 
-		<!-- Test -->
-		<junit.version>4.11</junit.version>
+    <!-- Test -->
+    <junit.version>4.11</junit.version>
 
-	</properties>
+  </properties>
 
-	<dependencies>
-		<!-- Spring and Transactions -->
+  <dependencies>
+    <!-- Spring and Transactions -->
 
-		<!-- Logging with SLF4J & LogBack -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.emc.documentum.dfc</groupId>
-			<artifactId>dfc</artifactId>
-			<version>7.1.1-SNAPSHOT</version>
-		</dependency>
+    <!-- Logging with SLF4J & LogBack -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+      <scope>runtime</scope>
+    </dependency>
 
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.8.3</version>
-		</dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>18.0</version>
-        </dependency>
+    <dependency>
+      <groupId>com.emc.documentum.dfc</groupId>
+      <artifactId>dfc</artifactId>
+      <version>7.1.1-SNAPSHOT</version>
+    </dependency>
 
-        <dependency>
-        	<groupId>org.springframework.boot</groupId>
-        	<artifactId>spring-boot-starter</artifactId>
-        	<version>1.2.2.RELEASE</version>
-        </dependency>
-        <dependency>
-        	<groupId>org.springframework.boot</groupId>
-        	<artifactId>spring-boot-starter-test</artifactId>
-        	<version>1.2.2.RELEASE</version>
-        </dependency>
-        <dependency>
-        	<groupId>org.springframework.data</groupId>
-        	<artifactId>spring-data-commons</artifactId>
-        </dependency>
-	</dependencies>	
-	
-	<repositories>
-		<repository>
-			<id>artifactory</id>
-			<url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/internal</url>
-			<snapshots>
-				<updatePolicy>
-                    never
-                </updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-	
-	
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.2.RELEASE</version>
-	</parent>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+      <version>1.8.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>18.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>1.2.2.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>1.2.2.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>com.mysema.querydsl</groupId>
+      <artifactId>querydsl-mongodb</artifactId>
+      <version>${querydsl}</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.mysema.querydsl</groupId>
+      <artifactId>querydsl-core</artifactId>
+      <version>${querydsl}</version>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.mysema.querydsl</groupId>
+      <artifactId>querydsl-apt</artifactId>
+      <version>${querydsl}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-commons</artifactId>
+      <version>1.9.2.RELEASE</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>artifactory</id>
+      <url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/internal</url>
+      <snapshots>
+        <updatePolicy>
+          never
+        </updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.2.2.RELEASE</version>
+  </parent>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>artifactory-dev</id>
-            <name>pls-jfrogrepo.lss.emc.com-snapshots</name>
-            <url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/dev-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>artifactory-dev</id>
+      <name>pls-jfrogrepo.lss.emc.com-snapshots</name>
+      <url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/dev-snapshot-local</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
