@@ -27,7 +27,7 @@
     <!-- Test -->
     <junit.version>4.11</junit.version>
 
-      <querydsl.version>3.5.1</querydsl.version>
+     <querydsl.version>3.5.1</querydsl.version>
   </properties>
 
   <dependencies>
@@ -139,4 +139,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
