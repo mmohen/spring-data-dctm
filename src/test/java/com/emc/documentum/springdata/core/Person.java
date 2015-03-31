@@ -6,30 +6,37 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
 import com.emc.documentum.springdata.entitymanager.annotations.Content;
-import com.emc.documentum.springdata.entitymanager.annotations.DCTMObject;
-import com.emc.documentum.springdata.entitymanager.annotations.EntityField;
+
+
+import com.emc.documentum.springdata.entitymanager.mapping.DctmAttribute;
+import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@DCTMObject(repository="persons")
+@DctmEntity(repository="persons")
 @TypeAlias("person")
 public class Person {
 
-    @EntityField("firstname")
+    @DctmAttribute("firstname")
     private String name;
 
     @Id
     public String _id;
     public Integer age;
 
-    @EntityField("sex")
+    @DctmAttribute("sex")
     private String gender;
 
 
     private List<String> hobbies = new ArrayList<String>();
+<<<<<<< HEAD
 
     @EntityField("accountnumbers")
+=======
+    
+    @DctmAttribute("accountnumbers")
+>>>>>>> Rebased from Gourav's repository code
     private List<Double> accountNumbers = new ArrayList<Double>();
 
 //    @Relation

@@ -3,7 +3,7 @@ package com.emc.documentum.springdata.entitymanager.mapping;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-import com.emc.documentum.springdata.entitymanager.annotations.EntityField;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
@@ -13,6 +13,7 @@ import com.emc.documentum.springdata.core.GenericCache;
 import com.emc.documentum.springdata.entitymanager.attributes.Attribute;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeFactory;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
+import com.emc.documentum.springdata.entitymanager.mapping.DctmAttribute;
 
 @Component
 public class MappingHandler {

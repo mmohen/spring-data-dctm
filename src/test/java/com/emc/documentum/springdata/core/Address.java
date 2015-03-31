@@ -1,6 +1,6 @@
 package com.emc.documentum.springdata.core;
 
-import com.emc.documentum.springdata.entitymanager.annotations.DCTMObject;
+import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
@@ -11,7 +11,7 @@ import org.springframework.data.annotation.TypeAlias;
  * Time: 9:25 PM
  * To change this template use File | Settings | File Templates.
  */
-@DCTMObject(repository="addresses")
+@DctmEntity(repository="addresses")
 @TypeAlias("address")
 public class Address {
 

@@ -19,7 +19,7 @@ import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.Application;
 import com.emc.documentum.springdata.core.DctmTemplate;
 import com.emc.documentum.springdata.core.Documentum;
-import com.emc.documentum.springdata.Person;
+import com.emc.documentum.springdata.core.Person;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)

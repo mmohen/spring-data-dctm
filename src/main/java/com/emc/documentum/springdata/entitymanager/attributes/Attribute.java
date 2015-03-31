@@ -20,5 +20,6 @@ public abstract class Attribute<T> {
         return this.name;
     }
 
+
     public abstract T getValue(Object o) throws DfException;
 }
