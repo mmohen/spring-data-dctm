@@ -29,7 +29,6 @@ public class DCTMToObjectConverter {
         }
     }
 
-    // TODO : see if there is a better way of doing this
     private void getValue(IDfTypedObject dctmObject, Object objectToReturn, AttributeType fieldType)
             throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
