@@ -3,12 +3,6 @@ package com.emc.documentum.springdata.entitymanager.convert;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
-
-import com.documentum.fc.common.DfValue;
-import com.documentum.fc.common.IDfValue;
-=======
->>>>>>> Added all ListTypes and SetValue Method for String, yet to test
 
 
 import com.documentum.fc.common.DfValue;
@@ -47,23 +41,12 @@ public class ObjectToDCTMConverter {
             throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
         Object valueFromClass = PropertyUtils.getSimpleProperty(objectToSave, fieldType.getFieldName());
-<<<<<<< HEAD
         
         Attribute<?> attribute = fieldType.getAttribute();
         
         if(attribute instanceof IterableAttribute<?> ) {
         	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass); 	
-=======
-        Attribute<?> attribute = fieldType.getAttribute();
-        
-        if(attribute instanceof IterableAttribute<?> ) {
-<<<<<<< HEAD
-        	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass);
-        	
->>>>>>> Added all ListTypes and SetValue Method for String, yet to test
-=======
-        	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass); 	
->>>>>>> Added test for repeating attributes
+
         }
         else {
         	IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());

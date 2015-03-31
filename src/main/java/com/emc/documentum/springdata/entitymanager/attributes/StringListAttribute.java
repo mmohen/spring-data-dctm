@@ -8,10 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringListAttribute extends IterableAttribute<List<String>> {
-<<<<<<< HEAD
-=======
-
->>>>>>> Added all ListTypes and SetValue Method for String, yet to test
 
     public StringListAttribute(java.lang.String name) {
         super(name);

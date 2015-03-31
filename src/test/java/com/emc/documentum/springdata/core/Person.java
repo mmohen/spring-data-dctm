@@ -6,8 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
 import com.emc.documentum.springdata.entitymanager.annotations.Content;
-
-
 import com.emc.documentum.springdata.entitymanager.mapping.DctmAttribute;
 import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 
@@ -30,13 +28,8 @@ public class Person {
 
 
     private List<String> hobbies = new ArrayList<String>();
-<<<<<<< HEAD
 
-    @EntityField("accountnumbers")
-=======
-    
     @DctmAttribute("accountnumbers")
->>>>>>> Rebased from Gourav's repository code
     private List<Double> accountNumbers = new ArrayList<Double>();
 
 //    @Relation
