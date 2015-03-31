@@ -1,9 +1,11 @@
 package com.emc.documentum.springdata.core;
 
 import com.emc.documentum.springdata.entitymanager.annotations.Relation;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
+import com.emc.documentum.springdata.entitymanager.annotations.Content;
 import com.emc.documentum.springdata.entitymanager.annotations.DCTMObject;
 import com.emc.documentum.springdata.entitymanager.annotations.EntityField;
 
@@ -26,45 +28,30 @@ public class Person {
 
 
     private List<String> hobbies = new ArrayList<String>();
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     @EntityField("accountnumbers")
     private List<Double> accountNumbers = new ArrayList<Double>();
 
-=======
-    private List<Long> accountNumbers = new ArrayList<Long>();
->>>>>>> Repeating Attributes Working
-=======
-    @EntityField("accountnumbers")
-    private List<Double> accountNumbers = new ArrayList<Double>();
->>>>>>> Added test for repeating attributes
 //    @Relation
 //    public Address address;
+    
+//    private Content file;
+//    
+//	@Content
+//	public boolean getFileAt(String path) {
+//		return true;
+//	}
+//
+//	@Content
+//	public void setFile(String path) {
+//		this.file = file;
+//	}
 
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
     public List<Double> getAccountNumbers() {
 		return accountNumbers;
 	}
 
 	public void setAccountNumbers(List<Double> accountNumbers) {
-=======
-    public List<Long> getAccountNumbers() {
-		return accountNumbers;
-	}
-
-	public void setAccountNumbers(List<Long> accountNumbers) {
->>>>>>> Repeating Attributes Working
-=======
-    public List<Double> getAccountNumbers() {
-		return accountNumbers;
-	}
-
-	public void setAccountNumbers(List<Double> accountNumbers) {
->>>>>>> Added test for repeating attributes
 		this.accountNumbers = accountNumbers;
 	}
 
@@ -72,7 +59,7 @@ public class Person {
         return hobbies;
     }
 
-    public void setHobbies(List<String> hobbies) {
+	 public void setHobbies(List<String> hobbies) {
         this.hobbies = hobbies;
     }
 
@@ -83,9 +70,6 @@ public class Person {
 //    public void setAddress(Address address) {
 //        this.address = address;
 //    }
-
-
-
 
 	public void set_id(String _id) {
 		this._id = _id;
@@ -100,7 +84,6 @@ public class Person {
 	public String get_id() {
 		return _id;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;

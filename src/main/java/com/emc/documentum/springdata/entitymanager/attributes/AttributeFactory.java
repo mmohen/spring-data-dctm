@@ -3,6 +3,7 @@ package com.emc.documentum.springdata.entitymanager.attributes;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.Collection;
 
 
 public class AttributeFactory {
@@ -25,20 +26,19 @@ public class AttributeFactory {
         } 
         
         
-        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.String.class ){
-        	// TODO Will not work if field declared as Arraylist of any other extended class of List, use Collection.class.isAssignableFrom(f.getType()) ??
+        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.String.class ){
             return new StringListAttribute(attributeName);
         }
-        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Integer.class ){
+        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Integer.class ){
             return new IntListAttribute(attributeName);
         }
-        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Double.class ){
+        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Double.class ){
             return new DoubleListAttribute(attributeName);
         }
-        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Long.class ){
+        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Long.class ){
             return new LongListAttribute(attributeName);
         }
-        else if (type == java.util.List.class && getParameterizedType(field) == java.lang.Boolean.class ){
+        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Boolean.class ){
             return new BooleanListAttribute(attributeName);
         }
 
