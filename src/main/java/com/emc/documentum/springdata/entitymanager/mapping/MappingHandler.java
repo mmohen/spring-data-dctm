@@ -78,7 +78,6 @@ public class MappingHandler {
 
         for (Field f : fields) {
             f.setAccessible(true);
-            Class<?> type = f.getType();
             attributeName = getEntityFieldName(f);
             attribute = AttributeFactory.getAttribute(f, attributeName);
             AttributeType attributeType = new AttributeType(f.getName(), attribute);

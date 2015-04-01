@@ -59,7 +59,6 @@ public class EntityPersistenceManager {
 
   public <T> String deleteObject(String repoObjectName, T objectToDelete) throws DfException {
     try {
-      IDfSession session = documentum.getSession();
       String idFieldName = mappingHandler.getIdField(objectToDelete);
       String id = (String)PropertyUtils.getSimpleProperty(objectToDelete, idFieldName);
       return deleteObject(id);
@@ -164,8 +163,6 @@ public long count(Class<?> entityClass, String repoObjectName) throws DfExceptio
 	try {
 
 	      IDfSession session = documentum.getSession();
-	      ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(entityClass);
-
 	      IDfQuery query = new DfQuery();
 	      String dql = "select count(*) as object_count from " + repoObjectName;    // TODO: create a DQL Builder
 	      query.setDQL(dql);

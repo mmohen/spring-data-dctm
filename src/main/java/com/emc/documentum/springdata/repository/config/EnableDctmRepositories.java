@@ -8,7 +8,6 @@ import java.lang.annotation.Target;
 
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.repository.query.QueryLookupStrategy;
 import org.springframework.data.repository.query.QueryLookupStrategy.Key;
 
 import com.emc.documentum.springdata.repository.support.DctmRepositoryFactoryBean;
