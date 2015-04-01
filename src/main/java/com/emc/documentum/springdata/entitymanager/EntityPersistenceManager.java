@@ -32,8 +32,7 @@ public class EntityPersistenceManager {
 
   @Autowired
   public EntityPersistenceManager(Documentum documentum, MappingHandler mappingHandler, ObjectToDCTMConverter objectToDctmConverter,
-                                  DCTMToObjectConverter DCTMToObjectConverter
-  ) {
+                                  DCTMToObjectConverter DCTMToObjectConverter) {
     this.documentum = documentum;
     this.mappingHandler = mappingHandler;
     this.objectToDctmConverter = objectToDctmConverter;
@@ -161,9 +160,26 @@ public class EntityPersistenceManager {
 
   }
 
+public long count(Class<?> entityClass, String repoObjectName) throws DfException {
+	try {
 
-  // TODO: have a custom exception class and throw that exception everywhere
-  // TODO : Inject DCTMObjectConverter, MappingHander and Documentum
+	      IDfSession session = documentum.getSession();
+	      ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(entityClass);
+
+	      IDfQuery query = new DfQuery();
+	      String dql = "select count(*) as object_count from " + repoObjectName;    // TODO: create a DQL Builder
+	      query.setDQL(dql);
+	      IDfCollection coll = query.execute(session, IDfQuery.DF_READ_QUERY);
+	      coll.next();
+	      long count = coll.getTypedObject().getLong("object_count");
+	      
+	      return count;
+
+	    } catch (Exception e) {
+	      String msg = String.format("Objects count be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
+	      throw new DfException(msg, e);
+	    }
+}
 
 }
 

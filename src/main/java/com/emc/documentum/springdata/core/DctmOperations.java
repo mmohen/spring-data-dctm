@@ -21,4 +21,7 @@ public interface DctmOperations {
   <T> String getRepositoryObjectName(T obj);
 
   String getRepositoryName(Class<?> entityClass);
+
+  long count(Class<?> entityClass) throws DfException;
+  
 }

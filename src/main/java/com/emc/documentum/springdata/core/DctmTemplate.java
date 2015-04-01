@@ -56,6 +56,14 @@ public class DctmTemplate implements DctmOperations {
     Assert.notNull(entityClass);
     return entityPersistenceManager.findById(id, entityClass);
   }
+  
+  @Override
+  public long count(Class<?> entityClass) throws DfException {
+	Assert.notNull(entityClass);
+	String repoObjectName = getRepositoryName(entityClass);
+	return entityPersistenceManager.count(entityClass, repoObjectName);
+  }
+  
 
   @Override
   public <T> T update(T objectToUpdate) throws DfException {

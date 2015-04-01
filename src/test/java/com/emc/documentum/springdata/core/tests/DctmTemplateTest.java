@@ -134,6 +134,12 @@ public class DctmTemplateTest {
 		assertEquals(list1.size() - 1, list2.size());
 	}
 	
+	@Test 
+	public void testCount() throws DfException {
+		long count = template.count(Person.class);
+		assertEquals(template.findAll(Person.class).size(), count);
+	}
+	
 	
 
 }

@@ -90,7 +90,12 @@ public class SimpleDctmRepository<T, ID extends Serializable> implements DctmRep
 
   @Override
   public long count() {
-    return 999;
+	try {
+	  return dctmTemplate.count(dctmEntityInformation.getJavaType());
+	  } catch (DfException e) {
+	    e.printStackTrace();
+	    return 0;
+	  }
   }
 
   @Override

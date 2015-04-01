@@ -190,6 +190,17 @@ public class SimpleDctmRepositoryTest {
 
   @Test
   public void testCount() throws Exception {
+	//Create collection to save
+	Person bruceWayne = new Person("Bruce Wayne", 35, "male");
+	Person peterParker = new Person("Peter Parker", 19, "male");
+	Person barbaraGordon = new Person("Barbara Gordon", 28, "female");
+	List<Person> objectsForInsertion = Arrays.asList(bruceWayne, peterParker, barbaraGordon);
+
+	//Do save
+	personRepository.save(objectsForInsertion);
+	long foundCount = personRepository.count();
+	    
+	assertEquals("Count mismatch", foundCount, objectsForInsertion.size());
 
   }
 
