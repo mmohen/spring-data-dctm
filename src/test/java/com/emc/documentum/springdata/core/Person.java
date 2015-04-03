@@ -2,6 +2,7 @@ package com.emc.documentum.springdata.core;
 
 import com.emc.documentum.springdata.entitymanager.annotations.Relation;
 
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
@@ -31,6 +32,9 @@ public class Person {
 
     @DctmAttribute("accountnumbers")
     private List<Double> accountNumbers = new ArrayList<Double>();
+
+    @Content
+    private String content;
 
 //    @Relation
 //    public Address address;
@@ -113,6 +117,17 @@ public class Person {
 	}
 	
 	public Person() {}
-	
- }
+
+    @Content
+    public String getContent(){
+        return content;
+    }
+
+    @Content
+    public void setContent(String path){
+        this.content = path;
+    }
+
+
+}
 

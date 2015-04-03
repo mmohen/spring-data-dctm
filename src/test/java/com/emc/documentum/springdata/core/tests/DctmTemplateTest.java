@@ -1,9 +1,13 @@
 package com.emc.documentum.springdata.core.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+import java.io.File;
+import java.net.URL;
 import java.util.List;
 
+import com.emc.documentum.springdata.core.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -16,10 +20,6 @@ import org.springframework.data.authentication.UserCredentials;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.documentum.fc.common.DfException;
-import com.emc.documentum.springdata.core.Application;
-import com.emc.documentum.springdata.core.DctmTemplate;
-import com.emc.documentum.springdata.core.Documentum;
-import com.emc.documentum.springdata.core.Person;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -51,7 +51,6 @@ public class DctmTemplateTest {
 
 //	@Test
 	public void testSpringConfiguration() throws DfException{
-		Person p = new Person("rohan",21,"male");
 		System.out.println(p.getName());
 		System.out.println(template.findAll(Person.class).size());
 	}
@@ -140,6 +139,17 @@ public class DctmTemplateTest {
 		assertEquals(template.findAll(Person.class).size(), count);
 	}
 	
-	
+
+
+    @Test
+    public void testSetContent() throws DfException {
+        Loan loan = new Loan(1000);
+        template.create(loan);
+        URL url = this.getClass().getResource("/sample.pdf");
+        template.setContent(loan,"pdf", url.getPath());
+        String path = template.getContent(loan, "testsample.pdf");
+        File file = new File(path);
+        assertTrue(file.exists());
+    }
 
 }

@@ -6,6 +6,7 @@ import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.entitymanager.EntityPersistenceManager;
 import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
 
+import com.emc.documentum.springdata.entitymanager.annotations.Content;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
@@ -81,4 +82,15 @@ public class DctmTemplate implements DctmOperations {
     Assert.notNull(entityClass);
     return entityTypeManager.getEntityObjectName(entityClass);
   }
+
+
+  public <T> void setContent(T object, String contentType, String path) throws DfException {
+      entityPersistenceManager.setContent(object, contentType, path);
+  }
+
+  public <T> String getContent(T object, String path) throws DfException {
+      return entityPersistenceManager.getContent(object, path);
+
+  }
+
 }

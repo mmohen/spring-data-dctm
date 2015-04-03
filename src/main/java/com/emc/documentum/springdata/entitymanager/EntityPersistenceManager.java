@@ -1,5 +1,6 @@
 package com.emc.documentum.springdata.entitymanager;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -137,12 +138,7 @@ public class EntityPersistenceManager {
 
   public <T> T update(T objectToUpdate) throws DfException {
     try {
-      String idField = mappingHandler.getIdField(objectToUpdate);
-      Object valueFromClass = PropertyUtils.getSimpleProperty(objectToUpdate, idField);
-
-      DfId dfid = new DfId((String)valueFromClass);
-      IDfSysObject dctmObject = (IDfSysObject)documentum.getSession().getObject(dfid);
-
+      IDfSysObject dctmObject = getDctmObject((T) objectToUpdate);
       ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToUpdate);
       objectToDctmConverter.convert(objectToUpdate, dctmObject, mapping);
       dctmObject.save();
@@ -159,7 +155,45 @@ public class EntityPersistenceManager {
 
   }
 
-public long count(Class<?> entityClass, String repoObjectName) throws DfException {
+  public <T> void setContent(T object, String contentType, String path) throws DfException {
+    try {
+      IDfSysObject dctmObject = getDctmObject(object);
+      dctmObject.setContentType(contentType);
+      dctmObject.setFile(path);
+      dctmObject.save();
+      } catch (Exception e) {
+          String msg = String.format(
+                  "Object cannot be updated for class %s. Exception: %s, %s.", object.getClass(), e.getClass(), e.getMessage()
+          );
+          throw new DfException(msg, e);
+      }
+
+  }
+
+  public <T> String getContent(T object, String filePath) throws DfException {
+      try {
+          IDfSysObject dctmObject = getDctmObject(object);
+          dctmObject.getFile(filePath);
+          return filePath;
+      } catch (Exception e) {
+          String msg = String.format(
+                  "Content cannot be fetched for class %s. Exception: %s, %s.", object.getClass(), e.getClass(), e.getMessage()
+          );
+          throw new DfException(msg, e);
+      }
+  }
+
+
+
+  private <T> IDfSysObject getDctmObject(T object) throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+    String idField = mappingHandler.getIdField(object);
+    Object valueFromClass = PropertyUtils.getSimpleProperty(object, idField);
+    DfId dfid = new DfId((String)valueFromClass);
+    return (IDfSysObject)documentum.getSession().getObject(dfid);
+  }
+
+
+    public long count(Class<?> entityClass, String repoObjectName) throws DfException {
 	try {
 
 	      IDfSession session = documentum.getSession();
@@ -176,7 +210,8 @@ public long count(Class<?> entityClass, String repoObjectName) throws DfExceptio
 	      String msg = String.format("Objects count be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
 	      throw new DfException(msg, e);
 	    }
-}
+    }
+
 
 }
 
