@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 
 import com.documentum.fc.common.DfException;
-import com.emc.documentum.springdata.core.DctmTemplate;
+import com.emc.documentum.springdata.core.DctmOperations;
 import com.emc.documentum.springdata.repository.DctmRepository;
 
 /*
@@ -18,15 +18,11 @@ import com.emc.documentum.springdata.repository.DctmRepository;
 public class SimpleDctmRepository<T, ID extends Serializable> implements DctmRepository<T, ID> {
 
   private Logger logger = Logger.getLogger(SimpleDctmRepository.class);
-  private DctmEntityInformation<T, ID> dctmEntityInformation;
-  private DctmTemplate dctmTemplate;
-
-  public SimpleDctmRepository(DctmEntityInformation<T, ID> dctmEntity) {
-    this.dctmEntityInformation = dctmEntity;
-  }
+  protected DctmEntityInformation<T, ID> dctmEntityInformation;
+  protected DctmOperations dctmTemplate;
 
   public SimpleDctmRepository(DctmEntityInformation<T, ID> dctmEntityInformation, ApplicationContext applicationContext) {
-    dctmTemplate = applicationContext.getBean(DctmTemplate.class);
+    dctmTemplate = applicationContext.getBean(DctmOperations.class);
     this.dctmEntityInformation = dctmEntityInformation;
   }
 

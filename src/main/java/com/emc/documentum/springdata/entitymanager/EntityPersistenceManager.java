@@ -22,6 +22,7 @@ import com.emc.documentum.springdata.entitymanager.convert.DCTMToObjectConverter
 import com.emc.documentum.springdata.entitymanager.convert.ObjectToDCTMConverter;
 import com.emc.documentum.springdata.entitymanager.mapping.MappingHandler;
 import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
+import com.emc.documentum.springdata.repository.query.DctmQuery;
 
 @Controller
 public class EntityPersistenceManager {
@@ -32,8 +33,9 @@ public class EntityPersistenceManager {
   private final DCTMToObjectConverter DCTMToObjectConverter;
 
   @Autowired
-  public EntityPersistenceManager(Documentum documentum, MappingHandler mappingHandler, ObjectToDCTMConverter objectToDctmConverter,
-                                  DCTMToObjectConverter DCTMToObjectConverter) {
+  public EntityPersistenceManager(
+      Documentum documentum, MappingHandler mappingHandler, ObjectToDCTMConverter objectToDctmConverter, DCTMToObjectConverter DCTMToObjectConverter
+  ) {
     this.documentum = documentum;
     this.mappingHandler = mappingHandler;
     this.objectToDctmConverter = objectToDctmConverter;
@@ -55,7 +57,6 @@ public class EntityPersistenceManager {
       String msg = String.format("Object cannot be created for class %s. Exception: %s, %s.", objectToSave.getClass(), e.getClass(), e.getMessage());
       throw new DfException(msg, e);
     }
-
   }
 
   public <T> String deleteObject(String repoObjectName, T objectToDelete) throws DfException {
@@ -107,6 +108,38 @@ public class EntityPersistenceManager {
     }
   }
 
+  public <T> List<T> find(Class<T> entityClass, String repoObjectName, DctmQuery dctmQuery) throws DfException {
+    try {
+
+      IDfSession session = documentum.getSession();
+      ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(entityClass);
+      List<T> list = new ArrayList<T>();
+
+      IDfQuery query = new DfQuery();
+      String selectClause = "select * from ";
+      String whereClause = "where " + dctmQuery.getPredicate();
+      String dql = String.format("%s %s %s", selectClause, repoObjectName, whereClause);
+
+      System.out.println("=======================================");
+      System.out.println(dql);
+      System.out.println("=======================================");
+      query.setDQL(dql);
+      IDfCollection coll = query.execute(session, 0);
+
+      while (coll.next()) {
+        T objectInstance = entityClass.newInstance();
+        IDfTypedObject dctmObject = coll.getTypedObject();
+        DCTMToObjectConverter.convert(dctmObject, objectInstance, mapping);
+        list.add(objectInstance);
+      }
+      return list;
+
+    } catch (Exception e) {
+      String msg = String.format("Objects cannot be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
+      throw new DfException(msg, e);
+    }
+  }
+
 
   public <T> T findById(String id, Class<T> entityClass) throws DfException {
 
@@ -118,10 +151,9 @@ public class EntityPersistenceManager {
       T objectInstance = entityClass.newInstance();
       DCTMToObjectConverter.convert(dctmObject, objectInstance, mapping);
       return objectInstance;
-    } catch(DfIdNotFoundException dfId) {
+    } catch (DfIdNotFoundException dfId) {
       return null;
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       String msg = String.format(
           "Exception occurred for object with Id: %s class %s. Exception: %s, %s.", id, entityClass, e.getClass(), e.getMessage()
       );
@@ -138,7 +170,7 @@ public class EntityPersistenceManager {
 
   public <T> T update(T objectToUpdate) throws DfException {
     try {
-      IDfSysObject dctmObject = getDctmObject((T) objectToUpdate);
+      IDfSysObject dctmObject = getDctmObject((T)objectToUpdate);
       ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToUpdate);
       objectToDctmConverter.convert(objectToUpdate, dctmObject, mapping);
       dctmObject.save();
@@ -151,8 +183,6 @@ public class EntityPersistenceManager {
       );
       throw new DfException(msg, e);
     }
-
-
   }
 
   public <T> void setContent(T object, String contentType, String path) throws DfException {
@@ -161,29 +191,24 @@ public class EntityPersistenceManager {
       dctmObject.setContentType(contentType);
       dctmObject.setFile(path);
       dctmObject.save();
-      } catch (Exception e) {
-          String msg = String.format(
-                  "Object cannot be updated for class %s. Exception: %s, %s.", object.getClass(), e.getClass(), e.getMessage()
-          );
-          throw new DfException(msg, e);
-      }
-
+    } catch (Exception e) {
+      String msg = String.format(
+          "Object cannot be updated for class %s. Exception: %s, %s.", object.getClass(), e.getClass(), e.getMessage()
+      );
+      throw new DfException(msg, e);
+    }
   }
 
   public <T> String getContent(T object, String filePath) throws DfException {
-      try {
-          IDfSysObject dctmObject = getDctmObject(object);
-          dctmObject.getFile(filePath);
-          return filePath;
-      } catch (Exception e) {
-          String msg = String.format(
-                  "Content cannot be fetched for class %s. Exception: %s, %s.", object.getClass(), e.getClass(), e.getMessage()
-          );
-          throw new DfException(msg, e);
-      }
+    try {
+      IDfSysObject dctmObject = getDctmObject(object);
+      dctmObject.getFile(filePath);
+      return filePath;
+    } catch (Exception e) {
+      String msg = String.format("Content cannot be fetched for class %s. Exception: %s, %s.", object.getClass(), e.getClass(), e.getMessage());
+      throw new DfException(msg, e);
+    }
   }
-
-
 
   private <T> IDfSysObject getDctmObject(T object) throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     String idField = mappingHandler.getIdField(object);
@@ -193,25 +218,21 @@ public class EntityPersistenceManager {
   }
 
 
-    public long count(Class<?> entityClass, String repoObjectName) throws DfException {
-	try {
+  public long count(Class<?> entityClass, String repoObjectName) throws DfException {
+    try {
 
-	      IDfSession session = documentum.getSession();
-	      IDfQuery query = new DfQuery();
-	      String dql = "select count(*) as object_count from " + repoObjectName;    // TODO: create a DQL Builder
-	      query.setDQL(dql);
-	      IDfCollection coll = query.execute(session, IDfQuery.DF_READ_QUERY);
-	      coll.next();
-	      long count = coll.getTypedObject().getLong("object_count");
-	      
-	      return count;
-
-	    } catch (Exception e) {
-	      String msg = String.format("Objects count be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
-	      throw new DfException(msg, e);
-	    }
+      IDfSession session = documentum.getSession();
+      IDfQuery query = new DfQuery();
+      String dql = "select count(*) as object_count from " + repoObjectName;    // TODO: create a DQL Builder
+      query.setDQL(dql);
+      IDfCollection coll = query.execute(session, IDfQuery.DF_READ_QUERY);
+      coll.next();
+      long count = coll.getTypedObject().getLong("object_count");
+      return count;
+    } catch (Exception e) {
+      String msg = String.format("Objects count be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
+      throw new DfException(msg, e);
     }
-
-
+  }
 }
 

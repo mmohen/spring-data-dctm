@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.NoRepositoryBean;
 
+import com.emc.documentum.springdata.repository.DctmRepositoryWithContent;
 import com.mysema.query.types.OrderSpecifier;
 import com.mysema.query.types.Predicate;
 
@@ -16,9 +17,10 @@ import com.mysema.query.types.Predicate;
  * EMC Confidential: Restricted Internal Distribution
  */
 @NoRepositoryBean
-public class QueryDslDctmRepository<T, ID extends Serializable> extends SimpleDctmRepository<T, ID> implements QueryDslPredicateExecutor<T> {
+public class QueryDslDctmRepositoryWithContent<T, ID extends Serializable> extends SimpleDctmRepositoryWithContent<T, ID>
+    implements QueryDslPredicateExecutor<T> {
 
-  public QueryDslDctmRepository(DctmEntityInformation<T, ID> dctmEntity, ApplicationContext applicationContext) {
+  public QueryDslDctmRepositoryWithContent(DctmEntityInformation<T, ID> dctmEntity, ApplicationContext applicationContext) {
     super(dctmEntity, applicationContext);
   }
 

@@ -32,7 +32,6 @@ public class ObjectToDCTMConverter {
                             objectToSave.getClass(), e.getClass(), e.getMessage());
                     throw new DfException(msg, e);
                 }
-
             }
         }
     }
