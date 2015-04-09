@@ -1,8 +1,8 @@
 package com.emc.documentum.springdata.core;
 
-import com.emc.documentum.springdata.entitymanager.annotations.Content;
-import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 import org.springframework.data.annotation.Id;
+
+import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 
 /**
  * Created with IntelliJ IDEA.

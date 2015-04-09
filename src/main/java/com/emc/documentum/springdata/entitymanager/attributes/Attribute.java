@@ -7,7 +7,6 @@ public abstract class Attribute<T> {
     protected int dfAttributeType;
     public String name;
 
-
     public int getDfAttributeType() {
         return dfAttributeType;
     }
@@ -19,7 +18,6 @@ public abstract class Attribute<T> {
     public String getName() {
         return this.name;
     }
-
 
     public abstract T getValue(Object o) throws DfException;
 }

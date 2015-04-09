@@ -1,32 +1,61 @@
-package com.emc.documentum.springdata;
+package com.emc.documentum.springdata.repository.relation;
+
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
-import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
+import com.emc.documentum.springdata.core.Loan;
+import com.emc.documentum.springdata.entitymanager.annotations.Relation;
+import com.emc.documentum.springdata.entitymanager.annotations.RelationshipType;
 import com.emc.documentum.springdata.entitymanager.mapping.DctmAttribute;
+import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 
 @DctmEntity(repository = "persons")
 @TypeAlias("person")
 public class Person {
+  public Person() {
+  }
 
   @Id
   public String _id;
 
-  public void set_id(String _id) {
-    this._id = _id;
-  }
+  public Integer age;
 
   @DctmAttribute("firstname")
   private String name;
 
-  public Integer age;
-
   @DctmAttribute("sex")
   private String gender;
 
+  @Relation(value=RelationshipType.ONE_TO_MANY, name="liabilities")
+  List<Loan> loans;
+
+  @Relation(value=RelationshipType.ONE_TO_ONE, name="address")
+  Address address;
+
+  public Address getAddress() {
+    return address;
+  }
+
+  public void setAddress(Address address) {
+    this.address = address;
+  }
+
+  public List<Loan> getLoans() {
+    return loans;
+  }
+
+  public void setLoans(List<Loan> loans) {
+    this.loans = loans;
+  }
+
   public String getName() {
     return name;
+  }
+
+  public void set_id(String _id) {
+    this._id = _id;
   }
 
   public String get_id() {
@@ -59,15 +88,14 @@ public class Person {
     this.gender = gender;
   }
 
-  public Person() {}
-
   @Override
   public String toString() {
     return "Person{" +
         "_id='" + _id + '\'' +
-        ", name='" + name + '\'' +
         ", age=" + age +
+        ", name='" + name + '\'' +
         ", gender='" + gender + '\'' +
+        ", loans=" + loans +
         '}';
   }
 
@@ -78,17 +106,21 @@ public class Person {
 
     Person person = (Person)o;
 
-    if (name != null ? !name.equals(person.name) : person.name != null) { return false; }
+    if (_id != null ? !_id.equals(person._id) : person._id != null) { return false; }
     if (age != null ? !age.equals(person.age) : person.age != null) { return false; }
-    return !(gender != null ? !gender.equals(person.gender) : person.gender != null);
+    if (name != null ? !name.equals(person.name) : person.name != null) { return false; }
+    if (gender != null ? !gender.equals(person.gender) : person.gender != null) { return false; }
+    return !(loans != null ? !loans.equals(person.loans) : person.loans != null);
 
   }
 
   @Override
   public int hashCode() {
-    int result = name != null ? name.hashCode() : 0;
+    int result = _id != null ? _id.hashCode() : 0;
     result = 31 * result + (age != null ? age.hashCode() : 0);
+    result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (gender != null ? gender.hashCode() : 0);
+    result = 31 * result + (loans != null ? loans.hashCode() : 0);
     return result;
   }
 }

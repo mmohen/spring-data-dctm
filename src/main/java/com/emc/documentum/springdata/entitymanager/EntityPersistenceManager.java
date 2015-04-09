@@ -2,6 +2,8 @@ package com.emc.documentum.springdata.entitymanager;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.beanutils.PropertyUtils;
@@ -18,10 +20,10 @@ import com.documentum.fc.client.IDfTypedObject;
 import com.documentum.fc.common.DfException;
 import com.documentum.fc.common.DfId;
 import com.emc.documentum.springdata.core.Documentum;
+import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 import com.emc.documentum.springdata.entitymanager.convert.DCTMToObjectConverter;
 import com.emc.documentum.springdata.entitymanager.convert.ObjectToDCTMConverter;
 import com.emc.documentum.springdata.entitymanager.mapping.MappingHandler;
-import com.emc.documentum.springdata.entitymanager.attributes.AttributeType;
 import com.emc.documentum.springdata.repository.query.DctmQuery;
 
 @Controller
@@ -29,20 +31,73 @@ public class EntityPersistenceManager {
 
   private final Documentum documentum;
   private final MappingHandler mappingHandler;
+  private final EntityTypeHandler entityTypeHandler;
   private final ObjectToDCTMConverter objectToDctmConverter;
   private final DCTMToObjectConverter DCTMToObjectConverter;
 
   @Autowired
   public EntityPersistenceManager(
-      Documentum documentum, MappingHandler mappingHandler, ObjectToDCTMConverter objectToDctmConverter, DCTMToObjectConverter DCTMToObjectConverter
+      Documentum documentum, MappingHandler mappingHandler, EntityTypeHandler entityTypeHandler, ObjectToDCTMConverter objectToDctmConverter,
+      DCTMToObjectConverter DCTMToObjectConverter
   ) {
     this.documentum = documentum;
     this.mappingHandler = mappingHandler;
+    this.entityTypeHandler = entityTypeHandler;
     this.objectToDctmConverter = objectToDctmConverter;
     this.DCTMToObjectConverter = DCTMToObjectConverter;
   }
 
   public <T> T createObject(String repoObjectName, T objectToSave) throws DfException {
+    T savedBaseObject = doSave(repoObjectName, objectToSave);
+
+    List<AttributeType> relations = mappingHandler.getRelations(objectToSave);
+    for (AttributeType relation : relations) {
+      saveRelatedObject(objectToSave, relation);
+    }
+
+    return savedBaseObject;
+  }
+
+  @SuppressWarnings("unchecked")
+  private <T> void saveRelatedObject(T baseObject, AttributeType relationAttribute) throws DfException {
+    try {
+      Object relations = PropertyUtils.getProperty(baseObject, relationAttribute.getFieldName());
+
+      if (relations != null) {
+        Collection relatedObjects = isCollection(relations) ? (Collection)relations : Arrays.asList(relations);
+
+        for (Object relatedObject : relatedObjects) {
+          Object relatedDctmObject = createObject(entityTypeHandler.getEntityObjectName(relatedObject.getClass()), relatedObject);
+
+          IDfSysObject parentDctmObject = getDctmObject(baseObject);
+          IDfSysObject childDctmObject = getDctmObject(relatedDctmObject);
+
+          parentDctmObject.addChildRelative(relationAttribute.getRelationName(), childDctmObject.getObjectId(), "", true, "");
+        }
+      }
+    } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+      throw new DfException(e);
+    }
+  }
+
+  private boolean isCollection(Object relations) {
+    return Collection.class.isAssignableFrom(relations.getClass());
+  }
+
+  private boolean isRelationPresent(IDfCollection childRelatives, IDfSysObject dctmObject) throws DfException {
+    boolean isRelated = false;
+    while (childRelatives.next()) {
+      IDfTypedObject object = childRelatives.getTypedObject();
+      if (object.getObjectId().equals(dctmObject.getObjectId())) {
+        isRelated = true;
+        break;
+      }
+    }
+    return isRelated;
+  }
+
+  private <T> T doSave(String repoObjectName, T objectToSave) throws DfException {
+    System.out.println("Saving object: " + objectToSave);
     try {
       IDfSysObject dctmObject = (IDfSysObject)documentum.getSession().newObject(repoObjectName);
       ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToSave);
@@ -55,6 +110,22 @@ public class EntityPersistenceManager {
 
     } catch (Exception e) {
       String msg = String.format("Object cannot be created for class %s. Exception: %s, %s.", objectToSave.getClass(), e.getClass(), e.getMessage());
+      throw new DfException(msg, e);
+    }
+  }
+
+  public <T> T update(T objectToUpdate) throws DfException {
+    try {
+      IDfSysObject dctmObject = getDctmObject(objectToUpdate);
+      ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToUpdate);
+      objectToDctmConverter.convert(objectToUpdate, dctmObject, mapping);
+      dctmObject.save();
+      DCTMToObjectConverter.convert(dctmObject, objectToUpdate, mapping);
+      return objectToUpdate;
+    } catch (Exception e) {
+      String msg = String.format(
+          "Object cannot be updated for class %s. Exception: %s, %s.", objectToUpdate.getClass(), e.getClass(), e.getMessage()
+      );
       throw new DfException(msg, e);
     }
   }
@@ -87,7 +158,7 @@ public class EntityPersistenceManager {
 
       IDfSession session = documentum.getSession();
       ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(entityClass);
-      List<T> list = new ArrayList<T>();
+      List<T> list = new ArrayList<>();
 
       IDfQuery query = new DfQuery();
       String dql = "select * from " + repoObjectName;    // TODO: create a DQL Builder, introspect mapping and make efficient dql
@@ -113,7 +184,7 @@ public class EntityPersistenceManager {
 
       IDfSession session = documentum.getSession();
       ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(entityClass);
-      List<T> list = new ArrayList<T>();
+      List<T> list = new ArrayList<>();
 
       IDfQuery query = new DfQuery();
       String selectClause = "select * from ";
@@ -168,23 +239,6 @@ public class EntityPersistenceManager {
 //    	return idValue.equals(null);
 //    }
 
-  public <T> T update(T objectToUpdate) throws DfException {
-    try {
-      IDfSysObject dctmObject = getDctmObject((T)objectToUpdate);
-      ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToUpdate);
-      objectToDctmConverter.convert(objectToUpdate, dctmObject, mapping);
-      dctmObject.save();
-      DCTMToObjectConverter.convert(dctmObject, objectToUpdate, mapping);
-      return objectToUpdate;
-
-    } catch (Exception e) {
-      String msg = String.format(
-          "Object cannot be updated for class %s. Exception: %s, %s.", objectToUpdate.getClass(), e.getClass(), e.getMessage()
-      );
-      throw new DfException(msg, e);
-    }
-  }
-
   public <T> void setContent(T object, String contentType, String path) throws DfException {
     try {
       IDfSysObject dctmObject = getDctmObject(object);
@@ -220,15 +274,13 @@ public class EntityPersistenceManager {
 
   public long count(Class<?> entityClass, String repoObjectName) throws DfException {
     try {
-
       IDfSession session = documentum.getSession();
       IDfQuery query = new DfQuery();
       String dql = "select count(*) as object_count from " + repoObjectName;    // TODO: create a DQL Builder
       query.setDQL(dql);
       IDfCollection coll = query.execute(session, IDfQuery.DF_READ_QUERY);
       coll.next();
-      long count = coll.getTypedObject().getLong("object_count");
-      return count;
+      return coll.getTypedObject().getLong("object_count");
     } catch (Exception e) {
       String msg = String.format("Objects count be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
       throw new DfException(msg, e);

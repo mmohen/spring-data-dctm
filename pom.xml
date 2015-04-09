@@ -15,7 +15,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!--Query DSL-->
-    <querydsl>3.6.2.BUILD-SNAPSHOT</querydsl>
     <apt>1.1.3</apt>
 
     <!-- Spring -->
@@ -30,7 +29,7 @@
     <!-- Test -->
     <junit.version>4.11</junit.version>
 
-     <querydsl.version>3.6.2</querydsl.version>
+     <querydsl.version>3.5.1</querydsl.version>
   </properties>
 
   <dependencies>
@@ -160,7 +159,7 @@
           <dependency>
             <groupId>com.mysema.querydsl</groupId>
             <artifactId>querydsl-apt</artifactId>
-            <version>${querydsl}</version>
+            <version>${querydsl.version}</version>
           </dependency>
         </dependencies>
         <executions>

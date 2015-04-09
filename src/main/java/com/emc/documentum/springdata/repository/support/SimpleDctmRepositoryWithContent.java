@@ -13,8 +13,9 @@ import com.emc.documentum.springdata.repository.DctmRepositoryWithContent;
  * EMC Confidential: Restricted Internal Distribution
  */
 @NoRepositoryBean
-public class SimpleDctmRepositoryWithContent<T, ID extends Serializable> extends SimpleDctmRepository<T, ID> implements DctmRepositoryWithContent
-                                                                                                                             <T, ID> {
+public class SimpleDctmRepositoryWithContent<T, ID extends Serializable> extends SimpleDctmRepository<T, ID>
+    implements DctmRepositoryWithContent<T, ID> {
+
   public SimpleDctmRepositoryWithContent(DctmEntityInformation<T, ID> dctmEntity, ApplicationContext applicationContext) {
     super(dctmEntity, applicationContext);
   }
