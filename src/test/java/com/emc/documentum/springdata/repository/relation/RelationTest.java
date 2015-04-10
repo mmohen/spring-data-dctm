@@ -119,7 +119,7 @@ public class RelationTest {
 
     IDfCollection children = query.execute(session, 0);
 
-    children.next();
+    assertTrue("No related objects found", children.next());
     IDfTypedObject child = children.getTypedObject();
     IDfPersistentObject childObject = session.getObject(new DfId(child.getString("child_id")));
     assertTrue(address.getId().equalsIgnoreCase(childObject.getObjectId().toString()));
