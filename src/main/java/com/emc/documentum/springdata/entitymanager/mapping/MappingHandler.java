@@ -4,14 +4,18 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
 import com.documentum.fc.common.DfException;
 import com.emc.documentum.springdata.core.GenericCache;
+import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
 import com.emc.documentum.springdata.entitymanager.annotations.Content;
 import com.emc.documentum.springdata.entitymanager.annotations.Relation;
 import com.emc.documentum.springdata.entitymanager.annotations.RelationshipType;
@@ -23,10 +27,15 @@ import com.emc.documentum.springdata.entitymanager.attributes.TypeUtils;
 @Component
 public class MappingHandler {
 
+  @Autowired
+  private EntityTypeHandler typeHandler;
   private final GenericCache cache;
+  private final GenericCache reverseCache;// TODO change name
+  private final Set<Class<?>> initializingSet = new HashSet<>();
 
   public MappingHandler() {
     cache = new GenericCache();
+    reverseCache = new GenericCache();
   }
 
   public <T> String getIdField(T objectOfEntityClass) throws DfException {
@@ -34,18 +43,6 @@ public class MappingHandler {
   }
 
   public String getIdField(Class<?> entityClass) throws DfException {
-    Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
-    if (cache.getEntry(entityClass) == null) {
-      setAttributeMappingInCache(entityClass);
-    }
-    return getIDFromCache(entityClass);
-  }
-
-  public <T> String getContentField(T objectOfEntityClass) throws DfException {
-    return getContentField(objectOfEntityClass.getClass());
-  }
-
-  public String getContentField(Class<?> entityClass) throws DfException {
     Assert.notNull(entityClass, "No class parameter provided, entity collection can't be determined!");
     if (cache.getEntry(entityClass) == null) {
       setAttributeMappingInCache(entityClass);
@@ -77,8 +74,10 @@ public class MappingHandler {
     return cache.getEntry(entityClass) == null ? setAttributeMappingInCache(entityClass) : (ArrayList<AttributeType>)cache.getEntry(entityClass);
   }
 
-  public ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) throws DfException {
+  //TODO: Fix circular initialization of items in cache
+  private ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) throws DfException {
 
+    initializingSet.add(entityClass);
     ArrayList<AttributeType> mapping = new ArrayList<>();
     Field[] fields = getDeclaredFields(entityClass);
 
@@ -87,15 +86,22 @@ public class MappingHandler {
 
       if(!isContentAttribute(field)) {
         if (isRelation(field)) {
-          getAttributeMappings(getRelatedEntityClass(field));
+          if(!initializingSet.contains(getRelatedEntityClass(field))) {
+            getAttributeMappings(getRelatedEntityClass(field));
+          }
         }
         addMapping(mapping, field);
       }
     }
     cache.setEntry(entityClass, mapping);
+    reverseCache.setEntry(typeHandler.getEntityObjectName(entityClass), entityClass);
+    initializingSet.remove(entityClass);
     return mapping;
   }
 
+  public Class<?> getEntityClass(String repositoryEntityName) {
+    return (Class)reverseCache.getEntry(repositoryEntityName);
+  }
   private Field[] getDeclaredFields(Class<?> entityClass) throws DfException {
     Field[] fields = entityClass.getDeclaredFields();
     if (fields.length == 0) {

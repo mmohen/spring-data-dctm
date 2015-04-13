@@ -2,7 +2,9 @@ package com.emc.documentum.springdata.entitymanager.convert;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,12 +24,17 @@ import com.emc.documentum.springdata.entitymanager.mapping.MappingHandler;
 @Controller
 public class DCTMToObjectConverter {
 
-  public static final String SELECT_RELATION_QUERY = "select * from dm_relation where relation_name=\'%s\' and parent_id=\'%s\'";
+  public static final String SELECT_RELATION_QUERY_PARENT = "select * from dm_relation where relation_name=\'%s\' and parent_id=\'%s\' or "
+      + "child_id=\'%s\'";
+  public static final String SELECT_RELATION_QUERY_CHILD = "select * from dm_relation where relation_name=\'%s\' and parent_id=\'%s\' or "
+      + "child_id=\'%s\'";
   @Autowired
   MappingHandler mappingHandler;
+  Set objectsBeingConverted = new HashSet();
 
   public DCTMToObjectConverter() {}
 
+  @SuppressWarnings("unchecked")
   public void convert(IDfTypedObject dctmObject, Object objectToReturn, ArrayList<AttributeType> mapping) throws DfException {
     for (AttributeType attributeType : mapping) {
       try {
@@ -36,13 +43,17 @@ public class DCTMToObjectConverter {
         }
       } catch (Exception e) {
         String msg = String.format(
-            "Conversion failed for Object of class %s. " + "Exception: %s, %s.", objectToReturn.getClass(), e.getClass(), e.getMessage());
+            "Conversion failed for Object of class %s. " + "Exception: %s, %s.", objectToReturn.getClass(), e.getClass(), e.getMessage()
+        );
         throw new DfException(msg, e);
       }
     }
-    for (AttributeType attributeType : mapping) {
-      if (attributeType.isRelation()) {
-        getRelatedObjects(dctmObject, objectToReturn, attributeType);
+    if (!objectsBeingConverted.contains(objectToReturn)) {
+      objectsBeingConverted.add(objectToReturn);
+      for (AttributeType attributeType : mapping) {
+        if (attributeType.isRelation()) {
+          getRelatedObjects(dctmObject, objectToReturn, attributeType);
+        }
       }
     }
   }
@@ -52,12 +63,11 @@ public class DCTMToObjectConverter {
   private void getRelatedObjects(IDfTypedObject dctmObject, Object objectToReturn, AttributeType attributeType) throws DfException {
     try {
       String objectId = dctmObject.getString("r_object_id");
-      String relationQuery = String.format(SELECT_RELATION_QUERY, attributeType.getRelationName(), objectId);
+      String relationQuery = String.format(SELECT_RELATION_QUERY_PARENT, attributeType.getRelationName(), objectId, objectId);
       IDfQuery query = new DfQuery(relationQuery);
       IDfCollection relations = query.execute(dctmObject.getSession(), 0);
 
       setRelatedObjects(dctmObject, objectToReturn, attributeType, relations);
-
     } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
       throw new DfException(e);
     }
@@ -80,7 +90,7 @@ public class DCTMToObjectConverter {
   private void setChild(IDfTypedObject dctmObject, Object objectToReturn, AttributeType attributeType, IDfCollection children)
       throws DfException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
-    if(children.next()) {
+    if (children.next()) {
       IDfTypedObject child = children.getTypedObject();
       IDfPersistentObject childObject = dctmObject.getSession().getObject(new DfId(child.getString("child_id")));
       Object relatedEntityInstance = attributeType.getRelatedEntityClass().newInstance();
@@ -100,7 +110,8 @@ public class DCTMToObjectConverter {
     while (children.next()) {
       IDfTypedObject child = children.getTypedObject();
       IDfPersistentObject childObject = dctmObject.getSession().getObject(new DfId(child.getString("child_id")));
-      Object relatedEntityInstance = attributeType.getRelatedEntityClass().newInstance();
+
+      Object relatedEntityInstance = mappingHandler.getEntityClass(childObject.getString("r_object_type")).newInstance();
       convert(childObject, relatedEntityInstance, mappingHandler.getAttributeMappings(relatedEntityInstance));
       childrenList.add(relatedEntityInstance);
     }
