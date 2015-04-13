@@ -1,4 +1,4 @@
-package com.emc.documentum.springdata.repository.relation;
+package com.emc.documentum.springdata.repository.relation.mn;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
  * Copyright (c) 2015 EMC Corporation. All Rights Reserved.
  * EMC Confidential: Restricted Internal Distribution
  */
-@DctmEntity(repository = "address")
+@DctmEntity(repository = "address_new")
 public class Address {
 
   private String street;
