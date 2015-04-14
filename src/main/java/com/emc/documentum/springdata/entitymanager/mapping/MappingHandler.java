@@ -74,7 +74,6 @@ public class MappingHandler {
     return cache.getEntry(entityClass) == null ? setAttributeMappingInCache(entityClass) : (ArrayList<AttributeType>)cache.getEntry(entityClass);
   }
 
-  //TODO: Fix circular initialization of items in cache
   private ArrayList<AttributeType> setAttributeMappingInCache(Class<?> entityClass) throws DfException {
 
     initializingSet.add(entityClass);
