@@ -62,7 +62,7 @@ public class EntityPersistenceManager {
 
       objectsBeingSaved.add(objectToSave);
       if(isIdAvailable(objectToSave)) {
-        return objectToSave;
+        return update(objectToSave);
       }
 
       T savedBaseObject = doSave(repoObjectName, objectToSave);
