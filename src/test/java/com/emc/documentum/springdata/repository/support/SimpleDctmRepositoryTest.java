@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,6 +29,7 @@ import com.emc.documentum.springdata.Person;
 import com.emc.documentum.springdata.PersonRepository;
 import com.emc.documentum.springdata.core.Documentum;
 import com.emc.documentum.springdata.log.AutowiredLogger;
+import com.google.common.collect.Lists;
 
 /*
  * Copyright (c) 2015 EMC Corporation. All Rights Reserved.
@@ -95,6 +97,50 @@ public class SimpleDctmRepositoryTest {
     }
 
     assertArrayEquals("They are different people", objectsForInsertion.toArray(), createdObjectsList.toArray());
+  }
+
+  @Test
+  public void testUpdate() throws Exception {
+    Person bruceWayne = new Person("Bruce Wayne", 35, "male");
+    logger.info("Trying to save: " + bruceWayne);
+    Person savedBruceWayne = personRepository.save(bruceWayne);
+    logger.info("Saved: " + savedBruceWayne);
+    assertEquals("They are different people", bruceWayne, savedBruceWayne);
+
+    bruceWayne.setName("Batman");
+    String originalId = bruceWayne.get_id();
+
+    personRepository.save(bruceWayne);
+    Person savedPerson = personRepository.findOne(originalId);
+    assertEquals("New object created", savedPerson.getName(), "Batman");
+  }
+
+  @Test
+  public void testUpdateCollection() throws Exception {
+    Person bruceWayne = new Person("Bruce Wayne", 35, "male");
+    Person peterParker = new Person("Peter Parker", 19, "male");
+    Person barbaraGordon = new Person("Barbara Gordon", 28, "female");
+    List<Person> objectsForInsertion = Arrays.asList(bruceWayne, peterParker, barbaraGordon);
+
+    Iterable<Person> savedObjects = personRepository.save(objectsForInsertion);
+    List<Person> createdObjectsList = new LinkedList<>();
+    logger.info("Saved the following objects to the repo: ");
+    for (Person savedObject : savedObjects) {
+      logger.info(savedObject);
+      createdObjectsList.add(savedObject);
+    }
+
+    assertArrayEquals("They are different people", objectsForInsertion.toArray(), createdObjectsList.toArray());
+
+    String updatedName = "UPDATED NAME";
+
+    for (Person savedObject : savedObjects) {
+      savedObject.setName(updatedName);
+    }
+    Iterable<Person> updatedPersons = personRepository.save(savedObjects);
+    for (Person updatedPerson : updatedPersons) {
+      assertEquals("Name not set correctly", updatedName, updatedPerson.getName());
+    }
   }
 
   @Test
