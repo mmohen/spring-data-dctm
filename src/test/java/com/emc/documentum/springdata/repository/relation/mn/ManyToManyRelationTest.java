@@ -53,7 +53,7 @@ public class ManyToManyRelationTest {
   public void setUp() throws Exception {
   }
 
-  @After
+//  @After
   public void cleanUp() {
     logger.info("Deleting objects: ");
     Iterable<Person> createdObjects = personRepositoryWithRelationMn.findAll();
@@ -111,5 +111,11 @@ public class ManyToManyRelationTest {
     }
 
     assertEquals("Some Addresses not found", 0, foundCount);
+    Address savedManor = addressRepository.findOne(wayneManor.getId());
+    Address savedBatCave = addressRepository.findOne(batCave.getId());
+    Address savedStarLabs = addressRepository.findOne(starLabs.getId());
+    assertEquals("Incorrect resident count", 2, savedManor.getResidents().size());
+    assertEquals("Incorrect resident count", 2, savedBatCave.getResidents().size());
+    assertEquals("Incorrect resident count", 1, savedStarLabs.getResidents().size());
   }
 }

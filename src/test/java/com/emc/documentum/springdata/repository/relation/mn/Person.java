@@ -78,17 +78,12 @@ public class Person {
 
   @Override
   public String toString() {
-    String person = "Person{" +
+    return "Person{" +
         "_id='" + _id + '\'' +
         ", age=" + age +
         ", name='" + name + '\'' +
         ", gender='" + gender + '\'' +
         '}';
-    StringBuilder toStringBuilder = new StringBuilder();
-    for (Address anAddress : address) {
-      toStringBuilder.append(anAddress);
-    }
-    return person + toStringBuilder.toString();
   }
 
   @Override
