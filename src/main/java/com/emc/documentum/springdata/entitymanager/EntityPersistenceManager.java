@@ -3,6 +3,7 @@ package com.emc.documentum.springdata.entitymanager;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.documentum.fc.client.*;
+
 import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
@@ -29,7 +31,7 @@ import com.emc.documentum.springdata.repository.query.DctmQuery;
 public class EntityPersistenceManager {
 
   public static final String SELECT_RELATION_QUERY =
-          "select * from dm_relation where relation_name=\'%s\' and (parent_id=\'%s\' and child_id=\'%s\') or (child_id = \'%s\' and parent_id = \'%s\')";
+      "select * from dm_relation where relation_name=\'%s\' and (parent_id=\'%s\' and child_id=\'%s\') or (child_id = \'%s\' and parent_id = \'%s\')";
   private final Set objectsBeingSaved = new HashSet();
   private final Set<String> objectsBeingUpdated = new HashSet<>();
   private final Documentum documentum;
@@ -53,12 +55,12 @@ public class EntityPersistenceManager {
   @SuppressWarnings("unchecked")
   public <T> T createObject(String repoObjectName, T objectToSave) throws DfException {
     try {
-      if(objectsBeingSaved.contains(objectToSave)) {
+      if (objectsBeingSaved.contains(objectToSave)) {
         return objectToSave;
       }
 
       objectsBeingSaved.add(objectToSave);
-      if(isIdAvailable(objectToSave)) {
+      if (isIdAvailable(objectToSave)) {
         return update(objectToSave);
       }
 
@@ -84,7 +86,7 @@ public class EntityPersistenceManager {
     boolean isIdAvailable = false;
     for (Field field : fields) {
       field.setAccessible(true);
-      if(field.getAnnotation(Id.class) != null) {
+      if (field.getAnnotation(Id.class) != null) {
         isIdAvailable = ReflectionUtils.getField(field, objectToSave) != null;
       }
     }
@@ -100,8 +102,7 @@ public class EntityPersistenceManager {
   }
 
   @SuppressWarnings("unchecked")
-  private <T> void saveRelatedObjects(T baseObject, AttributeType relationAttribute, Set<RelationshipInfo> relationships) throws
-      DfException {
+  private <T> void saveRelatedObjects(T baseObject, AttributeType relationAttribute, Set<RelationshipInfo> relationships) throws DfException {
     try {
       Object relations = PropertyUtils.getProperty(baseObject, relationAttribute.getFieldName());
 
@@ -109,7 +110,7 @@ public class EntityPersistenceManager {
         Collection relatedObjects = isCollection(relations) ? (Collection)relations : Collections.singletonList(relations);
 
         for (Object relatedObject : relatedObjects) {
-          if(relatedObject == null) { //TODO: improve this, PropertyUtils.getProperty() returns a weird list if the field is null.
+          if (relatedObject == null) { //TODO: improve this, PropertyUtils.getProperty() returns a weird list if the field is null.
             continue;
           }
           Object relatedDctmObject = createObject(entityTypeHandler.getEntityObjectName(relatedObject.getClass()), relatedObject);
@@ -150,10 +151,9 @@ public class EntityPersistenceManager {
   public <T> T update(T objectToUpdate) throws DfException {
     try {
       String id = getId(objectToUpdate);
-      if(objectsBeingUpdated.contains(id)) {
+      if (objectsBeingUpdated.contains(id)) {
         return objectToUpdate;
-      }
-      else {
+      } else {
         objectsBeingUpdated.add(id);
         IDfSysObject dctmObject = getDctmObject(objectToUpdate);
         ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToUpdate);
@@ -176,12 +176,12 @@ public class EntityPersistenceManager {
 
     try {
       for (AttributeType relation : relations) {
-        switch(relation.getRelationshipType()) {
+        switch (relation.getRelationshipType()) {
           case ONE_TO_MANY:
             updateChildren(dctmObject, relation);
             break;
           case ONE_TO_ONE:
-//            updateChild();
+            updateChild(dctmObject, relation);
             break;
         }
         PropertyUtils.getProperty(dctmObject, relation.getFieldName());
@@ -195,31 +195,45 @@ public class EntityPersistenceManager {
     }
   }
 
-  private <T> void updateChildren(T dctmObject, AttributeType relation) throws IllegalAccessException, NoSuchMethodException, InvocationTargetException, DfException {
-    List relatedObjects = (List) PropertyUtils.getProperty(dctmObject, relation.getFieldName());
+  private <T> void updateChild(T dctmObject, AttributeType relation)
+      throws IllegalAccessException, NoSuchMethodException, InvocationTargetException, DfException {
+    Object relatedObject = PropertyUtils.getProperty(dctmObject, relation.getFieldName());
+    if (relatedObject == null) {
+      return;
+    }
+    createRelatedObject(relatedObject);
+    createRelations(dctmObject, Collections.singletonList(getId(relatedObject)), relation.getRelationName());
+  }
 
-    if(relatedObjects == null || relatedObjects.size() == 0) {
+  private <T> void updateChildren(T dctmObject, AttributeType relation)
+      throws IllegalAccessException, NoSuchMethodException, InvocationTargetException, DfException {
+    List relatedObjects = (List)PropertyUtils.getProperty(dctmObject, relation.getFieldName());
+
+    if (relatedObjects == null || relatedObjects.size() == 0) {
       return;
     }
 
     List<String> objectIdToRelate = new ArrayList<>();
     for (Object relatedObject : relatedObjects) {
-      if(isIdAvailable(relatedObject)) {
-        update(relatedObject);
-      }
-      else {
-        createObject(entityTypeHandler.getEntityObjectName(relatedObject.getClass()), relatedObject);
-      }
+      createRelatedObject(relatedObject);
       objectIdToRelate.add(getId(relatedObject));
     }
 
     createRelations(dctmObject, objectIdToRelate, relation.getRelationName());
   }
 
+  private void createRelatedObject(Object relatedObject) throws DfException {
+    if (isIdAvailable(relatedObject)) {
+      update(relatedObject);
+    } else {
+      createObject(entityTypeHandler.getEntityObjectName(relatedObject.getClass()), relatedObject);
+    }
+  }
+
   private <T> void createRelations(T dctmObject, List<String> objectIdToRelate, String relationName) throws DfException {
     String parentId = getId(dctmObject);
     for (String childId : objectIdToRelate) {
-      if(!isRelated(parentId, childId, relationName)) {
+      if (!isRelated(parentId, childId, relationName)) {
         IDfPersistentObject parentObject = documentum.getSession().getObject(new DfId(parentId));
         parentObject.addChildRelative(relationName, new DfId(childId), "", true, "");
       }
@@ -227,7 +241,7 @@ public class EntityPersistenceManager {
   }
 
   //TODO: Optimize this, too many queries, Map<RelationName, Map<ParentId, Set<ChildId>>>
-  private boolean isRelated (String parentId, String childId, String relationName) throws DfException {
+  private boolean isRelated(String parentId, String childId, String relationName) throws DfException {
     IDfQuery query = new DfQuery();
     String queryString = String.format(SELECT_RELATION_QUERY, relationName, parentId, childId, childId, parentId);
     query.setDQL(queryString);

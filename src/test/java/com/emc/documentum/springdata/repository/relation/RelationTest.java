@@ -112,6 +112,18 @@ public class RelationTest {
     verifyOneToOneRelation(person, address);
   }
 
+  @Test
+  public void testUpdateOneToOneRelation() throws DfException {
+    Person person = new Person("Peter Parker", 19, "male");
+    Address address = new Address("SomeStreet", "SomeCity", "SomeCountry");
+    personRepository.save(person);
+    person.setAddress(address);
+    personRepository.save(person);
+    assertNotNull("Related object not saved " + address, address.getId());
+    assertNotNull("Base object not saved " + person, person.get_id());
+    verifyOneToOneRelation(person, address);
+  }
+
   private void verifyOneToOneRelation(Person person, Address address) throws DfException {
     String queryString = String.format(RELATION_QUERY, "address", person.get_id());
     IDfQuery query = new DfQuery(queryString);
