@@ -31,6 +31,7 @@ public class EntityPersistenceManager {
   public static final String SELECT_RELATION_QUERY =
           "select * from dm_relation where relation_name=\'%s\' and (parent_id=\'%s\' and child_id=\'%s\') or (child_id = \'%s\' and parent_id = \'%s\')";
   private final Set objectsBeingSaved = new HashSet();
+  private final Set<String> objectsBeingUpdated = new HashSet<>();
   private final Documentum documentum;
   private final MappingHandler mappingHandler;
   private final EntityTypeHandler entityTypeHandler;
@@ -145,13 +146,20 @@ public class EntityPersistenceManager {
 
   public <T> T update(T objectToUpdate) throws DfException {
     try {
-      IDfSysObject dctmObject = getDctmObject(objectToUpdate);
-      ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToUpdate);
-      objectToDctmConverter.convert(objectToUpdate, dctmObject, mapping);
-      dctmObject.save();
-      updateRelatedObjects(objectToUpdate);
-      DCTMToObjectConverter.convert(dctmObject, objectToUpdate, mapping);
-      return objectToUpdate;
+      String id = getId(objectToUpdate);
+      if(objectsBeingUpdated.contains(id)) {
+        return objectToUpdate;
+      }
+      else {
+        objectsBeingUpdated.add(id);
+        IDfSysObject dctmObject = getDctmObject(objectToUpdate);
+        ArrayList<AttributeType> mapping = mappingHandler.getAttributeMappings(objectToUpdate);
+        objectToDctmConverter.convert(objectToUpdate, dctmObject, mapping);
+        dctmObject.save();
+        updateRelatedObjects(objectToUpdate);
+        DCTMToObjectConverter.convert(dctmObject, objectToUpdate, mapping);
+        return objectToUpdate;
+      }
     } catch (Exception e) {
       String msg = String.format(
           "Object cannot be updated for class %s. Exception: %s, %s.", objectToUpdate.getClass(), e.getClass(), e.getMessage()

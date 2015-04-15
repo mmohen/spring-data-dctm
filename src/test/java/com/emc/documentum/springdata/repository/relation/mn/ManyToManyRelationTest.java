@@ -166,4 +166,43 @@ public class ManyToManyRelationTest {
     assertEquals("Incorrect resident count", 2, savedBatCave.getResidents().size());
     assertEquals("Incorrect resident count", 1, savedStarLabs.getResidents().size());
   }
+
+  @Test
+  public void testManyToManyRelationReverse() {
+    Person bruceWayne = new Person("Bruce Wayne", 35, "male");
+    Person alfredPennyworth = new Person("Alfred Pennyworth", 63, "male");
+
+    Address wayneManor = new Address("Wayne Street", "Gotham City", "DC");
+    Address batCave = new Address("Classified", "Classified", "Classified");
+    Address starLabs = new Address("S.T.A.R. Labs", "Austin", "Texas");
+
+    List<Address> bruceWayneAddresses = Arrays.asList(wayneManor, batCave, starLabs);
+
+    wayneManor.setResidents(Arrays.asList(bruceWayne, alfredPennyworth));
+    batCave.setResidents(Arrays.asList(bruceWayne, alfredPennyworth));
+    starLabs.setResidents(Arrays.asList(bruceWayne));
+    addressRepository.save(Arrays.asList(wayneManor, batCave, starLabs));
+
+    Person foundBruceWayne = personRepositoryWithRelationMn.findOne(bruceWayne.get_id());
+    assertEquals("Some addresses not found", bruceWayneAddresses.size(), foundBruceWayne.getAddress().size());
+
+    int foundCount = bruceWayneAddresses.size();
+    for (Address bruceWayneAddress : bruceWayneAddresses) {
+      for (Address address : foundBruceWayne.getAddress()) {
+        if(bruceWayneAddress.equals(address)) {
+          foundCount--;
+          break;
+        }
+      }
+    }
+
+    assertEquals("Some Addresses not found", 0, foundCount);
+    Address savedManor = addressRepository.findOne(wayneManor.getId());
+    Address savedBatCave = addressRepository.findOne(batCave.getId());
+    Address savedStarLabs = addressRepository.findOne(starLabs.getId());
+    assertEquals("Incorrect resident count", 2, savedManor.getResidents().size());
+    assertEquals("Incorrect resident count", 2, savedBatCave.getResidents().size());
+    assertEquals("Incorrect resident count", 1, savedStarLabs.getResidents().size());
+
+  }
 }
