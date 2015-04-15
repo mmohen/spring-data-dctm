@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -78,7 +79,7 @@ public class MappingHandler {
 
     initializingSet.add(entityClass);
     ArrayList<AttributeType> mapping = new ArrayList<>();
-    Field[] fields = getDeclaredFields(entityClass);
+    Field[] fields = getFields(entityClass);
 
     for (Field field : fields) {
       field.setAccessible(true);
@@ -99,10 +100,20 @@ public class MappingHandler {
   }
 
   public Class<?> getEntityClass(String repositoryEntityName) {
-    return (Class)reverseCache.getEntry(repositoryEntityName);
+    return (Class<?>)reverseCache.getEntry(repositoryEntityName);
   }
-  private Field[] getDeclaredFields(Class<?> entityClass) throws DfException {
-    Field[] fields = entityClass.getDeclaredFields();
+  
+  private Field[] getFields(Class<?> entityClass) throws DfException {
+	  
+    List<Field> fieldList = new ArrayList<Field>();
+	Class<?> tmpClass = entityClass;
+	while (tmpClass != null) {
+	  fieldList.addAll(Arrays.asList(tmpClass.getDeclaredFields()));
+	  tmpClass = tmpClass.getSuperclass();
+	}
+    Field[] fields = new Field[fieldList.size()];
+    fields = fieldList.toArray(fields);
+    
     if (fields.length == 0) {
       throw new DfException("No fields to map for the given class!");
     }
