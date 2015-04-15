@@ -1,55 +1,64 @@
 package com.emc.documentum.springdata.entitymanager.attributes;
 
+import static com.emc.documentum.springdata.entitymanager.attributes.TypeUtils.isBoolean;
+import static com.emc.documentum.springdata.entitymanager.attributes.TypeUtils.isCollection;
+import static com.emc.documentum.springdata.entitymanager.attributes.TypeUtils.isDouble;
+import static com.emc.documentum.springdata.entitymanager.attributes.TypeUtils.isInteger;
+import static com.emc.documentum.springdata.entitymanager.attributes.TypeUtils.isLong;
+import static com.emc.documentum.springdata.entitymanager.attributes.TypeUtils.isString;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.Collection;
+
+import com.emc.documentum.springdata.entitymanager.annotations.Relation;
 
 
 public class AttributeFactory {
 
     public static Attribute<?> getAttribute(Field field, String attributeName) {
-
-
         Class<?> type = field.getType();
 
-        if (type == java.lang.String.class) {
+        if(isRelation(field)) {
+            return getAttributeAsRelation(field, attributeName);
+        } else if (isString(type)) {
             return new StringAttribute(attributeName);
-        } else if (type == java.lang.Integer.class || type == int.class) {
+        } else if (isInteger(type)) {
             return new IntAttribute(attributeName);
-        } else if (type == java.lang.Double.class || type == double.class) {
+        } else if (isDouble(type)) {
             return new DoubleAttribute(attributeName);
-        } else if (type == java.lang.Long.class || type == long.class) {
+        } else if (isLong(type)) {
             return new LongAttribute(attributeName);
-        } else if (type == java.lang.Boolean.class || type == boolean.class) {
+        } else if (isBoolean(type)) {
             return new BooleanAttribute(attributeName);
-        } 
-        
-        
-        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.String.class ){
+        } else if (isCollection(type) && isString(getParameterizedType(field))) {
             return new StringListAttribute(attributeName);
-        }
-        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Integer.class ){
+        } else if (isCollection(type) && isInteger(getParameterizedType(field))) {
             return new IntListAttribute(attributeName);
-        }
-        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Double.class ){
+        } else if (isCollection(type) && isDouble(getParameterizedType(field))) {
             return new DoubleListAttribute(attributeName);
-        }
-        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Long.class ){
+        } else if (isCollection(type) && isLong(getParameterizedType(field))) {
             return new LongListAttribute(attributeName);
-        }
-        else if (Collection.class.isAssignableFrom(type) && getParameterizedType(field) == java.lang.Boolean.class ){
+        } else if (isCollection(type) && isBoolean(getParameterizedType(field))) {
             return new BooleanListAttribute(attributeName);
         }
-
         return null;
+    }
+
+    private static Attribute<?> getAttributeAsRelation(Field field, String attributeName) {
+        if(isCollection(field.getType())) {
+            return new EntityCollectionAttribute<>(attributeName);
+        } else {
+            return new EntityAttribute<>(attributeName);
+        }
+    }
+
+    private static boolean isRelation(Field field) {
+        return field.getAnnotation(Relation.class) != null;
     }
 
     private static Type getParameterizedType(Field field) {
         field.setAccessible(true);
         return ((ParameterizedType) field.getGenericType()).getActualTypeArguments()[0];
-
     }
-
-
 }

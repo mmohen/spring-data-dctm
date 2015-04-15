@@ -1,8 +1,8 @@
 package com.emc.documentum.springdata.core;
 
-import com.emc.documentum.springdata.entitymanager.annotations.Content;
-import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 import org.springframework.data.annotation.Id;
+
+import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,6 +13,12 @@ import org.springframework.data.annotation.Id;
  */
 @DctmEntity(repository = "loan")
 public class Loan {
+    public Loan() {}
+
+    public Loan(int amount){
+        this.amount = amount;
+    }
+
     public String getLoanId() {
         return loanId;
     }
@@ -29,18 +35,34 @@ public class Loan {
         this.amount = amount;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) { return true; }
+        if (o == null || getClass() != o.getClass()) { return false; }
 
-    public Loan(int amount){
-        this.amount = amount;
+        Loan loan = (Loan)o;
+
+        if (amount != loan.amount) { return false; }
+        return !(loanId != null ? !loanId.equals(loan.loanId) : loan.loanId != null);
+
     }
 
-    public Loan(){
+    @Override
+    public int hashCode() {
+        int result = loanId != null ? loanId.hashCode() : 0;
+        result = 31 * result + amount;
+        return result;
+    }
 
+    @Override
+    public String toString() {
+        return "Loan{" +
+            "loanId='" + loanId + '\'' +
+            ", amount=" + amount +
+            '}';
     }
 
     @Id
     String loanId;
     int amount;
-
-
 }

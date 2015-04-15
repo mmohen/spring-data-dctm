@@ -2,14 +2,14 @@ package com.emc.documentum.springdata.core;
 
 import java.util.List;
 
-import com.documentum.fc.common.DfException;
-import com.emc.documentum.springdata.entitymanager.EntityPersistenceManager;
-import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
-
-import com.emc.documentum.springdata.entitymanager.annotations.Content;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
+
+import com.documentum.fc.common.DfException;
+import com.emc.documentum.springdata.entitymanager.EntityPersistenceManager;
+import com.emc.documentum.springdata.entitymanager.EntityTypeHandler;
+import com.emc.documentum.springdata.repository.query.DctmQuery;
 
 
 @Controller
@@ -46,8 +46,17 @@ public class DctmTemplate implements DctmOperations {
 
   @Override
   public <T> List<T> findAll(Class<T> entityClass) throws DfException {
+    return find(null, entityClass);
+  }
+
+  @Override
+  public <T> List<T> find(DctmQuery query, Class<T> entityClass) throws DfException {
     Assert.notNull(entityClass);
     String repoObjectName = getRepositoryName(entityClass);
+    return query == null ? doFindAll(entityClass, repoObjectName) : entityPersistenceManager.find(entityClass, repoObjectName, query);
+  }
+
+  private <T> List<T> doFindAll(Class<T> entityClass, String repoObjectName) throws DfException {
     return entityPersistenceManager.findAllObjects(entityClass, repoObjectName);
   }
 
@@ -60,11 +69,10 @@ public class DctmTemplate implements DctmOperations {
   
   @Override
   public long count(Class<?> entityClass) throws DfException {
-	Assert.notNull(entityClass);
-	String repoObjectName = getRepositoryName(entityClass);
-	return entityPersistenceManager.count(entityClass, repoObjectName);
+  Assert.notNull(entityClass);
+  String repoObjectName = getRepositoryName(entityClass);
+  return entityPersistenceManager.count(entityClass, repoObjectName);
   }
-  
 
   @Override
   public <T> T update(T objectToUpdate) throws DfException {
@@ -83,14 +91,14 @@ public class DctmTemplate implements DctmOperations {
     return entityTypeManager.getEntityObjectName(entityClass);
   }
 
-
+  @Override
   public <T> void setContent(T object, String contentType, String path) throws DfException {
       entityPersistenceManager.setContent(object, contentType, path);
   }
 
+  @Override
   public <T> String getContent(T object, String path) throws DfException {
       return entityPersistenceManager.getContent(object, path);
-
   }
 
 }

@@ -14,7 +14,6 @@ public class StringAttribute extends Attribute<String> {
     @Override
     public String getValue(Object o) throws DfException {
         return ((IDfTypedObject) o).getString(name);
-
     }
 }
 

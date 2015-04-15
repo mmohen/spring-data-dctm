@@ -24,7 +24,7 @@ public class ObjectToDCTMConverter {
 
     public void convert(Object objectToSave, IDfSysObject dctmObject, ArrayList<AttributeType> mapping) throws DfException {
         for (AttributeType attributeType : mapping) {
-            if (!attributeType.getAttribute().getName().equals( "r_object_id")) {
+            if (!shouldIgnore(attributeType)) {
                 try {
                     setValue(dctmObject, objectToSave, attributeType);
                 } catch (Exception e) {
@@ -32,9 +32,12 @@ public class ObjectToDCTMConverter {
                             objectToSave.getClass(), e.getClass(), e.getMessage());
                     throw new DfException(msg, e);
                 }
-
             }
         }
+    }
+
+    private boolean shouldIgnore(AttributeType attributeType) {
+        return attributeType.getAttribute().getName().equals( "r_object_id") || attributeType.isRelation();
     }
 
     private void setValue(IDfSysObject dctmObject, Object objectToSave, AttributeType fieldType)
@@ -45,12 +48,10 @@ public class ObjectToDCTMConverter {
         Attribute<?> attribute = fieldType.getAttribute();
         
         if(attribute instanceof IterableAttribute<?> ) {
-        	((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass); 	
-
-        }
-        else {
-        	IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
-        	dctmObject.setValue(fieldType.getAttribute().getName(), value);
+          ((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass);   
+        } else {
+          IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
+          dctmObject.setValue(fieldType.getAttribute().getName(), value);
         }
     }
 

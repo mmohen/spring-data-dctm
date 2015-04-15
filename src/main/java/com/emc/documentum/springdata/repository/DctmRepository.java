@@ -34,4 +34,6 @@ public interface DctmRepository<T, ID extends Serializable> extends CrudReposito
   void delete(Iterable<? extends T> entities);
 
   void deleteAll();
+
+//TODO  void update(T entity);
 }

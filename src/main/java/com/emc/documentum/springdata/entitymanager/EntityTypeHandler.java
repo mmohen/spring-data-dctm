@@ -3,6 +3,7 @@ package com.emc.documentum.springdata.entitymanager;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 
@@ -15,12 +16,7 @@ public class EntityTypeHandler {
     }
 
     public String getEntityObjectNameFromClass(Class<?> type) {
-        String fallback = type.getSimpleName();
-        if (type.isAnnotationPresent(DctmEntity.class)) {
-            DctmEntity dctmObject = AnnotationUtils.findAnnotation(type, DctmEntity.class);
-            return dctmObject.repository();
-        } else {
-            return fallback;
-        }
+        DctmEntity dctmObject = AnnotationUtils.findAnnotation(type, DctmEntity.class);
+        return StringUtils.isEmpty(dctmObject.repository()) ? type.getSimpleName() : dctmObject.repository();
     }
 }

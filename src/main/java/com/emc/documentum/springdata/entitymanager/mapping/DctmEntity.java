@@ -18,7 +18,7 @@ import org.springframework.data.annotation.Persistent;
 @Target({ElementType.TYPE})
 public @interface DctmEntity {
 
-    String repository();
+    String repository() default "";
 
     /**
      * Defines the default language to be used with this document.

@@ -13,32 +13,32 @@ import com.emc.documentum.springdata.entitymanager.mapping.DctmEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-@DctmEntity(repository="persons")
+@DctmEntity(repository = "persons")
 @TypeAlias("person")
 public class Person {
 
-    @DctmAttribute("firstname")
-    private String name;
+  @DctmAttribute("firstname")
+  private String name;
 
-    @Id
-    public String _id;
-    public Integer age;
+  @Id
+  public String _id;
+  public Integer age;
 
-    @DctmAttribute("sex")
-    private String gender;
+  @DctmAttribute("sex")
+  private String gender;
 
 
-    private List<String> hobbies = new ArrayList<String>();
+  private List<String> hobbies = new ArrayList<>();
 
-    @DctmAttribute("accountnumbers")
-    private List<Double> accountNumbers = new ArrayList<Double>();
+  @DctmAttribute("accountnumbers")
+  private List<Double> accountNumbers = new ArrayList<>();
 
-    @Content
-    private String content;
+  @Content
+  private String content;
 
 //    @Relation
 //    public Address address;
-    
+
 //    private Content file;
 //    
 //	@Content
@@ -51,21 +51,21 @@ public class Person {
 //		this.file = file;
 //	}
 
-    public List<Double> getAccountNumbers() {
-		return accountNumbers;
-	}
+  public List<Double> getAccountNumbers() {
+    return accountNumbers;
+  }
 
-	public void setAccountNumbers(List<Double> accountNumbers) {
-		this.accountNumbers = accountNumbers;
-	}
+  public void setAccountNumbers(List<Double> accountNumbers) {
+    this.accountNumbers = accountNumbers;
+  }
 
-	public List<String> getHobbies() {
-        return hobbies;
-    }
+  public List<String> getHobbies() {
+    return hobbies;
+  }
 
-	 public void setHobbies(List<String> hobbies) {
-        this.hobbies = hobbies;
-    }
+  public void setHobbies(List<String> hobbies) {
+    this.hobbies = hobbies;
+  }
 
 //    public Address getAddress() {
 //        return address;
@@ -75,58 +75,57 @@ public class Person {
 //        this.address = address;
 //    }
 
-	public void set_id(String _id) {
-		this._id = _id;
-	}
+  public void set_id(String _id) {
+    this._id = _id;
+  }
 
 
-	public String getName() {
-		return name;
-	}
-	
+  public String getName() {
+    return name;
+  }
 
-	public String get_id() {
-		return _id;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+  public String get_id() {
+    return _id;
+  }
 
-	public Integer getAge() {
-		return age;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-	
-	public String getGender() {
-		return gender;
-	}
+  public Integer getAge() {
+    return age;
+  }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+  public void setAge(Integer age) {
+    this.age = age;
+  }
 
-	public Person(String name, Integer age, String gender)
-	{
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
-	}
-	
-	public Person() {}
+  public String getGender() {
+    return gender;
+  }
 
-    @Content
-    public String getContent(){
-        return content;
-    }
+  public void setGender(String gender) {
+    this.gender = gender;
+  }
 
-    @Content
-    public void setContent(String path){
-        this.content = path;
-    }
+  public Person(String name, Integer age, String gender) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+
+  public Person() {}
+
+  @Content
+  public String getContent() {
+    return content;
+  }
+
+  @Content
+  public void setContent(String path) {
+    this.content = path;
+  }
 
 
 }

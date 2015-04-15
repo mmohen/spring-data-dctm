@@ -14,5 +14,4 @@ public class IntAttribute extends Attribute<Integer> {
     public Integer getValue(Object o) throws DfException {
         return ((IDfTypedObject) o).getInt(name);
     }
-
 }
