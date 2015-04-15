@@ -203,6 +203,5 @@ public class ManyToManyRelationTest {
     assertEquals("Incorrect resident count", 2, savedManor.getResidents().size());
     assertEquals("Incorrect resident count", 2, savedBatCave.getResidents().size());
     assertEquals("Incorrect resident count", 1, savedStarLabs.getResidents().size());
-
   }
 }

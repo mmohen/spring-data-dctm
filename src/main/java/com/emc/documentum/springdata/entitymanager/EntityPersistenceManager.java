@@ -109,6 +109,9 @@ public class EntityPersistenceManager {
         Collection relatedObjects = isCollection(relations) ? (Collection)relations : Collections.singletonList(relations);
 
         for (Object relatedObject : relatedObjects) {
+          if(relatedObject == null) { //TODO: improve this, PropertyUtils.getProperty() returns a weird list if the field is null.
+            continue;
+          }
           Object relatedDctmObject = createObject(entityTypeHandler.getEntityObjectName(relatedObject.getClass()), relatedObject);
 
           IDfSysObject parentDctmObject = getDctmObject(baseObject);
