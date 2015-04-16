@@ -103,7 +103,7 @@ public class MappingHandler {
     return (Class<?>)reverseCache.getEntry(repositoryEntityName);
   }
   
-  private Field[] getFields(Class<?> entityClass) throws DfException {
+  public Field[] getFields(Class<?> entityClass) throws DfException {
 	  
     List<Field> fieldList = new ArrayList<Field>();
 	Class<?> tmpClass = entityClass;

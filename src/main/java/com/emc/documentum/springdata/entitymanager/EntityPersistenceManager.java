@@ -81,8 +81,8 @@ public class EntityPersistenceManager {
     }
   }
 
-  private <T> boolean isIdAvailable(T objectToSave) {
-    Field[] fields = objectToSave.getClass().getDeclaredFields();
+  private <T> boolean isIdAvailable(T objectToSave) throws DfException {
+    Field[] fields = mappingHandler.getFields(objectToSave.getClass());
     boolean isIdAvailable = false;
     for (Field field : fields) {
       field.setAccessible(true);
@@ -249,8 +249,8 @@ public class EntityPersistenceManager {
     return relations.next(); //DFC version of hasNext();
   }
 
-  private <T> String getId(T objectToSave) {
-    Field[] fields = objectToSave.getClass().getDeclaredFields();
+  private <T> String getId(T objectToSave) throws DfException {
+    Field[] fields = mappingHandler.getFields(objectToSave.getClass());
     String id = "";
     for (Field field : fields) {
       field.setAccessible(true);

@@ -146,15 +146,15 @@ public class DCTMToObjectConverter {
     PropertyUtils.setSimpleProperty(objectToReturn, attributeType.getFieldName(), childrenList);
   }
 
-  private <T> String getId(T objectToSave) {
-    Field[] fields = objectToSave.getClass().getDeclaredFields();
+  private <T> String getId(T objectToSave) throws DfException {
+    Field[] fields = mappingHandler.getFields(objectToSave.getClass());
     String id = "";
     for (Field field : fields) {
       field.setAccessible(true);
       if (field.getAnnotation(Id.class) != null) {
         id = (String)ReflectionUtils.getField(field, objectToSave);
       }
-    }
+    } 
     return id;
   }
 
