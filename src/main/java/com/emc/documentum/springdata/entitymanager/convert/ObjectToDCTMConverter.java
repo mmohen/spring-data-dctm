@@ -45,13 +45,17 @@ public class ObjectToDCTMConverter {
 
         Object valueFromClass = PropertyUtils.getSimpleProperty(objectToSave, fieldType.getFieldName());
         
-        Attribute<?> attribute = fieldType.getAttribute();
+        if(valueFromClass != null) {
+        	
+          Attribute<?> attribute = fieldType.getAttribute();
         
-        if(attribute instanceof IterableAttribute<?> ) {
-          ((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass);   
-        } else {
-          IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
-          dctmObject.setValue(fieldType.getAttribute().getName(), value);
+          if(attribute instanceof IterableAttribute<?> ) {
+            ((IterableAttribute<?>) attribute).setValue(dctmObject, (List<Object>) valueFromClass);   
+          } else {
+            IDfValue value = new DfValue(valueFromClass,fieldType.getAttribute().getDfAttributeType());
+            dctmObject.setValue(fieldType.getAttribute().getName(), value);
+          }
+          
         }
     }
 

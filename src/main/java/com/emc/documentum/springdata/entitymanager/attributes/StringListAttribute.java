@@ -30,9 +30,8 @@ public class StringListAttribute extends IterableAttribute<List<String>> {
 	public void setValue(IDfSysObject dctmObject, List<Object> valueToSet) throws DfException {
 		
 		dctmObject.removeAll(name);
-		
-         for (int i = 0; i < valueToSet.size(); i++) {
-             dctmObject.setRepeatingString(name, i, (String) valueToSet.get(i));
-         }
+          for (int i = 0; i < valueToSet.size(); i++) {
+            dctmObject.setRepeatingString(name, i, (String) valueToSet.get(i));
+          }
 	}
 }
