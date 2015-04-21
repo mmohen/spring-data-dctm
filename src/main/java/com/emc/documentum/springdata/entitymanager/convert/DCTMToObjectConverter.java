@@ -46,12 +46,13 @@ public class DCTMToObjectConverter {
     for (AttributeType attributeType : mapping) {
       try {
         if (!attributeType.isRelation()) {
+          System.out.println(attributeType);
           getValue(dctmObject, objectToReturn, attributeType);
         }
       } catch (Exception e) {
         String msg = String.format(
-            "Conversion failed for Object of class %s. " + "Exception: %s, %s.", objectToReturn.getClass(), e.getClass(), e.getMessage()
-        );
+            "Conversion failed for Object of class %s. " + "Exception: %s, %s.", objectToReturn.getClass(), e.getClass(), e.getMessage());
+        System.out.println("Failed for ");
         throw new DfException(msg, e);
       }
     }
@@ -102,18 +103,25 @@ public class DCTMToObjectConverter {
     }
   }
 
+  //TODO: Fix code duplication in setChild and setChildren
   @SuppressWarnings("unchecked")
-  private void setChild(IDfTypedObject dctmObject, Object objectToReturn, AttributeType attributeType, IDfCollection children)
+  private void setChild(IDfTypedObject dctmObject, Object objectToReturn, AttributeType attributeType, IDfCollection relation)
       throws DfException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
 
-    if (children.next()) {
-      IDfTypedObject child = children.getTypedObject();
-      IDfPersistentObject childObject = dctmObject.getSession().getObject(new DfId(child.getString("child_id")));
-      Object relatedEntityInstance = attributeType.getRelatedEntityClass().newInstance();
+    if (relation.next()) {
+      String relatedObjectId = getId(objectToReturn).equalsIgnoreCase(relation.getString("child_id")) ? relation.getString("parent_id") : relation
+          .getString("child_id");
 
-      convert(childObject, relatedEntityInstance, mappingHandler.getAttributeMappings(relatedEntityInstance));
+      if (objectsBeingConverted.get(relatedObjectId) == null) {
+        IDfTypedObject child = relation.getTypedObject();
+        IDfPersistentObject childObject = dctmObject.getSession().getObject(new DfId(child.getString("child_id")));
+        Object relatedEntityInstance = attributeType.getRelatedEntityClass().newInstance();
 
-      PropertyUtils.setSimpleProperty(objectToReturn, attributeType.getFieldName(), relatedEntityInstance);
+        convert(childObject, relatedEntityInstance, mappingHandler.getAttributeMappings(relatedEntityInstance));
+        PropertyUtils.setSimpleProperty(objectToReturn, attributeType.getFieldName(), relatedEntityInstance);
+      } else {
+        PropertyUtils.setSimpleProperty(objectToReturn, attributeType.getFieldName(), objectsBeingConverted.get(relatedObjectId));
+      }
     }
   }
 
@@ -161,6 +169,8 @@ public class DCTMToObjectConverter {
   private void getValue(IDfTypedObject dctmObject, Object objectToReturn, AttributeType fieldType)
       throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     Attribute<?> attribute = fieldType.getAttribute();
-    PropertyUtils.setSimpleProperty(objectToReturn, fieldType.getFieldName(), attribute.getValue(dctmObject));
+    System.out.println("Object is: " + dctmObject.getString("r_object_type"));
+    Object attributeValue = attribute.getValue(dctmObject);
+    PropertyUtils.setSimpleProperty(objectToReturn, fieldType.getFieldName(), attributeValue);
   }
 }
