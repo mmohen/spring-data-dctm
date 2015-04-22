@@ -28,7 +28,7 @@ import com.emc.documentum.springdata.entitymanager.mapping.MappingHandler;
 public class DCTMToObjectConverter {
 
   public static final String SELECT_RELATION_QUERY =
-      "select * from dm_relation where relation_name=\'%s\' and parent_id=\'%s\' or " + "child_id=\'%s\'";
+      "select * from dm_relation where relation_name=\'%s\' and (parent_id=\'%s\' or " + "child_id=\'%s\')";
   @Autowired
   MappingHandler mappingHandler;
   Map<String, Object> objectsBeingConverted = new HashMap<>();
