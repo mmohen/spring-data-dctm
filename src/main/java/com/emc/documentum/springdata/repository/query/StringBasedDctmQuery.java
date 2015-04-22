@@ -31,7 +31,7 @@ public class StringBasedDctmQuery extends AbstractDctmQuery {
 
   @Override
   protected DctmQuery createQuery(Object[] parameters) {
-    return null;
+    String formedQuery = String.format(queryMethod.getQuery(), parameters);
+    return new DctmQuery(formedQuery);
   }
-
 }

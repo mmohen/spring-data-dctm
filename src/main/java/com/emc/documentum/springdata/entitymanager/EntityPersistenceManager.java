@@ -318,11 +318,9 @@ public class EntityPersistenceManager {
       List<T> list = new ArrayList<>();
 
       IDfQuery query = new DfQuery();
-      String selectClause = "select * from ";
-      String whereClause = "where " + dctmQuery.getPredicate();
-      String dql = String.format("%s %s %s", selectClause, repoObjectName, whereClause);
+      String dql = buildQuery(repoObjectName, dctmQuery);
 
-      System.out.println(dql);
+      System.out.println("Executing query: " + dql);
       query.setDQL(dql);
 
       IDfCollection coll = query.execute(session, 0);
@@ -339,6 +337,14 @@ public class EntityPersistenceManager {
       String msg = String.format("Objects cannot be found for class %s. Exception: %s, %s.", entityClass, e.getClass(), e.getMessage());
       throw new DfException(msg, e);
     }
+  }
+
+  private String buildQuery(String repoObjectName, DctmQuery dctmQuery) {
+
+    String query = dctmQuery.isCompleteQuery() ? dctmQuery.getQueryString() :
+        String.format("select * from %s where %s", repoObjectName, dctmQuery.getPredicate());
+
+    return query;
   }
 
 

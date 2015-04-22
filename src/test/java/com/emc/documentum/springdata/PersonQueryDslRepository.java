@@ -19,8 +19,14 @@ public interface PersonQueryDslRepository extends DctmRepository<Person, String>
 
 //  public long countByName(String name);
 
-  @Query("select * from persons where p.attributes[?1] = ?2")
+  @Query("select * from persons where %s = \'%s\'")
   List<Person> findSomeone(String attribute, String value);
+
+  @Query("select * from persons where firstname = \'%s\' or age = %s")
+  List<Person> findByAgeOrName(String name, int value);
+
+  @Query("select * from persons where %s = %s")
+  List<Person> findSomeone(String attribute, int value);
 
   List<Person> findByNameAndAge(String name, int age);
 

@@ -10,10 +10,22 @@ import com.mysema.query.types.Predicate;
  */
 public class DctmQuery {
 
-  private Predicate predicate;
+  private final Predicate predicate;
+  private final String queryString;
+  private final boolean isCompleteQuery;
+
+  public DctmQuery(String queryString) {
+    this(queryString, null, true);
+  }
 
   public DctmQuery(Predicate predicate) {
+    this(null, predicate, false);
+  }
+
+  private DctmQuery(String queryString, Predicate predicate, boolean isCompleteQuery) {
+    this.queryString = queryString;
     this.predicate = predicate;
+    this.isCompleteQuery = isCompleteQuery;
   }
 
   public DctmQuery with(Sort sort) {
@@ -26,5 +38,11 @@ public class DctmQuery {
     return predicate.toString().replaceAll("\\|\\|", "OR").replaceAll("\\&\\&", "AND");
   }
 
+  public boolean isCompleteQuery() {
+    return isCompleteQuery;
+  }
 
+  public String getQueryString() {
+    return queryString;
+  }
 }
