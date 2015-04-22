@@ -169,7 +169,6 @@ public class DCTMToObjectConverter {
   private void getValue(IDfTypedObject dctmObject, Object objectToReturn, AttributeType fieldType)
       throws DfException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
     Attribute<?> attribute = fieldType.getAttribute();
-    System.out.println("Object is: " + dctmObject.getString("r_object_type"));
     Object attributeValue = attribute.getValue(dctmObject);
     PropertyUtils.setSimpleProperty(objectToReturn, fieldType.getFieldName(), attributeValue);
   }
