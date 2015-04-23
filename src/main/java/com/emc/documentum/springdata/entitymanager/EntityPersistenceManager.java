@@ -33,7 +33,7 @@ public class EntityPersistenceManager {
   public static final String SELECT_RELATION_QUERY =
       "select * from dm_relation where (relation_name=\'%s\' and (parent_id=\'%s\' and child_id=\'%s\')) or (relation_name=\'%s\' and (child_id = \'%s\' and parent_id = \'%s\'))";
   private final Set objectsBeingSaved = new HashSet();
-  private final Set<String> objectsBeingUpdated = new HashSet<>();
+  private Set<String> objectsBeingUpdated = new HashSet<>();
   private final Documentum documentum;
   private final MappingHandler mappingHandler;
   private final EntityTypeHandler entityTypeHandler;
@@ -149,6 +149,12 @@ public class EntityPersistenceManager {
   }
 
   public <T> T update(T objectToUpdate) throws DfException {
+    T updatedObject = doUpdate(objectToUpdate);
+    objectsBeingUpdated = new HashSet<>();
+    return updatedObject;
+  }
+
+  private <T> T doUpdate(T objectToUpdate) throws DfException {
     try {
       String id = getId(objectToUpdate);
       if (objectsBeingUpdated.contains(id)) {
@@ -244,9 +250,9 @@ public class EntityPersistenceManager {
   private boolean isRelated(String parentId, String childId, String relationName) throws DfException {
     IDfQuery query = new DfQuery();
     String queryString = String.format(SELECT_RELATION_QUERY, relationName, parentId, childId, relationName, parentId, childId);
-    
+
     System.out.println(String.format("Executing relation query: \r\n %s",queryString));
-    
+
     query.setDQL(queryString);
     IDfCollection relations = query.execute(documentum.getSession(), 0);
     return relations.next(); //DFC version of hasNext();
