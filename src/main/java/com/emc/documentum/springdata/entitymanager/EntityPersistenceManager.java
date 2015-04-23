@@ -31,7 +31,7 @@ import com.emc.documentum.springdata.repository.query.DctmQuery;
 public class EntityPersistenceManager {
 
   public static final String SELECT_RELATION_QUERY =
-      "select * from dm_relation where relation_name=\'%s\' and (parent_id=\'%s\' and child_id=\'%s\') or (child_id = \'%s\' and parent_id = \'%s\')";
+      "select * from dm_relation where (relation_name=\'%s\' and (parent_id=\'%s\' and child_id=\'%s\')) or (relation_name=\'%s\' and (child_id = \'%s\' and parent_id = \'%s\'))";
   private final Set objectsBeingSaved = new HashSet();
   private final Set<String> objectsBeingUpdated = new HashSet<>();
   private final Documentum documentum;
@@ -243,7 +243,10 @@ public class EntityPersistenceManager {
   //TODO: Optimize this, too many queries, Map<RelationName, Map<ParentId, Set<ChildId>>>
   private boolean isRelated(String parentId, String childId, String relationName) throws DfException {
     IDfQuery query = new DfQuery();
-    String queryString = String.format(SELECT_RELATION_QUERY, relationName, parentId, childId, childId, parentId);
+    String queryString = String.format(SELECT_RELATION_QUERY, relationName, parentId, childId, relationName, parentId, childId);
+    
+    System.out.println(String.format("Executing relation query: \r\n %s",queryString));
+    
     query.setDQL(queryString);
     IDfCollection relations = query.execute(documentum.getSession(), 0);
     return relations.next(); //DFC version of hasNext();
