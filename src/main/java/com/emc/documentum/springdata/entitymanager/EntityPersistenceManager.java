@@ -32,8 +32,10 @@ public class EntityPersistenceManager {
 
   public static final String SELECT_RELATION_QUERY =
       "select * from dm_relation where (relation_name=\'%s\' and (parent_id=\'%s\' and child_id=\'%s\')) or (relation_name=\'%s\' and (child_id = \'%s\' and parent_id = \'%s\'))";
-  private final Set objectsBeingSaved = new HashSet();
+
+  private Set objectsBeingSaved = new HashSet();
   private Set<String> objectsBeingUpdated = new HashSet<>();
+
   private final Documentum documentum;
   private final MappingHandler mappingHandler;
   private final EntityTypeHandler entityTypeHandler;
@@ -52,8 +54,19 @@ public class EntityPersistenceManager {
     this.DCTMToObjectConverter = DCTMToObjectConverter;
   }
 
-  @SuppressWarnings("unchecked")
   public <T> T createObject(String repoObjectName, T objectToSave) throws DfException {
+    T createdObject = doCreateObject(repoObjectName, objectToSave);
+    clearState();
+    return createdObject;
+  }
+
+  private void clearState() {
+    objectsBeingSaved = new HashSet();
+    objectsBeingUpdated = new HashSet<>();
+  }
+
+  @SuppressWarnings("unchecked")
+  public <T> T doCreateObject(String repoObjectName, T objectToSave) throws DfException {
     try {
       if (objectsBeingSaved.contains(objectToSave)) {
         return objectToSave;
@@ -61,7 +74,7 @@ public class EntityPersistenceManager {
 
       objectsBeingSaved.add(objectToSave);
       if (isIdAvailable(objectToSave)) {
-        return update(objectToSave);
+        return doUpdate(objectToSave);
       }
 
       T savedBaseObject = doSave(repoObjectName, objectToSave);
@@ -150,7 +163,7 @@ public class EntityPersistenceManager {
 
   public <T> T update(T objectToUpdate) throws DfException {
     T updatedObject = doUpdate(objectToUpdate);
-    objectsBeingUpdated = new HashSet<>();
+    clearState();
     return updatedObject;
   }
 
@@ -230,7 +243,7 @@ public class EntityPersistenceManager {
 
   private void createRelatedObject(Object relatedObject) throws DfException {
     if (isIdAvailable(relatedObject)) {
-      update(relatedObject);
+      doUpdate(relatedObject);
     } else {
       createObject(entityTypeHandler.getEntityObjectName(relatedObject.getClass()), relatedObject);
     }
