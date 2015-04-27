@@ -66,7 +66,7 @@ public class EntityPersistenceManager {
   }
 
   @SuppressWarnings("unchecked")
-  public <T> T doCreateObject(String repoObjectName, T objectToSave) throws DfException {
+  private <T> T doCreateObject(String repoObjectName, T objectToSave) throws DfException {
     try {
       if (objectsBeingSaved.contains(objectToSave)) {
         return objectToSave;

@@ -31,12 +31,17 @@ public class DCTMToObjectConverter {
       "select * from dm_relation where relation_name=\'%s\' and (parent_id=\'%s\' or " + "child_id=\'%s\')";
   @Autowired
   MappingHandler mappingHandler;
-  Map<String, Object> objectsBeingConverted = new HashMap<>();
+  private Map<String, Object> objectsBeingConverted = new HashMap<>();
 
   public DCTMToObjectConverter() {}
 
-  @SuppressWarnings("unchecked")
   public void convert(IDfTypedObject dctmObject, Object objectToReturn, ArrayList<AttributeType> mapping) throws DfException {
+    objectsBeingConverted = new HashMap<>();
+    doConvert(dctmObject, objectToReturn, mapping);
+  }
+
+  @SuppressWarnings("unchecked")
+  private void doConvert(IDfTypedObject dctmObject, Object objectToReturn, ArrayList<AttributeType> mapping) throws DfException {
     setNonRelationalAttributes(dctmObject, objectToReturn, mapping);
 
     setRelationalAttributes(dctmObject, objectToReturn, mapping);
@@ -117,7 +122,7 @@ public class DCTMToObjectConverter {
         IDfPersistentObject childObject = dctmObject.getSession().getObject(new DfId(child.getString("child_id")));
         Object relatedEntityInstance = attributeType.getRelatedEntityClass().newInstance();
 
-        convert(childObject, relatedEntityInstance, mappingHandler.getAttributeMappings(relatedEntityInstance));
+        doConvert(childObject, relatedEntityInstance, mappingHandler.getAttributeMappings(relatedEntityInstance));
         PropertyUtils.setSimpleProperty(objectToReturn, attributeType.getFieldName(), relatedEntityInstance);
       } else {
         PropertyUtils.setSimpleProperty(objectToReturn, attributeType.getFieldName(), objectsBeingConverted.get(relatedObjectId));
@@ -143,7 +148,7 @@ public class DCTMToObjectConverter {
         System.out.println(String.format("Child object type: {%s}", childObjectType));
 
         Object relatedEntityInstance = attributeType.getRelatedEntityClass().newInstance();
-        convert(childObject, relatedEntityInstance, mappingHandler.getAttributeMappings(relatedEntityInstance));
+        doConvert(childObject, relatedEntityInstance, mappingHandler.getAttributeMappings(relatedEntityInstance));
         childrenList.add(relatedEntityInstance);
         objectsBeingConverted.put(relatedObjectId, relatedEntityInstance);
       } else {
