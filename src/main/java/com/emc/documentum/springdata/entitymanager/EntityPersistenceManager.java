@@ -297,7 +297,7 @@ public class EntityPersistenceManager {
   public <T> String deleteObject(String id) throws DfException {
     try {
       IDfSession session = documentum.getSession();
-      IDfSysObject dctmObjectToDelete = (IDfSysObject)session.getObject(new DfId(id));
+      IDfPersistentObject dctmObjectToDelete = session.getObject(new DfId(id));
       dctmObjectToDelete.destroy();
       return id;
     } catch (DfException e) {
