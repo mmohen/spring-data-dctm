@@ -29,10 +29,15 @@
     <!-- Test -->
     <junit.version>4.11</junit.version>
 
-     <querydsl.version>3.5.1</querydsl.version>
+    <querydsl.version>3.5.1</querydsl.version>
+
+    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+    <github.global.server>github</github.global.server>
   </properties>
 
+
   <dependencies>
+
     <!-- Spring and Transactions -->
 
     <!-- Logging with SLF4J & LogBack -->
@@ -53,6 +58,42 @@
       <groupId>com.emc.documentum.dfc</groupId>
       <artifactId>dfc</artifactId>
       <version>7.1.1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>aspectj</groupId>
+      <artifactId>aspectjrt</artifactId>
+      <version>1.5.2a</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.3</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>2.1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
     </dependency>
 
     <dependency>
@@ -100,16 +141,25 @@
       <version>1.9.2.RELEASE</version>
     </dependency>
     <dependency>
-	  <groupId>org.aspectj</groupId>
-	  <artifactId>aspectjweaver</artifactId>
-	  <version>1.8.0</version>
-	  </dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.8.0</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.openjpa</groupId>
       <artifactId>openjpa</artifactId>
       <version>2.3.0</version>
     </dependency>
   </dependencies>
+
+
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.2.2.RELEASE</version>
+  </parent>
+
 
   <repositories>
     <repository>
@@ -124,19 +174,12 @@
   </repositories>
 
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.2.2.RELEASE</version>
-  </parent>
-
-
   <distributionManagement>
-    <snapshotRepository>
-      <id>artifactory-dev</id>
-      <name>pls-jfrogrepo.lss.emc.com-snapshots</name>
-      <url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/dev-snapshot-local</url>
-    </snapshotRepository>
+    <repository>
+      <id>internal.repo</id>
+      <name>Temporary Staging Repository</name>
+      <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
   </distributionManagement>
 
   <build>
@@ -175,7 +218,54 @@
           </execution>
         </executions>
       </plugin>
+
+
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.1</version>
+        <configuration>
+          <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.12</version>
+        <configuration>
+          <!-- git commit message -->
+          <message>Maven artifacts for ${project.version}</message>
+          <!-- disable webpage processing -->
+          <noJekyll>true</noJekyll>
+          <!-- matches distribution management repository url above -->
+          <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+          <!-- remote branch name -->
+          <!--<branch>refs/heads/mvn-repo</branch>-->
+          <!-- If you remove this then the old artifact will be removed and new
+           one will replace. But with the merge tag you can just release by changing
+                                            the version -->
+          <merge>true</merge>
+          <includes>
+            <include>**/*</include>
+          </includes>
+          <!-- github repo name -->
+          <repositoryName>mvn-repo</repositoryName>
+          <!-- github username -->
+          <repositoryOwner>mmohen</repositoryOwner>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>deploy</phase>
+          </execution>
+        </executions>
+      </plugin>
+
     </plugins>
   </build>
+
+
 
 </project>
