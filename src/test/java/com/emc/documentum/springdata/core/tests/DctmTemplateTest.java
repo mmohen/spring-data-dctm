@@ -10,10 +10,7 @@ import java.util.List;
 import com.emc.documentum.springdata.core.Loan;
 import com.emc.documentum.springdata.core.*;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +42,8 @@ public class DctmTemplateTest {
 
   @Before
   public void setUp() {
-    dctm.setCredentials(new UserCredentials("dmadmin", "password"));
-    dctm.setDocBase("FPIRepo");
+    dctm.setCredentials(new UserCredentials("dmadmin", "demo.demo"));
+    dctm.setDocBase("corp");
 
   }
 
@@ -90,7 +87,7 @@ public class DctmTemplateTest {
 
   }
 
-  @Test
+  @Ignore
   public void testForRepeatingAttributes() throws DfException {
 
     p = new Person("John", 67, "Male");

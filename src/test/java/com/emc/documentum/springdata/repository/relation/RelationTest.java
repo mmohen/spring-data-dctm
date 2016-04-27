@@ -40,8 +40,7 @@ import com.emc.documentum.springdata.repository.support.SimpleDctmRepository;
  * Copyright (c) 2015 EMC Corporation. All Rights Reserved.
  * EMC Confidential: Restricted Internal Distribution
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ApplicationConfig.class)
+
 public class RelationTest {
 
   public static final String RELATION_QUERY = "select * from dm_relation where relation_name=\'%s\' and parent_id=\'%s\'";
@@ -57,8 +56,8 @@ public class RelationTest {
 
   @PostConstruct
   public void setupDocumentum() {
-    UserCredentials credentials = new UserCredentials("dmadmin", "password");
-    String docBase = "FPIRepo";
+    UserCredentials credentials = new UserCredentials("dmadmin", "demo.demo");
+    String docBase = "corp";
     documentum.setDocBase(docBase);
     documentum.setCredentials(credentials);
   }
@@ -67,7 +66,6 @@ public class RelationTest {
   public void setUp() throws Exception {
   }
 
-  @After
   public void cleanUp() {
     logger.info("Deleting objects: ");
     Iterable<Person> createdObjects = personRepository.findAll();
@@ -78,7 +76,7 @@ public class RelationTest {
     personRepository.delete(createdObjects);
   }
 
-  @Test
+
   @Ignore("Test to test tests")
   public void testFindAll() throws  Exception {
     Iterable<Person> all = personRepository.findAll();
@@ -90,7 +88,7 @@ public class RelationTest {
     System.out.println();
   }
 
-  @Test
+  @Ignore
   public void testSaveObjectWithoutSavingRelation() {
     Person person = new Person("Peter Parker", 19, "male");
     personRepository.save(person);
@@ -101,7 +99,7 @@ public class RelationTest {
     assertTrue(personDctmObject.getLoans().size() == 0);
   }
 
-  @Test
+  @Ignore
   public void testSaveObjectWithOneToOneRelation() throws Exception {
     Person person = new Person("Peter Parker", 19, "male");
     Address address = new Address("SomeStreet", "SomeCity", "SomeCountry");
@@ -112,7 +110,7 @@ public class RelationTest {
     verifyOneToOneRelation(person, address);
   }
 
-  @Test
+  @Ignore
   public void testUpdateOneToOneRelation() throws DfException {
     Person person = new Person("Peter Parker", 19, "male");
     Address address = new Address("SomeStreet", "SomeCity", "SomeCountry");
@@ -137,7 +135,7 @@ public class RelationTest {
     assertTrue(address.getId().equalsIgnoreCase(childObject.getObjectId().toString()));
   }
 
-  @Test
+  @Ignore
   public void testSaveObjectWithOneToManyRelation() throws Exception {
     Person person = new Person("Peter Parker", 19, "male");
     Loan loan = new Loan(100000);

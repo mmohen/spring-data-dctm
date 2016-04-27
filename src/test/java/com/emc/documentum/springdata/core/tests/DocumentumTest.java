@@ -33,8 +33,8 @@ public class DocumentumTest {
 
     @Before
     public void setup(){
-        credentials = new UserCredentials("dmadmin", "password");
-        docBase = "FPIRepo";
+        credentials = new UserCredentials("dmadmin", "demo.demo");
+        docBase = "corp";
         doc.setDocBase(docBase);
         doc.setCredentials(credentials);
     }
@@ -62,7 +62,7 @@ public class DocumentumTest {
 //	public void testGetSessionThrowsDfServiceException() throws DfException {
 //	try {
 //		Documentum docWithoutHostAndPort = new Documentum(credentials);
-//		String docBase = "FPIRepo";
+//		String docBase = "corp";
 //		docWithoutHostAndPort.getSession(docBase);
 //	}
 //	catch(Exception e) {
@@ -75,7 +75,7 @@ public class DocumentumTest {
 	@Test
 	public void testGetSessionThrowsDfIdentityException() throws DfException{
 		
-        String docBase = "FPIRepo";
+        String docBase = "corp";
         UserCredentials wrongCredentials = new UserCredentials("admin", "passwrd");
         docWithWrongCredentials.setCredentials(wrongCredentials);
         docWithWrongCredentials.setDocBase(docBase);
@@ -84,7 +84,7 @@ public class DocumentumTest {
 
 	@Test
 	public void testDocumentumUserCredentialsStringString() throws DfException {
-        String docBase = "FPIRepo";
+        String docBase = "corp";
 		Documentum docCreatedWithPrimaryHostAndPort = new Documentum(credentials, docBase, "10.31.157.9", "1589" );
 		IDfSession session = docCreatedWithPrimaryHostAndPort.getSession();
 		assertEquals(session.getDocbaseName(), docBase);

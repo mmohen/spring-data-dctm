@@ -52,8 +52,8 @@ public class SimpleDctmRepositoryTest {
 
   @PostConstruct
   public void setupDocumentum() {
-    UserCredentials credentials = new UserCredentials("dmadmin", "password");
-    String docBase = "FPIRepo";
+    UserCredentials credentials = new UserCredentials("dmadmin", "demo.demo");
+    String docBase = "corp";
     documentum.setDocBase(docBase);
     documentum.setCredentials(credentials);
   }

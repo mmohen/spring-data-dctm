@@ -255,13 +255,13 @@
     </library>
     <library name="Maven: com.emc.documentum.dfc:configservice-api:7.1.1-SNAPSHOT">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/configservice-api/7.1.1-SNAPSHOT/configservice-api-7.1.1-20141104.073807-42.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/configservice-api/7.1.1-SNAPSHOT/configservice-api-7.1.1-SNAPSHOT.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/configservice-api/7.1.1-SNAPSHOT/configservice-api-7.1.1-20141104.073807-42-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/configservice-api/7.1.1-SNAPSHOT/configservice-api-7.1.1-SNAPSHOT-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/configservice-api/7.1.1-SNAPSHOT/configservice-api-7.1.1-20141104.073807-42-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/configservice-api/7.1.1-SNAPSHOT/configservice-api-7.1.1-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.emc.documentum.dfc:dfc:7.1.1-SNAPSHOT">
@@ -277,24 +277,24 @@
     </library>
     <library name="Maven: com.emc.documentum.dfc:krbutil:7.1.1-SNAPSHOT">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/krbutil/7.1.1-SNAPSHOT/krbutil-7.1.1-20141104.073759-42.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/krbutil/7.1.1-SNAPSHOT/krbutil-7.1.1-SNAPSHOT.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/krbutil/7.1.1-SNAPSHOT/krbutil-7.1.1-20141104.073759-42-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/krbutil/7.1.1-SNAPSHOT/krbutil-7.1.1-SNAPSHOT-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/krbutil/7.1.1-SNAPSHOT/krbutil-7.1.1-20141104.073759-42-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dfc/krbutil/7.1.1-SNAPSHOT/krbutil-7.1.1-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.emc.documentum.dms.client:dms-client-api:7.1.1-SNAPSHOT">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dms/client/dms-client-api/7.1.1-SNAPSHOT/dms-client-api-7.1.1-20141101.060956-24.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dms/client/dms-client-api/7.1.1-SNAPSHOT/dms-client-api-7.1.1-SNAPSHOT.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dms/client/dms-client-api/7.1.1-SNAPSHOT/dms-client-api-7.1.1-20141101.060956-24-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dms/client/dms-client-api/7.1.1-SNAPSHOT/dms-client-api-7.1.1-SNAPSHOT-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dms/client/dms-client-api/7.1.1-SNAPSHOT/dms-client-api-7.1.1-20141101.060956-24-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/dms/client/dms-client-api/7.1.1-SNAPSHOT/dms-client-api-7.1.1-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.emc.documentum.fs2:xtrim-api:6.7.1000.0003">
@@ -321,13 +321,13 @@
     </library>
     <library name="Maven: com.emc.documentum.services.config:configservice-impl:7.1.1-SNAPSHOT">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/services/config/configservice-impl/7.1.1-SNAPSHOT/configservice-impl-7.1.1-20141104.073908-40.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/services/config/configservice-impl/7.1.1-SNAPSHOT/configservice-impl-7.1.1-SNAPSHOT.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/services/config/configservice-impl/7.1.1-SNAPSHOT/configservice-impl-7.1.1-20141104.073908-40-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/services/config/configservice-impl/7.1.1-SNAPSHOT/configservice-impl-7.1.1-SNAPSHOT-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/services/config/configservice-impl/7.1.1-SNAPSHOT/configservice-impl-7.1.1-20141104.073908-40-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/emc/documentum/services/config/configservice-impl/7.1.1-SNAPSHOT/configservice-impl-7.1.1-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: com.emc.rsa.certj:certj:5.2">

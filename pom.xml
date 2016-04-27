@@ -160,17 +160,27 @@
     <version>1.2.2.RELEASE</version>
   </parent>
 
-
   <repositories>
+
+
     <repository>
       <id>artifactory</id>
-      <url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/internal</url>
+      <url>https://raw.github.com/mmohen/mvn-repo/gh-pages</url>
       <snapshots>
-        <updatePolicy>
-          never
-        </updatePolicy>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
       </snapshots>
     </repository>
+
+    <!--<repository>-->
+      <!--<id>artifactory</id>-->
+      <!--<url>http://pls-jfrogrepo.lss.emc.com:8081/artifactory/internal</url>-->
+      <!--<snapshots>-->
+        <!--<updatePolicy>-->
+          <!--never-->
+        <!--</updatePolicy>-->
+      <!--</snapshots>-->
+    <!--</repository>-->
   </repositories>
 
 

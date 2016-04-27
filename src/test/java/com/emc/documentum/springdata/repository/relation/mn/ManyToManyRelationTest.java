@@ -45,8 +45,8 @@ public class ManyToManyRelationTest {
 
   @PostConstruct
   public void setupDocumentum() {
-    UserCredentials credentials = new UserCredentials("dmadmin", "password");
-    String docBase = "FPIRepo";
+    UserCredentials credentials = new UserCredentials("dmadmin", "demo.demo");
+    String docBase = "corp";
     documentum.setDocBase(docBase);
     documentum.setCredentials(credentials);
   }
@@ -84,7 +84,8 @@ public class ManyToManyRelationTest {
     System.out.println();
   }
 
-  @Test
+
+
   public void testManyToManyRelation() throws  Exception {
     Person bruceWayne = new Person("Bruce Wayne", 35, "male");
     Person alfredPennyworth = new Person("Alfred Pennyworth", 63, "male");
@@ -122,7 +123,7 @@ public class ManyToManyRelationTest {
     assertEquals("Incorrect resident count", 1, savedStarLabs.getResidents().size());
   }
 
-  @Test
+  @Ignore
   public void testUpdateRelation() throws  Exception {
     Person bruceWayne = new Person("Bruce Wayne", 35, "male");
     Person alfredPennyworth = new Person("Alfred Pennyworth", 63, "male");
@@ -167,7 +168,7 @@ public class ManyToManyRelationTest {
     assertEquals("Incorrect resident count", 1, savedStarLabs.getResidents().size());
   }
 
-  @Test
+
   public void testManyToManyRelationReverse() {
     Person bruceWayne = new Person("Bruce Wayne", 35, "male");
     Person alfredPennyworth = new Person("Alfred Pennyworth", 63, "male");
